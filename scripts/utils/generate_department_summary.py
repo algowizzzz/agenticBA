@@ -14,11 +14,8 @@ with open('improved_summary_prompts_config.json', 'r') as f:
 # Get department summary config
 dept_config = config['department_summary']
 
-# Load API key from environment variable
-ANTHROPIC_API_KEY = os.getenv("ANTHROPIC_API_KEY")
-if not ANTHROPIC_API_KEY:
-    print("Error: ANTHROPIC_API_KEY environment variable not set.")
-    sys.exit(1)
+# Set API key directly
+ANTHROPIC_API_KEY = "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"
 
 # Custom JSON encoder for datetime objects
 class DateTimeEncoder(json.JSONEncoder):
