@@ -1,88 +1,181 @@
 """
-Configuration for the multi-tool hierarchical retrieval agent.
+Configuration for the multi-tool hierarchical retrieval agent (Financial and Risk Analyst).
+Dynamically fetches examples for tool descriptions.
 """
 
-from typing import Dict, Any
+import sqlite3
+import os
+import logging
+from typing import Dict, Any, List, Optional
+from dotenv import load_dotenv
 
-# Agent configuration
+# --- Constants ---
+# Assuming DBs are in the project root or a standard 'data' subfolder
+# Adjust these relative paths if DBs are located elsewhere
+FINANCIAL_DB_RELATIVE_PATH = "financial_data.db"
+CCR_DB_RELATIVE_PATH = "ccr_reporting.db"
+
+# Setup logger for this module
+logger = logging.getLogger(__name__)
+
+# --- Helper Functions ---
+
+# Basic project root finding (adjust if needed)
+def _get_project_root() -> str:
+    """Find the project root based on this file's location."""
+    return os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+
+def _get_db_path(relative_path: str) -> Optional[str]:
+    """Construct absolute path for DB, return None if not found."""
+    project_root = _get_project_root()
+    # Prefer path from .env if set, otherwise try relative path
+    env_var_name = "FINANCIAL_DB_PATH" if "financial" in relative_path else "CCR_DB_PATH"
+    load_dotenv(os.path.join(project_root, '.env')) # Ensure .env is loaded
+    db_path_env = os.getenv(env_var_name)
+
+    if db_path_env:
+        if os.path.exists(db_path_env):
+            logger.info(f"Using DB path from env var {env_var_name}: {db_path_env}")
+            return db_path_env
+        else:
+            logger.warning(f"DB path from env var {env_var_name} does not exist: {db_path_env}")
+
+    # Fallback to relative path calculation
+    potential_paths = [
+        os.path.join(project_root, relative_path),
+        os.path.join(project_root, 'data', relative_path),
+        os.path.join(project_root, 'scripts', 'data', relative_path)
+    ]
+
+    for path in potential_paths:
+        if os.path.exists(path):
+            logger.info(f"Using DB path: {path}")
+            return path
+        else:
+            logger.debug(f"Tried DB path (not found): {path}")
+
+    logger.warning(
+        f"Database file not found. Tried:\n"
+        f"1. Environment variable '{env_var_name}': {db_path_env or 'not set'}\n"
+        f"2. Relative paths:\n   " + "\n   ".join(potential_paths)
+    )
+    return None
+
+
+def _fetch_db_examples(db_rel_path: str, query: str, limit: int = 3) -> List[str]:
+    """Connects to DB, runs query to fetch examples, handles errors."""
+    db_path = _get_db_path(db_rel_path)
+    if not db_path:
+        return [] # Return empty list if DB not found
+
+    examples = []
+    conn = None
+    try:
+        conn = sqlite3.connect(db_path)
+        cursor = conn.cursor()
+        cursor.execute(query) # Query already includes LIMIT
+        results = cursor.fetchall()
+        examples = [str(row[0]) for row in results] # Get first column as string
+        logger.info(f"Fetched {len(examples)} examples from {db_rel_path} using query: {query}")
+    except sqlite3.Error as e:
+        logger.error(f"Failed to fetch examples from {db_rel_path}: {e}")
+        # Optionally return empty list or re-raise
+    finally:
+        if conn:
+            conn.close()
+    return examples
+
+
+# --- Agent Configuration ---
 AGENT_CONFIG = {
-    "max_iterations": 10,
+    "max_iterations": 5,
     "verbose": True,
     "agent_type": "zero_shot_react_description",
-    "early_stopping_method": "force",
+    "early_stopping_method": "generate",
 }
 
-# Tool descriptions for the agent
-TOOL_DESCRIPTIONS = {
-    "department_tool": """Use this tool first to analyze high-level information and identify relevant categories or topics.
-Input: User query about any topic
-Output: Initial analysis and suggested categories/topics to explore further
-This tool helps understand the broad context and identifies which specific areas to investigate.
-Example: For query "MU revenue", this will identify that MU (Micron) is the relevant category.""",
-    
-    "category_tool": """Use this tool second to analyze specific information about the company/category based on its summary.
-Input should be in format: \"<query>, category=<CATEGORY_ID>\"
-Example: \"how has MU revenue grown over the past 5 years, category=MU\"
-Output: Text analysis based on the summary.""",
-
-    "metadata_lookup_tool": """Use this tool to map user queries or specific terms to the most relevant Category Name and/or Transcript Filename available in the metadata.
-Input: A natural language query, or a specific term like a category ticker (e.g., 'AMZN'), a date (e.g., 'Q2 2022', '2023-10-26'), or a partial/full filename (e.g., '2023-Oct-26-AMZN.txt').
-Output: A dictionary containing 'category_name' (the single most relevant category string or None) and 'transcript_name' (the single most relevant filename string or None).
-How to use:
-- If the query is general (e.g., 'Amazon cloud growth'), the tool finds the most likely relevant category/transcript.
-- If the query is specific (e.g., 'AMZN', '2023-Oct-26-AMZN.txt'), the tool confirms and returns the exact match from metadata if found.
-- Use the output 'category_name' for the 'category_tool' and 'transcript_name' for the 'transcript_analysis_tool'.""",
-
-    "document_analysis_tool": """Use this tool to analyze a specific document. Input should be in the format: \"<query>, document_id=<UUID>\". Output includes the analysis of the document.""",
-
-    "transcript_analysis_tool": """Use this tool ONLY when you need to answer a specific question using the content of a KNOWN document (e.g., an earnings call transcript identified by metadata_lookup_tool). Input MUST be in the format: \"<query>, document_name=<filename.txt>\". The tool fetches the document content and uses an LLM to answer the query based *only* on that document. Do NOT use this for general queries or if you don't know the exact filename."""
+# --- Base Tool Descriptions (Templates) ---
+BASE_TOOL_DESCRIPTIONS = {
+    "financial_sql_query_tool": (
+        "Queries a database containing structured financial market data. Use this for specific questions about historical stock prices (daily OHLC data **available for 2016-2020** for tickers like **{financial_examples}**, etc.), "
+        "historical quarterly financials (income/balance sheet, limited dates), dividends, or stock splits. Input is a natural language question about specific data points."
+        " Persona: SQL Database Expert (Financial Data)."
+    ),
+    "ccr_sql_query_tool": (
+        "Queries a database containing structured Counterparty Credit Risk (CCR) reporting data. Use this for specific questions about daily limit utilization, breach status, "
+        "calculated aggregate exposures (Net MTM, Gross Exposure, PFE, Settlement Risk), collateral, current limits per risk type/asset class, or specific trades related to counterparties (using identifiers like **{ccr_examples}**, etc.). Input is a natural language question about specific CCR metrics."
+        " Persona: SQL Database Expert (CCR Data)."
+    ),
+    "transcript_search_summary_tool": (
+         "Answers questions requiring qualitative analysis, summaries, or context from **earnings call transcripts**. Use for queries about company performance narratives, strategies, management commentary, outlook, or specific events discussed in calls (e.g., queries like **'What was management\'s outlook for cloud growth in the MSFT Q4 2020 call?'**). Input should be the original user query."
+         " Persona: Equity Research Analyst (Transcript Specialist)."
+    ),
 }
 
-# Agent prompt template
-AGENT_PROMPT = """You are a hierarchical information retrieval agent. Your goal is to answer user queries, primarily about company financial performance based on available summaries and documents.
+# --- Dynamic Tool Description Generation ---
+def get_tool_descriptions() -> Dict[str, str]:
+    """
+    Generates tool descriptions, dynamically fetching examples from databases.
+    Falls back to generic examples if DB fetching fails.
+    """
+    # Fetch examples
+    fin_examples = _fetch_db_examples(
+        FINANCIAL_DB_RELATIVE_PATH,
+        "SELECT DISTINCT ticker FROM daily_stock_prices WHERE ticker IS NOT NULL ORDER BY ticker LIMIT 3"
+    )
+    ccr_examples = _fetch_db_examples(
+        CCR_DB_RELATIVE_PATH,
+        "SELECT DISTINCT short_name FROM report_counterparties WHERE short_name IS NOT NULL ORDER BY short_name LIMIT 3"
+    )
 
-AVAILABLE CONTEXT:
+    # Format examples or use fallbacks
+    fin_examples_str = ', '.join(f"'{ex}'" for ex in fin_examples) if fin_examples else "'AAPL', 'MSFT', 'GOOG'"
+    ccr_examples_str = ', '.join(f"'{ex}'" for ex in ccr_examples) if ccr_examples else "'HF Alpha', 'Pension B', 'EuroBank G'" # Fallback examples from schema script
 
-**TECH Department Summary Overview:**
-Over the period from 2016 to mid-2020, the tech department (AAPL, AMZN, MU, NVDA) showed strong performance driven by cloud, AI, 5G, and IoT. Key themes included robust revenue growth, expansion into new markets, heavy R&D, and margin improvement from mix shifts. Risks include cyclicality, geopolitical tensions (especially US-China), and competition.
+    # Populate templates
+    final_descriptions = {}
+    for tool_name, template in BASE_TOOL_DESCRIPTIONS.items():
+        try:
+            final_descriptions[tool_name] = template.format(
+                financial_examples=fin_examples_str,
+                ccr_examples=ccr_examples_str
+                # Add other placeholders if needed
+            )
+        except KeyError:
+            # If a template doesn't need formatting, use it directly
+            final_descriptions[tool_name] = template
 
-**Database Schema Overview:**
-- Database: earnings_transcripts
-  - Collection: `transcripts` (Main store for earnings call transcripts)
-    - Key Fields: `_id` (ObjectId), `document_id` (UUID String, used for linking), `category_id` (e.g., "AAPL"), `date` (datetime), `filename` (string), `quarter` (int), `fiscal_year` (int), `transcript_text` (string)
-  - Collection: `category_summaries` (Stores pre-generated summaries for categories)
-    - Key Fields: `_id` (ObjectId), `category_id` (string), `document_ids` (List of UUID Strings from `transcripts`), summary_text (string)
-  - Collection: `department_summaries` (Stores pre-generated summaries for departments)
-    - Key Fields: `_id` (ObjectId), `department_id` (string, e.g., "TECH"), `category_ids` (List of strings), summary_text (string)
+    return final_descriptions
 
-AVAILABLE TOOLS:
+
+# --- Master Agent Prompt ---
+MASTER_AGENT_PROMPT = """You are a diligent **Financial and Risk Analyst**. Your primary function is to understand user queries and route them accurately to the appropriate specialized tool based on the type of information required. You must be careful to attribute information to its source.
+
+You have access to the following specialized tools:
+
 {tools}
 
-You have access to the following tools:
-{tool_names}
+Based on the user's query, determine the most appropriate data source and tool:
+- For specific, quantitative facts about **historical stock market data or company financials** likely in a structured database (prices, dividends, quarterly revenue/income figures from 2016-2020), use the 'financial_sql_query_tool'.
+- For specific, quantitative facts about **Counterparty Credit Risk (CCR)** data (exposures, limits, utilization) likely in a structured database, use the 'ccr_sql_query_tool'.
+- For **qualitative analysis, summaries, context, management commentary, strategy discussions, or performance narratives** requiring interpretation of **earnings call transcripts** or other documents, use the 'transcript_search_summary_tool'.
 
-GENERAL WORKFLOW GUIDANCE:
-1. Start Broad: Use 'department_tool' first for queries about specific sectors or companies if unsure about the category.
-2. Identify Category/Transcript: Use 'metadata_lookup_tool'. Provide the most specific term you can extract from the user query (e.g., ticker, date, partial filename) as input. If the query is general, use the core query topic. This tool will return the most relevant 'category_name' and/or 'transcript_name' found in the metadata.
-3. Analyze Category Info: If 'metadata_lookup_tool' returned a valid 'category_name', use 'category_tool' to get insights from its summary. Format: \"<query>, category=<category_name>\"
-4. Analyze Specific Transcript: If 'metadata_lookup_tool' returned a valid 'transcript_name' AND the query requires details *from that specific transcript*, use 'transcript_analysis_tool'. Format: \"<query>, document_name=<transcript_name>\"
-5. Synthesize and Answer: Combine the information gathered from the tools used to formulate the final answer.
+Use the following format precisely:
 
-Follow the ReAct format strictly:
-Thought: Explain your reasoning and plan for the next step. Clearly state which tool you are using and why. Specify *what* you are providing as input to metadata_lookup_tool. Check its output ('category_name', 'transcript_name') to decide the next step.
-Action: The name of the tool to use (from the list {tool_names}).
-Action Input: The input required for the selected tool, formatted EXACTLY as specified in the tool description (e.g., \"AMZN Q2 2022\" for metadata_lookup_tool, \"revenue growth?, category=AMZN\" for category_tool, \"details on AWS?, document_name=XYZ.txt\" for transcript_analysis_tool).
-Observation: The result returned from the tool.
-
-If you have enough information to answer the question:
-Final Answer: Your final answer.
+Question: The input question you must answer.
+Thought: As a Financial and Risk Analyst, I must first analyze the query to identify the core information need. Is it asking for specific structured data (financial markets, CCR) or for qualitative analysis/summary of unstructured text (transcripts)? Based on this, I will select the single best specialized tool. I need to explain my reasoning for choosing this tool, referencing the type of query and the tool's specialization using its description.
+Action: The name of the single most appropriate tool to use (must be one of [{tool_names}]).
+Action Input: The input required for the selected tool (usually the original user query, unless the tool description specifies otherwise).
+Observation: The direct result received from the specialized tool.
+Thought: I have received the response from the specialized tool ([Tool Name]). This tool acts as a specialist ([Tool Persona mentioned in its description]). I will now present this information clearly, attributing it directly to the specialist tool's analysis.
+Final Answer: Based on the analysis performed by the specialized [Tool Name] ([Tool Persona]), here is the response to your query: [Insert the full Observation received from the tool here].
 
 Begin!
 
 Question: {input}
-{agent_scratchpad}"""
+Thought:{agent_scratchpad}"""
 
-# Custom output parser configuration
+# --- Custom Output Parser Configuration ---
 OUTPUT_PARSER_CONFIG = {
     "required_fields": ["thought", "action", "action_input"],
     "optional_fields": ["observation", "final_answer"],
@@ -92,22 +185,21 @@ OUTPUT_PARSER_CONFIG = {
     }
 }
 
+# --- Getter Functions ---
 def get_agent_config() -> Dict[str, Any]:
     """Get the agent configuration"""
     return AGENT_CONFIG
 
-def get_tool_descriptions() -> Dict[str, str]:
-    """Get the tool descriptions"""
-    return TOOL_DESCRIPTIONS
+# get_tool_descriptions() is now defined above
 
 def get_agent_prompt() -> str:
     """Get the agent prompt template"""
-    return AGENT_PROMPT 
+    return MASTER_AGENT_PROMPT
 
 def category_tool_response_structure() -> Dict[str, Any]:
-    """Get the expected response structure for category tool"""
+    """Get the expected response structure for category tool (might be deprecated for main agent)."""
     return {
         "summary": "comprehensive analysis...",
-        "relevant_doc_ids": [],  # Explicit parameter for next layer
+        "relevant_doc_ids": [],
         "confidence": 0
     } 

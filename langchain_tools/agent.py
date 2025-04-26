@@ -7,6 +7,7 @@ import re
 import traceback
 import time
 import json
+import os # Added os import
 from typing import List, Dict, Any, Optional, Set, Union, Callable
 from dataclasses import asdict
 
@@ -14,7 +15,7 @@ from langchain.agents import AgentExecutor, create_react_agent # Using newer Age
 from langchain_core.agents import AgentAction, AgentFinish
 from langchain_anthropic import ChatAnthropic
 from langchain.tools import Tool
-from langchain.prompts import PromptTemplate
+from langchain_core.prompts import PromptTemplate
 from requests.exceptions import ConnectionError
 from functools import wraps
 
@@ -25,7 +26,16 @@ from .output_parser import EnhancedAgentOutputParser # Use the new parser
 from .logger import AgentLogger
 
 # Import tool factory and config
-from .tool_factory import create_department_tool, create_category_tool, create_metadata_lookup_tool, create_transcript_analysis_tool, create_llm
+from .tool_factory import (
+    create_department_tool, 
+    create_category_tool, 
+    create_metadata_lookup_tool, 
+    create_transcript_analysis_tool, 
+    create_financial_sql_tool,  # Updated SQL tool factory import
+    create_ccr_sql_tool,  # Added CCR tool factory import
+    create_transcript_agent_tool, # <-- Add new transcript agent tool factory
+    create_llm
+)
 from . import agent_config
 
 # Configure detailed logging (basicConfig should ideally be called only once at entry point)
@@ -58,7 +68,7 @@ class HierarchicalRetrievalAgent:
         """Initialize the agent with structured components."""
         self.api_key = api_key
         self.debug = debug
-        self.agent_id = "HierarchicalAgent_v2"
+        self.agent_id = "HierarchicalAgent_v3_Refactored" # Update version ID
         
         if self.debug:
             logging.getLogger("langchain_tools").setLevel(logging.DEBUG) # Set level for this module
@@ -71,51 +81,74 @@ class HierarchicalRetrievalAgent:
         self.logger = AgentLogger(self.agent_id) # Structured logger
         
         try:
-            # Initialize tools using the factory (which includes validation)
-            logger.debug("Initializing tools via factory")
-            raw_tools = {
-                "department_tool": create_department_tool(self.api_key),
-                "category_tool": create_category_tool(),
-                "metadata_lookup_tool": create_metadata_lookup_tool(),
-                "transcript_analysis_tool": create_transcript_analysis_tool(self.api_key)
-            }
-            self.tools = self._create_langchain_tools(raw_tools)
-            logger.info("Tools initialized successfully")
-            if self.tools:
-                logger.info(f"Initialized with tools: {[tool.name for tool in self.tools]}")
-            else:
-                logger.warning("No tools were initialized!")
-            
-            # Initialize orchestrator
-            self.orchestrator = ToolChainOrchestrator(raw_tools, self.state)
-            logger.info("Orchestrator initialized")
-            
-            # Initialize LLM
+            # Initialize LLM first
             logger.debug("Initializing LLM")
             self.llm = self._initialize_llm()
             logger.info("LLM initialized successfully")
             
-            # Initialize agent executor
-            logger.debug("Initializing agent executor")
-            self.agent_executor = self._initialize_agent_executor()
-            logger.info("Agent executor initialized successfully")
+            # Initialize tools via factory - Master Agent Tools
+            logger.debug("Initializing tools for Master Agent")
+            
+            # Define DB paths
+            # Assuming script runs from project root where BussGPT is the root
+            financial_db_path = os.path.abspath("scripts/data/financial_data.db") 
+            ccr_db_path = os.path.abspath("ccr_reporting.db") # Assuming CCR DB is at root
+            
+            # Only initialize the tools the Master Agent will directly use
+            master_agent_tools = {
+                "financial_sql_query_tool": create_financial_sql_tool(db_path=financial_db_path, llm=self.llm),
+                "ccr_sql_query_tool": create_ccr_sql_tool(db_path=ccr_db_path, llm=self.llm),
+                "transcript_search_summary_tool": create_transcript_agent_tool(llm=self.llm, api_key=self.api_key)
+            }
+            
+            # Convert to LangChain Tools (descriptions loaded here)
+            # We might need to update agent_config descriptions for the new tool
+            self.tools = self._create_langchain_tools(master_agent_tools) 
+            logger.info("Master Agent tools initialized successfully")
+            if self.tools:
+                logger.info(f"Master Agent initialized with tools: {[tool.name for tool in self.tools]}")
+            else:
+                logger.warning("Master Agent - No tools were initialized!")
+            
+            # Initialize orchestrator (Does this need changing? Maybe not if it just uses the final tools list)
+            self.orchestrator = ToolChainOrchestrator(master_agent_tools, self.state) # Pass the dict of tools
+            logger.info("Orchestrator initialized")
+            
+            # Initialize agent executor with the Master Agent's tools
+            logger.debug("Initializing Master Agent executor")
+            self.agent_executor = self._initialize_agent_executor() # Uses self.tools
+            logger.info("Master Agent executor initialized successfully")
             
         except Exception as e:
-            logger.exception("Fatal error during agent initialization: Tools could not be created.")
-            # Decide how to handle this - raise, exit, or try to continue without tools?
-            raise # Re-raise for now
+            logger.exception("Fatal error during agent initialization")
+            raise
             
-    def _create_langchain_tools(self, raw_tools: Dict[str, Callable]) -> List[Tool]:
-        """Convert raw tool callables into LangChain Tool objects."""
+    def _create_langchain_tools(self, raw_tools_dict: Dict[str, Union[Callable, Tool]]) -> List[Tool]:
+        """Convert raw tool callables/Tools into LangChain Tool objects, loading descriptions."""
+        # Ensure descriptions from agent_config cover the new high-level tools
         descriptions = agent_config.get_tool_descriptions()
+             
         lc_tools = []
-        for name, func in raw_tools.items():
-            if name not in descriptions:
-                logger.warning(f"No description found for tool '{name}'. Skipping.")
-                continue
-            lc_tools.append(Tool(name=name, func=func, description=descriptions[name]))
+        for name, tool_or_func in raw_tools_dict.items():
+            if isinstance(tool_or_func, Tool):
+                # Use the description from the Tool object by default
+                # Override if a description exists in agent_config
+                desc = descriptions.get(name, tool_or_func.description)
+                tool_or_func.description = desc # Update tool's description
+                lc_tools.append(tool_or_func)
+                logger.debug(f"Loaded Tool: {name} with description: {desc}")
+            elif callable(tool_or_func):
+                # This path likely won't be used now if all tools are pre-wrapped
+                if name not in descriptions:
+                    logger.warning(f"No description found for tool function '{name}'. Skipping.")
+                    continue
+                lc_tools.append(Tool(name=name, func=tool_or_func, description=descriptions[name]))
+                logger.debug(f"Wrapped function tool: {name} with description: {descriptions[name]}")
+            else:
+                 logger.warning(f"Item '{name}' in raw_tools is neither a Tool nor callable. Skipping.")
+                 
         return lc_tools
-
+    
     @retry_on_connection_error
     def _initialize_llm(self) -> ChatAnthropic:
         """Initialize the LLM client using the factory."""
@@ -132,33 +165,36 @@ class HierarchicalRetrievalAgent:
         except Exception as e:
             logger.exception(f"Failed to initialize LLM: {e}")
             raise
-            
+    
     def _initialize_agent_executor(self):
-        """Initialize the LangChain AgentExecutor with React agent."""
+        """Initialize the Master Agent AgentExecutor with React agent."""
         # Use the enhanced output parser
         output_parser = EnhancedAgentOutputParser()
         
-        # Create prompt template from config
-        # Note: Ensure the prompt template is compatible with create_react_agent
-        prompt = PromptTemplate.from_template(agent_config.AGENT_PROMPT)
+        # Create prompt template from config - THIS PROMPT NEEDS UPDATING for the 3 master tools
+        # Make sure agent_config.AGENT_PROMPT reflects the new toolset
+        if not hasattr(agent_config, 'MASTER_AGENT_PROMPT'):
+             logger.warning("Using generic AGENT_PROMPT for Master Agent. Consider creating MASTER_AGENT_PROMPT in agent_config.py")
+             prompt_template_str = agent_config.AGENT_PROMPT
+        else:
+             prompt_template_str = agent_config.MASTER_AGENT_PROMPT
+             
+        prompt = PromptTemplate.from_template(prompt_template_str)
         
-        # Create the ReAct Agent
-        react_agent = create_react_agent(self.llm, self.tools, prompt)
+        # Create the ReAct Agent for the Master Agent
+        master_react_agent = create_react_agent(self.llm, self.tools, prompt)
         
         # Get agent executor config
         config = agent_config.AGENT_CONFIG
         
-        # Create the AgentExecutor
-        # Pass the tools list created earlier
+        # Create the AgentExecutor for the Master Agent
         return AgentExecutor(
-            agent=react_agent,
-            tools=self.tools,
+            agent=master_react_agent,
+            tools=self.tools, # Pass the high-level tools (SQLx2, TranscriptAgent)
             verbose=config["verbose"],
-            max_iterations=config["max_iterations"],
+            max_iterations=config["max_iterations"], # Maybe fewer iterations for master?
             early_stopping_method=config["early_stopping_method"],
-            handle_parsing_errors=self._handle_parsing_error, # Custom handling
-            # Include output_parser if required by the specific AgentExecutor version or setup
-            # It might be implicitly handled by create_react_agent
+            handle_parsing_errors=self._handle_parsing_error, # Use existing handler
         )
         
     def _handle_parsing_error(self, error: Exception) -> str:

@@ -13,4 +13,6 @@ pydantic>=2.6.0
 
 # Added for SQL database and data fetching
 yfinance
-pandas 
+pandas
+langchain-community
+langchain-experimental 

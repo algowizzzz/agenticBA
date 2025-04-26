@@ -1,8 +1,12 @@
 import argparse
-from langchain_tools.agent import HierarchicalRetrievalAgent
+# Adjust import based on new location
+import sys
 import os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../..'))) 
+from langchain_tools.agent import HierarchicalRetrievalAgent
+# Remove direct tool import if not needed for direct call
+# from langchain_tools.tool2_category import get_tool 
 import logging
-from langchain_tools.tool2_category import get_tool
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
@@ -17,21 +21,25 @@ def main(query: str):
     api_key = os.getenv("ANTHROPIC_API_KEY")
     if not api_key:
         raise ValueError("ANTHROPIC_API_KEY environment variable not set")
-    
-    # First try the category tool directly
-    category_tool = get_tool(api_key)
-    logger.info("\nTrying category tool directly:")
-    logger.info("(Skipping direct category tool call for this test)")
-    
+
+    # # First try the category tool directly - REMOVED as it complicates imports
+    # category_tool = get_tool(api_key)
+    # logger.info("\nTrying category tool directly:")
+    # logger.info("(Skipping direct category tool call for this test)")
+
     # Then try through the agent
-    agent = HierarchicalRetrievalAgent(api_key=api_key, debug=True)
+    # Initialize with debug=True to potentially see more logs
+    agent = HierarchicalRetrievalAgent(api_key=api_key, debug=True) 
     logger.info(f"\nRunning through agent: {query}")
-    
+
     try:
         response = agent.query(query)
         print("\nAgent response:", response)
     except Exception as e:
         logger.error(f"Error: {e}")
+        # Print traceback for debugging
+        import traceback
+        traceback.print_exc()
 
 if __name__ == "__main__":
     args = parser.parse_args()
