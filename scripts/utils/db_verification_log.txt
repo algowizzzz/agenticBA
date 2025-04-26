@@ -1,0 +1,74 @@
+INFO: Starting database verification...
+INFO: Connected to database: /Users/saadahmed/Desktop/Apps/BussGPT/scripts/data/financial_data.db
+INFO: 
+--- Running Verification Queries ---
+INFO: 
+1. Checking Companies...
+INFO: Executing query: SELECT ticker FROM companies ORDER BY ticker
+INFO:   Found 10 companies.
+INFO:   PASS: Company list matches expected tickers.
+INFO: 
+2. Checking Stock Price Counts...
+INFO: Executing query: SELECT ticker, COUNT(*) FROM daily_stock_prices GROUP BY ticker ORDER BY ticker
+INFO:   Stock price rows per ticker:
+INFO:     AAPL: 1173
+INFO:     AMD: 1173
+INFO:     AMZN: 1173
+INFO:     ASML: 1173
+INFO:     CSCO: 1173
+INFO:     GOOGL: 1173
+INFO:     INTC: 1173
+INFO:     MSFT: 1173
+INFO:     MU: 1173
+INFO:     NVDA: 1173
+INFO:   PASS: Stock price counts seem reasonable.
+INFO: 
+3. Checking Dividends...
+INFO: Executing query: SELECT COUNT(*) FROM dividends WHERE ticker = ? | Params: ('AAPL',)
+INFO: Executing query: SELECT COUNT(*) FROM dividends WHERE ticker = ? | Params: ('GOOGL',)
+INFO:   AAPL dividend entries: 19
+INFO:   GOOGL dividend entries: 0
+INFO:   PASS: Dividend counts look correct for samples.
+INFO: 
+4. Checking Stock Splits...
+INFO: Executing query: SELECT date, split_ratio FROM stock_splits WHERE ticker = ? AND date LIKE '2020-%' | Params: ('AAPL',)
+INFO:   Found AAPL split: [('2020-08-31', '4.0')]
+INFO:   PASS: AAPL 2020 split correctly recorded.
+INFO: 
+5. Checking Quarterly Financials Counts...
+INFO: Executing query: SELECT ticker, COUNT(*) FROM quarterly_income_statement GROUP BY ticker ORDER BY ticker
+INFO: Executing query: SELECT ticker, COUNT(*) FROM quarterly_balance_sheet GROUP BY ticker ORDER BY ticker
+INFO:   Quarterly Income Statement row counts:
+INFO:     AAPL: 6
+INFO:     AMD: 6
+INFO:     AMZN: 6
+INFO:     ASML: 6
+INFO:     CSCO: 5
+INFO:     GOOGL: 6
+INFO:     INTC: 6
+INFO:     MSFT: 5
+INFO:     MU: 7
+INFO:     NVDA: 7
+INFO:   Quarterly Balance Sheet row counts:
+INFO:     AAPL: 6
+INFO:     AMD: 6
+INFO:     AMZN: 6
+INFO:     ASML: 7
+INFO:     CSCO: 6
+INFO:     GOOGL: 6
+INFO:     INTC: 6
+INFO:     MSFT: 6
+INFO:     MU: 6
+INFO:     NVDA: 7
+INFO:   PASS: Quarterly report counts seem reasonable.
+INFO: 
+6. Checking Sample Quarterly Financial Data (NVDA 2024-07-31 report)...
+INFO: Executing query: SELECT total_revenue, net_income FROM quarterly_income_statement WHERE ticker = ? AND report_date = ? | Params: ('NVDA', '2024-07-31')
+INFO: Executing query: SELECT total_assets, stockholders_equity FROM quarterly_balance_sheet WHERE ticker = ? AND report_date = ? | Params: ('NVDA', '2024-07-31')
+INFO:   NVDA Income (Revenue, Net Income): (30040000000.0, 16599000000.0)
+INFO:   NVDA Balance (Assets, Equity): (85227000000.0, 58157000000.0)
+INFO:   PASS: Sample NVDA financial data found.
+INFO: 
+--- Verification Finished ---
+INFO: Database connection closed.
+INFO: Verification script finished.
