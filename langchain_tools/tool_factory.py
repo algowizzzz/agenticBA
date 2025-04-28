@@ -946,16 +946,22 @@ Thought:{agent_scratchpad}
             )
         except Exception as e:
             logger.error(f"Error creating transcript agent: {e}")
+            # Capture the error message NOW
+            error_message = f"Error creating transcript agent: {e}"
             return Tool(
                 name="transcript_agent_error",
-                func=lambda q: {"error": f"Error creating transcript agent: {e}"},
+                # Use the captured message in the lambda
+                func=lambda q: {"error": error_message},
                 description="Error creating transcript agent.",
             )
 
     except Exception as e:
         logger.error(f"Error creating transcript agent: {e}")
+        # Capture the error message NOW
+        error_message = f"Error creating transcript agent: {e}"
         return Tool(
             name="transcript_agent_error",
-            func=lambda q: {"error": f"Error creating transcript agent: {e}"},
+            # Use the captured message in the lambda
+            func=lambda q: {"error": error_message},
             description="Error creating transcript agent.",
         )

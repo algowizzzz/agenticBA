@@ -16,6 +16,7 @@ from datetime import datetime
 from langchain_anthropic import ChatAnthropic
 from langchain_core.messages import AIMessage
 from .config import sanitize_json_response # Reverted to relative import
+from langchain_core.language_models import BaseChatModel # Add if not present
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
@@ -211,9 +212,10 @@ CRITICAL: Your response MUST be a single valid JSON object enclosed in ```json\n
         query=query
     )
 
-# --- Main Tool Logic (LLM Based + JSON Post-processing) --- 
-def llm_metadata_lookup(query_term: str) -> Dict[str, Any]:
-    """Uses two LLM calls to find relevant category/document IDs and check summary availability,
+# --- Main Tool Logic (LLM Based + JSON Post-processing) ---
+# MODIFIED: Added llm parameter, removed internal LLM creation
+def llm_metadata_lookup(query_term: str, llm: BaseChatModel) -> Dict[str, Any]:
+    """Uses the provided LLM instance to find relevant category/document IDs and check summary availability,
        splitting the document metadata to fit context limits.
        Expects JSON output from LLM.
        Returns: Structured dictionary with aggregated findings or error.
@@ -224,7 +226,7 @@ def llm_metadata_lookup(query_term: str) -> Dict[str, Any]:
         "relevant_doc_ids": [],
         "category_summary_available": False,
         "doc_ids_with_summaries": [],
-        "error": "Tool initialization failed"
+        "error": "Tool logic failed", # More specific errors set below
     }
 
     logger.info(f"Metadata Tool: Received query: '{query_term[:100]}...'")
@@ -247,12 +249,6 @@ def llm_metadata_lookup(query_term: str) -> Dict[str, Any]:
     all_categories_map = metadata.get("categories", {})
     all_doc_summaries_list = list(doc_ids_with_summaries_set)
     all_cat_summaries_list = list(categories_with_summaries_set)
-        
-    api_key = os.getenv("ANTHROPIC_API_KEY")
-    if not api_key:
-        logger.error("Metadata Tool: ANTHROPIC_API_KEY not set")
-        default_error_return["error"] = "ANTHROPIC_API_KEY not set"
-        return default_error_return
 
     # Split the documents metadata into two halves
     all_documents_dict = metadata.get("documents", {})
@@ -263,21 +259,9 @@ def llm_metadata_lookup(query_term: str) -> Dict[str, Any]:
 
     logger.info(f"Metadata Tool: Splitting {len(all_documents_dict)} documents into two parts: {len(docs_part1)} and {len(docs_part2)}")
 
-    # --- Prepare LLM --- 
-    try:
-        llm = ChatAnthropic(
-            model="claude-3-5-sonnet-20240620", 
-            temperature=0,
-            max_tokens=1024, # For JSON output
-            anthropic_api_key=api_key
-        )
-    except Exception as e:
-         logger.error(f"Metadata Tool: Failed to initialize LLM: {e}")
-         default_error_return["error"] = f"LLM Initialization Error: {e}"
-         return default_error_return
-
-    # --- Function to perform single LLM call --- 
-    def _call_llm_with_metadata(documents_part: Dict[str, Any], part_num: int) -> Optional[Dict[str, Any]]:
+    # --- Function to perform single LLM call ---
+    # MODIFIED: Added llm parameter
+    def _call_llm_with_metadata(documents_part: Dict[str, Any], part_num: int, llm_instance: BaseChatModel) -> Optional[Dict[str, Any]]:
         metadata_chunk = {
             "categories": all_categories_map, # Send all categories
             "documents": documents_part,
@@ -287,7 +271,8 @@ def llm_metadata_lookup(query_term: str) -> Dict[str, Any]:
         try:
             prompt = format_metadata_prompt(query_term, metadata_chunk)
             logger.info(f"Metadata Tool: Sending request to LLM (Part {part_num})...")
-            response = llm.invoke(prompt)
+            # Use the passed LLM instance
+            response = llm_instance.invoke(prompt)
             logger.debug(f"Metadata Tool: Received response object (Part {part_num}) of type: {type(response)}")
             
             # Extract raw output
@@ -313,11 +298,12 @@ def llm_metadata_lookup(query_term: str) -> Dict[str, Any]:
             logger.error(f"Metadata Tool: Error during LLM call or processing (Part {part_num}): {e}", exc_info=True)
             return None
 
-    # --- Make the two LLM calls --- 
-    result1 = _call_llm_with_metadata(docs_part1, 1)
-    result2 = _call_llm_with_metadata(docs_part2, 2)
+    # --- Make the two LLM calls ---
+    # MODIFIED: Pass the llm instance
+    result1 = _call_llm_with_metadata(docs_part1, 1, llm_instance=llm)
+    result2 = _call_llm_with_metadata(docs_part2, 2, llm_instance=llm)
 
-    # --- Aggregate the results --- 
+    # --- Aggregate the results ---
     final_results = {
         "relevant_category_id": None,
         "relevant_doc_ids": [],
@@ -398,19 +384,56 @@ def llm_metadata_lookup(query_term: str) -> Dict[str, Any]:
     logger.info(f"Metadata Tool: Aggregated lookup results: {final_results}")
     return final_results
 
-# --- Tool Factory Function --- 
-def get_metadata_lookup_tool() -> Callable:
+# --- Tool Factory Function ---
+# MODIFIED: Added api_key parameter, instantiate LLM here, return wrapper lambda
+def get_metadata_lookup_tool(api_key: Optional[str] = None) -> Callable:
     """Factory function to create and return the LLM metadata lookup tool."""
-    logger.info("Metadata Tool: Creating tool instance.")
-    # Assign the main logic function to a variable for clarity
-    tool_function = llm_metadata_lookup
+    logger.info("Metadata Tool Factory: Creating tool instance.")
+
+    # --- Create LLM Instance ---
+    api_key = api_key or os.getenv("ANTHROPIC_API_KEY")
+    if not api_key:
+        logger.error("Metadata Tool Factory: ANTHROPIC_API_KEY not provided or set in environment.")
+        # Return a dummy function that reports the error
+        def error_func(query_term: str):
+             logger.error("Metadata Tool executing with error: API Key missing.")
+             return {"error": "ANTHROPIC_API_KEY not configured for metadata tool"}
+        # Add dunder attributes to the error function for consistency
+        error_func.__name__ = "metadata_lookup_error_tool"
+        error_func.__doc__ = "Error: Tool could not be initialized due to missing API key."
+        return error_func
+
+    try:
+        llm = ChatAnthropic(
+            model="claude-3-5-sonnet-20240620",
+            temperature=0,
+            max_tokens=1024, # Ensure sufficient tokens for JSON output
+            anthropic_api_key=api_key
+        )
+        logger.info("Metadata Tool Factory: LLM initialized successfully.")
+    except Exception as e:
+        logger.error(f"Metadata Tool Factory: Failed to initialize LLM: {e}")
+        def error_func(query_term: str):
+             logger.error(f"Metadata Tool executing with error: LLM Init failed ({e}).")
+             return {"error": f"LLM Initialization Error: {e}"}
+        # Add dunder attributes to the error function
+        error_func.__name__ = "metadata_lookup_error_tool"
+        error_func.__doc__ = f"Error: Tool could not be initialized due to LLM error ({e})."
+        return error_func
+
+    # --- Tool Function Wrapper ---
+    # Return a function that takes only the query and calls the main logic with the LLM
+    def tool_wrapper(query_term: str):
+        # Ensure the LLM instance is passed to the core logic function
+        return llm_metadata_lookup(query_term, llm=llm)
+
     # Set standard dunder attributes for better introspection if needed
-    tool_function.__name__ = "llm_metadata_lookup_tool"
-    tool_function.__doc__ = (
+    tool_wrapper.__name__ = "llm_metadata_lookup_tool"
+    tool_wrapper.__doc__ = (
         "Identifies relevant transcripts and available summaries (category, individual) based on a user query "
         "and MINIMAL metadata context for ALL documents. Input is the user query string. Returns a structured dictionary with findings."
     )
-    return tool_function
+    return tool_wrapper # Return the wrapper function
 
 # Example Usage (for testing)
 if __name__ == "__main__":
@@ -419,5 +442,5 @@ if __name__ == "__main__":
     parser.add_argument("query_term", help="Natural language query or term to search for.")
     args = parser.parse_args()
     
-    result = llm_metadata_lookup(args.query_term)
+    result = get_metadata_lookup_tool()(args.query_term)
     print(json.dumps(result, indent=2)) 
