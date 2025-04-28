@@ -64,52 +64,64 @@ def _get_db_path(relative_path: str) -> Optional[str]:
 
 def _fetch_db_examples(db_rel_path: str, query: str, limit: int = 3) -> List[str]:
     """Connects to DB, runs query to fetch examples, handles errors."""
+    logger.info(f"--- Attempting to fetch DB examples for: {db_rel_path} ---")
     db_path = _get_db_path(db_rel_path)
     if not db_path:
+        logger.warning(f"--- DB path not found for {db_rel_path}, skipping example fetch. ---")
         return [] # Return empty list if DB not found
 
     examples = []
     conn = None
     try:
+        logger.info(f"--- Connecting to DB at: {db_path} ---")
         conn = sqlite3.connect(db_path)
         cursor = conn.cursor()
+        logger.info(f"--- Executing query: {query} on {db_rel_path} ---")
         cursor.execute(query) # Query already includes LIMIT
         results = cursor.fetchall()
         examples = [str(row[0]) for row in results] # Get first column as string
-        logger.info(f"Fetched {len(examples)} examples from {db_rel_path} using query: {query}")
+        logger.info(f"--- Successfully fetched {len(examples)} examples from {db_rel_path} ---")
     except sqlite3.Error as e:
-        logger.error(f"Failed to fetch examples from {db_rel_path}: {e}")
+        logger.exception(f"--- SQLITE ERROR fetching examples from {db_rel_path}: {e} ---")
         # Optionally return empty list or re-raise
     finally:
         if conn:
+            logger.info(f"--- Closing DB connection for: {db_path} ---")
             conn.close()
+    logger.info(f"--- Finished fetching DB examples for: {db_rel_path} ---")
     return examples
 
 
 # --- Agent Configuration ---
 AGENT_CONFIG = {
-    "max_iterations": 5,
+    "max_iterations": 10,
     "verbose": True,
     "agent_type": "zero_shot_react_description",
-    "early_stopping_method": "generate",
+    "early_stopping_method": "force",
 }
 
 # --- Base Tool Descriptions (Templates) ---
 BASE_TOOL_DESCRIPTIONS = {
     "financial_sql_query_tool": (
-        "Queries a database containing structured financial market data. Use this for specific questions about historical stock prices (daily OHLC data **available for 2016-2020** for tickers like **{financial_examples}**, etc.), "
-        "historical quarterly financials (income/balance sheet, limited dates), dividends, or stock splits. Input is a natural language question about specific data points."
-        " Persona: SQL Database Expert (Financial Data)."
+        "Queries the `financial_data.db` database containing structured financial market data. Use this for specific questions about **historical (2016-2020) daily stock prices** (OHLC), **historical quarterly financials** (income/balance sheet, limited dates), **dividends**, or **stock splits** for known public companies like **{financial_examples}**, etc. "
+        "Input is a natural language question about specific historical data points."
+        " Persona: SQL Database Expert (Historical Financial Data)."
     ),
     "ccr_sql_query_tool": (
-        "Queries a database containing structured Counterparty Credit Risk (CCR) reporting data. Use this for specific questions about daily limit utilization, breach status, "
-        "calculated aggregate exposures (Net MTM, Gross Exposure, PFE, Settlement Risk), collateral, current limits per risk type/asset class, or specific trades related to counterparties (using identifiers like **{ccr_examples}**, etc.). Input is a natural language question about specific CCR metrics."
-        " Persona: SQL Database Expert (CCR Data)."
+        "Queries the `ccr_reporting.db` database containing structured Counterparty Credit Risk (CCR) reporting data (sample data). Use this for specific questions about **counterparty details (ratings, country)**, **daily risk exposures** (Net MTM, Gross, PFE, Settlement), **risk limits**, **limit utilization**, **breach status**, or individual **trade details** related to counterparties like **{ccr_examples}**, etc. "
+        "Input is a natural language question about specific CCR metrics or counterparty/trade details within this database."
+        " Persona: SQL Database Expert (CCR Reporting Data)."
     ),
     "transcript_search_summary_tool": (
          "Answers questions requiring qualitative analysis, summaries, or context from **earnings call transcripts**. Use for queries about company performance narratives, strategies, management commentary, outlook, or specific events discussed in calls (e.g., queries like **'What was management\'s outlook for cloud growth in the MSFT Q4 2020 call?'**). Input should be the original user query."
          " Persona: Equity Research Analyst (Transcript Specialist)."
     ),
+    "financial_news_search": (
+        "Searches the web for **current or recent** financial news, market sentiment, **live stock price estimates**, or general information about companies, markets, or economic events. "
+        "To focus results on reliable financial sources, preferentially construct the search term using the 'site:' operator. "
+        "For example: 'query site:reuters.com OR site:marketwatch.com OR site:finance.yahoo.com OR site:seekingalpha.com'. "
+        "Use this for information **not** found in the historical financial database or the CCR reporting database."
+    )
 }
 
 # --- Dynamic Tool Description Generation ---
@@ -119,6 +131,7 @@ def get_tool_descriptions() -> Dict[str, str]:
     Falls back to generic examples if DB fetching fails.
     """
     # Fetch examples
+    logger.info("--- Starting dynamic tool description generation... ---")
     fin_examples = _fetch_db_examples(
         FINANCIAL_DB_RELATIVE_PATH,
         "SELECT DISTINCT ticker FROM daily_stock_prices WHERE ticker IS NOT NULL ORDER BY ticker LIMIT 3"
@@ -127,23 +140,32 @@ def get_tool_descriptions() -> Dict[str, str]:
         CCR_DB_RELATIVE_PATH,
         "SELECT DISTINCT short_name FROM report_counterparties WHERE short_name IS NOT NULL ORDER BY short_name LIMIT 3"
     )
+    logger.info("--- Finished fetching all DB examples. ---")
 
     # Format examples or use fallbacks
-    fin_examples_str = ', '.join(f"'{ex}'" for ex in fin_examples) if fin_examples else "'AAPL', 'MSFT', 'GOOG'"
-    ccr_examples_str = ', '.join(f"'{ex}'" for ex in ccr_examples) if ccr_examples else "'HF Alpha', 'Pension B', 'EuroBank G'" # Fallback examples from schema script
+    fin_examples_str = ', '.join(f"\'{ex}\'" for ex in fin_examples) if fin_examples else "\'AAPL\', \'MSFT\', \'GOOG\'"
+    ccr_examples_str = ', '.join(f"\'{ex}\'" for ex in ccr_examples) if ccr_examples else "\'JPMorgan\', \'BankOfAmerica\', \'Citigroup\'"
 
     # Populate templates
     final_descriptions = {}
     for tool_name, template in BASE_TOOL_DESCRIPTIONS.items():
         try:
-            final_descriptions[tool_name] = template.format(
-                financial_examples=fin_examples_str,
-                ccr_examples=ccr_examples_str
-                # Add other placeholders if needed
-            )
-        except KeyError:
-            # If a template doesn't need formatting, use it directly
-            final_descriptions[tool_name] = template
+            if tool_name == "ccr_sql_query_tool" and tool_name in BASE_TOOL_DESCRIPTIONS:
+                 final_descriptions[tool_name] = template.format(ccr_examples=ccr_examples_str)
+            elif tool_name == "financial_sql_query_tool" and tool_name in BASE_TOOL_DESCRIPTIONS:
+                 final_descriptions[tool_name] = template.format(financial_examples=fin_examples_str)
+            else:
+                 # For tools without dynamic examples
+                 final_descriptions[tool_name] = template
+        except KeyError as e:
+             logger.warning(f"KeyError formatting description for {tool_name}: {e}. Using template directly.")
+             # If a template doesn't need formatting, use it directly
+             final_descriptions[tool_name] = template
+
+    # Make sure the CCR tool description is added even if template formatting had issues
+    if "ccr_sql_query_tool" not in final_descriptions and "ccr_sql_query_tool" in BASE_TOOL_DESCRIPTIONS:
+        logger.warning("Adding CCR tool description manually after potential formatting issue.")
+        final_descriptions["ccr_sql_query_tool"] = BASE_TOOL_DESCRIPTIONS["ccr_sql_query_tool"].format(ccr_examples="'JPMorgan', 'BankOfAmerica', 'Citigroup'") # Use fallback
 
     return final_descriptions
 
@@ -156,15 +178,16 @@ You have access to the following specialized tools:
 {tools}
 
 Based on the user's query, determine the most appropriate data source and tool:
-- For specific, quantitative facts about **historical stock market data or company financials** likely in a structured database (prices, dividends, quarterly revenue/income figures from 2016-2020), use the 'financial_sql_query_tool'.
-- For specific, quantitative facts about **Counterparty Credit Risk (CCR)** data (exposures, limits, utilization) likely in a structured database, use the 'ccr_sql_query_tool'.
+- For specific, quantitative facts about **historical (2016-2020) stock market data or company financials** (prices, dividends, quarterly figures) from the `financial_data.db`, use the 'financial_sql_query_tool'.
+- For specific, quantitative facts about **Counterparty Credit Risk (CCR)** data from the internal `ccr_reporting.db` (sample data), such as **customer/bank exposure, counterparty ratings, risk limits, limit utilization, breach status, or specific trade details for a customer ID or name**, use the 'ccr_sql_query_tool'. **Prioritize this tool for queries explicitly mentioning CCR, counterparty risk, exposure, limits, or specific customer IDs/trades.**
+- For **recent news, current events, LIVE stock prices, market sentiment, or general web information** about companies, markets, or economic topics (especially if the financial or CCR databases lack the data), use the 'financial_news_search'.
 - For **qualitative analysis, summaries, context, management commentary, strategy discussions, or performance narratives** requiring interpretation of **earnings call transcripts** or other documents, use the 'transcript_search_summary_tool'.
 
 Use the following format precisely:
 
 Question: The input question you must answer.
-Thought: As a Financial and Risk Analyst, I must first analyze the query to identify the core information need. Is it asking for specific structured data (financial markets, CCR) or for qualitative analysis/summary of unstructured text (transcripts)? Based on this, I will select the single best specialized tool. I need to explain my reasoning for choosing this tool, referencing the type of query and the tool's specialization using its description.
-Action: The name of the single most appropriate tool to use (must be one of [{tool_names}]).
+Thought: As a Financial and Risk Analyst, I must first analyze the query to identify the core information need. Does it ask for historical financial market data (`financial_sql_query_tool`), internal CCR reporting data like customer exposure/trades/limits (`ccr_sql_query_tool`), recent news/live prices (`financial_news_search`), or qualitative analysis of transcripts (`transcript_search_summary_tool`)? Based on keywords and the type of data requested, I will select the single best specialized tool. I need to explain my reasoning for choosing this tool, referencing the type of query and the tool's specialization using its description.
+Action: The name of the single most appropriate tool to use (must be one of [{tool_names}]). # Tool names list will be updated automatically
 Action Input: The input required for the selected tool (usually the original user query, unless the tool description specifies otherwise).
 Observation: The direct result received from the specialized tool.
 Thought: I have received the response from the specialized tool ([Tool Name]). This tool acts as a specialist ([Tool Persona mentioned in its description]). I will now present this information clearly, attributing it directly to the specialist tool's analysis.

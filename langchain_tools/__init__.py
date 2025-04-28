@@ -12,8 +12,8 @@ This package contains tools for the hierarchical retrieval system:
 from .tool1_department import get_tool as get_department_tool
 from .tool2_category import get_tool as get_category_tool
 # from .tool3_document_analysis import get_tool as get_document_analysis_tool
-from .tool4_metadata_lookup import get_tool as get_metadata_lookup_tool
-from .tool5_transcript_analysis import get_transcript_analysis_tool
+from .tool4_metadata_lookup import get_metadata_lookup_tool
+from .tool5_transcript_analysis import get_document_analysis_tool
 
 from .agent import HierarchicalRetrievalAgent
 from .orchestrator import ToolChainOrchestrator
@@ -26,7 +26,7 @@ __all__ = [
     'get_category_tool',
     # 'get_document_analysis_tool',
     'get_metadata_lookup_tool',
-    'get_transcript_analysis_tool',
+    'get_document_analysis_tool',
     'HierarchicalRetrievalAgent',
     'ToolChainOrchestrator',
     'AgentState',
