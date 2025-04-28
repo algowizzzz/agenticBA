@@ -29,11 +29,12 @@ from .logger import AgentLogger
 from .tool_factory import (
     create_department_tool, 
     create_category_tool, 
-    create_metadata_lookup_tool, 
-    create_transcript_analysis_tool, 
+    create_metadata_lookup_tool_wrapper as create_metadata_lookup_tool, 
+    create_document_analysis_tool_wrapper as create_transcript_analysis_tool, 
     create_financial_sql_tool,  # Updated SQL tool factory import
     create_ccr_sql_tool,  # Added CCR tool factory import
     create_transcript_agent_tool, # <-- Add new transcript agent tool factory
+    create_financial_news_search_tool, # <--- Import the new news tool factory
     create_llm
 )
 from . import agent_config
@@ -91,14 +92,20 @@ class HierarchicalRetrievalAgent:
             
             # Define DB paths
             # Assuming script runs from project root where BussGPT is the root
-            financial_db_path = os.path.abspath("scripts/data/financial_data.db") 
-            ccr_db_path = os.path.abspath("ccr_reporting.db") # Assuming CCR DB is at root
+            # Correctly find the project root relative to this file
+            project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+            financial_db_path = os.path.join(project_root, "scripts", "data", "financial_data.db") 
+            # Make CCR DB path relative to project root as well
+            ccr_db_path = os.path.join(project_root, "scripts", "data", "ccr_reporting.db") 
             
             # Only initialize the tools the Master Agent will directly use
             master_agent_tools = {
                 "financial_sql_query_tool": create_financial_sql_tool(db_path=financial_db_path, llm=self.llm),
+                # --- UNCOMMENTED CCR tool creation ---
                 "ccr_sql_query_tool": create_ccr_sql_tool(db_path=ccr_db_path, llm=self.llm),
-                "transcript_search_summary_tool": create_transcript_agent_tool(llm=self.llm, api_key=self.api_key)
+                # ---
+                "transcript_search_summary_tool": create_transcript_agent_tool(llm=self.llm, api_key=self.api_key),
+                "financial_news_search": create_financial_news_search_tool() # Instantiate the news tool
             }
             
             # Convert to LangChain Tools (descriptions loaded here)
@@ -127,7 +134,7 @@ class HierarchicalRetrievalAgent:
         """Convert raw tool callables/Tools into LangChain Tool objects, loading descriptions."""
         # Ensure descriptions from agent_config cover the new high-level tools
         descriptions = agent_config.get_tool_descriptions()
-             
+        
         lc_tools = []
         for name, tool_or_func in raw_tools_dict.items():
             if isinstance(tool_or_func, Tool):

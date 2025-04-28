@@ -1,0 +1,190 @@
+2025-04-27 19:15:52,018 - __main__ - INFO - Logging detailed output to: /Users/saadahmed/Desktop/Apps/BussGPT/scripts/agent_tests/../../test_results/run_20250427_191552_9bf00e10/log.txt
+2025-04-27 19:15:52,018 - __main__ - INFO - Starting agent test run for query: 'Give me CCR exposure and notional for trades which have AAPL ticker in trade, AAPL stock price latest whatever you have, latest news about AAPL, and a summary of AAPL AI strategy.'
+2025-04-27 19:15:52,018 - __main__ - INFO - --- Attempting to get API key from environment... ---
+2025-04-27 19:15:52,018 - __main__ - INFO - --- ANTHROPIC_API_KEY loaded successfully. ---
+2025-04-27 19:15:52,018 - langchain_tools.logger - INFO - Initialized AgentLogger for agent HierarchicalAgent_v3_Refactored, conversation ccdc2cdf-6fbf-4f6d-874f-65ec808cf3e8
+2025-04-27 19:15:52,018 - langchain_tools.agent - DEBUG - Initializing LLM
+2025-04-27 19:15:52,019 - langchain_tools.agent - DEBUG - Initializing LLM
+2025-04-27 19:15:52,019 - langchain_tools.tool_factory - INFO - Initializing ChatAnthropic with model: claude-3-5-sonnet-20240620
+2025-04-27 19:15:52,019 - langchain_tools.agent - DEBUG - ChatAnthropic instance created successfully via factory
+2025-04-27 19:15:52,019 - langchain_tools.agent - INFO - LLM initialized successfully
+2025-04-27 19:15:52,019 - langchain_tools.agent - DEBUG - Initializing tools for Master Agent
+2025-04-27 19:15:52,019 - langchain_tools.tool_factory - INFO - [Financial Tool] Connecting to SQL Database: sqlite:////Users/saadahmed/Desktop/Apps/BussGPT/scripts/data/financial_data.db
+2025-04-27 19:15:52,039 - langchain_tools.tool_factory - INFO - [Financial Tool] SQLDatabase connection successful. Tables: ['companies', 'daily_stock_prices', 'dividends', 'quarterly_balance_sheet', 'quarterly_income_statement', 'stock_splits']
+2025-04-27 19:15:52,040 - langchain_tools.tool_factory - INFO - [Financial Tool] Generated DB Metadata Hints for LLM.
+2025-04-27 19:15:52,041 - langchain_tools.tool_factory - INFO - [Financial Tool] SQLDatabaseChain created successfully.
+2025-04-27 19:15:52,041 - langchain_tools.tool_factory - INFO - [CCR Tool] Connecting to SQL Database: sqlite:////Users/saadahmed/Desktop/Apps/BussGPT/scripts/data/ccr_reporting.db
+2025-04-27 19:15:52,046 - langchain_tools.tool_factory - INFO - [CCR Tool] SQLDatabase connection successful. Tables: ['limits', 'products', 'report_counterparties', 'report_daily_exposures', 'securities', 'transit_mapping']
+2025-04-27 19:15:52,047 - langchain_tools.tool_factory - INFO - [CCR Tool] Generated DB Metadata Hints for LLM.
+2025-04-27 19:15:52,047 - langchain_tools.tool_factory - INFO - [CCR Tool] SQLDatabaseChain created successfully.
+2025-04-27 19:15:52,047 - langchain_tools.tool_factory - INFO - [Transcript Agent Tool] Initializing internal tools...
+2025-04-27 19:15:52,047 - langchain_tools.tool_factory - INFO - [Transcript Agent Tool] Internal tools created: ['category_tool', 'metadata_lookup_tool', 'transcript_analysis_tool']
+2025-04-27 19:15:52,047 - langchain_tools.tool_factory - DEBUG - [Transcript Agent Tool] Prompt template created.
+2025-04-27 19:15:52,048 - langchain_tools.tool_factory - DEBUG - [Transcript Agent Tool] Internal ReAct agent created.
+2025-04-27 19:15:52,048 - langchain_tools.tool_factory - INFO - [Transcript Agent Tool] Internal AgentExecutor created.
+2025-04-27 19:15:52,048 - langchain_tools.tool_factory - INFO - [Transcript Agent Tool] Tool object created successfully.
+2025-04-27 19:15:52,049 - langchain_tools.agent_config - INFO - --- Starting dynamic tool description generation... ---
+2025-04-27 19:15:52,049 - langchain_tools.agent_config - INFO - --- Attempting to fetch DB examples for: financial_data.db ---
+2025-04-27 19:15:52,049 - langchain_tools.agent_config - DEBUG - Tried DB path (not found): /Users/saadahmed/Desktop/Apps/BussGPT/financial_data.db
+2025-04-27 19:15:52,049 - langchain_tools.agent_config - DEBUG - Tried DB path (not found): /Users/saadahmed/Desktop/Apps/BussGPT/data/financial_data.db
+2025-04-27 19:15:52,049 - langchain_tools.agent_config - INFO - Using DB path: /Users/saadahmed/Desktop/Apps/BussGPT/scripts/data/financial_data.db
+2025-04-27 19:15:52,049 - langchain_tools.agent_config - INFO - --- Connecting to DB at: /Users/saadahmed/Desktop/Apps/BussGPT/scripts/data/financial_data.db ---
+2025-04-27 19:15:52,049 - langchain_tools.agent_config - INFO - --- Executing query: SELECT DISTINCT ticker FROM daily_stock_prices WHERE ticker IS NOT NULL ORDER BY ticker LIMIT 3 on financial_data.db ---
+2025-04-27 19:15:52,050 - langchain_tools.agent_config - INFO - --- Successfully fetched 3 examples from financial_data.db ---
+2025-04-27 19:15:52,050 - langchain_tools.agent_config - INFO - --- Closing DB connection for: /Users/saadahmed/Desktop/Apps/BussGPT/scripts/data/financial_data.db ---
+2025-04-27 19:15:52,050 - langchain_tools.agent_config - INFO - --- Finished fetching DB examples for: financial_data.db ---
+2025-04-27 19:15:52,050 - langchain_tools.agent_config - INFO - --- Attempting to fetch DB examples for: ccr_reporting.db ---
+2025-04-27 19:15:52,050 - langchain_tools.agent_config - INFO - Using DB path: /Users/saadahmed/Desktop/Apps/BussGPT/ccr_reporting.db
+2025-04-27 19:15:52,050 - langchain_tools.agent_config - INFO - --- Connecting to DB at: /Users/saadahmed/Desktop/Apps/BussGPT/ccr_reporting.db ---
+2025-04-27 19:15:52,051 - langchain_tools.agent_config - INFO - --- Executing query: SELECT DISTINCT short_name FROM report_counterparties WHERE short_name IS NOT NULL ORDER BY short_name LIMIT 3 on ccr_reporting.db ---
+2025-04-27 19:15:52,051 - langchain_tools.agent_config - ERROR - --- SQLITE ERROR fetching examples from ccr_reporting.db: no such table: report_counterparties ---
+Traceback (most recent call last):
+  File "/Users/saadahmed/Desktop/Apps/BussGPT/langchain_tools/agent_config.py", line 80, in _fetch_db_examples
+    cursor.execute(query) # Query already includes LIMIT
+    ~~~~~~~~~~~~~~^^^^^^^
+sqlite3.OperationalError: no such table: report_counterparties
+2025-04-27 19:15:52,051 - langchain_tools.agent_config - INFO - --- Closing DB connection for: /Users/saadahmed/Desktop/Apps/BussGPT/ccr_reporting.db ---
+2025-04-27 19:15:52,051 - langchain_tools.agent_config - INFO - --- Finished fetching DB examples for: ccr_reporting.db ---
+2025-04-27 19:15:52,051 - langchain_tools.agent_config - INFO - --- Finished fetching all DB examples. ---
+2025-04-27 19:15:52,051 - langchain_tools.agent - DEBUG - Loaded Tool: financial_sql_query_tool with description: Queries the `financial_data.db` database containing structured financial market data. Use this for specific questions about **historical (2016-2020) daily stock prices** (OHLC), **historical quarterly financials** (income/balance sheet, limited dates), **dividends**, or **stock splits** for known public companies like **'AAPL', 'AMD', 'AMZN'**, etc. Input is a natural language question about specific historical data points. Persona: SQL Database Expert (Historical Financial Data).
+2025-04-27 19:15:52,051 - langchain_tools.agent - DEBUG - Loaded Tool: ccr_sql_query_tool with description: Queries the `ccr_reporting.db` database containing structured Counterparty Credit Risk (CCR) reporting data (sample data). Use this for specific questions about **counterparty details (ratings, country)**, **daily risk exposures** (Net MTM, Gross, PFE, Settlement), **risk limits**, **limit utilization**, **breach status**, or individual **trade details** related to counterparties like **'JPMorgan', 'BankOfAmerica', 'Citigroup'**, etc. Input is a natural language question about specific CCR metrics or counterparty/trade details within this database. Persona: SQL Database Expert (CCR Reporting Data).
+2025-04-27 19:15:52,051 - langchain_tools.agent - DEBUG - Loaded Tool: transcript_search_summary_tool with description: Answers questions requiring qualitative analysis, summaries, or context from **earnings call transcripts**. Use for queries about company performance narratives, strategies, management commentary, outlook, or specific events discussed in calls (e.g., queries like **'What was management's outlook for cloud growth in the MSFT Q4 2020 call?'**). Input should be the original user query. Persona: Equity Research Analyst (Transcript Specialist).
+2025-04-27 19:15:52,052 - langchain_tools.agent - DEBUG - Loaded Tool: financial_news_search with description: Searches the web for **current or recent** financial news, market sentiment, **live stock price estimates**, or general information about companies, markets, or economic events. To focus results on reliable financial sources, preferentially construct the search term using the 'site:' operator. For example: 'query site:reuters.com OR site:marketwatch.com OR site:finance.yahoo.com OR site:seekingalpha.com'. Use this for information **not** found in the historical financial database or the CCR reporting database.
+2025-04-27 19:15:52,052 - langchain_tools.agent - INFO - Master Agent tools initialized successfully
+2025-04-27 19:15:52,052 - langchain_tools.agent - INFO - Master Agent initialized with tools: ['financial_sql_query_tool', 'ccr_sql_query_tool', 'transcript_search_summary_tool', 'financial_news_search']
+2025-04-27 19:15:52,052 - langchain_tools.orchestrator - INFO - Orchestrator initialized with tools: ['financial_sql_query_tool', 'ccr_sql_query_tool', 'transcript_search_summary_tool', 'financial_news_search']
+2025-04-27 19:15:52,052 - langchain_tools.agent - INFO - Orchestrator initialized
+2025-04-27 19:15:52,052 - langchain_tools.agent - DEBUG - Initializing Master Agent executor
+2025-04-27 19:15:52,052 - langchain_tools.agent - INFO - Master Agent executor initialized successfully
+2025-04-27 19:15:52,052 - __main__ - INFO - 
+Running through agent: Give me CCR exposure and notional for trades which have AAPL ticker in trade, AAPL stock price latest whatever you have, latest news about AAPL, and a summary of AAPL AI strategy.
+2025-04-27 19:15:52,052 - langchain_tools.state_manager - INFO - Agent state reset.
+2025-04-27 19:15:52,052 - langchain_tools.logger - INFO - {"timestamp": "2025-04-27T23:15:52.052678", "level": "INFO", "event_type": "query_start", "agent_id": "HierarchicalAgent_v3_Refactored", "conversation_id": "e7bf1399-af0b-4a34-b30d-579a0392fc48", "query": "Give me CCR exposure and notional for trades which have AAPL ticker in trade, AAPL stock price latest whatever you have, latest news about AAPL, and a summary of AAPL AI strategy."}
+2025-04-27 19:15:53,194 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-04-27 19:15:56,352 - langchain_tools.tool_factory - INFO - [CCR Tool] Running query: What is the CCR exposure and notional for trades which have AAPL ticker in trade?
+
+2025-04-27 19:15:58,107 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-04-27 19:15:58,116 - langchain_tools.tool_factory - INFO - [CCR Tool] Generated SQL (cleaned): SELECT 
+    SUM(exposure_usd) AS total_ccr_exposure,
+    SUM(notional_usd) AS total_notional
+FROM 
+    report_daily_exposures
+WHERE 
+    security_ticker = 'AAPL'
+2025-04-27 19:15:58,118 - langchain_tools.tool_factory - INFO - [CCR Tool] Raw execution result: [(1245000000.0, 1200000000.0)]
+2025-04-27 19:15:59,978 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-04-27 19:15:59,979 - langchain_tools.tool_factory - INFO - [CCR Tool] Final Answer: Based on the SQL query result provided, the requested data was found. For trades with the AAPL ticker:
+
+The total CCR exposure is $1,245,000,000 (1.245 billion USD).
+The total notional value is $1,200,000,000 (1.2 billion USD).
+
+These figures represent the sum of exposure and notional values for all trades involving the AAPL ticker in the report_daily_exposures table.
+2025-04-27 19:16:01,282 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-04-27 19:16:05,023 - langchain_tools.agent - ERROR - Output parsing error encountered: Parsing LLM output produced both a final answer and a parse-able action:: Thought: I have received the response from the specialized tool (ccr_sql_query_tool). This tool acts as a specialist (SQL Database Expert for CCR Reporting Data). I will now present this information clearly, attributing it directly to the specialist tool's analysis. Next, I'll need to use the financial_news_search tool to get the latest AAPL stock price and news, and then the transcript_search_summary_tool for information about AAPL's AI strategy.
+
+Final Answer: Based on the analysis performed by the specialized ccr_sql_query_tool (SQL Database Expert for CCR Reporting Data), here is the response to your query about CCR exposure and notional for trades with AAPL ticker:
+
+The total CCR exposure is $1,245,000,000 (1.245 billion USD).
+The total notional value is $1,200,000,000 (1.2 billion USD).
+
+These figures represent the sum of exposure and notional values for all trades involving the AAPL ticker in the report_daily_exposures table.
+
+Now, let's proceed to get the latest AAPL stock price and news.
+
+Action: financial_news_search
+Action Input: AAPL latest stock price and recent news site:finance.yahoo.com OR site:reuters.com OR site:marketwatch.com
+
+For troubleshooting, visit: https://python.langchain.com/docs/troubleshooting/errors/OUTPUT_PARSING_FAILURE 
+2025-04-27 19:16:06,708 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-04-27 19:16:07,378 - langchain_tools.tool_factory - INFO - Executing web search for query: AAPL latest stock price and recent news site:finance.yahoo.com OR site:reuters.com OR site:marketwatch.com
+
+2025-04-27 19:16:11,183 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-04-27 19:16:15,247 - langchain_tools.agent - ERROR - Output parsing error encountered: Parsing LLM output produced both a final answer and a parse-able action:: I have received the response from the specialized tool (financial_news_search). This tool acts as a specialist in current financial news and market data. I will now present this information clearly, attributing it directly to the specialist tool's analysis.
+
+Final Answer: Based on the analysis performed by the specialized financial_news_search tool (Financial News and Market Data Specialist), here is the response to your query about AAPL's latest stock price and recent news:
+
+1. Latest Stock Price: As of the most recent data available, Apple Inc. (AAPL) stock closed at $209.28. The day's trading range was $206.20 - $209.75.
+
+2. Recent News:
+   - Bank of America has cut its Apple stock price target by $10 to $240, citing tariff costs and AI delays.
+   - Apple is experiencing strong survey results amid tough market conditions.
+   - The company is frequently mentioned in discussions about AI stocks.
+   - Apple's stock has risen by 22.59% since a notable mention on a financial show last year.
+
+Now, let's proceed to get information about AAPL's AI strategy.
+
+Action: transcript_search_summary_tool
+Action Input: What is Apple's AI strategy based on recent earnings calls or announcements?
+
+For troubleshooting, visit: https://python.langchain.com/docs/troubleshooting/errors/OUTPUT_PARSING_FAILURE 
+2025-04-27 19:16:16,525 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-04-27 19:16:18,281 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-04-27 19:16:19,326 - langchain_tools.tool_factory - WARNING - Category ID not found in input: 'AAPL, Apple's AI strategy in recent earnings calls or announcements
+'. Tool might fail.
+2025-04-27 19:16:19,326 - langchain_tools.tool_factory - WARNING - Category tool reported an internal error: Category ID missing in input format 'query, category=<ID>'
+2025-04-27 19:16:19,326 - langchain_tools.tool_factory - ERROR - Invalid category_tool response: ['Missing required field: thought', 'Missing required field: answer']
+2025-04-27 19:16:20,266 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-04-27 19:16:21,698 - langchain_tools.tool_factory - WARNING - Category ID not found in input: 'AAPL, AI strategy in recent earnings calls
+'. Tool might fail.
+2025-04-27 19:16:21,699 - langchain_tools.tool_factory - WARNING - Category tool reported an internal error: Category ID missing in input format 'query, category=<ID>'
+2025-04-27 19:16:21,699 - langchain_tools.tool_factory - ERROR - Invalid category_tool response: ['Missing required field: thought', 'Missing required field: answer']
+2025-04-27 19:16:22,616 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-04-27 19:16:24,030 - langchain_tools.tool4_metadata_lookup - INFO - Fetching metadata from 'transcripts' for 74 unique document IDs...
+2025-04-27 19:16:24,034 - langchain_tools.tool4_metadata_lookup - INFO - Fetched details for 74 documents.
+2025-04-27 19:16:25,866 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-04-27 19:16:25,869 - langchain_tools.tool4_metadata_lookup - DEBUG - Raw LLM output from metadata tool: 'Category Name: AAPL\nTranscript Names: 2020-Jul-30-AAPL.txt, 2020-Apr-30-AAPL.txt, 2020-Jan-28-AAPL.txt, 2019-Oct-30-AAPL.txt'
+2025-04-27 19:16:25,869 - langchain_tools.tool4_metadata_lookup - INFO - Metadata lookup found category: AAPL, transcripts: ['2020-Jul-30-AAPL.txt', '2020-Apr-30-AAPL.txt', '2020-Jan-28-AAPL.txt', '2019-Oct-30-AAPL.txt']
+2025-04-27 19:16:27,702 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-04-27 19:16:29,008 - langchain_tools.tool_factory - DEBUG - Transcript analysis wrapper parsed query='What is Apple's AI strategy discussed in this call?', doc_name='2020-Jul-30-AAPL.txt'
+2025-04-27 19:16:29,008 - langchain_tools.tool5_transcript_analysis - INFO - Transcript Analysis Tool called with query: 'What is Apple's AI strategy discussed in this call?' and document_name: '2020-Jul-30-AAPL.txt'
+2025-04-27 19:16:29,016 - langchain_tools.tool5_transcript_analysis - INFO - Attempting to fetch document with filename: 2020-Jul-30-AAPL.txt
+2025-04-27 19:16:29,018 - langchain_tools.tool5_transcript_analysis - INFO - Document found for filename: 2020-Jul-30-AAPL.txt
+2025-04-27 19:16:29,018 - langchain_tools.tool5_transcript_analysis - INFO - Using document context from 2020-Jul-30-AAPL.txt for LLM prompt.
+2025-04-27 19:16:33,330 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-04-27 19:16:33,332 - langchain_tools.tool5_transcript_analysis - DEBUG - Received plain text answer from transcript analysis LLM call.
+2025-04-27 19:16:34,564 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-04-27 19:16:35,713 - langchain_tools.tool_factory - DEBUG - Transcript analysis wrapper parsed query='What is Apple's AI strategy discussed in this call?', doc_name='2020-Apr-30-AAPL.txt'
+2025-04-27 19:16:35,713 - langchain_tools.tool5_transcript_analysis - INFO - Transcript Analysis Tool called with query: 'What is Apple's AI strategy discussed in this call?' and document_name: '2020-Apr-30-AAPL.txt'
+2025-04-27 19:16:35,720 - langchain_tools.tool5_transcript_analysis - INFO - Attempting to fetch document with filename: 2020-Apr-30-AAPL.txt
+2025-04-27 19:16:35,722 - langchain_tools.tool5_transcript_analysis - INFO - Document found for filename: 2020-Apr-30-AAPL.txt
+2025-04-27 19:16:35,722 - langchain_tools.tool5_transcript_analysis - INFO - Using document context from 2020-Apr-30-AAPL.txt for LLM prompt.
+2025-04-27 19:16:38,730 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-04-27 19:16:38,732 - langchain_tools.tool5_transcript_analysis - DEBUG - Received plain text answer from transcript analysis LLM call.
+2025-04-27 19:16:40,664 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-04-27 19:16:41,626 - langchain_tools.tool_factory - DEBUG - Transcript analysis wrapper parsed query='What is Apple's AI strategy discussed in this call?', doc_name='2020-Jan-28-AAPL.txt'
+2025-04-27 19:16:41,626 - langchain_tools.tool5_transcript_analysis - INFO - Transcript Analysis Tool called with query: 'What is Apple's AI strategy discussed in this call?' and document_name: '2020-Jan-28-AAPL.txt'
+2025-04-27 19:16:41,633 - langchain_tools.tool5_transcript_analysis - INFO - Attempting to fetch document with filename: 2020-Jan-28-AAPL.txt
+2025-04-27 19:16:41,634 - langchain_tools.tool5_transcript_analysis - INFO - Document found for filename: 2020-Jan-28-AAPL.txt
+2025-04-27 19:16:41,635 - langchain_tools.tool5_transcript_analysis - INFO - Using document context from 2020-Jan-28-AAPL.txt for LLM prompt.
+2025-04-27 19:16:44,998 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-04-27 19:16:45,005 - langchain_tools.tool5_transcript_analysis - DEBUG - Received plain text answer from transcript analysis LLM call.
+2025-04-27 19:16:46,134 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-04-27 19:16:47,255 - langchain_tools.tool_factory - DEBUG - Transcript analysis wrapper parsed query='What is Apple's AI strategy discussed in this call?', doc_name='2019-Oct-30-AAPL.txt'
+2025-04-27 19:16:47,255 - langchain_tools.tool5_transcript_analysis - INFO - Transcript Analysis Tool called with query: 'What is Apple's AI strategy discussed in this call?' and document_name: '2019-Oct-30-AAPL.txt'
+2025-04-27 19:16:47,270 - langchain_tools.tool5_transcript_analysis - INFO - Attempting to fetch document with filename: 2019-Oct-30-AAPL.txt
+2025-04-27 19:16:47,273 - langchain_tools.tool5_transcript_analysis - INFO - Document found for filename: 2019-Oct-30-AAPL.txt
+2025-04-27 19:16:47,273 - langchain_tools.tool5_transcript_analysis - INFO - Using document context from 2019-Oct-30-AAPL.txt for LLM prompt.
+2025-04-27 19:16:52,686 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-04-27 19:16:52,688 - langchain_tools.tool5_transcript_analysis - DEBUG - Received plain text answer from transcript analysis LLM call.
+2025-04-27 19:16:54,506 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-04-27 19:17:05,799 - langchain_tools.agent - ERROR - Unhandled exception during agent execution: Got unsupported early_stopping_method `generate`
+Traceback (most recent call last):
+  File "/Users/saadahmed/Desktop/Apps/BussGPT/langchain_tools/agent.py", line 277, in query
+    final_outcome = self.agent_executor.invoke(inputs)
+  File "/Users/saadahmed/Desktop/Apps/BussGPT/venv/lib/python3.13/site-packages/langchain/chains/base.py", line 167, in invoke
+    raise e
+  File "/Users/saadahmed/Desktop/Apps/BussGPT/venv/lib/python3.13/site-packages/langchain/chains/base.py", line 157, in invoke
+    self._call(inputs, run_manager=run_manager)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/saadahmed/Desktop/Apps/BussGPT/venv/lib/python3.13/site-packages/langchain/agents/agent.py", line 1643, in _call
+    output = self._action_agent.return_stopped_response(
+        self.early_stopping_method, intermediate_steps, **inputs
+    )
+  File "/Users/saadahmed/Desktop/Apps/BussGPT/venv/lib/python3.13/site-packages/langchain/agents/agent.py", line 140, in return_stopped_response
+    raise ValueError(
+        f"Got unsupported early_stopping_method `{early_stopping_method}`"
+    )
+ValueError: Got unsupported early_stopping_method `generate`
+2025-04-27 19:17:05,803 - langchain_tools.logger - ERROR - {"timestamp": "2025-04-27T23:17:05.803001", "level": "ERROR", "event_type": "query_end", "agent_id": "HierarchicalAgent_v3_Refactored", "conversation_id": "e7bf1399-af0b-4a34-b30d-579a0392fc48", "final_response": {"status": "error", "result": "Agent execution failed with error: Got unsupported early_stopping_method `generate`", "error": "Agent execution failed: Got unsupported early_stopping_method `generate`", "evidence": [], "confidence": 0.0, "tool_sequence": [], "category_identified": null}, "final_state": {"pending_doc_ids": [], "processed_doc_ids": [], "current_confidence": 0.0, "evidence_collected": [], "tool_sequence": [], "category_id": null, "last_query": "Give me CCR exposure and notional for trades which have AAPL ticker in trade, AAPL stock price latest whatever you have, latest news about AAPL, and a summary of AAPL AI strategy.", "last_error": "Agent execution failed: Got unsupported early_stopping_method `generate`"}}
+2025-04-27 19:17:05,803 - __main__ - INFO - Agent execution completed.
+2025-04-27 19:17:05,804 - __main__ - INFO - Saved agent response to: /Users/saadahmed/Desktop/Apps/BussGPT/scripts/agent_tests/../../test_results/run_20250427_191552_9bf00e10/response.txt

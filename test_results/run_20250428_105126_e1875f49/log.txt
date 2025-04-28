@@ -1,0 +1,151 @@
+2025-04-28 10:51:26,965 - __main__ - INFO - Logging detailed output to: /Users/saadahmed/Desktop/Apps/BussGPT/scripts/agent_tests/../../test_results/run_20250428_105126_e1875f49/log.txt
+2025-04-28 10:51:26,965 - __main__ - INFO - Starting agent test run for query: 'Summarize the most recent MSFT earnings call transcript available.'
+2025-04-28 10:51:26,965 - __main__ - INFO - --- Attempting to get API key from environment... ---
+2025-04-28 10:51:26,965 - __main__ - INFO - --- ANTHROPIC_API_KEY loaded successfully. ---
+2025-04-28 10:51:26,965 - langchain_tools.logger - INFO - Initialized AgentLogger for agent HierarchicalAgent_v3_Refactored, conversation 1b087a4b-39c7-4f18-96ee-cd6f81aff1d0
+2025-04-28 10:51:26,965 - langchain_tools.agent - DEBUG - Initializing LLM
+2025-04-28 10:51:26,965 - langchain_tools.agent - DEBUG - Initializing LLM
+2025-04-28 10:51:26,965 - langchain_tools.tool_factory - INFO - Initializing ChatAnthropic with model: claude-3-5-sonnet-20240620
+2025-04-28 10:51:26,967 - langchain_tools.agent - DEBUG - ChatAnthropic instance created successfully via factory
+2025-04-28 10:51:26,967 - langchain_tools.agent - INFO - LLM initialized successfully
+2025-04-28 10:51:26,967 - langchain_tools.agent - DEBUG - Initializing tools for Master Agent
+2025-04-28 10:51:26,967 - langchain_tools.tool_factory - INFO - [Financial Tool] Connecting to SQL Database: /Users/saadahmed/Desktop/Apps/BussGPT/scripts/data/financial_data.db
+2025-04-28 10:51:26,986 - langchain_tools.tool_factory - INFO - [Financial Tool] SQLDatabase connection successful. Tables: ['companies', 'daily_stock_prices', 'dividends', 'quarterly_balance_sheet', 'quarterly_income_statement', 'stock_splits']
+2025-04-28 10:51:26,989 - langchain_tools.tool_factory - INFO - [Financial Tool] Generated DB Metadata Hints for LLM.
+2025-04-28 10:51:26,989 - langchain_tools.tool_factory - INFO - [Financial Tool] SQLDatabaseChain created successfully.
+2025-04-28 10:51:26,989 - langchain_tools.tool_factory - INFO - [CCR Tool] Connecting to SQL Database: /Users/saadahmed/Desktop/Apps/BussGPT/scripts/data/ccr_reporting.db
+2025-04-28 10:51:26,995 - langchain_tools.tool_factory - INFO - [CCR Tool] SQLDatabase connection successful. Tables: ['limits', 'products', 'report_counterparties', 'report_daily_exposures', 'securities', 'transit_mapping']
+2025-04-28 10:51:26,995 - langchain_tools.tool_factory - WARNING - [CCR Tool] Error getting metadata hints: no such column: product_type
+2025-04-28 10:51:26,995 - langchain_tools.tool_factory - INFO - [CCR Tool] Generated DB Metadata Hints for LLM.
+2025-04-28 10:51:26,995 - langchain_tools.tool_factory - INFO - [CCR Tool] SQLDatabaseChain created successfully.
+2025-04-28 10:51:26,995 - langchain_tools.tool_factory - INFO - [Transcript Agent Tool] Initializing...
+2025-04-28 10:51:26,995 - langchain_tools.tool4_metadata_lookup - INFO - Metadata Tool: Creating tool instance.
+2025-04-28 10:51:26,996 - langchain_tools.tool_factory - INFO - [Transcript Agent Tool] Internal tools created: ['category_tool', 'metadata_lookup_tool', 'document_content_analysis_tool']
+2025-04-28 10:51:26,997 - langchain_tools.agent_config - INFO - --- Starting dynamic tool description generation... ---
+2025-04-28 10:51:26,997 - langchain_tools.agent_config - INFO - --- Attempting to fetch DB examples for: financial_data.db ---
+2025-04-28 10:51:26,997 - langchain_tools.agent_config - DEBUG - Tried DB path (not found): /Users/saadahmed/Desktop/Apps/BussGPT/financial_data.db
+2025-04-28 10:51:26,997 - langchain_tools.agent_config - DEBUG - Tried DB path (not found): /Users/saadahmed/Desktop/Apps/BussGPT/data/financial_data.db
+2025-04-28 10:51:26,997 - langchain_tools.agent_config - INFO - Using DB path: /Users/saadahmed/Desktop/Apps/BussGPT/scripts/data/financial_data.db
+2025-04-28 10:51:26,997 - langchain_tools.agent_config - INFO - --- Connecting to DB at: /Users/saadahmed/Desktop/Apps/BussGPT/scripts/data/financial_data.db ---
+2025-04-28 10:51:26,997 - langchain_tools.agent_config - INFO - --- Executing query: SELECT DISTINCT ticker FROM daily_stock_prices WHERE ticker IS NOT NULL ORDER BY ticker LIMIT 3 on financial_data.db ---
+2025-04-28 10:51:26,998 - langchain_tools.agent_config - INFO - --- Successfully fetched 3 examples from financial_data.db ---
+2025-04-28 10:51:26,998 - langchain_tools.agent_config - INFO - --- Closing DB connection for: /Users/saadahmed/Desktop/Apps/BussGPT/scripts/data/financial_data.db ---
+2025-04-28 10:51:26,998 - langchain_tools.agent_config - INFO - --- Finished fetching DB examples for: financial_data.db ---
+2025-04-28 10:51:26,998 - langchain_tools.agent_config - INFO - --- Attempting to fetch DB examples for: ccr_reporting.db ---
+2025-04-28 10:51:26,998 - langchain_tools.agent_config - INFO - Using DB path: /Users/saadahmed/Desktop/Apps/BussGPT/ccr_reporting.db
+2025-04-28 10:51:26,998 - langchain_tools.agent_config - INFO - --- Connecting to DB at: /Users/saadahmed/Desktop/Apps/BussGPT/ccr_reporting.db ---
+2025-04-28 10:51:26,998 - langchain_tools.agent_config - INFO - --- Executing query: SELECT DISTINCT short_name FROM report_counterparties WHERE short_name IS NOT NULL ORDER BY short_name LIMIT 3 on ccr_reporting.db ---
+2025-04-28 10:51:26,998 - langchain_tools.agent_config - ERROR - --- SQLITE ERROR fetching examples from ccr_reporting.db: no such table: report_counterparties ---
+Traceback (most recent call last):
+  File "/Users/saadahmed/Desktop/Apps/BussGPT/langchain_tools/agent_config.py", line 80, in _fetch_db_examples
+    cursor.execute(query) # Query already includes LIMIT
+    ~~~~~~~~~~~~~~^^^^^^^
+sqlite3.OperationalError: no such table: report_counterparties
+2025-04-28 10:51:26,999 - langchain_tools.agent_config - INFO - --- Closing DB connection for: /Users/saadahmed/Desktop/Apps/BussGPT/ccr_reporting.db ---
+2025-04-28 10:51:26,999 - langchain_tools.agent_config - INFO - --- Finished fetching DB examples for: ccr_reporting.db ---
+2025-04-28 10:51:26,999 - langchain_tools.agent_config - INFO - --- Finished fetching all DB examples. ---
+2025-04-28 10:51:26,999 - langchain_tools.agent - DEBUG - Loaded Tool: financial_sql_query_tool with description: Queries the `financial_data.db` database containing structured financial market data. Use this for specific questions about **historical (2016-2020) daily stock prices** (OHLC), **historical quarterly financials** (income/balance sheet, limited dates), **dividends**, or **stock splits** for known public companies like **'AAPL', 'AMD', 'AMZN'**, etc. Input is a natural language question about specific historical data points. Persona: SQL Database Expert (Historical Financial Data).
+2025-04-28 10:51:26,999 - langchain_tools.agent - DEBUG - Loaded Tool: ccr_sql_query_tool with description: Queries the `ccr_reporting.db` database containing structured Counterparty Credit Risk (CCR) reporting data (sample data). Use this for specific questions about **counterparty details (ratings, country)**, **daily risk exposures** (Net MTM, Gross, PFE, Settlement), **risk limits**, **limit utilization**, **breach status**, or individual **trade details** related to counterparties like **'JPMorgan', 'BankOfAmerica', 'Citigroup'**, etc. Input is a natural language question about specific CCR metrics or counterparty/trade details within this database. Persona: SQL Database Expert (CCR Reporting Data).
+2025-04-28 10:51:26,999 - langchain_tools.agent - DEBUG - Loaded Tool: transcript_search_summary_tool with description: Answers questions requiring qualitative analysis, summaries, or context from **earnings call transcripts**. Use for queries about company performance narratives, strategies, management commentary, outlook, or specific events discussed in calls (e.g., queries like **'What was management's outlook for cloud growth in the MSFT Q4 2020 call?'**). Input should be the original user query. Persona: Equity Research Analyst (Transcript Specialist).
+2025-04-28 10:51:26,999 - langchain_tools.agent - DEBUG - Loaded Tool: financial_news_search with description: Searches the web for **current or recent** financial news, market sentiment, **live stock price estimates**, or general information about companies, markets, or economic events. To focus results on reliable financial sources, preferentially construct the search term using the 'site:' operator. For example: 'query site:reuters.com OR site:marketwatch.com OR site:finance.yahoo.com OR site:seekingalpha.com'. Use this for information **not** found in the historical financial database or the CCR reporting database.
+2025-04-28 10:51:27,000 - langchain_tools.agent - INFO - Master Agent tools initialized successfully
+2025-04-28 10:51:27,000 - langchain_tools.agent - INFO - Master Agent initialized with tools: ['financial_sql_query_tool', 'ccr_sql_query_tool', 'transcript_agent', 'financial_news_search']
+2025-04-28 10:51:27,000 - langchain_tools.orchestrator - INFO - Orchestrator initialized with tools: ['financial_sql_query_tool', 'ccr_sql_query_tool', 'transcript_search_summary_tool', 'financial_news_search']
+2025-04-28 10:51:27,000 - langchain_tools.agent - INFO - Orchestrator initialized
+2025-04-28 10:51:27,000 - langchain_tools.agent - DEBUG - Initializing Master Agent executor
+2025-04-28 10:51:27,001 - langchain_tools.agent - INFO - Master Agent executor initialized successfully
+2025-04-28 10:51:27,001 - __main__ - INFO - 
+Running through agent: Summarize the most recent MSFT earnings call transcript available.
+2025-04-28 10:51:27,001 - langchain_tools.state_manager - INFO - Agent state reset.
+2025-04-28 10:51:27,001 - langchain_tools.logger - INFO - {"timestamp": "2025-04-28T14:51:27.001801", "level": "INFO", "event_type": "query_start", "agent_id": "HierarchicalAgent_v3_Refactored", "conversation_id": "5dd28991-016d-4237-8d32-2923bb533494", "query": "Summarize the most recent MSFT earnings call transcript available."}
+2025-04-28 10:51:27,119 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 401 Unauthorized"
+2025-04-28 10:51:27,120 - langchain_tools.agent - ERROR - Unhandled exception during agent execution: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}}
+Traceback (most recent call last):
+  File "/Users/saadahmed/Desktop/Apps/BussGPT/langchain_tools/agent.py", line 277, in query
+    final_outcome = self.agent_executor.invoke(inputs)
+  File "/Users/saadahmed/Desktop/Apps/BussGPT/venv/lib/python3.13/site-packages/langchain/chains/base.py", line 167, in invoke
+    raise e
+  File "/Users/saadahmed/Desktop/Apps/BussGPT/venv/lib/python3.13/site-packages/langchain/chains/base.py", line 157, in invoke
+    self._call(inputs, run_manager=run_manager)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/saadahmed/Desktop/Apps/BussGPT/venv/lib/python3.13/site-packages/langchain/agents/agent.py", line 1620, in _call
+    next_step_output = self._take_next_step(
+        name_to_tool_map,
+    ...<3 lines>...
+        run_manager=run_manager,
+    )
+  File "/Users/saadahmed/Desktop/Apps/BussGPT/venv/lib/python3.13/site-packages/langchain/agents/agent.py", line 1328, in _take_next_step
+    for a in self._iter_next_step(
+             ~~~~~~~~~~~~~~~~~~~~^
+        name_to_tool_map,
+        ^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+        run_manager,
+        ^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/saadahmed/Desktop/Apps/BussGPT/venv/lib/python3.13/site-packages/langchain/agents/agent.py", line 1354, in _iter_next_step
+    output = self._action_agent.plan(
+        intermediate_steps,
+        callbacks=run_manager.get_child() if run_manager else None,
+        **inputs,
+    )
+  File "/Users/saadahmed/Desktop/Apps/BussGPT/venv/lib/python3.13/site-packages/langchain/agents/agent.py", line 461, in plan
+    for chunk in self.runnable.stream(inputs, config={"callbacks": callbacks}):
+                 ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/saadahmed/Desktop/Apps/BussGPT/venv/lib/python3.13/site-packages/langchain_core/runnables/base.py", line 3424, in stream
+    yield from self.transform(iter([input]), config, **kwargs)
+  File "/Users/saadahmed/Desktop/Apps/BussGPT/venv/lib/python3.13/site-packages/langchain_core/runnables/base.py", line 3410, in transform
+    yield from self._transform_stream_with_config(
+    ...<4 lines>...
+    )
+  File "/Users/saadahmed/Desktop/Apps/BussGPT/venv/lib/python3.13/site-packages/langchain_core/runnables/base.py", line 2205, in _transform_stream_with_config
+    chunk: Output = context.run(next, iterator)
+                    ~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "/Users/saadahmed/Desktop/Apps/BussGPT/venv/lib/python3.13/site-packages/langchain_core/runnables/base.py", line 3372, in _transform
+    yield from final_pipeline
+  File "/Users/saadahmed/Desktop/Apps/BussGPT/venv/lib/python3.13/site-packages/langchain_core/runnables/base.py", line 1419, in transform
+    for ichunk in input:
+                  ^^^^^
+  File "/Users/saadahmed/Desktop/Apps/BussGPT/venv/lib/python3.13/site-packages/langchain_core/runnables/base.py", line 5632, in transform
+    yield from self.bound.transform(
+    ...<3 lines>...
+    )
+  File "/Users/saadahmed/Desktop/Apps/BussGPT/venv/lib/python3.13/site-packages/langchain_core/runnables/base.py", line 1437, in transform
+    yield from self.stream(final, config, **kwargs)
+  File "/Users/saadahmed/Desktop/Apps/BussGPT/venv/lib/python3.13/site-packages/langchain_core/language_models/chat_models.py", line 494, in stream
+    for chunk in self._stream(input_messages, stop=stop, **kwargs):
+                 ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/saadahmed/Desktop/Apps/BussGPT/venv/lib/python3.13/site-packages/langchain_anthropic/chat_models.py", line 1062, in _stream
+    stream = self._client.messages.create(**payload)
+  File "/Users/saadahmed/Desktop/Apps/BussGPT/venv/lib/python3.13/site-packages/anthropic/_utils/_utils.py", line 275, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/saadahmed/Desktop/Apps/BussGPT/venv/lib/python3.13/site-packages/anthropic/resources/messages/messages.py", line 953, in create
+    return self._post(
+           ~~~~~~~~~~^
+        "/v1/messages",
+        ^^^^^^^^^^^^^^^
+    ...<23 lines>...
+        stream_cls=Stream[RawMessageStreamEvent],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/saadahmed/Desktop/Apps/BussGPT/venv/lib/python3.13/site-packages/anthropic/_base_client.py", line 1336, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/saadahmed/Desktop/Apps/BussGPT/venv/lib/python3.13/site-packages/anthropic/_base_client.py", line 1013, in request
+    return self._request(
+           ~~~~~~~~~~~~~^
+        cast_to=cast_to,
+        ^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+        retries_taken=retries_taken,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/saadahmed/Desktop/Apps/BussGPT/venv/lib/python3.13/site-packages/anthropic/_base_client.py", line 1117, in _request
+    raise self._make_status_error_from_response(err.response) from None
+anthropic.AuthenticationError: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}}
+2025-04-28 10:51:27,129 - langchain_tools.logger - ERROR - {"timestamp": "2025-04-28T14:51:27.129446", "level": "ERROR", "event_type": "query_end", "agent_id": "HierarchicalAgent_v3_Refactored", "conversation_id": "5dd28991-016d-4237-8d32-2923bb533494", "final_response": {"status": "error", "result": "Agent execution failed with error: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}}", "error": "Agent execution failed: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}}", "evidence": [], "confidence": 0.0, "tool_sequence": [], "category_identified": null}, "final_state": {"pending_doc_ids": [], "processed_doc_ids": [], "current_confidence": 0.0, "evidence_collected": [], "tool_sequence": [], "category_id": null, "last_query": "Summarize the most recent MSFT earnings call transcript available.", "last_error": "Agent execution failed: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}}"}}
+2025-04-28 10:51:27,129 - __main__ - INFO - Agent execution completed.
+2025-04-28 10:51:27,129 - __main__ - INFO - Saved agent response to: /Users/saadahmed/Desktop/Apps/BussGPT/scripts/agent_tests/../../test_results/run_20250428_105126_e1875f49/response.txt

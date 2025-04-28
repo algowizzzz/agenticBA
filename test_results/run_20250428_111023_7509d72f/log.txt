@@ -1,0 +1,71 @@
+2025-04-28 11:10:23,446 - __main__ - INFO - Logging detailed output to: /Users/saadahmed/Desktop/Apps/BussGPT/scripts/agent_tests/../../test_results/run_20250428_111023_7509d72f/log.txt
+2025-04-28 11:10:23,446 - __main__ - INFO - Starting agent test run for query: 'What was the total exposure_usd, notional_usd, and mtm_usd for JPMorgan Chase?'
+2025-04-28 11:10:23,447 - __main__ - INFO - --- Attempting to get API key from environment... ---
+2025-04-28 11:10:23,447 - __main__ - INFO - --- ANTHROPIC_API_KEY loaded successfully. ---
+2025-04-28 11:10:23,447 - langchain_tools.logger - INFO - Initialized AgentLogger for agent HierarchicalAgent_v3_Refactored, conversation ed3a4e61-8ba6-4d2d-b99b-9a59cb0167e6
+2025-04-28 11:10:23,447 - langchain_tools.agent - DEBUG - Initializing LLM
+2025-04-28 11:10:23,447 - langchain_tools.agent - DEBUG - Initializing LLM
+2025-04-28 11:10:23,447 - langchain_tools.tool_factory - INFO - Initializing ChatAnthropic with model: claude-3-5-sonnet-20240620
+2025-04-28 11:10:23,450 - langchain_tools.agent - DEBUG - ChatAnthropic instance created successfully via factory
+2025-04-28 11:10:23,450 - langchain_tools.agent - INFO - LLM initialized successfully
+2025-04-28 11:10:23,450 - langchain_tools.agent - DEBUG - Initializing tools for Master Agent
+2025-04-28 11:10:23,451 - langchain_tools.tool_factory - INFO - [Financial Tool] Connecting to SQL Database: /Users/saadahmed/Desktop/Apps/BussGPT/scripts/data/financial_data.db
+2025-04-28 11:10:23,466 - langchain_tools.tool_factory - INFO - [Financial Tool] SQLDatabase connection successful. Tables: ['companies', 'daily_stock_prices', 'dividends', 'quarterly_balance_sheet', 'quarterly_income_statement', 'stock_splits']
+2025-04-28 11:10:23,468 - langchain_tools.tool_factory - INFO - [Financial Tool] Generated DB Metadata Hints for LLM.
+2025-04-28 11:10:23,468 - langchain_tools.tool_factory - INFO - [Financial Tool] SQLDatabaseChain created successfully.
+2025-04-28 11:10:23,468 - langchain_tools.tool_factory - INFO - [CCR Tool] Connecting to SQL Database: /Users/saadahmed/Desktop/Apps/BussGPT/scripts/data/ccr_reporting.db
+2025-04-28 11:10:23,475 - langchain_tools.tool_factory - WARNING - [CCR Tool] Error getting metadata hints: no such column: product_type
+2025-04-28 11:10:23,475 - langchain_tools.tool_factory - INFO - [CCR Tool] SQLDatabase connection successful. Tables: ['limits', 'products', 'report_counterparties', 'report_daily_exposures', 'securities', 'transit_mapping']
+2025-04-28 11:10:23,475 - langchain_tools.tool_factory - INFO - [CCR Tool] SQLDatabaseChain created successfully with custom prompt.
+2025-04-28 11:10:23,475 - langchain_tools.tool_factory - INFO - [Transcript Agent Tool] Initializing...
+2025-04-28 11:10:23,475 - langchain_tools.tool4_metadata_lookup - INFO - Metadata Tool: Creating tool instance.
+2025-04-28 11:10:23,475 - langchain_tools.tool_factory - INFO - [Transcript Agent Tool] Internal tools created: ['category_tool', 'metadata_lookup_tool', 'document_content_analysis_tool']
+2025-04-28 11:10:23,477 - langchain_tools.agent_config - INFO - --- Starting dynamic tool description generation... ---
+2025-04-28 11:10:23,477 - langchain_tools.agent_config - INFO - --- Attempting to fetch DB examples for: financial_data.db ---
+2025-04-28 11:10:23,477 - langchain_tools.agent_config - DEBUG - Tried DB path (not found): /Users/saadahmed/Desktop/Apps/BussGPT/financial_data.db
+2025-04-28 11:10:23,477 - langchain_tools.agent_config - DEBUG - Tried DB path (not found): /Users/saadahmed/Desktop/Apps/BussGPT/data/financial_data.db
+2025-04-28 11:10:23,477 - langchain_tools.agent_config - INFO - Using DB path: /Users/saadahmed/Desktop/Apps/BussGPT/scripts/data/financial_data.db
+2025-04-28 11:10:23,477 - langchain_tools.agent_config - INFO - --- Connecting to DB at: /Users/saadahmed/Desktop/Apps/BussGPT/scripts/data/financial_data.db ---
+2025-04-28 11:10:23,477 - langchain_tools.agent_config - INFO - --- Executing query: SELECT DISTINCT ticker FROM daily_stock_prices WHERE ticker IS NOT NULL ORDER BY ticker LIMIT 3 on financial_data.db ---
+2025-04-28 11:10:23,478 - langchain_tools.agent_config - INFO - --- Successfully fetched 3 examples from financial_data.db ---
+2025-04-28 11:10:23,478 - langchain_tools.agent_config - INFO - --- Closing DB connection for: /Users/saadahmed/Desktop/Apps/BussGPT/scripts/data/financial_data.db ---
+2025-04-28 11:10:23,478 - langchain_tools.agent_config - INFO - --- Finished fetching DB examples for: financial_data.db ---
+2025-04-28 11:10:23,478 - langchain_tools.agent_config - INFO - --- Attempting to fetch DB examples for: ccr_reporting.db ---
+2025-04-28 11:10:23,478 - langchain_tools.agent_config - INFO - Using DB path: /Users/saadahmed/Desktop/Apps/BussGPT/ccr_reporting.db
+2025-04-28 11:10:23,478 - langchain_tools.agent_config - INFO - --- Connecting to DB at: /Users/saadahmed/Desktop/Apps/BussGPT/ccr_reporting.db ---
+2025-04-28 11:10:23,478 - langchain_tools.agent_config - INFO - --- Executing query: SELECT DISTINCT short_name FROM report_counterparties WHERE short_name IS NOT NULL ORDER BY short_name LIMIT 3 on ccr_reporting.db ---
+2025-04-28 11:10:23,478 - langchain_tools.agent_config - ERROR - --- SQLITE ERROR fetching examples from ccr_reporting.db: no such table: report_counterparties ---
+Traceback (most recent call last):
+  File "/Users/saadahmed/Desktop/Apps/BussGPT/langchain_tools/agent_config.py", line 80, in _fetch_db_examples
+    cursor.execute(query) # Query already includes LIMIT
+    ~~~~~~~~~~~~~~^^^^^^^
+sqlite3.OperationalError: no such table: report_counterparties
+2025-04-28 11:10:23,479 - langchain_tools.agent_config - INFO - --- Closing DB connection for: /Users/saadahmed/Desktop/Apps/BussGPT/ccr_reporting.db ---
+2025-04-28 11:10:23,479 - langchain_tools.agent_config - INFO - --- Finished fetching DB examples for: ccr_reporting.db ---
+2025-04-28 11:10:23,479 - langchain_tools.agent_config - INFO - --- Finished fetching all DB examples. ---
+2025-04-28 11:10:23,479 - langchain_tools.agent - DEBUG - Loaded Tool: financial_sql_query_tool with description: Queries the `financial_data.db` database containing structured financial market data. Use this for specific questions about **historical (2016-2020) daily stock prices** (OHLC), **historical quarterly financials** (income/balance sheet, limited dates), **dividends**, or **stock splits** for known public companies like **'AAPL', 'AMD', 'AMZN'**, etc. Input is a natural language question about specific historical data points. Persona: SQL Database Expert (Historical Financial Data).
+2025-04-28 11:10:23,479 - langchain_tools.agent - DEBUG - Loaded Tool: ccr_sql_query_tool with description: Queries the `ccr_reporting.db` database containing structured Counterparty Credit Risk (CCR) reporting data (sample data). Use this for specific questions about **counterparty details (ratings, country)**, **daily risk exposures** (Net MTM, Gross, PFE, Settlement), **risk limits**, **limit utilization**, **breach status**, or individual **trade details** related to counterparties like **'JPMorgan', 'BankOfAmerica', 'Citigroup'**, etc. Input is a natural language question about specific CCR metrics or counterparty/trade details within this database. Persona: SQL Database Expert (CCR Reporting Data).
+2025-04-28 11:10:23,479 - langchain_tools.agent - DEBUG - Loaded Tool: transcript_search_summary_tool with description: Answers questions requiring qualitative analysis, summaries, or context from **earnings call transcripts**. Use for queries about company performance narratives, strategies, management commentary, outlook, or specific events discussed in calls (e.g., queries like **'What was management's outlook for cloud growth in the MSFT Q4 2020 call?'**). Input should be the original user query. Persona: Equity Research Analyst (Transcript Specialist).
+2025-04-28 11:10:23,479 - langchain_tools.agent - DEBUG - Loaded Tool: financial_news_search with description: Searches the web for **current or recent** financial news, market sentiment, **live stock price estimates**, or general information about companies, markets, or economic events. To focus results on reliable financial sources, preferentially construct the search term using the 'site:' operator. For example: 'query site:reuters.com OR site:marketwatch.com OR site:finance.yahoo.com OR site:seekingalpha.com'. Use this for information **not** found in the historical financial database or the CCR reporting database.
+2025-04-28 11:10:23,479 - langchain_tools.agent - INFO - Master Agent tools initialized successfully
+2025-04-28 11:10:23,479 - langchain_tools.agent - INFO - Master Agent initialized with tools: ['financial_sql_query_tool', 'ccr_sql_query_tool', 'transcript_agent', 'financial_news_search']
+2025-04-28 11:10:23,479 - langchain_tools.orchestrator - INFO - Orchestrator initialized with tools: ['financial_sql_query_tool', 'ccr_sql_query_tool', 'transcript_search_summary_tool', 'financial_news_search']
+2025-04-28 11:10:23,479 - langchain_tools.agent - INFO - Orchestrator initialized
+2025-04-28 11:10:23,479 - langchain_tools.agent - DEBUG - Initializing Master Agent executor
+2025-04-28 11:10:23,479 - langchain_tools.agent - INFO - Master Agent executor initialized successfully
+2025-04-28 11:10:23,480 - __main__ - INFO - 
+Running through agent: What was the total exposure_usd, notional_usd, and mtm_usd for JPMorgan Chase?
+2025-04-28 11:10:23,480 - langchain_tools.state_manager - INFO - Agent state reset.
+2025-04-28 11:10:23,480 - langchain_tools.logger - INFO - {"timestamp": "2025-04-28T15:10:23.480119", "level": "INFO", "event_type": "query_start", "agent_id": "HierarchicalAgent_v3_Refactored", "conversation_id": "c05a1930-c04a-4211-9946-a3d9ebec67f2", "query": "What was the total exposure_usd, notional_usd, and mtm_usd for JPMorgan Chase?"}
+2025-04-28 11:10:24,664 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-04-28 11:10:27,567 - langchain_tools.tool_factory - INFO - [CCR Tool] Executing query: What was the total exposure_usd, notional_usd, and mtm_usd for JPMorgan Chase?
+...
+2025-04-28 11:10:30,202 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-04-28 11:10:31,781 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-04-28 11:10:39,133 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-04-28 11:10:39,134 - langchain_tools.tool_factory - INFO - [CCR Tool] Query execution time: 11.57s
+2025-04-28 11:10:47,485 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-04-28 11:10:53,621 - langchain_tools.agent - INFO - AgentExecutor finished. Outcome: {'input': 'What was the total exposure_usd, notional_usd, and mtm_usd for JPMorgan Chase?', 'output': "Based on the analysis performed by the specialized ccr_sql_query_tool (SQL Database Expert for CCR Reporting Data), here is the response to your query: \n\nThe tool has generated an SQL query to calculate the total exposure_usd, notional_usd, and mtm_usd for JPMorgan Chase & Co. The query joins the daily exposures table with the counterparties table and sums up the relevant fields for the specified counterparty. \n\nWhile we don't have the actual numerical results, this query would typically return three values:\n\n1. total_exposure_usd: The sum of all exposure in USD for JPMorgan Chase & Co.\n2. total_notional_usd: The sum of all notional amounts in USD for JPMorgan Chase & Co.\n3. total_mtm_usd: The sum of all mark-to-market values in USD for JPMorgan Chase & Co.\n\nThese totals would give you a comprehensive view of the aggregate risk and position with JPMorgan Chase & Co. across all transactions in the CCR reporting database. To get the actual numbers, this query would need to be executed against the live database."}
+2025-04-28 11:10:53,621 - langchain_tools.logger - INFO - {"timestamp": "2025-04-28T15:10:53.621883", "level": "INFO", "event_type": "query_end", "agent_id": "HierarchicalAgent_v3_Refactored", "conversation_id": "c05a1930-c04a-4211-9946-a3d9ebec67f2", "final_response": {"status": "success", "result": "Based on the analysis performed by the specialized ccr_sql_query_tool (SQL Database Expert for CCR Reporting Data), here is the response to your query: \n\nThe tool has generated an SQL query to calculate the total exposure_usd, notional_usd, and mtm_usd for JPMorgan Chase & Co. The query joins the daily exposures table with the counterparties table and sums up the relevant fields for the specified counterparty. \n\nWhile we don't have the actual numerical results, this query would typically return three values:\n\n1. total_exposure_usd: The sum of all exposure in USD for JPMorgan Chase & Co.\n2. total_notional_usd: The sum of all notional amounts in USD for JPMorgan Chase & Co.\n3. total_mtm_usd: The sum of all mark-to-market values in USD for JPMorgan Chase & Co.\n\nThese totals would give you a comprehensive view of the aggregate risk and position with JPMorgan Chase & Co. across all transactions in the CCR reporting database. To get the actual numbers, this query would need to be executed against the live database.", "error": null, "evidence": [], "confidence": 0.0, "tool_sequence": [], "category_identified": null}, "final_state": {"pending_doc_ids": [], "processed_doc_ids": [], "current_confidence": 0.0, "evidence_collected": [], "tool_sequence": [], "category_id": null, "last_query": "What was the total exposure_usd, notional_usd, and mtm_usd for JPMorgan Chase?", "last_error": null}}
+2025-04-28 11:10:53,622 - __main__ - INFO - Agent execution completed.
+2025-04-28 11:10:53,622 - __main__ - INFO - Saved agent response to: /Users/saadahmed/Desktop/Apps/BussGPT/scripts/agent_tests/../../test_results/run_20250428_111023_7509d72f/response.txt

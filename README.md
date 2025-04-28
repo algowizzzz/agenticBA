@@ -434,4 +434,69 @@ BussGPT/
 │   └── transcripts/          # Transcript storage
 ├── logs/                     # Log files
 └── web/                      # Web interface (if applicable)
-``` 
+```
+
+# BussGPT Agent UI
+
+A chat interface for interacting with the BussGPT agent.
+
+## Features
+
+- Real-time chat with the BussGPT agent
+- View agent's thinking process
+- Clean, modern interface
+- Socket.IO-based communication
+
+## Setup Instructions
+
+### Backend Setup
+
+1. Create and activate a virtual environment:
+   ```
+   python3 -m venv venv
+   source venv/bin/activate
+   ```
+
+2. Install required packages:
+   ```
+   pip install flask flask-socketio flask-cors
+   ```
+
+3. Run the backend server:
+   ```
+   python server.py
+   ```
+   The server will run on http://localhost:5000
+
+### Frontend Setup
+
+1. Navigate to the Angular app directory:
+   ```
+   cd agent-ui/agent-ui
+   ```
+
+2. Install dependencies:
+   ```
+   npm install
+   ```
+
+3. Start the development server:
+   ```
+   npm start
+   ```
+   The application will be available at http://localhost:4200
+
+## Usage
+
+1. Open your browser and navigate to http://localhost:4200
+2. Type a message in the input field and press Enter or click Send
+3. The agent will respond and show its thinking process
+
+## Development
+
+- Backend: Flask + Socket.IO
+- Frontend: Angular 19 + Socket.IO client
+
+## License
+
+MIT 

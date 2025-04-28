@@ -1,0 +1,91 @@
+2025-04-27 23:07:28,338 - __main__ - INFO - Logging detailed output to: /Users/saadahmed/Desktop/Apps/BussGPT/scripts/agent_tests/../../test_results/run_20250427_230728_c6edf03b/log.txt
+2025-04-27 23:07:28,338 - __main__ - INFO - Starting agent test run for query: 'What was Microsoft's cloud strategy in Q3 2020?'
+2025-04-27 23:07:28,338 - __main__ - INFO - --- Attempting to get API key from environment... ---
+2025-04-27 23:07:28,338 - __main__ - INFO - --- ANTHROPIC_API_KEY loaded successfully. ---
+2025-04-27 23:07:28,339 - langchain_tools.logger - INFO - Initialized AgentLogger for agent HierarchicalAgent_v3_Refactored, conversation 7768d25a-9ad0-4fea-a0d5-319ed53a00f2
+2025-04-27 23:07:28,339 - langchain_tools.agent - DEBUG - Initializing LLM
+2025-04-27 23:07:28,339 - langchain_tools.agent - DEBUG - Initializing LLM
+2025-04-27 23:07:28,339 - langchain_tools.tool_factory - INFO - Initializing ChatAnthropic with model: claude-3-5-sonnet-20240620
+2025-04-27 23:07:28,339 - langchain_tools.agent - DEBUG - ChatAnthropic instance created successfully via factory
+2025-04-27 23:07:28,339 - langchain_tools.agent - INFO - LLM initialized successfully
+2025-04-27 23:07:28,339 - langchain_tools.agent - DEBUG - Initializing tools for Master Agent
+2025-04-27 23:07:28,340 - langchain_tools.tool_factory - INFO - [Financial Tool] Connecting to SQL Database: /Users/saadahmed/Desktop/Apps/BussGPT/scripts/data/financial_data.db
+2025-04-27 23:07:28,358 - langchain_tools.tool_factory - INFO - [Financial Tool] SQLDatabase connection successful. Tables: ['companies', 'daily_stock_prices', 'dividends', 'quarterly_balance_sheet', 'quarterly_income_statement', 'stock_splits']
+2025-04-27 23:07:28,361 - langchain_tools.tool_factory - INFO - [Financial Tool] Generated DB Metadata Hints for LLM.
+2025-04-27 23:07:28,361 - langchain_tools.tool_factory - INFO - [Financial Tool] SQLDatabaseChain created successfully.
+2025-04-27 23:07:28,361 - langchain_tools.tool_factory - INFO - [CCR Tool] Connecting to SQL Database: /Users/saadahmed/Desktop/Apps/BussGPT/scripts/data/ccr_reporting.db
+2025-04-27 23:07:28,367 - langchain_tools.tool_factory - INFO - [CCR Tool] SQLDatabase connection successful. Tables: ['limits', 'products', 'report_counterparties', 'report_daily_exposures', 'securities', 'transit_mapping']
+2025-04-27 23:07:28,368 - langchain_tools.tool_factory - WARNING - [CCR Tool] Error getting metadata hints: no such column: product_type
+2025-04-27 23:07:28,368 - langchain_tools.tool_factory - INFO - [CCR Tool] Generated DB Metadata Hints for LLM.
+2025-04-27 23:07:28,368 - langchain_tools.tool_factory - INFO - [CCR Tool] SQLDatabaseChain created successfully.
+2025-04-27 23:07:28,368 - langchain_tools.tool_factory - INFO - [Transcript Agent Tool] Initializing...
+2025-04-27 23:07:28,368 - langchain_tools.tool4_metadata_lookup - INFO - Metadata Tool: Creating tool instance.
+2025-04-27 23:07:28,368 - langchain_tools.tool_factory - INFO - [Transcript Agent Tool] Internal tools created: ['category_tool', 'metadata_lookup_tool', 'document_content_analysis_tool']
+2025-04-27 23:07:28,368 - langchain_tools.tool_factory - DEBUG - [Transcript Agent Tool] Prompt template created.
+2025-04-27 23:07:28,369 - langchain_tools.tool_factory - DEBUG - [Transcript Agent Tool] Internal ReAct agent created.
+2025-04-27 23:07:28,369 - langchain_tools.tool_factory - INFO - [Transcript Agent Tool] Internal AgentExecutor created.
+2025-04-27 23:07:28,369 - langchain_tools.tool_factory - INFO - [Transcript Agent Tool] Tool object created successfully.
+2025-04-27 23:07:28,370 - langchain_tools.agent_config - INFO - --- Starting dynamic tool description generation... ---
+2025-04-27 23:07:28,370 - langchain_tools.agent_config - INFO - --- Attempting to fetch DB examples for: financial_data.db ---
+2025-04-27 23:07:28,370 - langchain_tools.agent_config - DEBUG - Tried DB path (not found): /Users/saadahmed/Desktop/Apps/BussGPT/financial_data.db
+2025-04-27 23:07:28,370 - langchain_tools.agent_config - DEBUG - Tried DB path (not found): /Users/saadahmed/Desktop/Apps/BussGPT/data/financial_data.db
+2025-04-27 23:07:28,370 - langchain_tools.agent_config - INFO - Using DB path: /Users/saadahmed/Desktop/Apps/BussGPT/scripts/data/financial_data.db
+2025-04-27 23:07:28,370 - langchain_tools.agent_config - INFO - --- Connecting to DB at: /Users/saadahmed/Desktop/Apps/BussGPT/scripts/data/financial_data.db ---
+2025-04-27 23:07:28,370 - langchain_tools.agent_config - INFO - --- Executing query: SELECT DISTINCT ticker FROM daily_stock_prices WHERE ticker IS NOT NULL ORDER BY ticker LIMIT 3 on financial_data.db ---
+2025-04-27 23:07:28,370 - langchain_tools.agent_config - INFO - --- Successfully fetched 3 examples from financial_data.db ---
+2025-04-27 23:07:28,370 - langchain_tools.agent_config - INFO - --- Closing DB connection for: /Users/saadahmed/Desktop/Apps/BussGPT/scripts/data/financial_data.db ---
+2025-04-27 23:07:28,371 - langchain_tools.agent_config - INFO - --- Finished fetching DB examples for: financial_data.db ---
+2025-04-27 23:07:28,371 - langchain_tools.agent_config - INFO - --- Attempting to fetch DB examples for: ccr_reporting.db ---
+2025-04-27 23:07:28,371 - langchain_tools.agent_config - INFO - Using DB path: /Users/saadahmed/Desktop/Apps/BussGPT/ccr_reporting.db
+2025-04-27 23:07:28,371 - langchain_tools.agent_config - INFO - --- Connecting to DB at: /Users/saadahmed/Desktop/Apps/BussGPT/ccr_reporting.db ---
+2025-04-27 23:07:28,371 - langchain_tools.agent_config - INFO - --- Executing query: SELECT DISTINCT short_name FROM report_counterparties WHERE short_name IS NOT NULL ORDER BY short_name LIMIT 3 on ccr_reporting.db ---
+2025-04-27 23:07:28,371 - langchain_tools.agent_config - ERROR - --- SQLITE ERROR fetching examples from ccr_reporting.db: no such table: report_counterparties ---
+Traceback (most recent call last):
+  File "/Users/saadahmed/Desktop/Apps/BussGPT/langchain_tools/agent_config.py", line 80, in _fetch_db_examples
+    cursor.execute(query) # Query already includes LIMIT
+    ~~~~~~~~~~~~~~^^^^^^^
+sqlite3.OperationalError: no such table: report_counterparties
+2025-04-27 23:07:28,371 - langchain_tools.agent_config - INFO - --- Closing DB connection for: /Users/saadahmed/Desktop/Apps/BussGPT/ccr_reporting.db ---
+2025-04-27 23:07:28,371 - langchain_tools.agent_config - INFO - --- Finished fetching DB examples for: ccr_reporting.db ---
+2025-04-27 23:07:28,371 - langchain_tools.agent_config - INFO - --- Finished fetching all DB examples. ---
+2025-04-27 23:07:28,371 - langchain_tools.agent - DEBUG - Loaded Tool: financial_sql_query_tool with description: Queries the `financial_data.db` database containing structured financial market data. Use this for specific questions about **historical (2016-2020) daily stock prices** (OHLC), **historical quarterly financials** (income/balance sheet, limited dates), **dividends**, or **stock splits** for known public companies like **'AAPL', 'AMD', 'AMZN'**, etc. Input is a natural language question about specific historical data points. Persona: SQL Database Expert (Historical Financial Data).
+2025-04-27 23:07:28,372 - langchain_tools.agent - DEBUG - Loaded Tool: ccr_sql_query_tool with description: Queries the `ccr_reporting.db` database containing structured Counterparty Credit Risk (CCR) reporting data (sample data). Use this for specific questions about **counterparty details (ratings, country)**, **daily risk exposures** (Net MTM, Gross, PFE, Settlement), **risk limits**, **limit utilization**, **breach status**, or individual **trade details** related to counterparties like **'JPMorgan', 'BankOfAmerica', 'Citigroup'**, etc. Input is a natural language question about specific CCR metrics or counterparty/trade details within this database. Persona: SQL Database Expert (CCR Reporting Data).
+2025-04-27 23:07:28,372 - langchain_tools.agent - DEBUG - Loaded Tool: transcript_search_summary_tool with description: Answers questions requiring qualitative analysis, summaries, or context from **earnings call transcripts**. Use for queries about company performance narratives, strategies, management commentary, outlook, or specific events discussed in calls (e.g., queries like **'What was management's outlook for cloud growth in the MSFT Q4 2020 call?'**). Input should be the original user query. Persona: Equity Research Analyst (Transcript Specialist).
+2025-04-27 23:07:28,372 - langchain_tools.agent - DEBUG - Loaded Tool: financial_news_search with description: Searches the web for **current or recent** financial news, market sentiment, **live stock price estimates**, or general information about companies, markets, or economic events. To focus results on reliable financial sources, preferentially construct the search term using the 'site:' operator. For example: 'query site:reuters.com OR site:marketwatch.com OR site:finance.yahoo.com OR site:seekingalpha.com'. Use this for information **not** found in the historical financial database or the CCR reporting database.
+2025-04-27 23:07:28,372 - langchain_tools.agent - INFO - Master Agent tools initialized successfully
+2025-04-27 23:07:28,372 - langchain_tools.agent - INFO - Master Agent initialized with tools: ['financial_sql_query_tool', 'ccr_sql_query_tool', 'transcript_search_summary_tool', 'financial_news_search']
+2025-04-27 23:07:28,372 - langchain_tools.orchestrator - INFO - Orchestrator initialized with tools: ['financial_sql_query_tool', 'ccr_sql_query_tool', 'transcript_search_summary_tool', 'financial_news_search']
+2025-04-27 23:07:28,372 - langchain_tools.agent - INFO - Orchestrator initialized
+2025-04-27 23:07:28,372 - langchain_tools.agent - DEBUG - Initializing Master Agent executor
+2025-04-27 23:07:28,372 - langchain_tools.agent - INFO - Master Agent executor initialized successfully
+2025-04-27 23:07:28,372 - __main__ - INFO - 
+Running through agent: What was Microsoft's cloud strategy in Q3 2020?
+2025-04-27 23:07:28,372 - langchain_tools.state_manager - INFO - Agent state reset.
+2025-04-27 23:07:28,372 - langchain_tools.logger - INFO - {"timestamp": "2025-04-28T03:07:28.372740", "level": "INFO", "event_type": "query_start", "agent_id": "HierarchicalAgent_v3_Refactored", "conversation_id": "8b8ae466-87c9-476d-972b-7d4300aa07af", "query": "What was Microsoft's cloud strategy in Q3 2020?"}
+2025-04-27 23:07:29,810 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-04-27 23:07:31,943 - langchain_tools.tool_factory - INFO - [Transcript Agent Tool] Invoking sub-agent for query: What was Microsoft's cloud strategy in Q3 2020?
+...
+2025-04-27 23:07:33,330 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-04-27 23:07:34,444 - langchain_tools.tool4_metadata_lookup - INFO - Metadata Tool: Received query: 'Microsoft cloud strategy Q3 2020
+...'
+2025-04-27 23:07:34,457 - langchain_tools.tool4_metadata_lookup - INFO - Metadata Tool: MongoDB connection successful.
+2025-04-27 23:07:34,457 - langchain_tools.tool4_metadata_lookup - INFO - Metadata Tool: Fetching all metadata...
+2025-04-27 23:07:34,461 - langchain_tools.tool4_metadata_lookup - INFO - Metadata Tool: Fetched details for 188 documents across 10 categories.
+2025-04-27 23:07:34,463 - langchain_tools.tool4_metadata_lookup - INFO - Metadata Tool: Found 167 documents with individual summaries.
+2025-04-27 23:07:34,463 - langchain_tools.tool4_metadata_lookup - INFO - Metadata Tool: Found 6 categories with synthesized summaries.
+2025-04-27 23:07:34,464 - langchain_tools.tool4_metadata_lookup - WARNING - Metadata Tool: Metadata context length (46490) exceeds limit (20000). Simple truncation applied (may break JSON). Consider reducing data passed.
+2025-04-27 23:07:34,464 - langchain_tools.tool4_metadata_lookup - INFO - Metadata Tool: Sending request to LLM...
+2025-04-27 23:07:36,977 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-04-27 23:07:36,988 - langchain_tools.tool4_metadata_lookup - ERROR - Metadata Tool: Error during LLM lookup or processing: 'str' object has no attribute 'text'
+Traceback (most recent call last):
+  File "/Users/saadahmed/Desktop/Apps/BussGPT/langchain_tools/tool4_metadata_lookup.py", line 253, in llm_metadata_lookup
+    raw_llm_output = response.content[0].text.strip()
+                     ^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'text'
+2025-04-27 23:07:38,191 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-04-27 23:07:43,704 - langchain_tools.tool_factory - INFO - [Transcript Agent Tool] Sub-agent finished. Returning output.
+2025-04-27 23:07:44,865 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-04-27 23:07:48,975 - langchain_tools.agent - INFO - AgentExecutor finished. Outcome: {'input': "What was Microsoft's cloud strategy in Q3 2020?", 'output': "Based on the analysis performed by the specialized transcript_search_summary_tool (Equity Research Analyst (Transcript Specialist)), here is the response to your query: \n\n**[Analyst Report Format]**\n\nUnfortunately, I am unable to provide a detailed analysis of Microsoft's cloud strategy in Q3 2020 due to technical limitations in accessing the relevant information. The metadata lookup tool, which is crucial for identifying relevant documents and summaries, encountered an error during the process.\n\nKey points:\n\n1. Data Availability: The system was unable to retrieve any relevant documents or summaries related to Microsoft's cloud strategy for Q3 2020.\n\n2. Technical Limitations: An error occurred during the metadata lookup process, preventing access to the necessary information.\n\n3. Incomplete Analysis: Without access to the relevant earnings call transcripts, press releases, or other official documents, it's not possible to provide an accurate or comprehensive analysis of Microsoft's cloud strategy for the specified period.\n\nRecommendation:\n\nTo obtain accurate information about Microsoft's cloud strategy in Q3 2020, I recommend:\n\n1. Directly accessing Microsoft's investor relations website for official earnings reports and presentations from that period.\n2. Reviewing reputable financial news sources for analyst reports and summaries from that time.\n3. If possible, addressing the technical issue with the metadata lookup tool to enable future analyses of this nature.\n\nThis report is based solely on the limited information available due to technical constraints and should not be considered a complete analysis of Microsoft's cloud strategy for Q3 2020."}
+2025-04-27 23:07:48,976 - langchain_tools.logger - INFO - {"timestamp": "2025-04-28T03:07:48.976146", "level": "INFO", "event_type": "query_end", "agent_id": "HierarchicalAgent_v3_Refactored", "conversation_id": "8b8ae466-87c9-476d-972b-7d4300aa07af", "final_response": {"status": "success", "result": "Based on the analysis performed by the specialized transcript_search_summary_tool (Equity Research Analyst (Transcript Specialist)), here is the response to your query: \n\n**[Analyst Report Format]**\n\nUnfortunately, I am unable to provide a detailed analysis of Microsoft's cloud strategy in Q3 2020 due to technical limitations in accessing the relevant information. The metadata lookup tool, which is crucial for identifying relevant documents and summaries, encountered an error during the process.\n\nKey points:\n\n1. Data Availability: The system was unable to retrieve any relevant documents or summaries related to Microsoft's cloud strategy for Q3 2020.\n\n2. Technical Limitations: An error occurred during the metadata lookup process, preventing access to the necessary information.\n\n3. Incomplete Analysis: Without access to the relevant earnings call transcripts, press releases, or other official documents, it's not possible to provide an accurate or comprehensive analysis of Microsoft's cloud strategy for the specified period.\n\nRecommendation:\n\nTo obtain accurate information about Microsoft's cloud strategy in Q3 2020, I recommend:\n\n1. Directly accessing Microsoft's investor relations website for official earnings reports and presentations from that period.\n2. Reviewing reputable financial news sources for analyst reports and summaries from that time.\n3. If possible, addressing the technical issue with the metadata lookup tool to enable future analyses of this nature.\n\nThis report is based solely on the limited information available due to technical constraints and should not be considered a complete analysis of Microsoft's cloud strategy for Q3 2020.", "error": null, "evidence": [], "confidence": 0.0, "tool_sequence": [], "category_identified": null}, "final_state": {"pending_doc_ids": [], "processed_doc_ids": [], "current_confidence": 0.0, "evidence_collected": [], "tool_sequence": [], "category_id": null, "last_query": "What was Microsoft's cloud strategy in Q3 2020?", "last_error": null}}
+2025-04-27 23:07:48,977 - __main__ - INFO - Agent execution completed.
+2025-04-27 23:07:48,978 - __main__ - INFO - Saved agent response to: /Users/saadahmed/Desktop/Apps/BussGPT/scripts/agent_tests/../../test_results/run_20250427_230728_c6edf03b/response.txt

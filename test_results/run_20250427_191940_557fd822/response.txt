@@ -1,0 +1,9 @@
+{
+  "status": "success",
+  "result": "Agent stopped due to iteration limit or time limit.",
+  "error": null,
+  "evidence": [],
+  "confidence": 0.0,
+  "tool_sequence": [],
+  "category_identified": null
+}

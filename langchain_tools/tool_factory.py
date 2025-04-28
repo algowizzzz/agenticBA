@@ -9,14 +9,12 @@ import json
 from langchain_anthropic import ChatAnthropic
 from datetime import datetime
 import re
+import time # Added time import
 
 # Import utility modules
 from .config import sanitize_json_response
-# from .tool3_document import get_tool as get_document_tool # REMOVE Import for deleted tool
-from .tool4_metadata_lookup import get_tool as get_metadata_lookup_tool
-# from .tool3_document_analysis import get_tool as get_document_analysis_tool # REMOVE Import
-# from .tool5_simple_llm import get_tool as get_simple_llm_tool # Import new tool
-from .tool5_transcript_analysis import get_transcript_analysis_tool # Import renamed transcript analysis tool
+from .tool4_metadata_lookup import get_metadata_lookup_tool # Use the modified tool factory
+from .tool5_transcript_analysis import get_document_analysis_tool # Use the modified tool factory
 
 # Added imports for SQL Tool
 from langchain.sql_database import SQLDatabase
@@ -27,6 +25,9 @@ from langchain_core.prompts import PromptTemplate # <--- Added import
 from langchain.agents import AgentExecutor, create_react_agent # <--- Added create_react_agent
 import sqlite3 # Added for specific error handling
 import traceback # Added for detailed error logging
+
+# --- Add new import for our tool ---
+from langchain_community.utilities import SerpAPIWrapper # Example: Assuming SerpAPI is used by web_search, adjust if different
 
 # Configure logging
 logger = logging.getLogger(__name__)
@@ -66,19 +67,31 @@ def create_tool_with_validation(tool_fn: Callable, tool_name: str, response_vali
             is_valid, errors = response_validator(result)
             if not is_valid:
                 logger.error(f"Invalid {tool_name} response: {errors}")
-                return {
-                    "thought": f"Tool response validation failed: {errors}",
-                    "answer": "Error: Tool response did not meet requirements",
-                    "confidence": 0,
-                    "metadata": {
+                # Return the error within the expected structure, if the tool itself didn't return an error structure
+                if isinstance(result, dict) and "error" in result and result.get("error"):
+                    # Tool already returned an error, perhaps just add validation info?
+                    result["metadata"] = {
                         "tool_name": tool_name,
                         "validation_errors": errors,
                         "timestamp": datetime.utcnow().isoformat(),
-                        "success": False
+                        "success": False,
+                        "original_error": result["error"]
+                    }
+                    return result 
+                else:
+                    # Tool output was invalid but didn't report an error itself
+                    return {
+                        "error": f"Tool response validation failed: {errors}", # Main error message
+                        "metadata": {
+                            "tool_name": tool_name,
+                            "validation_errors": errors,
+                            "timestamp": datetime.utcnow().isoformat(),
+                            "success": False,
+                            "original_output": result # Include original bad output if helpful
                     }
                 }
             
-            # Add metadata if not present
+            # Add metadata if not present (success case)
             if "metadata" not in result:
                 result["metadata"] = {}
             result["metadata"].update({
@@ -90,19 +103,21 @@ def create_tool_with_validation(tool_fn: Callable, tool_name: str, response_vali
             return result
             
         except Exception as e:
-            logger.error(f"Error in {tool_name}: {e}")
+            logger.error(f"Error executing {tool_name}: {e}", exc_info=True)
+            # Return error in a structure compatible with expected output
             return {
-                "thought": f"Error in {tool_name}: {str(e)}",
-                "answer": f"An error occurred while using {tool_name}",
-                "confidence": 0,
+                "error": f"Execution Error in {tool_name}: {type(e).__name__}: {e}",
                 "metadata": {
                     "tool_name": tool_name,
-                    "error": str(e),
+                    "error_type": type(e).__name__,
                     "timestamp": datetime.utcnow().isoformat(),
                     "success": False
                 }
             }
     
+    # Copy original function attributes if possible
+    validated_tool.__name__ = getattr(tool_fn, '__name__', tool_name)
+    validated_tool.__doc__ = getattr(tool_fn, '__doc__', f"Validated wrapper for {tool_name}")
     return validated_tool
 
 def create_department_tool(api_key: Optional[str] = None) -> Callable:
@@ -122,10 +137,6 @@ def create_department_tool(api_key: Optional[str] = None) -> Callable:
         """
         return department_summary_tool(query, api_key)
     
-    # Copy attributes for better display
-    department_tool.__name__ = "department_summary_tool"
-    department_tool.__doc__ = department_summary_tool.__doc__
-    
     return create_tool_with_validation(
         department_tool,
         "department_tool",
@@ -144,31 +155,17 @@ def create_category_tool() -> Callable:
         # Parse query and category_id from the input string
         query = input_str
         category_id = None
-        match = re.search(r"category=([\w\-]+)", input_str, re.IGNORECASE)
+        match = re.search(r"category=([\w\.\-]+)", input_str, re.IGNORECASE)
         if match:
             category_id = match.group(1)
             # Remove the category part from the query string if desired
-            query = re.sub(r"\\s*category=[\w\-]+", "", query, flags=re.IGNORECASE).strip().rstrip(',') # Remove tag and potential trailing comma
+            query = re.sub(r",?\s*category=[\w\.\-]+$", "", query, flags=re.IGNORECASE).strip().rstrip(',') # Remove tag and potential trailing comma
         else:
-            # Handle cases where category_id might be missing in the input
-            # Option 1: Raise an error
-            # raise ValueError("Input string must contain 'category=<CATEGORY_ID>'")
-            # Option 2: Log a warning and proceed without category_id (might fail later)
-            logger.warning(f"Category ID not found in input: '{input_str}'. Tool might fail.")
-            # Option 3: Attempt to infer category if possible (complex)
-            # For now, we proceed but expect category_summary_tool to handle None category_id if applicable
+            logger.warning(f"Category ID not found in input format for category_tool: '{input_str}'. Tool will fail.")
+            return {"error": "Category ID missing in input format 'query, category=<ID>'"} # Return error immediately
 
-        if not category_id:
-             # Return an error if category_id is essential and wasn't found
-             return {"error": "Category ID missing in input format 'query, category=<ID>'"}
-        
-        # Remove api_key argument as it's not accepted by category_summary_tool
-        # return category_summary_tool(query, category_id, api_key)
+        # Call the underlying tool
         return category_summary_tool(query, category_id)
-    
-    # Copy attributes for better display
-    category_tool_wrapper.__name__ = "category_summary_tool"
-    category_tool_wrapper.__doc__ = category_summary_tool.__doc__ # Keep original tool doc? Or use wrapper's?
     
     return create_tool_with_validation(
         category_tool_wrapper,
@@ -176,703 +173,583 @@ def create_category_tool() -> Callable:
         validate_category_response
     )
 
-def create_metadata_lookup_tool() -> Callable:
-    """Create metadata lookup tool with validation."""
+def create_metadata_lookup_tool_wrapper() -> Callable:
+    """Create metadata lookup tool wrapper with validation."""
     # Get the actual tool function by calling its factory
     metadata_lookup_fn = get_metadata_lookup_tool()
 
-    # Define a simple wrapper if needed (optional, could use fn directly)
+    # Define a simple wrapper (needed for validation layer)
     def metadata_lookup_wrapper(query_term: str) -> Dict[str, Any]:
          return metadata_lookup_fn(query_term)
-
-    # Copy attributes for better display
-    metadata_lookup_wrapper.__name__ = getattr(metadata_lookup_fn, '__name__', "metadata_lookup_tool")
-    metadata_lookup_wrapper.__doc__ = getattr(metadata_lookup_fn, '__doc__', "Finds category/document IDs by metadata term.")
 
     return create_tool_with_validation(
         metadata_lookup_wrapper,
         "metadata_lookup_tool",
-        validate_metadata_lookup_response
+        validate_metadata_lookup_response # Use the (updated) validation function
     )
 
-def create_transcript_analysis_tool(api_key: Optional[str] = None) -> Callable:
-    """Create transcript analysis tool with validation."""
+def create_document_analysis_tool_wrapper(api_key: Optional[str] = None) -> Callable:
+    """Create document analysis tool wrapper with validation."""
     # Import renamed factory function
-    transcript_analysis_fn = get_transcript_analysis_tool(api_key)
+    document_analysis_fn = get_document_analysis_tool(api_key)
 
-    # Wrapper to parse single string input from agent: "query, document_name=<name>"
-    def transcript_analysis_wrapper(input_str: str) -> Dict[str, Any]:
-        """Wrapper for transcript analysis tool. Input format: '<query>, document_name=<name>'"""
+    # Wrapper to parse single string input from agent: "query, document_id=<id>"
+    def document_analysis_wrapper(input_str: str) -> Dict[str, Any]:
+        """Wrapper for document analysis tool. Input format: '<query>, document_id=<uuid>'"""
         query = input_str
-        doc_name = None
-        # Look for the mandatory document_name parameter
-        match = re.search(r"document_name=([\w\.\-]+)", input_str, re.IGNORECASE)
+        doc_id = None
+        # Look for the mandatory document_id parameter (UUID format)
+        match = re.search(r"document_id=([0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})", input_str, re.IGNORECASE)
         if match:
-            doc_name = match.group(1)
+            doc_id = match.group(1)
             # Remove the parameter part from the query string
-            query = re.sub(r",?\s*document_name=[\w\.\-]+$", "", query, flags=re.IGNORECASE).strip().rstrip(',')
-            logger.debug(f"Transcript analysis wrapper parsed query='{query}', doc_name='{doc_name}'")
+            query = re.sub(r",?\s*document_id=[0-9a-f\-]+\s*$", "", query, flags=re.IGNORECASE).strip().rstrip(',') # Adjusted regex
+            logger.debug(f"Document analysis wrapper parsed query='{query}', doc_id='{doc_id}'")
             # Call the actual tool function with parsed args
-            return transcript_analysis_fn(query=query, document_name=doc_name)
+            return document_analysis_fn(query=query, document_id=doc_id)
         else:
-            # Document name is required by the underlying tool now
-            logger.error(f"Transcript analysis wrapper failed: document_name missing in input: '{input_str}'")
-            return {"answer": "Error: Input format requires 'document_name=<filename>'", "error": "Missing document_name"}
-
-    # Use attributes from the actual tool function
-    transcript_analysis_wrapper.__name__ = getattr(transcript_analysis_fn, '__name__', "transcript_analysis_tool")
-    transcript_analysis_wrapper.__doc__ = getattr(transcript_analysis_fn, '__doc__', "Analyzes a specific document transcript.")
+            # Document ID is required
+            logger.error(f"Document analysis wrapper failed: document_id missing or invalid format in input: '{input_str}'")
+            return {"answer": None, "error": "Input format requires 'document_id=<valid_uuid>'"}
 
     return create_tool_with_validation(
-        transcript_analysis_wrapper,
-        "transcript_analysis_tool", # Tool name used in metadata/logging
-        validate_transcript_analysis_response # Use renamed validation function
+        document_analysis_wrapper,
+        "document_content_analysis_tool", # Use the new underlying tool name here for clarity
+        validate_transcript_analysis_response # Reuse validation as it checks for 'answer'/'error'
     )
 
-# --- SQL Tool Factories ---
+# --- Add the Web Search Wrapper Function ---
+# NOTE: This assumes the underlying web_search tool can be called via an API or library.
+# We'll use SerpAPIWrapper as a placeholder example. This might need adjustment
+# depending on how the environment's `web_search` is actually implemented.
+# It requires SERPAPI_API_KEY environment variable.
+def _run_web_search(query: str) -> str:
+    """
+    Performs a web search using the provided query and returns formatted results.
+    This is a wrapper around the environment's web search capability.
+    """
+    logger.info(f"Executing web search for query: {query}")
+    try:
+        # Example using SerpAPI - REPLACE THIS with the actual call
+        # to the environment's web_search mechanism if different.
+        # This requires SERPAPI_API_KEY to be set in the environment.
+        search = SerpAPIWrapper()
+        results = search.run(query)
+        # Simple formatting for demonstration
+        if isinstance(results, list):
+            return "\n".join(results)
+        elif isinstance(results, dict):
+            return json.dumps(results, indent=2)
+        else:
+            return str(results)
 
-# Renamed and potentially slightly adjusted for clarity
+    except ImportError:
+        logger.error("SerpAPIWrapper not available. Install `pip install google-search-results`")
+        return "Error: Web search dependency not installed."
+    except Exception as e:
+        logger.error(f"Error during web search: {e}")
+        return f"Error during web search: {str(e)}"
+
+def create_financial_news_search_tool() -> Tool:
+    """
+    Factory function to create the financial news search tool.
+    Wraps the web search functionality with specific instructions.
+    """
+    # Assuming _run_web_search is defined elsewhere or imported
+    
+    # The description guides the LLM on *how* and *when* to use the tool.
+    description = ( "Searches the web for **current or recent** financial news, market sentiment, **live stock price estimates**, "
+                    "or general information about companies, markets, or economic events. To focus results on reliable financial sources, "
+                    "preferentially construct the search term using the 'site:' operator. For example: 'query site:reuters.com OR site:marketwatch.com OR site:finance.yahoo.com OR site:seekingalpha.com'. "
+                    "Use this for information **not** found in the historical financial database or the CCR reporting database." )
+    
+    return Tool(
+        name="financial_news_search",
+        func=_run_web_search, # Use the generic web search wrapper
+        description=description
+    )
+
+
+# --- SQL Tools (Financial and CCR) --- 
+
 def create_financial_sql_tool(db_path: str, llm: BaseChatModel) -> Tool:
     """
-    Creates a tool to query the FINANCIAL database (stocks, historical financials).
-    Includes database metadata in the prompt and returns structured output.
-    Uses SQLDatabaseChain for direct query generation and execution.
-    DB targeted: financial_data.db
+    Factory function to create the SQL query tool for the financial database.
+    Includes dynamic metadata hints and validation.
     """
-    db_uri = f"sqlite:///{db_path}"
-    logger.info(f"[Financial Tool] Connecting to SQL Database: {db_uri}")
-
-    # --- Metadata Helper for Financial DB ---
-    def _get_financial_db_metadata(db_conn, db_object) -> str:
-        """Queries Financial DB for metadata like date ranges and ALL tickers."""
-        metadata_parts = []
-        cursor = db_conn.cursor()
-        try:
-            metadata_parts.append("FINANCIAL Database Schema Overview:")
-            usable_tables = db_object.get_usable_table_names()
-            table_info = db_object.get_table_info(usable_tables)
-            metadata_parts.append(table_info)
-            metadata_parts.append("\nKey Financial Tables & Usage Hints:")
-
-            # Companies Table - Fetch ALL tickers
-            if 'companies' in usable_tables:
-                try:
-                    cursor.execute("SELECT DISTINCT ticker FROM companies ORDER BY ticker")
-                    tickers = [row[0] for row in cursor.fetchall()]
-                    if tickers:
-                        # Include the full list in the hint (No explicit brace escaping)
-                        metadata_parts.append(f"- `companies`: Company names and tickers. **Full list of known tickers: [{', '.join(tickers)}]**.")
-                    else:
-                         metadata_parts.append("- `companies`: Company names and tickers. (No tickers found).")
-                except Exception as e:
-                     logger.warning(f"[Financial Tool] Could not fetch full ticker list: {e}")
-                     metadata_parts.append("- `companies`: Company names and tickers. Error fetching full list.")
-
-            # Daily Stock Prices Table
-            if 'daily_stock_prices' in usable_tables:
-                try:
-                    cursor.execute("SELECT MIN(date), MAX(date) FROM daily_stock_prices")
-                    min_date, max_date = cursor.fetchone() or ('N/A', 'N/A')
-                    metadata_parts.append(f"- `daily_stock_prices`: Daily OHLC prices/volume. Data available from {min_date} to {max_date}. Use 'YYYY-MM-DD'. Filter by `ticker`.")
-                except Exception as e:
-                     logger.warning(f"[Financial Tool] Could not fetch date range for daily_stock_prices: {e}")
-                     metadata_parts.append("- `daily_stock_prices`: Daily OHLC prices/volume. Use 'YYYY-MM-DD'. Filter by `ticker`.")
-
-            # Quarterly Income Statement Table
-            if 'quarterly_income_statement' in usable_tables:
-                try:
-                    cursor.execute("SELECT MIN(report_date), MAX(report_date) FROM quarterly_income_statement")
-                    min_date, max_date = cursor.fetchone() or ('N/A', 'N/A')
-                    metadata_parts.append(f"- `quarterly_income_statement`: Quarterly income data (e.g., revenue, net_income). Data available from {min_date} to {max_date}. Use `report_date` 'YYYY-MM-DD'. Filter by `ticker`.")
-                except Exception as e:
-                     logger.warning(f"[Financial Tool] Could not fetch date range for quarterly_income_statement: {e}")
-                     metadata_parts.append("- `quarterly_income_statement`: Quarterly income data. Use `report_date` 'YYYY-MM-DD'. Filter by `ticker`.")
-
-            # Quarterly Balance Sheet Table
-            if 'quarterly_balance_sheet' in usable_tables:
-                try:
-                    cursor.execute("SELECT MIN(report_date), MAX(report_date) FROM quarterly_balance_sheet")
-                    min_date, max_date = cursor.fetchone() or ('N/A', 'N/A')
-                    metadata_parts.append(f"- `quarterly_balance_sheet`: Quarterly balance sheet data. Data available from {min_date} to {max_date}. Use `report_date` 'YYYY-MM-DD'. Filter by `ticker`.")
-                except Exception as e:
-                     logger.warning(f"[Financial Tool] Could not fetch date range for quarterly_balance_sheet: {e}")
-                     metadata_parts.append("- `quarterly_balance_sheet`: Quarterly balance sheet data. Use `report_date` 'YYYY-MM-DD'. Filter by `ticker`.")
-            
-            # Dividends Table Hint (Optional)
-            if 'dividends' in usable_tables:
-                 metadata_parts.append("- `dividends`: Historical dividend payment amounts and dates. Filter by `ticker`.")
-            
-            # Stock Splits Table Hint (Optional)
-            if 'stock_splits' in usable_tables:
-                 metadata_parts.append("- `stock_splits`: Historical stock split dates and ratios. Filter by `ticker`.")
-
-            metadata_parts.append("\nFinancial Querying Tips:")
-            metadata_parts.append("- **Always** filter by `ticker` using the known tickers list provided above.")
-            metadata_parts.append("- Use 'YYYY-MM-DD' format for dates (`date` in daily_stock_prices, `report_date` in quarterly tables, `ex_dividend_date` in dividends). ")
-            metadata_parts.append("- Price data is in `daily_stock_prices`.")
-            metadata_parts.append("- Quarterly financial data is in `quarterly_income_statement` and `quarterly_balance_sheet`.")
-
-        except Exception as e:
-            logger.error(f"[Financial Tool] Error generating DB metadata: {e}")
-            metadata_parts.append("\nError: Could not dynamically generate full metadata hints.")
-        finally:
-            cursor.close()
-
-        return "\n".join(metadata_parts)
-    # --- End Metadata Helper ---
-
+    logger.info(f"[Financial Tool] Connecting to SQL Database: {db_path}")
     try:
-        # Establish connections
-        conn = sqlite3.connect(db_path)
-        db = SQLDatabase.from_uri(db_uri)
-        logger.info(f"[Financial Tool] SQLDatabase connection successful. Tables: {db.get_usable_table_names()}")
+        # Ensure the path is treated correctly (relative to project root or absolute)
+        # This assumes the db_path provided is correct relative to where the script runs
+        # Or it's an absolute path.
+        db_object = SQLDatabase.from_uri(f"sqlite:///{db_path}")
+        
+        # Basic check to see if connection is okay
+        tables = db_object.get_usable_table_names()
+        logger.info(f"[Financial Tool] SQLDatabase connection successful. Tables: {tables}")
 
-        db_metadata_string = _get_financial_db_metadata(conn, db)
-        conn.close()
-        logger.info("[Financial Tool] Generated DB Metadata Hints for LLM.")
+        # --- Fetch Metadata Dynamically --- 
+        db_metadata_hints = "" # Initialize empty string
+        try:
+            conn = sqlite3.connect(db_path)
+            db_metadata_hints = _get_financial_db_metadata(conn, db_object)
+            conn.close()
+            logger.info("[Financial Tool] Generated DB Metadata Hints for LLM.")
+        except Exception as meta_err:
+            logger.error(f"[Financial Tool] Error fetching dynamic metadata: {meta_err}", exc_info=True)
+            db_metadata_hints = " (Error fetching metadata hints - LLM should rely on schema only) "
 
-        sql_chain = SQLDatabaseChain.from_llm(llm, db, verbose=False, return_intermediate_steps=False)
+        # --- Create SQLDatabaseChain --- 
+        db_chain = SQLDatabaseChain.from_llm(llm, db_object, verbose=True)
         logger.info("[Financial Tool] SQLDatabaseChain created successfully.")
 
-        # --- Tool Execution Wrapper (Refactored) ---
+        # --- Wrapper function to run the chain --- 
         def _run_financial_sql_wrapper(query: str) -> Dict[str, str]:
-            """Wraps SQL execution for financial data: generates SQL, executes, formats answer."""
-            
-            # Define template as a regular string with distinct placeholders
-            sql_generation_prompt_template_base = """
-Given the FINANCIAL database schema and hints below, generate a SQL query to answer the user's question.
-**IMPORTANT INSTRUCTIONS**:
-1.  **ONLY** return the raw SQL query. Do NOT include explanations, markdown formatting, or anything else.
-2.  Use the **Full list of known tickers** provided in the hints to map user query names/IDs correctly.
-3.  Use the provided schema, hints, and examples below accurately.
-
-Schema and Hints:
-%%DB_METADATA%%
-
-**Examples (Financial DB):**
-
-Example 1 (Specific Stock Price):
-User Query: What was the closing price for MSFT on 2020-05-15?
-SQL Query: SELECT close FROM daily_stock_prices WHERE ticker = 'MSFT' AND date = '2020-05-15'
-
-Example 2 (Dividend Check):
-User Query: Did GOOG pay dividends in 2019?
-SQL Query: SELECT date, dividend_amount FROM dividends WHERE ticker = 'GOOG' AND date BETWEEN '2019-01-01' AND '2019-12-31' LIMIT 1
-
-Example 3 (Multiple Columns / Range):
-User Query: Show the high and low prices for AAPL between 2020-03-01 and 2020-03-05.
-SQL Query: SELECT date, high, low FROM daily_stock_prices WHERE ticker = 'AAPL' AND date BETWEEN '2020-03-01' AND '2020-03-05' ORDER BY date
-
-Example 4 (Quarterly Financials):
-User Query: What was the net income for MSFT reported around March 2020?
-SQL Query: SELECT report_date, net_income FROM quarterly_income_statement WHERE ticker = 'MSFT' AND report_date BETWEEN '2020-01-01' AND '2020-03-31' ORDER BY report_date DESC LIMIT 1
-
-Example 5 (Aggregation / Range):
-User Query: What was the highest closing price for AMZN in Q1 2020?
-SQL Query: SELECT MAX(close) FROM daily_stock_prices WHERE ticker = 'AMZN' AND date BETWEEN '2020-01-01' AND '2020-03-31'
-
-Example 6 (Comparison / Multiple Tickers):
-User Query: Compare the quarterly revenue reported by GOOG and MSFT around December 2019.
-SQL Query: SELECT ticker, report_date, total_revenue FROM quarterly_income_statement WHERE ticker IN ('GOOG', 'MSFT') AND report_date BETWEEN '2019-10-01' AND '2019-12-31' ORDER BY ticker, report_date
-
-Example 7 (Relative Date / Subquery):
-User Query: give me historical 1 week price data for aapl, it will use latest date for that
-SQL Query: SELECT date, close FROM daily_stock_prices WHERE ticker = 'AAPL' AND date >= (SELECT DATE(MAX(date), '-6 days') FROM daily_stock_prices WHERE ticker = 'AAPL') ORDER BY date
-
-**(End of Examples)**
-
-User Query: {query}
-
-SQL Query: """
-            
-            # Step 1: Replace metadata placeholder after escaping braces in the metadata itself
-            escaped_metadata = db_metadata_string.replace("{", "{{").replace("}", "}}")
-            prompt_with_metadata = sql_generation_prompt_template_base.replace("%%DB_METADATA%%", escaped_metadata)
-            
-            # DEBUG: Log the prompt just before formatting (keep for now)
-            logger.debug(f"[Financial Tool] Prompt before final format:\n{prompt_with_metadata}")
-            
-            # Step 2: Format with the actual query using .format()
-            sql_generation_prompt = prompt_with_metadata.format(query=query)
-
-            logger.info(f"[Financial Tool] Running query: {query}")
-
+            """
+            Wrapper to execute the SQLDatabaseChain for the financial DB.
+            Returns a dictionary {"result": ..., "error": ...}.
+            """
+            logger.info(f"[Financial Tool] Executing query: {query[:100]}...")
+            start_time = time.time()
+            result = ""
+            error = None
             try:
-                # 1. Generate SQL Query
-                sql_query_raw = llm.invoke(sql_generation_prompt).content
-                sql_query_cleaned = sql_query_raw.strip().removeprefix("```sql").removesuffix("```").strip()
-                
-                if not sql_query_cleaned or not sql_query_cleaned.upper().startswith(("SELECT", "WITH")):
-                    logger.error(f"[Financial Tool] LLM did not return a valid SQL query. Raw response: {sql_query_raw}")
-                    return {"status": "error", "result": "LLM failed to generate a valid SQL query."}
-
-                logger.info(f"[Financial Tool] Generated SQL (cleaned): {sql_query_cleaned}")
-
-                # 2. Execute SQL Query
-                chain_result = db.run(sql_query_cleaned)
-                logger.info(f"[Financial Tool] Raw execution result: {chain_result}")
-
-                # 3. Prepare Result for Final Answer Generation
-                processed_result = None
-                if isinstance(chain_result, (list, tuple)) and not chain_result:
-                    processed_result = None
-                elif isinstance(chain_result, str) and not chain_result.strip():
-                    processed_result = None
+                # Make sure the input is just the query string
+                chain_output = db_chain.invoke(query) 
+                # Handle potential dictionary output from invoke
+                if isinstance(chain_output, dict) and 'result' in chain_output:
+                    result = chain_output['result']
+                elif isinstance(chain_output, str): 
+                     result = chain_output
                 else:
-                    processed_result = chain_result
-
-                sql_result_for_prompt = "The SQL query returned no matching data." if processed_result is None else str(processed_result)
-                if processed_result is None:
-                    logger.warning(f"[Financial Tool] Query returned no data. Original query: {query}")
-
-                # 4. Generate Final Answer
-                answer_prompt = f"""Based on the SQL query '{sql_query_cleaned}' and its result:
-
-{sql_result_for_prompt}
-
-Please provide a concise, natural language answer to the original user query: '{query}'. State clearly whether the requested data was found or not based on the provided SQL result."""
-                final_answer = llm.invoke(answer_prompt).content
-                logger.info(f"[Financial Tool] Final Answer: {final_answer}")
-                
-                return {"status": "success", "result": final_answer}
-
-            except sqlite3.Error as db_err:
-                error_msg = f"Database Error: {type(db_err).__name__} - {str(db_err)}"
-                logger.error(f"[Financial Tool] Failed query '{query}'. {error_msg}") # Removed full traceback for brevity
-                return {"status": "error", "result": error_msg}
+                     result = str(chain_output) # Fallback 
+                     
+                # Basic check for empty or error-like results
+                if not result or "error" in result.lower():
+                     logger.warning(f"[Financial Tool] Chain returned potentially empty or error result: {result}")
+                     # Consider setting error based on content? For now, keep result.
+                     
+            except sqlite3.OperationalError as oe:
+                logger.error(f"[Financial Tool] SQL Operational Error: {oe}")
+                error = f"SQL Operational Error: {oe}"
             except Exception as e:
-                error_msg = f"Execution Error: {type(e).__name__} - {str(e)}"
-                logger.error(f"[Financial Tool] Failed unexpectedly for query '{query}'. {error_msg}") # Removed full traceback for brevity
-                return {"status": "error", "result": error_msg}
-        # --- End Wrapper ---
+                logger.error(f"[Financial Tool] Error during SQL chain execution: {e}", exc_info=True)
+                error = f"Error: {type(e).__name__}: {e}"
+            
+            end_time = time.time()
+            logger.info(f"[Financial Tool] Query execution time: {end_time - start_time:.2f}s")
+            
+            return {"result": result, "error": error}
+        
+        # --- Tool Description --- 
+        # Include dynamic metadata hints in the description
+        tool_description = ( "Queries the `financial_data.db` database containing structured financial market data. "
+                           "Use this for specific questions about **historical (2016-2020) daily stock prices** (OHLC), "
+                           "**historical quarterly financials** (income/balance sheet, limited dates), **dividends**, or **stock splits** "
+                           "for known public companies. {metadata_hints}Input is a natural language question about specific historical data points. "
+                           "Persona: SQL Database Expert (Historical Financial Data)." )
+        # Format hints safely
+        try:
+             formatted_description = tool_description.format(metadata_hints=db_metadata_hints)
+        except Exception as fmt_err:
+             logger.error(f"[Financial Tool] Error formatting description: {fmt_err}")
+             formatted_description = tool_description.format(metadata_hints="(Hints unavailable)")
 
-        tool_description = (
-            "Useful for querying the FINANCIAL database for stock prices (daily data 2016-2020), historical quarterly financials (income/balance sheet, limited recent dates), "
-            "dividends, stock splits, and company tickers. Input is a natural language question. "
-            "Output is a JSON object with 'status' ('success', 'no_data', 'error') and 'result' (answer string or error details). "
-            f"Key Tables: {', '.join(db.get_usable_table_names())}."
-        )
-
+        # --- Return the Langchain Tool --- 
         return Tool(
-            name="financial_sql_query_tool", # Renamed tool
-            description=tool_description,
-            func=_run_financial_sql_wrapper
+            name="financial_sql_query_tool",
+            func=_run_financial_sql_wrapper,
+            description=formatted_description
         )
 
     except Exception as e:
+        error_message_for_tool = f"Error setting up Financial SQL Tool: {type(e).__name__}: {e}" 
         logger.error(f"[Financial Tool] Failed setup: {e}\n{traceback.format_exc()}")
+        # Return a dummy tool that reports the error
         def _error_tool_wrapper(query: str) -> Dict[str, str]:
-             return {"status": "error", "result": f"Financial Tool Setup Error: {type(e).__name__}: {e}"}
+            return {"result": None, "error": error_message_for_tool}
         return Tool(
             name="financial_sql_query_tool_error",
-            description=f"Error setting up Financial SQL query tool: {e}. Returns structured error.",
+            description=f"Error setting up Financial SQL Tool: {e}. Returns error message.",
             func=_error_tool_wrapper
         )
 
+def _get_financial_db_metadata(db_conn, db_object) -> str:
+    """Fetches dynamic metadata (examples) for the financial DB prompt hint."""
+    hints = []
+    cursor = db_conn.cursor()
+    try:
+        # Example tickers from daily prices
+        cursor.execute("SELECT DISTINCT ticker FROM daily_stock_prices WHERE ticker IS NOT NULL ORDER BY RANDOM() LIMIT 3")
+        tickers = [row[0] for row in cursor.fetchall()]
+        if tickers:
+            hints.append(f"Example available tickers: {tickers}.")
 
-# NEW Tool for CCR Reporting DB
+        # Example date range from daily prices
+        cursor.execute("SELECT MIN(date), MAX(date) FROM daily_stock_prices")
+        min_date, max_date = cursor.fetchone()
+        if min_date and max_date:
+            hints.append(f"Stock price data covers range {min_date[:10]} to {max_date[:10]}.")
+        
+        # Check table existence before querying
+        table_names = db_object.get_usable_table_names()
+        if 'quarterly_income_statement' in table_names:
+            cursor.execute("SELECT COUNT(*) FROM quarterly_income_statement")
+            if cursor.fetchone()[0] > 0:
+                hints.append("Quarterly financials (income/balance sheet) available for some companies/dates.")
+    except Exception as e:
+        logger.warning(f"[Financial Tool] Error getting metadata hints: {e}")
+        return "(Metadata hints query failed)"
+    finally:
+        cursor.close()
+        
+    return "Some relevant examples: " + " ".join(hints) if hints else ""
+
+
 def create_ccr_sql_tool(db_path: str, llm: BaseChatModel) -> Tool:
     """
-    Creates a tool to query the CCR REPORTING database (counterparty risk).
-    Includes database metadata in the prompt and returns structured output.
-    Uses SQLDatabaseChain for direct query generation and execution.
-    DB targeted: ccr_reporting.db
+    Factory function to create the SQL query tool for the CCR reporting database.
+    Includes dynamic metadata hints and validation.
+    Now returns both SQL query and result.
     """
-    db_uri = f"sqlite:///{db_path}"
-    logger.info(f"[CCR Tool] Connecting to SQL Database: {db_uri}")
-
-    # --- Metadata Helper for CCR DB ---
-    def _get_ccr_db_metadata(db_conn, db_object) -> str:
-        """Queries CCR Reporting DB for metadata, reflecting the NEW schema (trades, securities, aggregated exposures)."""
-        metadata_parts = []
-        cursor = db_conn.cursor()
-        try:
-            # --- Basic Schema Info ---
-            metadata_parts.append("CCR Reporting Database Schema Overview (NEW STRUCTURE):")
-            usable_tables = db_object.get_usable_table_names()
-            table_info = db_object.get_table_info(usable_tables) # Gets table structures (columns, types)
-            metadata_parts.append(table_info)
-
-            # --- Business Term Definitions (Updated) ---
-            metadata_parts.append("\nKey Business Term Definitions:")
-            metadata_parts.append("- **Exposure Columns (`report_daily_exposures`)**: These represent AGGREGATED risk values per counterparty for a given day.")
-            metadata_parts.append("  - `net_mtm_exposure`: Net Mark-to-Market, aggregate value net of collateral.")
-            metadata_parts.append("  - `gross_exposure`: Aggregate exposure before netting/collateral.")
-            metadata_parts.append("  - `pfe_95_exposure`: Potential Future Exposure (95% conf), aggregate estimate.")
-            metadata_parts.append("  - `settlement_risk_exposure`: Aggregate settlement risk.")
-            metadata_parts.append("- **Collateral**: `collateral_value` in `report_daily_exposures` is aggregate collateral held. `collateral_agreement_id` in `report_counterparties` links to specific agreements (details not in DB).")
-            metadata_parts.append("- **Risk Type**: Used in `report_limits` and `report_limit_utilization` (e.g., 'Net MTM', 'Settlement Risk', 'Gross Exposure'). Links conceptually to aggregate exposure columns.")
-            metadata_parts.append("- **Asset Class**: Used in `report_limits` and `report_products` (e.g., 'FX', 'Equity', 'Rates', 'Securities Financing'). Limits are often set per asset class.")
-            metadata_parts.append("- **Limit Breach Status**: In `report_limit_utilization`. 'OK', 'Advisory Breach', 'Hard Breach'.")
-
-            # --- Key Table Hints (NEW SCHEMA) ---
-            metadata_parts.append("\nKey CCR Tables & Usage Hints (NEW SCHEMA):")
-            asset_classes = ['FX', 'Equity', 'Rates', 'Securities Financing'] # From query
-            risk_types = ['Net MTM', 'Settlement Risk', 'Gross Exposure'] # From query
-            sectors = ['Hedge Fund', 'Pension Fund', 'Bank', 'Sovereign Wealth Fund'] # From query
-            breach_statuses = ['OK', 'Advisory Breach', 'Hard Breach'] # Expected values
-
-            # Securities Table
-            if 'securities' in usable_tables:
-                 metadata_parts.append("- `securities`: Reference table for securities (e.g., stocks, bonds). PK: `security_ticker`.")
-
-            # Products Table
-            if 'report_products' in usable_tables:
-                 metadata_parts.append(f"- `report_products`: Reference table for product classifications. PK: `product_id`. Links products to `asset_class`. Example `asset_class`: {', '.join(asset_classes)}.")
-
-            # Counterparties Table
-            if 'report_counterparties' in usable_tables:
-                try:
-                    cursor.execute("SELECT counterparty_id, short_name, counterparty_legal_name FROM report_counterparties ORDER BY counterparty_id")
-                    all_counterparties = cursor.fetchall()
-                    if all_counterparties:
-                        cpty_list_str = ", ".join([f"({c[0]}, '{c[1]}', '{c[2]}')" for c in all_counterparties])
-                        metadata_parts.append(f"- `report_counterparties`: Counterparty details (region, rating, sector, collateral agreement). PK: `counterparty_id`. Example `sector`: {', '.join(sectors)}. **Full list (ID, Short, Legal): [{cpty_list_str}]**")
-                    else: metadata_parts.append("- `report_counterparties`: Counterparty details. PK: `counterparty_id`. (No counterparties found).")
-                except Exception as e:
-                     logger.warning(f"[CCR Tool] Could not fetch full counterparty list: {e}")
-                     metadata_parts.append("- `report_counterparties`: Counterparty details. PK: `counterparty_id`. Error fetching full list.")
-
-            # Trades Table
-            if 'trades' in usable_tables:
-                 metadata_parts.append("- `trades`: Core table linking counterparties, products, and optionally securities for each transaction. PK: `trade_id`. Contains `notional`, `currency`, `trade_date`.")
-
-            # Limits Table
-            if 'report_limits' in usable_tables:
-                 metadata_parts.append(f"- `report_limits`: Defines risk limits (`limit_amount`) per counterparty (`counterparty_id`), `risk_type`, and `asset_class`. PK: `limit_id`. Example `risk_type`: {', '.join(risk_types)}. Example `asset_class`: {', '.join(asset_classes)}.")
-
-            # Daily Exposures Table
-            if 'report_daily_exposures' in usable_tables:
-                try:
-                    cursor.execute("SELECT MIN(report_date), MAX(report_date) FROM report_daily_exposures")
-                    min_date, max_date = cursor.fetchone() or ('N/A', 'N/A')
-                    metadata_parts.append(f"- `report_daily_exposures`: **AGGREGATED** daily risk snapshot per counterparty. PK: `daily_exposure_id`. Columns include `net_mtm_exposure`, `gross_exposure`, `pfe_95_exposure`, `settlement_risk_exposure`, `collateral_value`. Unique per `report_date`, `counterparty_id`. Data available from {min_date} to {max_date}. Use 'YYYY-MM-DD'.")
-                except Exception as e:
-                     logger.warning(f"[CCR Tool] Could not fetch date range for report_daily_exposures: {e}")
-                     metadata_parts.append("- `report_daily_exposures`: **AGGREGATED** daily risk snapshot per counterparty. Use 'YYYY-MM-DD'.")
-
-            # Utilization Table
-            if 'report_limit_utilization' in usable_tables:
-                try:
-                    cursor.execute("SELECT MIN(report_date), MAX(report_date) FROM report_limit_utilization")
-                    min_date, max_date = cursor.fetchone() or ('N/A', 'N/A')
-                    metadata_parts.append(f"- `report_limit_utilization`: **AGGREGATED** daily limit utilization per counterparty and `risk_type`. PK: `limit_utilization_id`. Compares aggregate `exposure_amount` (from `report_daily_exposures`) against aggregate `limit_amount` (derived from `report_limits`), calculating `limit_utilization_percent` and `limit_breach_status`. Unique per `report_date`, `counterparty_id`, `risk_type`. Data available from {min_date} to {max_date}. Example `limit_breach_status`: {', '.join(breach_statuses)}.")
-                except Exception as e:
-                    logger.warning(f"[CCR Tool] Could not fetch date range for report_limit_utilization: {e}")
-                    metadata_parts.append("- `report_limit_utilization`: **AGGREGATED** daily limit utilization per counterparty and risk type.")
-
-
-            # --- Querying Tips (NEW SCHEMA) ---
-            metadata_parts.append("\nCCR Querying Tips (NEW SCHEMA):")
-            metadata_parts.append("- **Aggregate Exposures**: Query `report_daily_exposures` for overall risk figures (Net MTM, Gross, PFE, Settlement) for a counterparty on a specific `report_date`.")
-            metadata_parts.append("- **Aggregate Utilization**: Query `report_limit_utilization` for overall utilization against `risk_type` limits (Net MTM, Settlement Risk, Gross Exposure).")
-            metadata_parts.append("- **Limits by Asset Class**: Query `report_limits` to see specific limits set for a `counterparty_id`, `risk_type`, and `asset_class`.")
-            metadata_parts.append("- **Trade Details**: Query `trades` for individual transaction details (notional, date, involved parties/products/securities).")
-            metadata_parts.append("- **Joining**: Use `counterparty_id` to link most tables. Use `product_id` to link `trades` and `report_products`. Use `security_ticker` to link `trades` and `securities`.")
-            metadata_parts.append("- **Dates**: Filter relevant tables by `report_date` or `trade_date` (YYYY-MM-DD). Current sample data centers around 2025-04-25.")
-
-        except Exception as e:
-            logger.error(f"[CCR Tool] Error generating DB metadata: {e}")
-            metadata_parts.append("\nError: Could not dynamically generate full metadata hints for the new schema.")
-        finally:
-            cursor.close()
-
-        return "\n".join(metadata_parts)
-    # --- End Metadata Helper ---
-
+    logger.info(f"[CCR Tool] Connecting to SQL Database: {db_path}")
     try:
-        # Establish connections
+        db = SQLDatabase.from_uri(f"sqlite:///{db_path}")
         conn = sqlite3.connect(db_path)
-        db = SQLDatabase.from_uri(db_uri)
-        logger.info(f"[CCR Tool] SQLDatabase connection successful. Tables: {db.get_usable_table_names()}")
-
-        db_metadata_string = _get_ccr_db_metadata(conn, db)
+        db_metadata_hints = _get_ccr_db_metadata(conn, db)
         conn.close()
-        logger.info("[CCR Tool] Generated DB Metadata Hints for LLM.")
+        table_names = db.get_usable_table_names()
+        logger.info(f"[CCR Tool] SQLDatabase connection successful. Tables: {table_names}")
 
-        sql_chain = SQLDatabaseChain.from_llm(llm, db, verbose=False, return_intermediate_steps=False)
-        logger.info("[CCR Tool] SQLDatabaseChain created successfully.")
+        # --- Define Custom Prompt for SQL Generation --- 
+        # (Keep the same prompt that strictly asks for only SQL output)
+        SQL_PROMPT_TEMPLATE = """
+        Given an input question, create a syntactically correct {dialect} query to run.
+        Unless the user specifies in the question a specific number of examples to obtain, query for at most {top_k} results using the LIMIT clause as per {dialect}.
+        Never query for all columns from a table. You must query only the columns that are needed to answer the question.
+        Pay attention to use only the column names you can see in the tables below. Be careful to not query for columns that do not exist.
+        Also, pay attention to which table is implicitly referenced in the question.
+        
+        **IMPORTANT: You MUST generate ONLY the SQL query for the user's question.**
+        **Do NOT include any explanatory text, comments, or markdown formatting (like ```sql).**
+        **Output ONLY the raw SQL query itself.**
 
-        # --- Tool Execution Wrapper ---
-        def _run_ccr_sql_wrapper(query: str) -> Dict[str, str]:
-            """Wraps the SQL chain for CCR data (NEW SCHEMA), adds metadata, handles errors, returns structured output."""
-            # **MODIFIED Prompt for SQL Generation ONLY (NEW SCHEMA & EXAMPLES)**
-            sql_generation_prompt_template = f"""
-Given the database schema and hints below (reflecting the NEW schema with trades, aggregated exposures, etc.), generate a SQL query to answer the user's question.
-**IMPORTANT INSTRUCTIONS**:
-1.  **ONLY** return the raw SQL query. Do NOT include explanations, markdown formatting, or anything else.
-2.  Refer to the **Full list of known counterparties** provided in the hints to map user query names/IDs correctly.
-3.  If the user query refers to a counterparty ambiguously (e.g., 'Alpha') and multiple counterparties in the known list might match, generate SQL to retrieve data for **ALL potentially matching** counterparties (e.g., using `counterparty_id IN (...)` or `LIKE`).
-4.  Pay attention to the **AGGREGATED** nature of `report_daily_exposures` and `report_limit_utilization`. Trade-level detail is in `trades`.
-5.  Use the provided schema, hints, definitions, and examples below accurately.
+        Only use the following tables:
+        {table_info}
 
-Schema and Hints:
-{db_metadata_string}
-
-**Examples (NEW SCHEMA):**
-
-Example 1 (Security Lookup):
-User Query: What sector is MSFT in?
-SQL Query: SELECT issuer_sector FROM securities WHERE security_ticker = 'MSFT'
-
-Example 2 (Filtering Trades):
-User Query: List trades for Alpha Hedge Fund.
-SQL Query: SELECT trade_id, product_id, security_ticker, trade_date, notional, currency FROM trades WHERE counterparty_id = 101 ORDER BY trade_date
-
-Example 3 (Joining Trades/Products):
-User Query: Show FX trades for Gamma European Bank.
-SQL Query: SELECT t.trade_id, p.product_name, t.trade_date, t.notional, t.currency FROM trades t JOIN report_products p ON t.product_id = p.product_id WHERE t.counterparty_id = 103 AND p.asset_class = 'FX'
-
-Example 4 (Querying Aggregate Exposure):
-User Query: What is the Net MTM exposure for Beta Pension Plan on 2025-04-25?
-SQL Query: SELECT net_mtm_exposure, currency FROM report_daily_exposures WHERE counterparty_id = 102 AND report_date = '2025-04-25'
-
-Example 5 (Querying Limits):
-User Query: What is the Equity Net MTM limit for AlphaHF?
-SQL Query: SELECT limit_amount, limit_currency FROM report_limits WHERE counterparty_id = 101 AND risk_type = 'Net MTM' AND asset_class = 'Equity'
-
-Example 6 (Querying Aggregate Utilization):
-User Query: Show Net MTM utilization status for GammaEB today.
-SQL Query: SELECT limit_utilization_percent, limit_breach_status FROM report_limit_utilization WHERE counterparty_id = 103 AND risk_type = 'Net MTM' AND report_date = '2025-04-25'
-
-Example 7 (Complex Join / Trade Detail):
-User Query: What counterparties traded AAPL options?
-SQL Query: SELECT DISTINCT rc.short_name FROM trades t JOIN report_counterparties rc ON t.counterparty_id = rc.counterparty_id JOIN report_products p ON t.product_id = p.product_id WHERE t.security_ticker = 'AAPL' AND p.product_category = 'Equity Option'
-
-**(End of Examples)**
-
-User Query: {query}
-
-SQL Query: """
-            sql_generation_prompt = sql_generation_prompt_template.format(query=query)
-            
-            logger.info(f"[CCR Tool] Running query: {query}")
-
-            try:
-                # Generate the SQL query first
-                sql_query_raw = llm.invoke(sql_generation_prompt).content
-                
-                # Strip potential minor leading/trailing whitespace or artifacts (like ```sql)
-                # Although the prompt requests ONLY SQL, add minor cleanup just in case.
-                sql_query_cleaned = sql_query_raw.strip().removeprefix("```sql").removesuffix("```").strip()
-                
-                # Check if the cleaned query is empty or looks like not-SQL (basic check)
-                if not sql_query_cleaned or not sql_query_cleaned.upper().startswith("SELECT"):
-                    logger.error(f"[CCR Tool] LLM did not return a valid SQL query. Raw response: {sql_query_raw}")
-                    return {"status": "error", "result": "LLM failed to generate a valid SQL query."}
-
-                logger.info(f"[CCR Tool] Generated SQL (cleaned): {sql_query_cleaned}")
-
-                # Now execute the cleaned SQL query using the database connection
-                chain_result = db.run(sql_query_cleaned)
-
-                logger.info(f"[CCR Tool] Raw execution result: {chain_result}")
-
-                # Check for no data / empty result and prepare context for final LLM
-                processed_result = None
-                if isinstance(chain_result, (list, tuple)) and not chain_result:
-                    processed_result = None # Explicitly None for empty list/tuple
-                elif isinstance(chain_result, str) and not chain_result.strip():
-                    processed_result = None # Explicitly None for empty string
-                else:
-                    processed_result = chain_result # Keep the result if it seems to contain data
-
-                # Prepare the input string for the final answer LLM
-                if processed_result is None:
-                    sql_result_for_prompt = "The SQL query returned no matching data."
-                    logger.warning(f"[CCR Tool] Query returned no data. Original query: {query}")
-                else:
-                    sql_result_for_prompt = str(processed_result) # Use string representation of the result
-
-                # Always call the final LLM to formulate the response based on the SQL outcome
-                answer_prompt = f"""Based on the SQL query '{sql_query_cleaned}' and its result:
-
-{sql_result_for_prompt}
-
-Please provide a concise, natural language answer to the original user query: '{query}'. State clearly whether the requested data was found or not based on the provided SQL result.""" # Prompt emphasizes clarity on data presence
-                final_answer = llm.invoke(answer_prompt).content
-                logger.info(f"[CCR Tool] Final Answer: {final_answer}")
-
-                # Return success, as the process completed; the answer conveys data presence/absence
-                return {"status": "success", "result": final_answer}
-
-            except sqlite3.Error as db_err:
-                error_msg = f"Database Error: {type(db_err).__name__} - {str(db_err)}"
-                logger.error(f"[CCR Tool] Failed query '{query}'. {error_msg}\n{traceback.format_exc()}")
-                return {"status": "error", "result": error_msg}
-            except Exception as e:
-                error_msg = f"Execution Error: {type(e).__name__} - {str(e)}"
-                logger.error(f"[CCR Tool] Failed unexpectedly for query '{query}'. {error_msg}\n{traceback.format_exc()}")
-                return {"status": "error", "result": error_msg}
-        # --- End Wrapper ---
-
-        tool_description = (
-            "Useful for querying the Counterparty Credit Risk (CCR) REPORTING database for daily limit utilization, "
-            "breach status, calculated exposures (e.g., Net MTM, Gross Exposure, PFE), and current limits. "
-            "Input is a natural language question about counterparties (use counterparty_id if known) and report dates (YYYY-MM-DD). "
-            "Output is a JSON object with 'status' ('success', 'no_data', 'error') and 'result' (answer string or error details). "
-            f"Key Tables: {', '.join(db.get_usable_table_names())}."
+        Question: {input}
+        SQLQuery: 
+        """
+        
+        CUSTOM_SQL_PROMPT = PromptTemplate(
+             input_variables=["input", "table_info", "dialect", "top_k"],
+             template=SQL_PROMPT_TEMPLATE
         )
+        # ------------------------------------------------
 
+        # --- Removed SQLDatabaseChain --- 
+        # We will call LLM and db.run() directly in the wrapper
+
+        # --- Wrapper function to generate SQL, execute, and return both --- 
+        def _run_ccr_sql_wrapper(query: str) -> Dict[str, Any]: # Return type changed
+            logger.info(f"[CCR Tool] Processing query: {query[:100]}...")
+            start_time = time.time()
+            generated_sql = ""
+            sql_result = None
+            error = None
+            
+            try:
+                # 1. Prepare prompt input
+                table_info = db.get_table_info(table_names=table_names)
+                prompt_input = {
+                    "input": query,
+                    "table_info": table_info,
+                    "dialect": db.dialect,
+                    "top_k": 10 # Default limit, adjust if needed
+                }
+                
+                # 2. Generate SQL using LLM with the custom prompt
+                logger.info("[CCR Tool] Generating SQL query...")
+                sql_generation_prompt = CUSTOM_SQL_PROMPT.format(**prompt_input)
+                # Assuming llm.invoke returns AIMessage with 'content' attribute
+                llm_response = llm.invoke(sql_generation_prompt) 
+                generated_sql = llm_response.content.strip() # Extract content and strip whitespace
+                
+                # Basic check if generated content looks like SQL
+                if not generated_sql or not (generated_sql.upper().startswith("SELECT") or generated_sql.upper().startswith("WITH")):
+                    raise ValueError(f"LLM did not return a valid SQL query starting with SELECT/WITH. Output: {generated_sql[:200]}")
+                    
+                logger.info(f"[CCR Tool] Generated SQL: {generated_sql[:200]}...")
+
+                # 3. Execute the generated SQL
+                logger.info("[CCR Tool] Executing generated SQL query...")
+                sql_result = db.run(generated_sql) # Execute the SQL
+                logger.info(f"[CCR Tool] SQL execution successful. Result: {str(sql_result)[:200]}...")
+
+            except sqlite3.OperationalError as oe:
+                logger.error(f"[CCR Tool] SQL Operational Error: {oe} running SQL: {generated_sql}")
+                error = f"SQL Operational Error: {oe}"
+            except Exception as e:
+                logger.error(f"[CCR Tool] Error during SQL tool execution: {e}", exc_info=True)
+                error = f"Error: {type(e).__name__}: {e}"
+            
+            end_time = time.time()
+            logger.info(f"[CCR Tool] Query processing time: {end_time - start_time:.2f}s")
+
+            # Return dictionary with query, result, and error
+            return {
+                "sql_query": generated_sql,
+                "sql_result": sql_result, 
+                "error": error
+            }
+
+        # --- Tool Description (remains largely the same) --- 
+        tool_description = ( # Description might need slight update if output format changes significantly for agent
+                           "Queries the `ccr_reporting.db` database containing structured Counterparty Credit Risk (CCR) reporting data (sample data). "
+                           "Use this for specific questions about **counterparty details (ratings, country)**, **daily risk exposures** (Net MTM, Gross, PFE, Settlement), "
+                           "**risk limits**, **limit utilization**, **breach status**, or individual **trade details** related to known counterparties. "
+                           "{metadata_hints}Input is a natural language question about specific CCR metrics or counterparty/trade details within this database. "
+                           "Persona: SQL Database Expert (CCR Reporting Data). Output includes the generated SQL and the result."
+                            ) # Added note about output
+        # Format hints safely
+        try:
+             formatted_description = tool_description.format(metadata_hints=db_metadata_hints)
+        except Exception as fmt_err:
+             logger.error(f"[CCR Tool] Error formatting description: {fmt_err}")
+             formatted_description = tool_description.format(metadata_hints="(Hints unavailable)")
+
+        # --- Return the Langchain Tool --- 
         return Tool(
-            name="ccr_sql_query_tool", # New tool name
-            description=tool_description,
-            func=_run_ccr_sql_wrapper
+            name="ccr_sql_query_tool",
+            func=_run_ccr_sql_wrapper,
+            description=formatted_description
         )
 
     except Exception as e:
+         # ... (existing error handling for tool setup failure remains the same) ...
+        error_message_for_tool = f"Error setting up CCR SQL Tool: {type(e).__name__}: {e}"
         logger.error(f"[CCR Tool] Failed setup: {e}\n{traceback.format_exc()}")
         def _error_tool_wrapper(query: str) -> Dict[str, str]:
-             return {"status": "error", "result": f"CCR Tool Setup Error: {type(e).__name__}: {e}"}
+            return {"sql_query": None, "sql_result": None, "error": error_message_for_tool}
         return Tool(
             name="ccr_sql_query_tool_error",
-            description=f"Error setting up CCR SQL query tool: {e}. Returns structured error.",
+            description=f"Error setting up CCR SQL Tool: {e}. Returns error message.",
             func=_error_tool_wrapper
         )
 
+def _get_ccr_db_metadata(db_conn, db_object) -> str:
+    """Fetches dynamic metadata (examples) for the CCR DB prompt hint."""
+    hints = []
+    cursor = db_conn.cursor()
+    table_names = db_object.get_usable_table_names()
+    try:
+        # Example counterparties
+        if 'report_counterparties' in table_names:
+            cursor.execute("SELECT DISTINCT short_name FROM report_counterparties WHERE short_name IS NOT NULL ORDER BY RANDOM() LIMIT 3")
+            counterparties = [row[0] for row in cursor.fetchall()]
+            if counterparties:
+                hints.append(f"Example counterparties: {counterparties}.")
+
+        # Example exposure date range
+        if 'report_daily_exposures' in table_names:
+            cursor.execute("SELECT MIN(report_date), MAX(report_date) FROM report_daily_exposures")
+            min_date, max_date = cursor.fetchone()
+            if min_date and max_date:
+                hints.append(f"Exposure data covers range {min_date} to {max_date}.")
+
+        # Example product types
+        if 'products' in table_names:
+            cursor.execute("SELECT DISTINCT product_type FROM products WHERE product_type IS NOT NULL ORDER BY RANDOM() LIMIT 3")
+            product_types = [row[0] for row in cursor.fetchall()]
+            if product_types:
+                hints.append(f"Example product types: {product_types}.")
+                
+    except Exception as e:
+        logger.warning(f"[CCR Tool] Error getting metadata hints: {e}")
+        return "(Metadata hints query failed)"
+    finally:
+        cursor.close()
+        
+    return "Some relevant examples: " + " ".join(hints) if hints else ""
+
+
+# --- Validation Functions --- 
+
 def validate_department_response(response: Dict) -> Tuple[bool, List[str]]:
-    """Validate department tool response."""
+    """Validate the response from the department tool."""
     errors = []
-    required_fields = ["thought", "answer", "category", "confidence"]
-    
-    for field in required_fields:
-        if field not in response:
-            errors.append(f"Missing required field: {field}")
-    
+    if not isinstance(response, dict):
+        return False, ["Response is not a dictionary."]
+    if "thought" not in response or not isinstance(response["thought"], str):
+        errors.append("Missing or invalid field: thought (string)")
+    if "answer" not in response or not isinstance(response["answer"], str):
+        errors.append("Missing or invalid field: answer (string)")
+    # Confidence is optional? Assume optional if not present.
     if "confidence" in response and not isinstance(response["confidence"], (int, float)):
-        errors.append("Confidence must be a number")
-    
-    return len(errors) == 0, errors
+        errors.append("Invalid field type: confidence (number)")
+    return not errors, errors
 
 def validate_category_response(response: Dict) -> Tuple[bool, List[str]]:
-    """Validate category tool response (simplified JSON)."""
+    """Validate the response from the category tool."""
     errors = []
-    # Require 'thought' and 'answer' field now
-    required_fields = ["thought", "answer"]
-    
-    for field in required_fields:
-        if field not in response:
-            errors.append(f"Missing required field: {field}")
-    
-    # Check for internal error reported by the tool
+    if not isinstance(response, dict):
+        return False, ["Response is not a dictionary."]
+    # Allow for error key instead of thought/answer on failure
     if "error" in response and response["error"]:
-         logger.warning(f"Category tool reported an internal error: {response['error']}")
-         # Still counts as a valid *structure* for the validator
-         pass
-
-    return len(errors) == 0, errors
+         return True, [] # Tool reported its own error, consider valid structure
+    if "thought" not in response or not isinstance(response["thought"], str):
+        errors.append("Missing or invalid field: thought (string)")
+    if "answer" not in response or not isinstance(response["answer"], str):
+        errors.append("Missing or invalid field: answer (string)")
+    if "confidence" in response and not isinstance(response["confidence"], (int, float)):
+        errors.append("Invalid field type: confidence (number)")
+    # Allow for missing 'document_ids' if confidence is low or answer indicates no docs
+    if "document_ids" in response and not isinstance(response["document_ids"], list):
+         errors.append("Invalid field type: document_ids (list)")
+    elif "document_ids" in response:
+         if not all(isinstance(item, str) for item in response["document_ids"]):
+              errors.append("Invalid item type in document_ids list (must be strings)")
+              
+    return not errors, errors
 
 def validate_metadata_lookup_response(response: Dict) -> Tuple[bool, List[str]]:
-    """Validate metadata lookup tool response."""
+    """Validate the structured response from the metadata lookup tool."""
     errors = []
-    # Check for the new required keys
-    required_fields = ["category_name", "transcript_names"] # Changed to plural
-    # Optional error field
-
     if not isinstance(response, dict):
         return False, ["Response is not a dictionary."]
 
-    # Validate presence of required fields
-    for field in required_fields:
+    # If the tool reported an error, consider the structure valid
+    if "error" in response and response["error"]:
+        return True, []
+
+    # Check required keys and types
+    required_fields = {
+        "relevant_category_id": (str, type(None)), # Allow string or None
+        "relevant_doc_ids": list,
+        "category_summary_available": bool,
+        "doc_ids_with_summaries": list
+    }
+
+    for field, expected_type in required_fields.items():
         if field not in response:
             errors.append(f"Missing required field: {field}")
+        elif not isinstance(response[field], expected_type):
+            # --- Add detailed logging here ---
+            if field == "relevant_category_id":
+                 logger.debug(f"VALIDATION_DEBUG: Checking field \'{field}\'. Value: \'{response[field]}\', Type: {type(response[field])}")
+                 # Add fallback coercion for relevant_category_id
+                 if response[field] == "null" or response[field] == "" or response[field] is False:
+                     logger.warning(f"Validation: Coercing invalid relevant_category_id value '{response[field]}' to None")
+                     response[field] = None
+                     continue  # Skip to next field after coercion
+            # --- End added logging ---
+            
+            # Special handling for bool which might be parsed as int 0/1
+            if expected_type == bool and isinstance(response[field], int) and response[field] in [0, 1]:
+                response[field] = bool(response[field]) # Coerce
+            else:
+                 errors.append(f"Invalid type for field {field}: Expected {expected_type}, got {type(response[field])}")
 
-    # Validate type of category_name (string or None)
-    if "category_name" in response and not (isinstance(response["category_name"], str) or response["category_name"] is None):
-        errors.append(f"Field 'category_name' must be a string or None, but got {type(response['category_name'])}.")
+    # Check list item types
+    if "relevant_doc_ids" in response and isinstance(response["relevant_doc_ids"], list):
+        if not all(isinstance(item, str) for item in response["relevant_doc_ids"]):
+            errors.append("Invalid item type in relevant_doc_ids list (must be strings)")
+    if "doc_ids_with_summaries" in response and isinstance(response["doc_ids_with_summaries"], list):
+        if not all(isinstance(item, str) for item in response["doc_ids_with_summaries"]):
+            errors.append("Invalid item type in doc_ids_with_summaries list (must be strings)")
 
-    # Validate type of transcript_names (must be a list of strings)
-    if "transcript_names" in response:
-        if not isinstance(response["transcript_names"], list):
-            errors.append(f"Field 'transcript_names' must be a list, but got {type(response['transcript_names'])}.")
-        else:
-            # Check each item in the list is a string
-            for item in response["transcript_names"]:
-                if not isinstance(item, str):
-                    errors.append(f"Items in 'transcript_names' list must be strings, but found {type(item)}.")
-                    break # Only report first type error in list
-
-    # Check for internal error reported by the tool itself
-    if response.get("error"):
-         logger.warning(f"Metadata lookup tool reported an internal error: {response['error']}")
-         pass # Still counts as a valid *structure* for the validator
-
-    return len(errors) == 0, errors
+    return not errors, errors
 
 def validate_transcript_analysis_response(response: Dict) -> Tuple[bool, List[str]]:
-    """Validate transcript analysis tool response."""
+    """Validate the response from the transcript analysis tool."""
     errors = []
-    required_fields = ["answer"] # Expecting at least an answer field
+    if not isinstance(response, dict):
+        return False, ["Response is not a dictionary."]
 
-    for field in required_fields:
-        if field not in response:
-            errors.append(f"Missing required field: {field}")
+    # Check if either 'answer' (string) or 'error' (string/None) is present
+    has_answer = "answer" in response and isinstance(response["answer"], (str, type(None)))
+    has_error = "error" in response and isinstance(response["error"], (str, type(None)))
 
-    # Check for internal error reported by the tool itself
-    if "error" in response and response["error"]:
-         logger.warning(f"Transcript Analysis tool reported an internal error: {response['error']}")
-         # Still counts as a valid *structure* for the validator, the agent needs to see the error message
-         pass
+    if not (has_answer or has_error):
+         errors.append("Response must contain either 'answer' (string/None) or 'error' (string/None)")
+    elif has_answer and has_error and response["error"] is not None:
+         # Technically possible, but might indicate confusion
+         logger.warning("Transcript analysis response contains both non-None answer and error.")
+         # We'll allow it for now.
 
-    return len(errors) == 0, errors 
+    # Optional: Validate metadata if it exists
+    if "metadata" in response and not isinstance(response["metadata"], dict):
+        errors.append("Invalid field type: metadata (dict)")
 
-# NEW: Function to create the Transcript Search/Summary Agent as a Tool
+    return not errors, errors
+
+
+# --- Transcript Agent Tool Factory --- 
+
 def create_transcript_agent_tool(llm: BaseChatModel, api_key: Optional[str] = None) -> Tool:
     """
-    Creates a Tool that encapsulates a dedicated agent for searching and summarizing transcripts.
-    This agent uses category, metadata, and transcript analysis tools internally.
+    Creates a specialized agent (as a Tool) that focuses on transcript 
+    search and analysis using its own set of internal tools.
     """
-    logger.info("[Transcript Agent Tool] Initializing internal tools...")
+    logger.info("[Transcript Agent Tool] Initializing...")
     try:
-        # 1. Initialize internal tools required by the transcript agent
-        category_tool_func = create_category_tool()
-        metadata_lookup_tool_func = create_metadata_lookup_tool()
-        transcript_analysis_tool_func = create_transcript_analysis_tool(api_key)
+        # 1. Create instances of the internal tools for the Transcript Agent
+        category_tool_instance = create_category_tool()
+        metadata_lookup_tool_instance = create_metadata_lookup_tool_wrapper()
+        document_analysis_tool_instance = create_document_analysis_tool_wrapper(api_key)
 
-        # Convert internal functions to LangChain Tools with appropriate descriptions *for this agent*
         internal_tools = [
             Tool(
                 name="category_tool",
-                func=category_tool_func,
-                description="Identifies relevant document categories (like earnings calls) for a specific company/ticker based on user query context. Input is 'ticker, query'."
+                func=category_tool_instance,
+                description="Analyzes summaries for a specific category (company ticker) to answer high-level queries or determine if deeper analysis is needed. Input format: 'query, category=<CATEGORY_ID>' (e.g., 'Summarize performance, category=AAPL')"
             ),
              Tool(
                 name="metadata_lookup_tool",
-                func=metadata_lookup_tool_func,
-                description="Finds relevant document transcript filenames based on company ticker, category, and date/quarter context from the query. Input is 'ticker, category, date/quarter context'."
+                func=metadata_lookup_tool_instance,
+                description="Finds relevant document IDs and checks for available summaries (category synthesis, individual document) based on query terms (e.g., ticker, dates, keywords). Use this AFTER category_tool if more specific document details are required. Input is the natural language query. Output is a structured JSON detailing findings (e.g., {\'relevant_doc_ids\': [...], \'category_summary_available\': true, ...})."
             ),
              Tool(
-                name="transcript_analysis_tool",
-                func=transcript_analysis_tool_func,
-                description="Analyzes the content of specific document transcripts (provided by filename) to answer a user query. Input MUST be in the format 'query, document_name=<filename>'. Provide only ONE document_name per call."
+                name="document_content_analysis_tool",
+                func=document_analysis_tool_instance,
+                description="Analyzes the content of a specific document (identified by document_id) to answer a detailed query. Prioritizes using pre-computed summaries if available, otherwise uses the full transcript. Input MUST be in the format: '<query>, document_id=<uuid>' (e.g., 'What was revenue growth?, document_id=uuid-goes-here'). Use this AFTER metadata_lookup_tool identifies a relevant document ID."
             )
         ]
         logger.info(f"[Transcript Agent Tool] Internal tools created: {[t.name for t in internal_tools]}")
 
-        # 2. Define the prompt for the Transcript Agent (with context + formatting guidance + analyst persona)
-        TRANSCRIPT_AGENT_PROMPT = """
-You are an expert **Equity Research Analyst** specializing in analyzing company earnings call transcripts.
-Your primary goal is to answer the user's query by producing a **concise analytical summary/report** based *only* on the information found within the relevant documents (primarily earnings call transcripts).
-(Note: Your focus is deep document analysis; you do not perform high-level query classification or use external data.)
+        # 2. Define the prompt for the Transcript Agent (Prioritizing category_tool)
+        # ** UPDATED PROMPT **
+        TRANSCRIPT_AGENT_PROMPT = """You are an expert **Equity Research Analyst** specializing in analyzing company earnings calls and related documents.
+Your primary goal is to answer the user's query by producing a **concise analytical summary/report** based *only* on the information found within the relevant documents or their pre-computed summaries. 
+**(Note: Transcript data covers roughly 2016 to 2020).**
 
-You have access to the following tools to help you find and analyze relevant documents:
+You have access to the following tools:
 
 {tools}
 
 Use the following format:
 
 Question: the input question you must answer
-Thought: As an analyst, I need to break down the question. First, identify the company/timeframe. Then, find the relevant transcript(s) using the tools. Finally, analyze the transcript(s) content to address the specific aspects of the query.
+Thought: As an analyst, I need to break down the question and gather information step-by-step.
+1. First, identify the company categories (tickers like AAPL, MSFT, NVDA) mentioned in the Question.
+2. For **each** identified category, call the `category_tool` to get a high-level summary. The Action Input MUST be in the format: '<Brief query about category>, category=<CATEGORY_ID>' (e.g., 'Summarize recent growth, category=AAPL').
+3. Review the results (`Observation`) from all `category_tool` calls. Is this high-level information sufficient to answer the original Question?
+4. **If** the high-level summaries are insufficient OR the Question asks for specific examples/details from specific quarters, THEN I need to find specific documents. Use the `metadata_lookup_tool` with the original Question (or relevant parts) to find relevant document IDs for the necessary categories and time periods.
+5. Carefully examine the JSON output from `metadata_lookup_tool`. Pay close attention to the `relevant_doc_ids` list.
+6. **CRITICAL:** If the `metadata_lookup_tool` was used and the `relevant_doc_ids` list in its JSON output is empty, it means no specific relevant documents were found. Synthesize your Final Answer using the information gathered so far (from `category_tool`), explaining that more specific details could not be found.
+7. If `relevant_doc_ids` is NOT empty, proceed to analyze the specific documents. For **each** `document_id` in the `relevant_doc_ids` list: Call the `document_content_analysis_tool`. The Action Input MUST be in the format: '<Original Query or relevant sub-query>, document_id=<the specific document_id>'. Analyze the 'Observation' (the analysis result) returned by each call.
+8. After gathering information from `category_tool` and potentially `document_content_analysis_tool`, synthesize the key findings from all relevant 'Observation' steps into your Final Answer.
+
 Action: the action to take, must be one of [{tool_names}]
 Action Input: the input to the action. **CRITICAL: Ensure the input strictly matches the format specified in the tool's description.** Examples:
-    - For 'category_tool': `ticker, query` (e.g., `AAPL, summarize performance`)
-    - For 'metadata_lookup_tool': `ticker, category, date/quarter context` (e.g., `MSFT, earnings call, Q4 2019`)
-    - For 'transcript_analysis_tool': `query, document_name=<filename>` (e.g., `What was revenue growth?, document_name=2018-Jan-30-MSFT.txt`) --- **Provide only ONE filename per call.**
-Observation: the result of the action (e.g., list of filenames, summary of one transcript excerpt)
-... (this Thought/Action/Action Input/Observation can repeat N times as you gather information from different tools/transcripts)
-Thought: I have gathered and analyzed the necessary information from the transcript(s) using the tools. Now I will synthesize these findings into a concise analyst report answering the original question.
+    - For 'category_tool': `query, category=<ticker>` (e.g., `summarize performance, category=AAPL`) 
+    - For 'metadata_lookup_tool': `natural language query` (e.g., `MSFT earnings call Q4 2019`)
+    - For 'document_content_analysis_tool': `query, document_id=<uuid>` (e.g., `What was revenue growth?, document_id=123e4567-e89b-12d3-a456-426614174000`) --- **Provide only ONE document_id per call.**
+Observation: the result of the action
+... (this Thought/Action/Action Input/Observation can repeat N times as you gather information)
+Thought: I have gathered sufficient information from the category summaries and/or specific document analyses. Now I will synthesize these findings into a concise analyst report answering the original question. OR If insufficient information was found, I will state that clearly.
 Final Answer: **[Analyst Report Format]**
-Synthesize the key findings from the 'Observation' steps above into a clear, concise report that directly answers the user's original 'Question'. Structure the report logically (e.g., by quarter, by theme). Focus on the aspects relevant to an equity analyst (e.g., financial performance, guidance, strategy shifts, management commentary). Cite transcript filenames where appropriate. If the documents do not contain sufficient information to answer fully, state that clearly.
+Synthesize the key findings from the 'Observation' steps above into a clear, concise report that directly answers the user's original 'Question'. Structure the report logically. Focus on the aspects relevant to an equity analyst. Explicitly state if the answer relies only on category summaries or includes details from specific documents. **If insufficient information was found (e.g., no relevant category summaries, no specific documents found by metadata lookup), state that clearly and explain that the query could not be fully answered based on the available data (mentioning the 2016-2020 date range if relevant).**
 
 Begin!
 
@@ -880,54 +757,40 @@ Question: {input}
 Thought:{agent_scratchpad}
 """
 
-        prompt = PromptTemplate.from_template(TRANSCRIPT_AGENT_PROMPT)
-        logger.debug("[Transcript Agent Tool] Prompt template created.")
-
-        # 3. Create the internal Agent specific for transcripts
-        # Using ReAct agent again for this sub-agent
-        transcript_react_agent = create_react_agent(llm, internal_tools, prompt)
-        logger.debug("[Transcript Agent Tool] Internal ReAct agent created.")
-
-        # 4. Create the AgentExecutor for the internal agent
-        # Note: Add error handling? Maybe use the main agent's handler? For now, default.
-        transcript_agent_executor = AgentExecutor(
-            agent=transcript_react_agent,
-            tools=internal_tools,
-            verbose=True, # Make sub-agent verbose for debugging
-            max_iterations=10, # Allow more steps for document search/analysis
-            handle_parsing_errors="Check your output and make sure it conforms to the expected format!", # Simple handler
-        )
-        logger.info("[Transcript Agent Tool] Internal AgentExecutor created.")
-
-        # Wrapper function to adapt input for invoke
-        def _transcript_agent_wrapper(query_string: str) -> str:
-            try:
-                # Invoke the sub-agent executor with the input in the expected dict format
-                result = transcript_agent_executor.invoke({"input": query_string})
-                # Extract the final output string
-                return result.get("output", "Transcript agent did not return a final answer.")
-            except Exception as sub_agent_error:
-                logger.error(f"[Transcript Agent Tool] Error during sub-agent execution: {sub_agent_error}", exc_info=True)
-                return f"Error executing transcript analysis: {type(sub_agent_error).__name__}: {sub_agent_error}"
-
-        # 5. Wrap the AgentExecutor in a Tool for the Master Agent
-        transcript_agent_tool = Tool(
-            name="transcript_search_summary_tool",
-            func=_transcript_agent_wrapper, # Use the wrapper function
-            description=("Answers questions about company performance, statements, strategies, or specific events by searching and analyzing historical earnings call transcripts and related documents. Use this for queries requiring textual analysis of documents, NOT for direct structured financial data (use financial_sql_query_tool) or counterparty risk data (use ccr_sql_query_tool). Input should be the original user query.")
-        )
-        logger.info("[Transcript Agent Tool] Tool object created successfully.")
-        return transcript_agent_tool
+        # 3. Create the Transcript Agent tool
+        try:
+            # Create the react agent
+            react_agent = create_react_agent(
+                llm,
+                internal_tools,
+                prompt=PromptTemplate.from_template(TRANSCRIPT_AGENT_PROMPT)
+            )
+            
+            # Create an AgentExecutor
+            agent_executor = AgentExecutor(
+                agent=react_agent,
+                tools=internal_tools,
+                handle_parsing_errors="Check your output and make sure it conforms to the expected format!"
+            )
+            
+            # Return the Tool with a lambda that invokes the agent_executor
+            return Tool(
+                name="transcript_agent",
+                func=lambda q: agent_executor.invoke({"input": q}).get("output", "No response from transcript agent"),
+                description="A specialized agent for analyzing company earnings calls and related documents."
+            )
+        except Exception as e:
+            logger.error(f"Error creating transcript agent: {e}")
+            return Tool(
+                name="transcript_agent_error",
+                func=lambda q: {"error": f"Error creating transcript agent: {e}"},
+                description="Error creating transcript agent."
+            )
 
     except Exception as e:
-        error_message_for_tool = f"Error setting up Transcript Agent Tool: {type(e).__name__}: {e}" # Capture error message here
-        logger.error(f"[Transcript Agent Tool] Failed setup: {e}\n{traceback.format_exc()}")
-        # Return a dummy tool that reports the error
-        def _error_tool_wrapper(query: str) -> str: # Return string for compatibility
-             # Use the captured error message
-             return error_message_for_tool
+        logger.error(f"Error creating transcript agent: {e}")
         return Tool(
-            name="transcript_search_summary_tool_error",
-            description=f"Error setting up Transcript Agent Tool: {e}. Returns error message.", # Keep original description using e
-            func=_error_tool_wrapper
+            name="transcript_agent_error",
+            func=lambda q: {"error": f"Error creating transcript agent: {e}"},
+            description="Error creating transcript agent."
         ) 

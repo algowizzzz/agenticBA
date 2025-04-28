@@ -1,0 +1,9 @@
+{
+  "status": "error",
+  "result": "Agent execution failed with error: 'RunnableSequence' object is not callable",
+  "error": "Agent execution failed: 'RunnableSequence' object is not callable",
+  "evidence": [],
+  "confidence": 0.0,
+  "tool_sequence": [],
+  "category_identified": null
+}

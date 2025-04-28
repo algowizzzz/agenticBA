@@ -158,55 +158,41 @@ def get_summary_config():
     return {}
 
 def sanitize_json_response(response: str) -> str:
+    """Extracts a JSON object string from a potentially larger string (e.g., markdown code block).
+       Handles standard JSON escape sequences via json.loads.
+    Args:
+        response (str): The raw string response from the LLM.
+    Returns:
+        str: The extracted JSON string.
+    Raises:
+        ValueError: If a valid JSON object string cannot be extracted or parsed.
     """
-    Clean up the LLM response to ensure it's valid JSON.
-    Handles markdown fences and attempts to fix common control characters within strings.
-    """
-    logger.debug(f"Sanitizing JSON input (first 100 chars): {repr(response[:100])}")
-    
-    # Remove markdown fences first
-    text = re.sub(r'^```json\n?', '', response.strip())
-    text = re.sub(r'\n?```$', '', text.strip())
-    text = text.strip()
+    logger.debug(f"Attempting to sanitize JSON input (first 100 chars): {repr(response[:100])}")
 
-    # Find the first { and last }
-    start_index = text.find('{')
-    end_index = text.rfind('}')
+    # Find the first '{' and the last '}'
+    start_brace = response.find('{')
+    end_brace = response.rfind('}')
 
-    if start_index == -1 or end_index == -1:
-        logger.warning(f"No JSON object structure found in response: {text[:100]}...")
-        raise ValueError(f"Response does not contain a JSON object: {text[:100]}") 
+    if start_brace == -1 or end_brace == -1 or end_brace < start_brace:
+        logger.error(f"Could not find valid JSON start/end braces in response: {response[:200]}...")
+        raise ValueError("Could not extract JSON object from response string.")
 
-    # Extract the potential JSON block
-    json_str = text[start_index : end_index + 1]
+    # Extract the potential JSON substring
+    json_str = response[start_brace : end_brace + 1]
+    logger.debug(f"Extracted potential JSON string: {repr(json_str[:100])}...")
 
-    # Attempt to fix common errors: unescaped newlines, tabs, etc. within the string values
-    # Note: This is still heuristic and might fail on complex nested strings or edge cases.
+    # Attempt to parse the extracted string to validate it
     try:
-        # Replace literal newlines, tabs, carriage returns NOT preceded by a backslash
-        # Use negative lookbehind assertion (?<!\) to avoid double-escaping
-        # Important: Process backslashes FIRST to avoid breaking other escapes
-        fixed_json_str = json_str.replace('\\', '\\\\') # Escape existing backslashes
-        fixed_json_str = fixed_json_str.replace('\"', '\\"') # Escape existing escaped quotes
-        
-        # Now replace literal control chars with their escaped versions
-        fixed_json_str = fixed_json_str.replace('\n', '\\n')
-        fixed_json_str = fixed_json_str.replace('\r', '\\r')
-        fixed_json_str = fixed_json_str.replace('\t', '\\t')
-        
-        # Attempt to parse the fixed string
-        json.loads(fixed_json_str)
-        logger.debug(f"JSON parsed successfully after basic sanitization.")
-        logger.debug(f"Sanitized JSON output (first 100 chars): {repr(fixed_json_str[:100])}")
-        return fixed_json_str
-        
+        parsed = json.loads(json_str)
+        # Optional: re-serialize to ensure consistent formatting, though json_str should be fine
+        # return json.dumps(parsed)
+        logger.info("Successfully validated extracted JSON string.")
+        return json_str
     except json.JSONDecodeError as e:
-        logger.error(f"JSON parsing failed even after basic sanitization: {e}")
-        logger.debug(f"Problematic JSON string after basic sanitization (first 200 chars): {repr(fixed_json_str[:200])}")
-        # Raise the error if basic fixing doesn't work
-        raise ValueError(f"Failed to parse sanitized JSON. Error: {e}. String: {json_str[:200]}...")
+        logger.error(f"Failed to parse extracted JSON string: {e}. String: {json_str[:200]}...")
+        raise ValueError(f"Extracted string is not valid JSON: {e}. String: {json_str[:200]}...")
     except Exception as e_other:
-        logger.error(f"Unexpected error during sanitization: {e_other}")
+        logger.error(f"Unexpected error during JSON validation: {e_other}")
         raise # Re-raise unexpected errors
 
 # Category tool configuration
