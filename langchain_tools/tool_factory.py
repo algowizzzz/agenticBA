@@ -49,12 +49,12 @@ def create_llm(
 ) -> ChatAnthropic:
     """
     Create an instance of the ChatAnthropic LLM.
-    
+
     Args:
         api_key (str, optional): Anthropic API key. If None, uses environment variable.
         model (str): Model name to use
         temperature (float): Temperature for generation
-        
+
     Returns:
         ChatAnthropic: Configured LLM instance
     """
@@ -62,7 +62,7 @@ def create_llm(
     api_key = api_key or os.getenv("ANTHROPIC_API_KEY")
     if not api_key:
         raise ValueError("Anthropic API key not provided and not found in environment")
-    
+
     logger.info(f"Initializing ChatAnthropic with model: {model}")
     return ChatAnthropic(
         model=model, temperature=temperature, anthropic_api_key=api_key
@@ -78,7 +78,7 @@ def create_tool_with_validation(
         try:
             # Execute the tool
             result = tool_fn(*args, **kwargs)
-            
+
             # Validate the response
             is_valid, errors = response_validator(result)
             if not is_valid:
@@ -110,18 +110,19 @@ def create_tool_with_validation(
                             "original_output": result,  # Include original bad output if helpful
                         },
                     }
-            
-                        # Add metadata if not present (success case)
-                        if "metadata" not in result:
-                        result["metadata"] = {}
-                        result["metadata"].update({
-                "tool_name": tool_name,
-                "timestamp": datetime.utcnow().isoformat(),
-                "success": True,
-            })
-            
+            # Add metadata if not present (success case)
+            if "metadata" not in result:
+                result["metadata"] = {}
+            result["metadata"].update(
+                {
+                    "tool_name": tool_name,
+                    "timestamp": datetime.utcnow().isoformat(),
+                    "success": True,
+                }
+            )
+
             return result
-            
+
         except Exception as e:
             logger.error(f"Error executing {tool_name}: {e}", exc_info=True)
             # Return error in a structure compatible with expected output
@@ -134,7 +135,7 @@ def create_tool_with_validation(
                     "success": False,
                 },
             }
-    
+
     # Copy original function attributes if possible
     validated_tool.__name__ = getattr(tool_fn, "__name__", tool_name)
     validated_tool.__doc__ = getattr(
@@ -146,20 +147,20 @@ def create_tool_with_validation(
 def create_department_tool(api_key: Optional[str] = None) -> Callable:
     """Create department tool with validation."""
     from langchain_tools.tool1_department import department_summary_tool
-    
+
     def department_tool(query: str) -> Dict[str, Any]:
         """
         Analyze department-level summaries to determine if a query can be answered
         at the high level or identify which specific category (company) to explore next.
-        
+
         Args:
             query (str): User query about companies or trends
-            
+
         Returns:
             Dict[str, Any]: Analysis results
         """
         return department_summary_tool(query, api_key)
-    
+
     return create_tool_with_validation(
         department_tool, "department_tool", validate_department_response
     )
@@ -168,7 +169,7 @@ def create_department_tool(api_key: Optional[str] = None) -> Callable:
 def create_category_tool() -> Callable:
     """Create category tool with validation."""
     from .tool2_category import category_summary_tool
-    
+
     # Modify to accept single string input and parse
     def category_tool_wrapper(input_str: str) -> Dict[str, Any]:
         """
@@ -196,7 +197,7 @@ def create_category_tool() -> Callable:
 
         # Call the underlying tool
         return category_summary_tool(query, category_id)
-    
+
     return create_tool_with_validation(
         category_tool_wrapper, "category_tool", validate_category_response
     )
@@ -209,7 +210,7 @@ def create_metadata_lookup_tool_wrapper(api_key: Optional[str] = None) -> Callab
 
     # Define a simple wrapper (needed for validation layer)
     def metadata_lookup_wrapper(query_term: str) -> Dict[str, Any]:
-         return metadata_lookup_fn(query_term)
+        return metadata_lookup_fn(query_term)
 
     return create_tool_with_validation(
         metadata_lookup_wrapper,
@@ -314,7 +315,7 @@ def create_financial_news_search_tool() -> Tool:
         "preferentially construct the search term using the 'site:' operator. For example: 'query site:reuters.com OR site:marketwatch.com OR site:finance.yahoo.com OR site:seekingalpha.com'. "
         "Use this for information **not** found in the historical financial database or the CCR reporting database."
     )
-    
+
     return Tool(
         name="financial_news_search",
         func=_run_web_search,  # Use the generic web search wrapper
@@ -864,12 +865,12 @@ def create_transcript_agent_tool(
                 func=category_tool_instance,
                 description="Analyzes summaries for a specific category (company ticker) to answer high-level queries or determine if deeper analysis is needed. Input format: 'query, category=<CATEGORY_ID>' (e.g., 'Summarize performance, category=AAPL')",
             ),
-             Tool(
+            Tool(
                 name="metadata_lookup_tool",
                 func=metadata_lookup_tool_instance,
                 description="Finds relevant document IDs and checks for available summaries (category synthesis, individual document) based on query terms (e.g., ticker, dates, keywords). Use this AFTER category_tool if more specific document details are required. Input is the natural language query. Output is a structured JSON detailing findings (e.g., {'relevant_doc_ids': [...], 'category_summary_available': true, ...}).",
             ),
-             Tool(
+            Tool(
                 name="document_content_analysis_tool",
                 func=document_analysis_tool_instance,
                 description="Analyzes the content of a specific document (identified by document_id) to answer a detailed query. Prioritizes using pre-computed summaries if available, otherwise uses the full transcript. Input MUST be in the format: '<query>, document_id=<uuid>' (e.g., 'What was revenue growth?, document_id=uuid-goes-here'). Use this AFTER metadata_lookup_tool identifies a relevant document ID.",
@@ -931,7 +932,7 @@ Thought:{agent_scratchpad}
             # Create an AgentExecutor
             agent_executor = AgentExecutor(
                 agent=react_agent,
-            tools=internal_tools,
+                tools=internal_tools,
                 handle_parsing_errors="Check your output and make sure it conforms to the expected format!",
             )
 
@@ -957,4 +958,4 @@ Thought:{agent_scratchpad}
             name="transcript_agent_error",
             func=lambda q: {"error": f"Error creating transcript agent: {e}"},
             description="Error creating transcript agent.",
-        ) 
+        )
