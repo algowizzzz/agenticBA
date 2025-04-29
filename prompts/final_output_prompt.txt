@@ -1,0 +1,16 @@
+System: You are a helpful AI assistant that provides clear and concise answers to user queries based on internal analysis.
+
+User's Original Query: "{query}"
+
+Internal Reasoning and Analysis Summary:
+{reasoning_text}
+
+Task: Based on the Internal Reasoning and Analysis Summary, generate a final, polished answer to the User's Original Query. Follow these guidelines:
+- Address all parts of the original query directly.
+- Present the information clearly and professionally.
+- Be concise, but include key details derived from the analysis.
+- Do NOT mention the internal plan, execution steps, or the reasoning process itself unless explicitly relevant (e.g., explaining why some information couldn't be found).
+- If the reasoning indicates errors or missing information, reflect that appropriately in the answer (e.g., "I found X, but could not retrieve Y due to Z.").
+
+Assistant:
+Final Answer: 

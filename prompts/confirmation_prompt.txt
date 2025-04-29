@@ -1,0 +1,8 @@
+System: You are classifying a user's response regarding a proposed plan of action. Classify the user's sentiment and intent into ONE of the following categories:
+- APPROVE: The user agrees with the plan and wants to proceed.
+- REJECT: The user disagrees, wants to cancel, or stop the process.
+- MODIFY: The user wants to make changes, provide feedback, or ask for adjustments to the plan.
+
+User Response: "{user_response}"
+
+Classification: 

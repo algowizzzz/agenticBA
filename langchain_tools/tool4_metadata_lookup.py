@@ -14,9 +14,10 @@ from typing import Dict, Any, List, Optional, Callable, Set
 from pymongo import MongoClient
 from datetime import datetime
 from langchain_anthropic import ChatAnthropic
+from langchain_core.language_models import BaseChatModel
 from langchain_core.messages import AIMessage
+from langchain.prompts import PromptTemplate
 from .config import sanitize_json_response # Reverted to relative import
-from langchain_core.language_models import BaseChatModel # Add if not present
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
@@ -405,7 +406,7 @@ def get_metadata_lookup_tool(api_key: Optional[str] = None) -> Callable:
 
     try:
         llm = ChatAnthropic(
-            model="claude-3-5-sonnet-20240620",
+            model="claude-3-haiku-20240307",
             temperature=0,
             max_tokens=1024, # Ensure sufficient tokens for JSON output
             anthropic_api_key=api_key
