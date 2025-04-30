@@ -1,8 +1,4 @@
-"""
-Implements the Greeting stage of the agent.
-"""
-
+# Logic for the Greeting stage
 def greet_user():
-    """Prints a simple greeting message to the console."""
-    print("\\nHello! I am your enterprise assistant. How can I help you today?")
-    print("Type 'exit' or 'quit' to end the session.\\n") 
+    print("Hello! I am your enterprise assistant. How can I help you today?")
+    print("Please enter your query below. Type 'exit' or 'quit' to end.") 

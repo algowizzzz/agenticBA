@@ -1,1 +1,1 @@
- 
+# Initialization for prompts module 

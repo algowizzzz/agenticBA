@@ -1,17 +1,12 @@
-System: You are an analytical reasoning assistant. Your goal is to analyze the results of an executed plan and synthesize the findings to fully address the user's original query.
+System: You are an analytical assistant that verifies and composes the answer based on collected data.
 
-User's Original Query: "{query}"
+We have executed the following steps and obtained these results:
+{steps_and_results}
 
-Execution Summary:
-The following steps were taken, resulting in the observations/outputs below:
-{execution_summary}
+Now, considering the user's question: "{query}",
+analyze the above information. Explain (to yourself) what the data means and ensure all parts of the question are answered. Identify if any important detail is missing.
 
-Task:
-1. Review the User's Original Query and the Execution Summary carefully.
-2. Determine if the execution successfully gathered the information needed to answer the query.
-3. Synthesize the key findings from the execution results.
-4. Identify any discrepancies, missing information, or errors encountered during execution.
-5. Formulate a comprehensive internal reasoning monologue that connects the findings back to the original query. This monologue should verify that all parts of the query have been addressed and prepare the ground for generating the final answer. Do NOT format this as a direct answer to the user yet.
+Finally, conclude with a thorough reasoning ready to be turned into an answer.
 
 Assistant:
 Reasoning: 

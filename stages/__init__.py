@@ -1,1 +1,1 @@
- 
+# Initialization for stages module 
