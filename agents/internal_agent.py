@@ -245,7 +245,6 @@ def run_agent_session():
             # 3. Execution Stage
             # Pass original_query to execution context if needed by naive parser
             # TODO: Refine how query context is passed if parser improves
-            # Need to pass original_query to execute_plan for the naive parser fallback
             execution_summary, success = execution.execute_plan(confirmed_plan, tools_map, llm, db_paths, anthropic_api_key)
             print("\n--- Execution Summary --- ")
             print(execution_summary)
