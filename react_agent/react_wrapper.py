@@ -55,6 +55,11 @@ class ReactAgentWrapper:
         Returns:
             The agent's response
         """
+        # Ensure tools_map is populated
+        if not self.tools_map:
+             logger.error("[ReAct] Tools map is empty during run. Initialization might have failed.")
+             return "ERROR: Agent tools are not configured correctly."
+             
         # Initialize the system prompt with conversation history
         system_prompt = self._create_system_prompt(query)
         
@@ -74,6 +79,7 @@ class ReactAgentWrapper:
             response = self.llm.invoke(messages)
             response_text = response.content
             react_trace.append(response_text)
+            logger.debug(f"[ReAct] LLM Response: {response_text}") # Add debug logging
             
             # Check if we've reached a final answer
             if "Final Answer:" in response_text:
@@ -95,10 +101,13 @@ class ReactAgentWrapper:
                 action_text = response_text.split("Action:")[1].split("\n")[0].strip()
                 
                 # Extract tool name and parameters
-                tool_match = re.match(r"(\w+)\((.+)\)", action_text)
+                tool_match = re.match(r"(\\w+)\\((.*)\\)", action_text, re.DOTALL) # Use DOTALL to handle multiline inputs
                 if tool_match:
-                    tool_name = tool_match.group(1)
-                    tool_input = tool_match.group(2).strip()
+                    tool_name = tool_match.group(1).strip()
+                    # Handle potential quotes around the input, common with LLM outputs
+                    tool_input = tool_match.group(2).strip().strip('\'"') 
+                    
+                    logger.info(f"[ReAct] Attempting Action: {tool_name}({tool_input[:100]}...)") # Log parsed action
                     
                     # Execute the tool
                     observation = self._execute_tool(tool_name, tool_input)
@@ -107,6 +116,21 @@ class ReactAgentWrapper:
                     messages.append({"role": "assistant", "content": response_text})
                     messages.append({"role": "user", "content": observation})
                     react_trace.append(observation)
+                else:
+                    # If action parsing fails, provide feedback to the LLM
+                    logger.warning(f"[ReAct] Could not parse Action: {action_text}")
+                    observation = f"Observation: Invalid Action format. Expected 'tool_name(parameters)', got '{action_text}'. Please check your syntax."
+                    messages.append({"role": "assistant", "content": response_text})
+                    messages.append({"role": "user", "content": observation})
+                    react_trace.append(observation)
+            else:
+                 # If no action found, treat it as needing more thought or maybe a final answer was intended but poorly formatted
+                 logger.warning(f"[ReAct] No 'Action:' found in response: {response_text}")
+                 # We might just append the assistant's response and let it try again, 
+                 # or provide specific feedback if it seems stuck.
+                 # For now, let's assume it's part of the thought process and needs another cycle.
+                 messages.append({"role": "assistant", "content": response_text}) 
+                 # Optionally add a user message like: messages.append({"role": "user", "content": "Observation: Please provide an Action or Final Answer."})
         
         # If we reach here, we've hit max iterations without a final answer
         logger.warning(f"[ReAct] Reached maximum iterations ({self.max_iterations}) without final answer")
@@ -145,48 +169,80 @@ Begin working on: {query}
 """
     
     def _format_tools_description(self) -> str:
-        """Format the tools description for the system prompt."""
+        """Format the tools description for the system prompt using individual tools."""
+        # Descriptions adapted from agents/internal_agent.py
+        # Make sure the parameter format "(parameter: type)" is clear for the LLM.
         tools_desc = [
-            "enterprise_agent: A powerful tool for retrieving and analyzing financial data. Use this for specific data queries about companies, stocks, credit ratings, etc. Parameters: (query: str)",
-            "conversation_handler: Used to respond to general questions, provide explanations, and handle follow-ups without using external tools. Parameters: (query: str)",
-            "clarification_request: Used to ask the user for clarification when the query is ambiguous or more information is needed. Parameters: (question: str)"
+            "FinancialSQL(query: str): Query the internal financial database with SQL. Use for financial metrics, e.g. revenue, profit for specific historical periods (2016-2020). Input must be a natural language question about the specific data needed.",
+            "CCRSQL(query: str): Query the CCR database for customer credit risk records. Use for credit/risk info, exposures, limits, ratings. Input must be a natural language question about specific CCR data.",
+            "FinancialNewsSearch(query: str): Search recent financial news articles or current market info using keywords or company name. Use for finding recent news or information not in historical databases.",
+            "EarningsCallSummary(query: str): Retrieve and summarize earnings call transcripts (historical, ~2016-2020) for a given company to understand qualitative performance, strategy, and management commentary. Input must be a natural language query specifying the company and desired information.",
+            "DirectAnswer(instruction: str): Use ONLY when no other tools are needed and the LLM can answer directly without external data. For general knowledge questions, writing emails, explaining concepts, etc. Input must be a clear instruction describing what the LLM should respond with.",
+            "conversation_handler(query: str): Use to respond to general conversational input (greetings, thanks), provide explanations about capabilities, or handle follow-ups that don't require data tools. Input is the user's conversational text.",
+            "clarification_request(question: str): Use to ask the user for clarification when the query is ambiguous or more information is needed to use other tools effectively. Input is the question to ask the user."
         ]
         return "\n".join(tools_desc)
     
     def _execute_tool(self, tool_name: str, tool_input: str) -> str:
-        """Execute a tool and return the observation."""
+        """Execute a tool by looking up its function in the tools_map and return the observation."""
         logger.info(f"[ReAct] Executing tool: {tool_name} with input: {tool_input[:100]}...")
         
-        try:
-            if tool_name == "enterprise_agent":
-                # Call the full Enterprise Internal Agent pipeline
-                result = self._execute_enterprise_agent(tool_input)
-                return f"Observation: {result}"
-            
-            elif tool_name == "conversation_handler":
-                # Direct conversation handling through the LLM
-                result = self._handle_conversation(tool_input)
-                return f"Observation: {result}"
-            
-            elif tool_name == "clarification_request":
-                # This would typically prompt the user, but for now just return what would be asked
-                return f"Observation: The user would be asked: '{tool_input}'. For this simulation, assume they have not yet responded."
-            
-            else:
-                return f"Observation: Unknown tool '{tool_name}'. Available tools are: enterprise_agent, conversation_handler, clarification_request"
+        # Retrieve the tool function from the map
+        tool_function = self.tools_map.get(tool_name)
         
+        if not tool_function:
+            available_tools = ", ".join(self.tools_map.keys())
+            logger.warning(f"[ReAct] Unknown tool '{tool_name}'. Available: {available_tools}")
+            return f"Observation: Unknown tool '{tool_name}'. Available tools are: {available_tools}"
+
+        try:
+            # Call the specific tool function with necessary arguments
+            # We need to determine which arguments each tool function requires.
+            # Based on internal_agent.py and common patterns:
+            if tool_name == "FinancialSQL":
+                result = tool_function(query=tool_input, llm=self.llm, db_path=self.db_paths.get("financial"))
+            elif tool_name == "CCRSQL":
+                result = tool_function(query=tool_input, llm=self.llm, db_path=self.db_paths.get("ccr"))
+            elif tool_name == "FinancialNewsSearch":
+                result = tool_function(query=tool_input) # Assumes it doesn't need llm, db_path, api_key
+            elif tool_name == "EarningsCallSummary":
+                 # Handle potential parsing issues if input isn't just the query string
+                parsed_input = tool_input # Assume simple string for now
+                # Example if tool expects dict: try: parsed_input = json.loads(tool_input) catch...
+                result = tool_function(query=parsed_input, llm=self.llm, api_key=self.api_key)
+            elif tool_name == "DirectAnswer":
+                result = tool_function(query=tool_input) # The original lambda expects 'query'
+            elif tool_name == "conversation_handler":
+                # This still uses the internal placeholder method
+                result = self._handle_conversation(tool_input) 
+            elif tool_name == "clarification_request":
+                 # This still uses the internal placeholder method
+                 return f"Observation: The user would be asked: '{tool_input}'. For this simulation, assume they have not yet responded."
+            else:
+                 # Should not be reached if tool_function lookup succeeded, but as a safeguard:
+                 logger.error(f"[ReAct] Tool '{tool_name}' found in map but not handled in execution logic.")
+                 return f"Observation: Tool '{tool_name}' execution logic is not implemented."
+
+            # Ensure result is a string for the observation
+            observation_content = str(result)
+            logger.info(f"[ReAct] Tool '{tool_name}' executed successfully. Result: {observation_content[:200]}...") # Log success and snippet
+            return f"Observation: {observation_content}"
+
         except Exception as e:
-            logger.error(f"[ReAct] Error executing tool '{tool_name}': {e}", exc_info=True)
+            logger.error(f"[ReAct] Error executing tool '{tool_name}' with input '{tool_input[:100]}...': {e}", exc_info=True)
             return f"Observation: Error executing {tool_name}: {str(e)}"
     
-    def _execute_enterprise_agent(self, query: str) -> str:
-        """Execute the full Enterprise Internal Agent pipeline."""
-        # This would call into the existing agent pipeline
-        # For now, this is a placeholder
-        return "Enterprise Agent result would appear here"
-    
     def _handle_conversation(self, query: str) -> str:
-        """Handle conversational queries directly through the LLM."""
-        # This would handle general conversation without external tools
-        # For now, this is a placeholder
-        return "Direct conversation response would appear here"
+        """Placeholder for handling conversational queries directly through the LLM if needed, 
+           or could just return a standard conversational acknowledgement."""
+        # Option 1: Simple acknowledgement
+        # return f"Acknowledged: {query}" 
+        # Option 2: Pass to LLM (might be redundant if DirectAnswer covers this)
+        # messages = [{"role": "system", "content": "You are a helpful assistant."}, {"role": "user", "content": query}]
+        # response = self.llm.invoke(messages)
+        # return response.content
+        # Option 3: Use DirectAnswer's logic implicitly
+        logger.info(f"[ReAct] Handling conversation directly for: {query}")
+        # For now, let's just indicate it was handled conversationally.
+        # A more sophisticated approach might involve invoking the LLM or using DirectAnswer logic.
+        return f"Handled conversationally: '{query}'"

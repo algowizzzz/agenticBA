@@ -4,7 +4,6 @@ import logging
 import sys
 import re  # Added for regex pattern matching
 from dotenv import load_dotenv
-import asyncio
 from langchain_core.runnables import RunnableConfig
 from langchain.callbacks.base import BaseCallbackHandler # For potential callback usage if needed
 
@@ -179,8 +178,9 @@ def handle_disconnect():
 
 @socketio.on('chat_message')
 def handle_chat_message(data):
-    """Handle incoming chat messages from the client."""
+    """Handle incoming chat messages from the client. Using synchronized eventlet-compatible approach."""
     # --- Start Enhanced Logging ---
+    logger.info(f"*** CHAT_MESSAGE EVENT RECEIVED: {request.sid} ***")
     logger.info(f"*** chat_message event received for SID: {request.sid} ***")
     if isinstance(data, dict):
         query = data.get('message', '')
@@ -203,67 +203,36 @@ def handle_chat_message(data):
 
     logger.info(f"Received query from {request.sid}: '{query}'")
     
-    # Mock response for testing - Commented out to use real agent
-    """
-    logger.info(f"Sending mock response for testing")
-    
-    # First emit thinking state
+    # Using the actual agent - simplified execution flow without nested functions
+    # First emit thinking state to show the user we're processing their query
     emit('thinking', {'status': 'thinking'}, room=request.sid)
     
-    # Emit thought step
-    emit('thought', {'content': 'I need to analyze this question and formulate a response.'}, room=request.sid)
-    
-    # Emit action step
-    emit('action', {'tool': 'search', 'content': 'Searching for information related to the query.'}, room=request.sid)
-    
-    # Emit observation step
-    emit('observation', {'content': 'Found relevant information to answer the question.'}, room=request.sid)
-    
-    # Final response
-    emit('agent_response', {'content': f'This is a test response to your query: "{query}"', 'sender': 'agent'}, room=request.sid)
-    """
-    
-    # Using the actual agent
-    # Run the agent in a separate thread to not block the event loop
-    def run_agent_task():
+    # Define a simpler agent execution function for eventlet
+    def execute_agent_query():
         try:
-            logger.info(f"Starting agent execution for query: '{query}'")
+            # Use the synchronous invoke method
+            result = agent_instance.agent_executor.invoke(
+                {"input": query},
+                config={"configurable": {"session_id": request.sid}}
+            )
             
-            # First emit thinking state to show the user we're processing their query
-            socketio.emit('thinking', {'status': 'thinking'}, room=request.sid)
+            # Extract the final answer
+            final_answer = result.get('output', 'No response generated.')
             
-            # Use Eventlet's spawn to run the agent
-            def agent_task():
-                try:
-                    # For now, use the synchronous invoke method
-                    result = agent_instance.agent_executor.invoke(
-                        {"input": query},
-                        config={"configurable": {"session_id": request.sid}}
-                    )
-                    
-                    # Extract the final answer
-                    final_answer = result.get('output', 'No response generated.')
-                    
-                    # Emit the final answer
-                    logger.info(f"Agent execution completed. Final Answer for {request.sid}: '{final_answer}'")
-                    socketio.emit('agent_response', {'content': final_answer, 'sender': 'agent'}, room=request.sid)
-                    
-                except Exception as e:
-                    error_message = f"Error during agent execution: {e}"
-                    logger.exception(f"Error processing query for {request.sid}: {e}")
-                    socketio.emit('agent_error', {'error': error_message}, room=request.sid)
-            
-            # Spawn the agent task
-            eventlet.spawn(agent_task)
+            # Emit the final answer
+            logger.info(f"Agent execution completed. Final Answer for {request.sid}: '{final_answer}'")
+            socketio.emit('agent_response', {'content': final_answer, 'sender': 'agent'}, room=request.sid)
             
         except Exception as e:
-            error_message = f"Error starting agent task: {e}"
-            logger.exception(f"Error setting up agent task for {request.sid}: {e}")
+            error_message = f"Error during agent execution: {e}"
+            logger.exception(f"Error processing query for {request.sid}: {e}")
             socketio.emit('agent_error', {'error': error_message}, room=request.sid)
     
-    # Start the agent task
-    run_agent_task()
+    # Use eventlet's spawn directly (no nested functions)
+    eventlet.spawn(execute_agent_query)
+    logger.info(f"Spawned agent task for {request.sid}")
     
+    # Non-blocking return from the event handler
     logger.info(f"Finished handling chat_message for {request.sid}")
 
 # --- Routes for health check ---
