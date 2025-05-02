@@ -4,7 +4,7 @@ import time
 import sqlite3
 from typing import Dict, Any
 
-from langchain.sql_database import SQLDatabase
+from langchain_community.utilities import SQLDatabase
 from langchain_core.language_models import BaseChatModel
 from langchain_core.prompts import PromptTemplate
 
