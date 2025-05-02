@@ -38,3 +38,9 @@ data/processed/
 .vscode/
 *.swp
 *.swo
+
+# MongoDB backups (commented to allow inclusion with this PR)
+# earnings_backup/
+# earnings_transcripts_backup.tar.gz
+# *.bson
+# *.tar.gz
