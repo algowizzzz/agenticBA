@@ -27,7 +27,7 @@ logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s - [%(levelname)s] - %(name)s - %(message)s",
     handlers=[
-        logging.FileHandler("sec_filings/bmo_sec_extractor.log"),
+        logging.FileHandler("bmo_sec_extractor.log"),
         logging.StreamHandler()
     ]
 )
