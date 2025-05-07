@@ -92,6 +92,26 @@ class BasicAgent:
 
     def _add_thinking_step(self, step: str) -> None:
         """Add a simplified thinking step to track agent reasoning."""
+
+    def _format_conversation_history(self, max_turns=3):
+        """Format recent conversation history for inclusion in prompts."""
+        if not self.memory:
+            return ""
+            
+        # Get last few turns, limited by max_turns
+        recent_memory = self.memory[-max_turns:]
+        
+        formatted_history = "Recent conversation history:\n"
+        for i, (user_query, assistant_response) in enumerate(recent_memory):
+            # Truncate very long responses
+            if len(assistant_response) > 500:
+                assistant_response = assistant_response[:500] + "..."
+                
+            formatted_history += f"User {i+1}: {user_query}\n"
+            formatted_history += f"Assistant {i+1}: {assistant_response}\n\n"
+            
+        return formatted_history
+        
         logger.info(f"[Thinking] {step}")
         self.thinking_steps.append(step)
 
@@ -173,25 +193,77 @@ The "pass" field should be true for both PASSED and MODIFIED decisions, and fals
         """Generates a plan outlining which tool(s) are needed."""
         logger.info("[Planner] Generating plan for multiple tools...")
         
-        # Define descriptions for all available tools
+        # --- Define NEW Detailed Tool Descriptions ---
+        # Descriptions now include data source, scope, and input hints.
         tool_descriptions = (
-            "- FinancialSQL(query: str): Use for specific historical financial metrics from the financial DB (e.g., revenue, profit for 2016-2020). Input: natural language question.\n"
-            "- CCRSQL(query: str): Use for specific counterparty credit risk data (e.g., exposures, limits, ratings) from the CCR DB. Input: natural language question.\n"
-            "- FinancialNewsSearch(query: str): Use for recent financial news, market sentiment, or live stock prices not in historical DBs. Input: search query keywords.\n"
-            "- EarningsCallSummary(query: str): Use for qualitative information or summaries from historical earnings call transcripts (e.g., strategy, management commentary for specific company/quarter). Input: natural language question."
+            "*   EarningsCallSummary: Finds and analyzes specific company earnings call transcripts (focusing on AAPL, AMD, AMZN, ASML, CSCO, GOOGL, INTC, MSFT, MU, NVDA) for periods roughly 2016-2020 stored in a MongoDB database. Use for qualitative insights: management commentary, strategy discussion, product mentions, Q&A details. Input should specify the company (e.g., 'MSFT') and the desired period (e.g., 'Q1 2017', 'annual 2017'). For comparisons across companies or periods, call this tool separately for each.\n"
+            "*   FinancialSQL: Queries a SQL database (`financial_data.db`) containing quantitative financial data (quarterly income statements, balance sheets, daily stock prices, dividends). Use for specific financial figures like revenue, net income, EPS, assets, liabilities, stock price on a specific date, etc. Input is a natural language question about financial data.\n"
+            "*   FinancialNewsSearch: Searches the web (currently mocked) for recent financial news articles related to companies, tickers, or market events. Use for latest news, market sentiment analysis, or information about recent events not found in historical databases. Input is a natural language search query.\n"
+            "*   CCRSQL: Queries a SQL database (`ccr_reporting.db`) containing customer care reporting (CCR) data. Use only for questions specifically about CCR metrics, reports, or related internal data. Input is a natural language question about CCR data."
         )
         
-        system_prompt_content = f"""You are a planning assistant. Your goal is to determine which tool(s) from the available list are needed to comprehensively answer the user's query, and what input to provide to each tool. List the steps in the order they should ideally be executed.
+        # --- Define NEW Planner Prompt --- 
+        system_prompt_content = f"""You are an expert financial analysis planning assistant. Your goal is to create an execution plan using the available tools to answer the user's query. Create a sequence of tool calls.
 
-Available Tools:
+AVAILABLE TOOLS OVERVIEW:
 {tool_descriptions}
 
-Based *only* on the user query and the tool descriptions, decide which tool(s) are needed. 
+PLANNING GUIDELINES:
+*   Analyze the user query carefully to determine the required information type (qualitative transcript analysis, quantitative financial figures, recent news, CCR data) and the necessary entities (company tickers, time periods).
+*   Select the most appropriate tool(s) based on the information type and the data source described above.
+*   When the user asks to compare multiple companies or analyze distinct time periods, generate separate, sequential steps using the relevant tools for *each* entity or period. Do not combine comparisons into a single tool input.
+*   Ensure tool inputs are specific and contain necessary details as required by the tool (e.g., company ticker, time period for EarningsCallSummary).
+*   If a query requires combining information from multiple tools (e.g., financial figures from FinancialSQL and commentary from EarningsCallSummary), create sequential steps for each tool.
+
+EXAMPLES:
+
+Example 1:
+User Query: Compare NVIDIA and Microsoft revenue and strategy in 2017.
+Generated Plan:
+Tool: FinancialSQL
+Input: Get NVIDIA revenue for 2017
+
+Tool: FinancialSQL
+Input: Get Microsoft revenue for 2017
+
+Tool: EarningsCallSummary
+Input: Summarize NVIDIA 2017 annual earnings call strategy
+
+Tool: EarningsCallSummary
+Input: Summarize Microsoft 2017 annual earnings call strategy
+
+Example 2:
+User Query: What were Apple's results in Q4 2019?
+Generated Plan:
+Tool: EarningsCallSummary
+Input: Summarize Apple's Q4 2019 earnings call results
+
+Tool: FinancialSQL
+Input: Get Apple revenue and profit for Q4 2019
+
+Example 3:
+User Query: Any recent news about Intel?
+Generated Plan:
+Tool: FinancialNewsSearch
+Input: Recent news about Intel
+
+Example 4:
+User Query: Tell me about the CCR reports.
+Generated Plan:
+Tool: CCRSQL
+Input: Describe the available CCR reports
+
+Example 5:
+User Query: Hi there!
+Generated Plan:
+No tool needed
+
+FINAL INSTRUCTIONS:
 - For EACH tool needed, respond with exactly two lines: 
   Tool: [Tool Name]
   Input: [Rephrase the user query or extract keywords suitable for the specified tool]
 - If multiple tools are needed, list each Tool/Input pair sequentially.
-- If no tools are needed (e.g., the query is conversational or asks for general knowledge that doesn't require specific data lookup), respond ONLY with the text:
+- If no tools are needed (e.g., the query is conversational), respond ONLY with the text:
 No tool needed
 
 Respond Now."""
@@ -222,7 +294,9 @@ Respond Now."""
     def _execute_plan(self, plan: str) -> Dict[str, Any]:
         """Parses the plan and executes the specified tool steps sequentially."""
         logger.info(f"[Executor] Executing full plan:\n{plan}")
-        results = {} # Store results keyed by tool name (or error key)
+        results = {} # Store results with unique keys
+        # Track tool usage counts for unique keys
+        tool_usage_counters = {}
         planned_steps = []
 
         # --- Parse the plan text into steps --- 
@@ -317,7 +391,15 @@ Respond Now."""
                     else:
                         self._add_thinking_step(f"Tool returned result: '{str(tool_result)[:30]}...'")
                     
-                    results[tool_name] = tool_result
+                    # Create a unique key for this tool call
+                    if tool_name not in tool_usage_counters:
+                        tool_usage_counters[tool_name] = 1
+                    else:
+                        tool_usage_counters[tool_name] += 1
+                    unique_key = f"{tool_name}_{tool_usage_counters[tool_name]}"
+                    
+                    # Store with unique key
+                    results[unique_key] = tool_result
                     
                 except KeyboardInterrupt:
                     logger.warning(f"[Executor] Step {step_num}: Tool execution interrupted by user.")
@@ -401,6 +483,8 @@ Respond Now."""
         else:
             formatted_results = []
             for tool_name, result_data in execution_results.items():
+                # Extract base tool name (removing the unique identifier)
+                base_tool_name = tool_name.split("_")[0] if "_" in tool_name and not tool_name.startswith("Error_Step") else tool_name
                 if tool_name.startswith("Error_Step"):
                     formatted_results.append(f"Error during step {tool_name}: {result_data}")
                 elif isinstance(result_data, dict):
@@ -413,18 +497,28 @@ Respond Now."""
                         else:
                             formatted_sql_result = sql_result
                             
-                        formatted_results.append(f"Tool: {tool_name}\\nSQL Query: {result_data.get('sql_query', 'N/A')}\\nResult: {formatted_sql_result}\\nError: {result_data.get('error', 'None')}")
+                        formatted_results.append(f"Tool: {base_tool_name}\\nSQL Query: {result_data.get('sql_query', 'N/A')}\\nResult: {formatted_sql_result}\\nError: {result_data.get('error', 'None')}")
                     elif "error" in result_data: # Tool execution error
-                        formatted_results.append(f"Tool: {tool_name}\\nError: {result_data['error']}")
+                        formatted_results.append(f"Tool: {base_tool_name}\\nError: {result_data['error']}")
                     else: # Generic dict
-                        formatted_results.append(f"Tool: {tool_name}\\nResult: {json.dumps(result_data, indent=2)}")
+                        formatted_results.append(f"Tool: {base_tool_name}\\nResult: {json.dumps(result_data, indent=2)}")
                 else: # Other data types
-                    formatted_results.append(f"Tool: {tool_name}\\nResult: {str(result_data)}")
+                    formatted_results.append(f"Tool: {base_tool_name}\\nResult: {str(result_data)}")
             result_context = "\\n\\n".join(formatted_results)
 
         logger.debug(f"[Synthesizer] Context for synthesis prompt:\\n{result_context}")
 
-        system_prompt_content = """You are an assistant that synthesizes answers based *only* on the provided context from tool executions. Do not add external knowledge or information not present in the results. Combine information from multiple tool results if necessary to provide a comprehensive answer. If the results indicate errors, are empty, or don't seem relevant to the query, state that clearly."""
+        system_prompt_content = """You are an assistant that synthesizes answers based *only* on the provided context from tool executions. Do not add external knowledge or information not present in the results. Combine information from multiple tool results if necessary to provide a comprehensive answer. If the results indicate errors, are empty, or don't seem relevant to the query, state that clearly. If conversation history is provided, use it for context while staying focused on the current query."""
+
+        # Add conversation history to the prompt if available
+        conversation_context = self._format_conversation_history()
+        if conversation_context:
+            system_prompt_content = system_prompt_content + "\n\n" + conversation_context
+
+        # Add conversation history to the prompt if available
+        conversation_context = self._format_conversation_history()
+        if conversation_context:
+            system_prompt_content = system_prompt_content + "\n\n" + conversation_context
         
         human_prompt_content = f"""Original User Query: "{query}"
 
