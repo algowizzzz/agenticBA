@@ -4,6 +4,18 @@ import os
 import json
 from typing import Union, List, Dict
 import datetime
+import re
+
+# Check for JsonFileNewsProvider availability
+try:
+    from tools.json_news_tool import JsonFileNewsProvider
+except ImportError:
+    # Create a placeholder class if import fails
+    class JsonFileNewsProvider:
+        def __init__(self, *args, **kwargs):
+            pass
+        def search(self, query):
+            return []
 
 # Assuming SerpAPIWrapper is the intended tool
 # Handle potential ImportError
@@ -104,25 +116,43 @@ def format_news_results(results: List[Dict]) -> str:
     
     return formatted
 
-def run_financial_news_search(query: str) -> str:
+def run_financial_news_search(query: str, json_mode: bool = False, json_file_path: str = None) -> str:
     """
-    Performs a web search using the provided query and returns formatted results.
-    Now includes a fallback to mock news when SerpAPI is unavailable.
-    Returns results as a formatted string.
-    """
-    logger.info(f"[Financial News Tool] Executing web search for query: {query}")
+    Performs a news search using the provided query and returns formatted results.
     
-    # Attempt to use SerpAPI first
+    Args:
+        query: The search query string
+        json_mode: If True, uses JSON file as news source instead of API or mock
+        json_file_path: Optional path to a specific JSON news file
+        
+    Returns:
+        Formatted results as a string
+    """
+    logger.info(f"[Financial News Tool] Executing search for query: {query}")
+    
+    # If JSON mode is requested, prioritize using JSON file
+    if json_mode:
+        logger.info("[Financial News Tool] Using JSON news provider as requested")
+        try:
+            json_provider = JsonFileNewsProvider(json_file_path)
+            results = json_provider.search(query)
+            if results:
+                return format_news_results(results)
+            logger.warning("[Financial News Tool] No results from JSON provider, will try fallbacks")
+        except Exception as e:
+            logger.error(f"[Financial News Tool] Error with JSON provider: {e}", exc_info=True)
+    
+    # Attempt to use SerpAPI as secondary option
     use_mock = False
     serpapi_results = []
     
     if SerpAPIWrapper is None:
-        logger.warning("SerpAPIWrapper dependency not installed. Falling back to mock news provider.")
+        logger.warning("SerpAPIWrapper dependency not installed. Falling back to next option.")
         use_mock = True
     else:
         serpapi_api_key = os.getenv("SERPAPI_API_KEY")
         if not serpapi_api_key:
-            logger.warning("SERPAPI_API_KEY environment variable not set. Falling back to mock news provider.")
+            logger.warning("SERPAPI_API_KEY environment variable not set. Falling back to next option.")
             use_mock = True
         else:
             try:
@@ -144,16 +174,32 @@ def run_financial_news_search(query: str) -> str:
                     
                 logger.info(f"[Financial News Tool] Successfully retrieved {len(serpapi_results)} results from SerpAPI")
                 
+                # Return SerpAPI results if found
+                if serpapi_results:
+                    return format_news_results(serpapi_results)
+                    
             except Exception as e:
                 logger.error(f"[Financial News Tool] Error during web search: {e}", exc_info=True)
                 use_mock = True
     
-    # Use mock provider if needed
+    # Try JSON provider as fallback if not already tried
+    if not json_mode:
+        logger.info("[Financial News Tool] Trying JSON news provider as fallback")
+        try:
+            json_provider = JsonFileNewsProvider(json_file_path)
+            results = json_provider.search(query)
+            if results:
+                return format_news_results(results)
+            logger.warning("[Financial News Tool] No results from JSON provider, will use mock")
+        except Exception as e:
+            logger.error(f"[Financial News Tool] Error with JSON provider: {e}", exc_info=True)
+    
+    # Use mock provider as final fallback
     if use_mock:
-        logger.info("[Financial News Tool] Using mock news provider as fallback")
+        logger.info("[Financial News Tool] Using mock news provider as final fallback")
         mock_provider = MockNewsProvider()
         results = mock_provider.search(query)
-        return format_news_results(results) + "\n[NOTE: These are mock results provided as a fallback since SerpAPI is unavailable]"
+        return format_news_results(results) + "\n[NOTE: These are mock results provided as a fallback since other providers failed]"
     
-    # Format actual results
-    return format_news_results(serpapi_results) 
+    # If somehow we reach here with no results, return empty
+    return "No financial news results found for the query." 
