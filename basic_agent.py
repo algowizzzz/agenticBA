@@ -11,6 +11,14 @@ import json # Potentially for plan parsing
 import re # For plan parsing
 from typing import Dict, Any, Callable, List, Tuple # Add types for memory
 
+# Import our RiskGPT persona
+try:
+    from riskgpt_persona import RiskGPTPersona
+    HAS_PERSONA = True
+except ImportError:
+    HAS_PERSONA = False
+    print("WARNING: RiskGPT persona module not found. Using default persona.")
+
 # Try to import dotenv with error handling
 try:
     from dotenv import load_dotenv
@@ -63,7 +71,16 @@ class BasicAgent:
 
     def __init__(self):
         """Initializes the agent, LLM, tools, and DB paths."""
-        logger.info("Initializing BasicAgent (Phase 3)...")
+        logger.info("Initializing BasicAgent with RiskGPT persona...")
+        
+        # Initialize persona first - independent of any query processing
+        if HAS_PERSONA:
+            self.persona = RiskGPTPersona()
+            logger.info(f"Initialized {self.persona.name} persona")
+        else:
+            self.persona = None
+            logger.warning("RiskGPT persona not available. Using default persona.")
+        
         # Explicitly load .env from the script's directory and override existing vars
         dotenv_path = os.path.join(os.path.dirname(__file__), '.env')
         
@@ -114,7 +131,13 @@ class BasicAgent:
                     "EarningsCallSummary": run_transcript_agent,
                     "ControlDescriptionAnalysis": run_control_analyzer_agent,
                 }
-                logger.info(f"Tools map initialized with: {list(self.tools_map.keys())}")
+                
+                # Log with display names if persona is available
+                if self.persona:
+                    display_names = [self.persona.get_tool_display_name(tool) for tool in self.tools_map.keys()]
+                    logger.info(f"Tools map initialized with: {display_names}")
+                else:
+                    logger.info(f"Tools map initialized with: {list(self.tools_map.keys())}")
             else:
                 self.tools_map = {}
                 logger.warning("Tools map initialization skipped due to missing dependencies")
@@ -191,7 +214,31 @@ class BasicAgent:
         # Use the provided LLM or default to self.llm
         llm_to_use = override_llm if override_llm else self.llm
         
-        system_prompt = """You are a helpful but cautious AI assistant. Your role is to evaluate incoming user queries for:
+        # Base guardrail prompt with persona injection if available
+        if self.persona:
+            system_prompt = f"""
+{self.persona.get_persona_preamble()}
+
+{self.persona.get_persona_injection("guardrails")}
+
+For EACH query, FIRST determine if it should be:
+- PASSED: The query is safe, appropriate, and specific enough to be processed
+- MODIFIED: The query needs minor adjustments to be processable (e.g., clarification, rewording)
+- REJECTED: The query violates guidelines and should not be processed
+
+THEN respond in the following JSON format ONLY:
+{{
+  "decision": "PASSED|MODIFIED|REJECTED",
+  "modified_query": "Only include if decision is MODIFIED, otherwise null",
+  "explanation": "Brief explanation of your decision",
+  "pass": true|false
+}}
+
+The "pass" field should be true for both PASSED and MODIFIED decisions, and false for REJECTED.
+"""
+        else:
+            # Fall back to original guardrail prompt if persona not available
+            system_prompt = """You are a helpful but cautious AI assistant. Your role is to evaluate incoming user queries for:
 
 1. Safety: No harmful, illegal, unethical or dangerous content
 2. Appropriateness: No obscene, offensive or discriminatory content
@@ -245,18 +292,6 @@ The "pass" field should be true for both PASSED and MODIFIED decisions, and fals
                 # Fail open - if we can't parse the guardrail response, let the query through
                 return {"pass": True, "query": query, "message": ""}
                 
-        except anthropic.BadRequestError as e:
-            # Handle API credit issues
-            if "credit balance is too low" in str(e) or "billing" in str(e).lower():
-                logger.warning(f"[Guardrail] API credit issue: {e}")
-            else:
-                logger.error(f"[Guardrail] API error: {e}")
-            # Fail open - if the API fails, let the query through
-            return {"pass": True, "query": query, "message": ""}
-        except anthropic.AuthenticationError as e:
-            logger.error(f"[Guardrail] Authentication error: {e}")
-            # Fail open
-            return {"pass": True, "query": query, "message": ""}
         except Exception as e:
             logger.error(f"[Guardrail] Error during guardrail check: {e}", exc_info=True)
             # Fail open
@@ -269,18 +304,61 @@ The "pass" field should be true for both PASSED and MODIFIED decisions, and fals
         # Use the provided LLM or default to self.llm
         llm_to_use = override_llm if override_llm else self.llm
         
-        # --- Define NEW Detailed Tool Descriptions ---
-        # Descriptions now include data source, scope, and input hints.
-        tool_descriptions = (
-            "*   EarningsCallSummary: Analyzes company earnings call transcripts (primarily tech companies, ~2016-2020, from MongoDB) for qualitative insights. Use this to understand management's discussion of trends, strategic direction, product performance, market sentiment, and Q&A details. Especially useful for understanding the 'why' behind numbers or for comparative qualitative analysis over time or between companies. Input should specify company (e.g., 'MSFT') and period (e.g., 'Q1 2019', 'Full Year 2018 summary'). For direct quantitative figures like revenue numbers, prefer FinancialSQL.\\n"
-            "*   FinancialSQL: Queries a SQL database (`financial_data.db`) containing quantitative financial data (quarterly income statements, balance sheets, daily stock prices, dividends). Use for specific financial figures like revenue, net income, EPS, assets, liabilities, stock price on a specific date, etc. Input is a natural language question about financial data.\\n"
-            "*   FinancialNewsSearch: Searches for recent financial news articles (may be slightly outdated, as this is a demonstration capability). Use when seeking news about companies, markets, or economic events. Input is a search query about financial news.\\n"
-            "*   CCRSQL: Queries a SQL database (`ccr_reporting.db`) containing counterparty credit risk data (exposures, limits, risk ratings, etc.). Use for credit risk analysis, exposure assessment, and limit monitoring. Input is a natural language question about counterparty risk.\\n"
-            "*   ControlDescriptionAnalysis: Analyzes operational or non-financial control descriptions. This tool can perform a 5Ws (Who, What, When, Where, Why) coverage analysis, suggest improvements to the control wording, and generate test scripts for design and operating effectiveness. Input should be the control description and a clear statement of the desired action (e.g., 'full analysis of control: [description]', 'create test script for control: [description]', 'analyze 5Ws for control: [description]'). If the action is unclear, it defaults to a full analysis."
-        )
+        # Create tool descriptions with display names if persona is available
+        if self.persona:
+            tool_descriptions = []
+            for tool_name in self.tools_map.keys():
+                display_name = self.persona.get_tool_display_name(tool_name)
+                if tool_name == "FinancialSQL":
+                    tool_descriptions.append(f"*   {display_name}: Query security prices, financial metrics, and market data")
+                elif tool_name == "CCRSQL":
+                    tool_descriptions.append(f"*   {display_name}: Access market risk reports, VaR, sensitivities, and trading book measures")
+                elif tool_name == "FinancialNewsSearch":
+                    tool_descriptions.append(f"*   {display_name}: Find relevant news about market events, companies, and economic developments")
+                elif tool_name == "EarningsCallSummary":
+                    tool_descriptions.append(f"*   {display_name}: Analyze earnings calls for market insights and company performance")
+                elif tool_name == "ControlDescriptionAnalysis":
+                    tool_descriptions.append(f"*   {display_name}: Assess operational controls and risk management procedures")
+            
+            tool_descriptions_text = "\n".join(tool_descriptions)
+            
+            # Planning prompt with persona injection
+            system_prompt_content = f"""
+{self.persona.get_persona_preamble()}
 
-        # --- Add Business Information ---
-        system_prompt_content = f"""You are a business analysis agent planning tool usage for financial analysis and operational risk.
+{self.persona.get_persona_injection("planning")}
+
+Your goal is to break down a query into a sequence of tool calls, or determine if it can be answered directly.
+
+AVAILABLE TOOLS:
+{tool_descriptions_text}
+
+FORMAT YOUR RESPONSE AS A PLAN:
+For tool-based plans:
+Tool: [Tool Name]
+Input: [Input for the tool]
+
+Or, for queries that can be answered directly:
+No tool needed. Reason: [Brief explanation of why built-in capabilities are sufficient]
+
+IMPORTANT GUIDELINES:
+1. Only include tools that are NECESSARY to answer the query.
+2. Many queries can be answered with your built-in capabilities (coding, content creation, general knowledge).
+3. For each tool, provide specific inputs that will yield relevant results.
+4. Keep the plan concise and focused on direct value to the user.
+"""
+        else:
+            # Fall back to original tool descriptions
+            tool_descriptions = (
+                "*   EarningsCallSummary: Analyzes company earnings call transcripts (primarily tech companies, ~2016-2020, from MongoDB) for qualitative insights. Use this to understand management's discussion of trends, strategic direction, product performance, market sentiment, and Q&A details. Especially useful for understanding the 'why' behind numbers or for comparative qualitative analysis over time or between companies. Input should specify company (e.g., 'MSFT') and period (e.g., 'Q1 2019', 'Full Year 2018 summary'). For direct quantitative figures like revenue numbers, prefer FinancialSQL.\\n"
+                "*   FinancialSQL: Queries a SQL database (`financial_data.db`) containing quantitative financial data (quarterly income statements, balance sheets, daily stock prices, dividends). Use for specific financial figures like revenue, net income, EPS, assets, liabilities, stock price on a specific date, etc. Input is a natural language question about financial data.\\n"
+                "*   FinancialNewsSearch: Searches for recent financial news articles (may be slightly outdated, as this is a demonstration capability). Use when seeking news about companies, markets, or economic events. Input is a search query about financial news.\\n"
+                "*   CCRSQL: Queries a SQL database (`ccr_reporting.db`) containing counterparty credit risk data (exposures, limits, risk ratings, etc.). Use for credit risk analysis, exposure assessment, and limit monitoring. Input is a natural language question about counterparty risk.\\n"
+                "*   ControlDescriptionAnalysis: Analyzes operational or non-financial control descriptions. This tool can perform a 5Ws (Who, What, When, Where, Why) coverage analysis, suggest improvements to the control wording, and generate test scripts for design and operating effectiveness. Input should be the control description and a clear statement of the desired action (e.g., 'full analysis of control: [description]', 'create test script for control: [description]', 'analyze 5Ws for control: [description]'). If the action is unclear, it defaults to a full analysis."
+            )
+
+            # Fall back to original planning prompt
+            system_prompt_content = f"""You are a business analysis agent planning tool usage for financial analysis and operational risk.
 Your goal is to break down a complex financial, business, or control-related query into a sequence of tool calls.
 
 First, analyze the query to deeply understand what information or analysis is needed.
@@ -290,9 +368,6 @@ AVAILABLE TOOLS:
 {tool_descriptions}
 
 FORMAT YOUR RESPONSE AS A PLAN USING THE FOLLOWING FORMAT:
-Tool: [Tool Name]
-Input: [Input for the tool]
-
 Tool: [Tool Name]
 Input: [Input for the tool]
 
@@ -323,23 +398,20 @@ IMPORTANT GUIDELINES:
             
             # Validate that there are at least some recognized tool names in the plan
             recognized_tools = ["FinancialSQL", "CCRSQL", "EarningsCallSummary", "FinancialNewsSearch", "ControlDescriptionAnalysis", "No tool needed"]
+            
+            # Add display names to recognized tools if persona available
+            if self.persona:
+                for tool in list(recognized_tools):  # Create a copy to avoid modifying during iteration
+                    display_name = self.persona.get_tool_display_name(tool)
+                    if display_name != tool:
+                        recognized_tools.append(display_name)
+            
             if not any(tool in plan_text for tool in recognized_tools):
                 logger.warning("[Planner] Generated plan does not contain recognized tools. Using 'No tool needed' fallback.")
                 plan_text = "No tool needed for this query, as it can be answered with general knowledge."
             
             return plan_text
             
-        except anthropic.BadRequestError as e:
-            # Handle API credit issues
-            if "credit balance is too low" in str(e) or "billing" in str(e).lower():
-                logger.warning(f"[Planner] API credit issue: {e}")
-                return f"Error generating plan: {str(e)}"
-            else:
-                logger.error(f"[Planner] API error: {e}")
-                return f"Error generating plan: {str(e)}"
-        except anthropic.AuthenticationError as e:
-            logger.error(f"[Planner] Authentication error: {e}")
-            return f"Error generating plan: {str(e)}"
         except Exception as e:
             logger.error(f"[Planner] Error during plan generation: {e}", exc_info=True)
             return f"Error generating plan: {str(e)}"
@@ -635,7 +707,7 @@ IMPORTANT: If the tools returned NO DATA or NO RELEVANT DATA, begin your respons
             return f"Error synthesizing answer: {str(e)}"
 
     def run(self, query: str, override_llm=None) -> Dict[str, str]:
-        """Runs the Guardrail -> Plan -> [Confirm] -> Execute -> Synthesize flow.
+        """Runs the Guardrail -> Plan -> Confirm -> Execute -> Synthesize flow.
         Returns a dictionary with 'thinking_steps_str' and 'final_answer_str'.
         """
         logger.info(f'--- Running query: "{query}" ---')
@@ -706,32 +778,42 @@ IMPORTANT: If the tools returned NO DATA or NO RELEVANT DATA, begin your respons
             }
 
         if "No tool needed" in plan:
-            logger.info("Plan indicates no tool needed. Attempting direct LLM response.")
-            self._add_thinking_step("No specialized tools needed, answering from general knowledge...")
+            logger.info("Plan indicates no tool needed. Using direct response with RiskGPT persona if available.")
+            self._add_thinking_step("No specialized tools needed, answering with built-in capabilities...")
             try:
-                 system_content = "You are a helpful assistant answering based on general knowledge as no specific tools were deemed necessary."
-                 if self.memory:
-                     memory_context = "\n".join([f"Previous query: {q}\nYour response: {r}\n" 
-                                               for q, r in self.memory[-3:]])
-                     system_content += f"\n\nRecent conversation history:\n{memory_context}"
+                if self.persona:
+                    system_content = f"""
+{self.persona.get_persona_preamble()}
+
+{self.persona.get_persona_injection("direct_response")}
+
+For this query, rely on your built-in capabilities rather than specialized tools.
+"""
+                else:
+                    system_content = "You are a helpful assistant answering based on general knowledge as no specific tools were deemed necessary."
+                
+                if self.memory:
+                    memory_context = "\n".join([f"Previous query: {q}\nYour response: {r}\n" 
+                                              for q, r in self.memory[-3:]])
+                    system_content += f"\n\nRecent conversation history:\n{memory_context}"
                  
-                 direct_messages = [
-                     SystemMessage(content=system_content),
-                     HumanMessage(content=query),
-                 ]
-                 response = llm_to_use.invoke(direct_messages)
-                 final_answer = response.content.strip()
-                 logger.info(f"Direct LLM Response: {final_answer[:500]}...")
-                 self._add_thinking_step("Synthesizing answer from general knowledge...")
-                 
-                 self.memory.append((query, final_answer))
-                 if len(self.memory) > 5: self.memory.pop(0)
-                     
-                 thinking_output = "Thinking...\n" + "\n".join([f"- {step}" for step in self.thinking_steps])
-                 return {
-                    "thinking_steps_str": thinking_output,
-                    "final_answer_str": final_answer
-                 }
+                direct_messages = [
+                    SystemMessage(content=system_content),
+                    HumanMessage(content=query),
+                ]
+                response = llm_to_use.invoke(direct_messages)
+                final_answer = response.content.strip()
+                logger.info(f"Direct Response: {final_answer[:500]}...")
+                self._add_thinking_step("Creating response using general knowledge and capabilities...")
+                
+                self.memory.append((query, final_answer))
+                if len(self.memory) > 5: self.memory.pop(0)
+                    
+                thinking_output = "Thinking...\n" + "\n".join([f"- {step}" for step in self.thinking_steps])
+                return {
+                   "thinking_steps_str": thinking_output,
+                   "final_answer_str": final_answer
+                }
             except Exception as e:
                 logger.error(f"Error during direct LLM invocation: {e}", exc_info=True)
                 self._add_thinking_step("Error occurred while generating direct response...")
