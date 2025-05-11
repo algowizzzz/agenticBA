@@ -11,23 +11,44 @@ import json # Potentially for plan parsing
 import re # For plan parsing
 from typing import Dict, Any, Callable, List, Tuple # Add types for memory
 
-from dotenv import load_dotenv
+# Try to import dotenv with error handling
+try:
+    from dotenv import load_dotenv
+    HAS_DOTENV = True
+except ImportError:
+    HAS_DOTENV = False
+    print("WARNING: python-dotenv package not found. Install with 'pip install python-dotenv'")
 
 # Langchain components
-from langchain_anthropic import ChatAnthropic
-from langchain_core.language_models import BaseChatModel
-from langchain_core.messages import HumanMessage, SystemMessage
+try:
+    from langchain_anthropic import ChatAnthropic
+    from langchain_core.language_models import BaseChatModel
+    from langchain_core.messages import HumanMessage, SystemMessage
+    HAS_LANGCHAIN = True
+except ImportError:
+    HAS_LANGCHAIN = False
+    print("WARNING: langchain packages not found. Install with 'pip install langchain langchain-anthropic'")
 
 # Add Anthropic import to fix error
-import anthropic
+try:
+    import anthropic
+    HAS_ANTHROPIC = True
+except ImportError:
+    HAS_ANTHROPIC = False
+    print("WARNING: anthropic package not found. Install with 'pip install anthropic'")
 
 # --- Import Tool Functions --- 
 sys.path.append(os.path.dirname(os.path.abspath(__file__))) # Ensure tools are importable
-from tools.ccr_sql_tool import run_ccr_sql
-from tools.financial_sql_tool import run_financial_sql
-from tools.financial_news_tool import run_financial_news_search
-from tools.earnings_call_tool import run_transcript_agent
-from tools.control_analysis_tool import run_control_analyzer_agent
+try:
+    from tools.ccr_sql_tool import run_ccr_sql
+    from tools.financial_sql_tool import run_financial_sql
+    from tools.financial_news_tool import run_financial_news_search
+    from tools.earnings_call_tool import run_transcript_agent
+    from tools.control_analysis_tool import run_control_analyzer_agent
+    HAS_TOOLS = True
+except ImportError as e:
+    HAS_TOOLS = False
+    print(f"WARNING: Not all tools could be imported: {e}")
 
 # Configure logging
 logging.basicConfig(
@@ -45,18 +66,31 @@ class BasicAgent:
         logger.info("Initializing BasicAgent (Phase 3)...")
         # Explicitly load .env from the script's directory and override existing vars
         dotenv_path = os.path.join(os.path.dirname(__file__), '.env')
-        load_dotenv(dotenv_path=dotenv_path, override=True)
-        logger.info(f"Environment variables loaded from {dotenv_path} with override.")
+        
+        if HAS_DOTENV:
+            try:
+                load_dotenv(dotenv_path=dotenv_path, override=True)
+                logger.info(f"Environment variables loaded from {dotenv_path} with override.")
+            except Exception as e:
+                logger.warning(f"Failed to load environment variables from {dotenv_path}: {e}")
+        else:
+            logger.warning("python-dotenv not available, skipping .env loading")
 
         try:
             self.anthropic_api_key = os.getenv("ANTHROPIC_API_KEY")
             if not self.anthropic_api_key:
-                raise ValueError("ANTHROPIC_API_KEY not found in environment variables.")
+                logger.warning("ANTHROPIC_API_KEY not found in environment variables.")
+                self.anthropic_api_key = None
 
-            # Initialize LLM
-            model_name = "claude-3-5-sonnet-20240620" 
-            self.llm = ChatAnthropic(model=model_name, temperature=0, anthropic_api_key=self.anthropic_api_key)
-            logger.info(f"LLM Initialized: {getattr(self.llm, 'model', model_name)}")
+            # Initialize LLM if possible
+            model_name = "claude-3-5-sonnet-20240620"
+            
+            if HAS_LANGCHAIN and HAS_ANTHROPIC and self.anthropic_api_key:
+                self.llm = ChatAnthropic(model=model_name, temperature=0, anthropic_api_key=self.anthropic_api_key)
+                logger.info(f"LLM Initialized: {getattr(self.llm, 'model', model_name)}")
+            else:
+                self.llm = None
+                logger.warning("LLM initialization skipped due to missing dependencies or API key")
             
             # Define DB Paths
             project_root = os.path.abspath(os.path.dirname(__file__))
@@ -72,14 +106,18 @@ class BasicAgent:
                 logger.warning(f"CCR DB not found at {self.db_paths['ccr']}")
             
             # Define available tools for this phase
-            self.tools_map: Dict[str, Callable] = {
-                "CCRSQL": run_ccr_sql,
-                "FinancialSQL": run_financial_sql,
-                "FinancialNewsSearch": run_financial_news_search,
-                "EarningsCallSummary": run_transcript_agent,
-                "ControlDescriptionAnalysis": run_control_analyzer_agent,
-            }
-            logger.info(f"Tools map initialized with: {list(self.tools_map.keys())}")
+            if HAS_TOOLS:
+                self.tools_map: Dict[str, Callable] = {
+                    "CCRSQL": run_ccr_sql,
+                    "FinancialSQL": run_financial_sql,
+                    "FinancialNewsSearch": run_financial_news_search,
+                    "EarningsCallSummary": run_transcript_agent,
+                    "ControlDescriptionAnalysis": run_control_analyzer_agent,
+                }
+                logger.info(f"Tools map initialized with: {list(self.tools_map.keys())}")
+            else:
+                self.tools_map = {}
+                logger.warning("Tools map initialization skipped due to missing dependencies")
             
             # Add conversation memory
             self.memory: List[Tuple[str, str]] = []  # List of (query, response) tuples
@@ -101,6 +139,20 @@ class BasicAgent:
         """Add a simplified thinking step to track agent reasoning."""
         logger.info(f"[Thinking] {step}")
         self.thinking_steps.append(step)
+
+    # Add query method for compatibility with simplified implementation
+    def query(self, prompt: str) -> str:
+        """Simple query method that just calls the LLM directly."""
+        if not self.llm:
+            return "LLM not available. Please install required dependencies."
+            
+        try:
+            messages = [HumanMessage(content=prompt)]
+            response = self.llm.invoke(messages)
+            return response.content
+        except Exception as e:
+            logger.error(f"Error in direct LLM query: {e}")
+            return f"Error: {str(e)}"
 
     def _format_conversation_history(self, max_turns=3):
         """Format recent conversation history for inclusion in prompts."""
