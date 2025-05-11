@@ -147,9 +147,9 @@ Answer:"""
 
     try:
         llm = ChatAnthropic(
-            model="claude-3-5-sonnet-20240620", # Or load from config
+            model="claude-3-haiku-20240307", # Lower cost model
             temperature=0.1,
-            max_tokens=1500, # Max output tokens for the answer
+            max_tokens=1500,
             anthropic_api_key=api_key
         )
 

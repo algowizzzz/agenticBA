@@ -65,9 +65,17 @@ class HierarchicalRetrievalAgent:
     A hierarchical retrieval agent using structured components for state, orchestration, and logging.
     """
     
-    def __init__(self, api_key: str = None, debug: bool = False):
-        """Initialize the agent with structured components."""
-        self.api_key = api_key
+    def __init__(self, api_key: Optional[str] = None, debug: bool = False):
+        """
+        Initialize the agent with configurations.
+        Args:
+            api_key: Anthropic API key (optional, defaults to checking environment variables)
+        """
+        self.api_key = api_key or os.environ.get("ANTHROPIC_API_KEY")
+        if not self.api_key:
+            logger.error("No Anthropic API key found")
+            raise ValueError("Anthropic API key is required")
+        
         self.debug = debug
         self.agent_id = "HierarchicalAgent_v3_Refactored" # Update version ID
         
@@ -165,7 +173,7 @@ class HierarchicalRetrievalAgent:
             llm_instance = create_llm(
                 api_key=self.api_key,
                 # model="claude-3.5-sonnet-20240620" # Typo
-                model="claude-3-5-sonnet-20240620" # Corrected model
+                model="claude-3-haiku-20240307" # Lower cost model
             )
             logger.debug("ChatAnthropic instance created successfully via factory")
             return llm_instance

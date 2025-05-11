@@ -1,0 +1,12 @@
+{
+  "ticker": "C",
+  "company": "Citigroup Inc.",
+  "title": "NOTE: No Citigroup filings found in current SEC RSS feeds",
+  "link": "https://www.sec.gov/",
+  "published": "2025-05-05T16:49:18.028426",
+  "summary": "This is a placeholder entry. No actual Citigroup filings were found in the current SEC RSS feeds.",
+  "content": "\n            This is a placeholder filing created because no actual Citigroup (C) filings were found\n            in the currently available SEC RSS feeds.\n            \n            To find actual Citigroup filings, you could:\n            1. Try again later when new SEC feeds are available\n            2. Use the SEC EDGAR database directly: https://www.sec.gov/edgar/searchedgar/companysearch\n            3. Increase the search depth by modifying the 'max_entries' parameter\n            \n            This placeholder is for demonstration purposes only.\n        ",
+  "entry_id": "placeholder-citi-20250505164918",
+  "filing_type": "NOTE",
+  "processed_date": "2025-05-05T16:49:18.028443"
+}

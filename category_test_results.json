@@ -1,0 +1,82 @@
+[
+  {
+    "category_id": "AAPL",
+    "success": true,
+    "summary_fetched": true,
+    "answer_generated": true,
+    "error": null,
+    "answer_snippet": "Recent financial trends for AAPL include:\n1. Strong quarterly results with record-breaking revenues,..."
+  },
+  {
+    "category_id": "INTC",
+    "success": true,
+    "summary_fetched": true,
+    "answer_generated": true,
+    "error": null,
+    "answer_snippet": "Based on the information in the category summary, recent financial trends for Intel (INTC) include:\n..."
+  },
+  {
+    "category_id": "AMZN",
+    "success": true,
+    "summary_fetched": true,
+    "answer_generated": true,
+    "error": null,
+    "answer_snippet": "Based on the Category Summary, recent financial trends for AMZN include:\n1. Strong overall revenue g..."
+  },
+  {
+    "category_id": "ASML",
+    "success": true,
+    "summary_fetched": true,
+    "answer_generated": true,
+    "error": null,
+    "answer_snippet": "Based on the summary, ASML's recent financial trends appear positive, with consistent revenue growth..."
+  },
+  {
+    "category_id": "MU",
+    "success": true,
+    "summary_fetched": true,
+    "answer_generated": true,
+    "error": null,
+    "answer_snippet": "Recent financial trends for Micron (MU) show a recovery after a period of downturn. In fiscal Q3 202..."
+  },
+  {
+    "category_id": "NVDA",
+    "success": true,
+    "summary_fetched": true,
+    "answer_generated": true,
+    "error": null,
+    "answer_snippet": "Based on the summary, NVIDIA has been experiencing exceptional revenue growth and strong margins. Th..."
+  },
+  {
+    "category_id": "AMD",
+    "success": true,
+    "summary_fetched": true,
+    "answer_generated": true,
+    "error": null,
+    "answer_snippet": "Based on the summary, AMD has shown positive financial trends, including consistent revenue growth a..."
+  },
+  {
+    "category_id": "CSCO",
+    "success": true,
+    "summary_fetched": true,
+    "answer_generated": true,
+    "error": null,
+    "answer_snippet": "Based on the Category Summary, Cisco's recent financial trends appear positive, characterized by str..."
+  },
+  {
+    "category_id": "GOOGL",
+    "success": true,
+    "summary_fetched": true,
+    "answer_generated": true,
+    "error": null,
+    "answer_snippet": "Based solely on the Category Summary, GOOGL's recent financial trends appear positive. The company i..."
+  },
+  {
+    "category_id": "MSFT",
+    "success": true,
+    "summary_fetched": true,
+    "answer_generated": true,
+    "error": null,
+    "answer_snippet": "Based on the Category Summary, Microsoft's recent financial trends appear positive, though specific ..."
+  }
+]

@@ -1,0 +1,1266 @@
+{
+  "feed_info": {
+    "title": "Latest Filings - Mon, 05 May 2025 16:49:17 EDT",
+    "title_detail": {
+      "type": "text/plain",
+      "language": null,
+      "base": "https://www.sec.gov/cgi-bin/browse-edgar?type=10-K&action=getcurrent&output=atom",
+      "value": "Latest Filings - Mon, 05 May 2025 16:49:17 EDT"
+    },
+    "links": [
+      {
+        "rel": "alternate",
+        "href": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcurrent",
+        "type": "text/html"
+      },
+      {
+        "rel": "self",
+        "href": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcurrent",
+        "type": "application/atom+xml"
+      }
+    ],
+    "link": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcurrent",
+    "id": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcurrent",
+    "guidislink": false,
+    "authors": [
+      {
+        "name": "Webmaster",
+        "email": "webmaster@sec.gov"
+      }
+    ],
+    "author_detail": {
+      "name": "Webmaster",
+      "email": "webmaster@sec.gov"
+    },
+    "author": "Webmaster (webmaster@sec.gov)",
+    "updated": "2025-05-05T16:49:17-04:00",
+    "updated_parsed": [
+      2025,
+      5,
+      5,
+      20,
+      49,
+      17,
+      0,
+      125,
+      0
+    ]
+  },
+  "entries": [
+    {
+      "title": "10-K/A - Onar Holding Corp (0001682265) (Filer)",
+      "title_detail": {
+        "type": "text/plain",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?type=10-K&action=getcurrent&output=atom",
+        "value": "10-K/A - Onar Holding Corp (0001682265) (Filer)"
+      },
+      "links": [
+        {
+          "rel": "alternate",
+          "type": "text/html",
+          "href": "https://www.sec.gov/Archives/edgar/data/1682265/000147793225003315/0001477932-25-003315-index.htm"
+        }
+      ],
+      "link": "https://www.sec.gov/Archives/edgar/data/1682265/000147793225003315/0001477932-25-003315-index.htm",
+      "summary": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0001477932-25-003315 <b>Size:</b> 4 MB",
+      "summary_detail": {
+        "type": "text/html",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?type=10-K&action=getcurrent&output=atom",
+        "value": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0001477932-25-003315 <b>Size:</b> 4 MB"
+      },
+      "updated": "2025-05-05T16:05:38-04:00",
+      "updated_parsed": [
+        2025,
+        5,
+        5,
+        20,
+        5,
+        38,
+        0,
+        125,
+        0
+      ],
+      "tags": [
+        {
+          "term": "10-K/A",
+          "scheme": "https://www.sec.gov/",
+          "label": "form type"
+        }
+      ],
+      "id": "urn:tag:sec.gov,2008:accession-number=0001477932-25-003315",
+      "guidislink": false
+    },
+    {
+      "title": "10-K - COMMVAULT SYSTEMS INC (0001169561) (Filer)",
+      "title_detail": {
+        "type": "text/plain",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?type=10-K&action=getcurrent&output=atom",
+        "value": "10-K - COMMVAULT SYSTEMS INC (0001169561) (Filer)"
+      },
+      "links": [
+        {
+          "rel": "alternate",
+          "type": "text/html",
+          "href": "https://www.sec.gov/Archives/edgar/data/1169561/000116956125000034/0001169561-25-000034-index.htm"
+        }
+      ],
+      "link": "https://www.sec.gov/Archives/edgar/data/1169561/000116956125000034/0001169561-25-000034-index.htm",
+      "summary": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0001169561-25-000034 <b>Size:</b> 10 MB",
+      "summary_detail": {
+        "type": "text/html",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?type=10-K&action=getcurrent&output=atom",
+        "value": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0001169561-25-000034 <b>Size:</b> 10 MB"
+      },
+      "updated": "2025-05-05T15:47:30-04:00",
+      "updated_parsed": [
+        2025,
+        5,
+        5,
+        19,
+        47,
+        30,
+        0,
+        125,
+        0
+      ],
+      "tags": [
+        {
+          "term": "10-K",
+          "scheme": "https://www.sec.gov/",
+          "label": "form type"
+        }
+      ],
+      "id": "urn:tag:sec.gov,2008:accession-number=0001169561-25-000034",
+      "guidislink": false
+    },
+    {
+      "title": "10-K/A - Greater Cannabis Company, Inc. (0001695473) (Filer)",
+      "title_detail": {
+        "type": "text/plain",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?type=10-K&action=getcurrent&output=atom",
+        "value": "10-K/A - Greater Cannabis Company, Inc. (0001695473) (Filer)"
+      },
+      "links": [
+        {
+          "rel": "alternate",
+          "type": "text/html",
+          "href": "https://www.sec.gov/Archives/edgar/data/1695473/000164117225008461/0001641172-25-008461-index.htm"
+        }
+      ],
+      "link": "https://www.sec.gov/Archives/edgar/data/1695473/000164117225008461/0001641172-25-008461-index.htm",
+      "summary": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0001641172-25-008461 <b>Size:</b> 4 MB",
+      "summary_detail": {
+        "type": "text/html",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?type=10-K&action=getcurrent&output=atom",
+        "value": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0001641172-25-008461 <b>Size:</b> 4 MB"
+      },
+      "updated": "2025-05-05T06:09:45-04:00",
+      "updated_parsed": [
+        2025,
+        5,
+        5,
+        10,
+        9,
+        45,
+        0,
+        125,
+        0
+      ],
+      "tags": [
+        {
+          "term": "10-K/A",
+          "scheme": "https://www.sec.gov/",
+          "label": "form type"
+        }
+      ],
+      "id": "urn:tag:sec.gov,2008:accession-number=0001641172-25-008461",
+      "guidislink": false
+    },
+    {
+      "title": "10-K - JOCOM HOLDINGS CORP. (0001907425) (Filer)",
+      "title_detail": {
+        "type": "text/plain",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?type=10-K&action=getcurrent&output=atom",
+        "value": "10-K - JOCOM HOLDINGS CORP. (0001907425) (Filer)"
+      },
+      "links": [
+        {
+          "rel": "alternate",
+          "type": "text/html",
+          "href": "https://www.sec.gov/Archives/edgar/data/1907425/000164117225008460/0001641172-25-008460-index.htm"
+        }
+      ],
+      "link": "https://www.sec.gov/Archives/edgar/data/1907425/000164117225008460/0001641172-25-008460-index.htm",
+      "summary": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0001641172-25-008460 <b>Size:</b> 4 MB",
+      "summary_detail": {
+        "type": "text/html",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?type=10-K&action=getcurrent&output=atom",
+        "value": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0001641172-25-008460 <b>Size:</b> 4 MB"
+      },
+      "updated": "2025-05-05T06:09:08-04:00",
+      "updated_parsed": [
+        2025,
+        5,
+        5,
+        10,
+        9,
+        8,
+        0,
+        125,
+        0
+      ],
+      "tags": [
+        {
+          "term": "10-K",
+          "scheme": "https://www.sec.gov/",
+          "label": "form type"
+        }
+      ],
+      "id": "urn:tag:sec.gov,2008:accession-number=0001641172-25-008460",
+      "guidislink": false
+    },
+    {
+      "title": "10-K - Oak Woods Acquisition Corp (0001945422) (Filer)",
+      "title_detail": {
+        "type": "text/plain",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?type=10-K&action=getcurrent&output=atom",
+        "value": "10-K - Oak Woods Acquisition Corp (0001945422) (Filer)"
+      },
+      "links": [
+        {
+          "rel": "alternate",
+          "type": "text/html",
+          "href": "https://www.sec.gov/Archives/edgar/data/1945422/000121390025039392/0001213900-25-039392-index.htm"
+        }
+      ],
+      "link": "https://www.sec.gov/Archives/edgar/data/1945422/000121390025039392/0001213900-25-039392-index.htm",
+      "summary": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0001213900-25-039392 <b>Size:</b> 4 MB",
+      "summary_detail": {
+        "type": "text/html",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?type=10-K&action=getcurrent&output=atom",
+        "value": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0001213900-25-039392 <b>Size:</b> 4 MB"
+      },
+      "updated": "2025-05-02T19:41:46-04:00",
+      "updated_parsed": [
+        2025,
+        5,
+        2,
+        23,
+        41,
+        46,
+        4,
+        122,
+        0
+      ],
+      "tags": [
+        {
+          "term": "10-K",
+          "scheme": "https://www.sec.gov/",
+          "label": "form type"
+        }
+      ],
+      "id": "urn:tag:sec.gov,2008:accession-number=0001213900-25-039392",
+      "guidislink": false
+    },
+    {
+      "title": "10-K - LEGEND SPICES, INC. (0001970129) (Filer)",
+      "title_detail": {
+        "type": "text/plain",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?type=10-K&action=getcurrent&output=atom",
+        "value": "10-K - LEGEND SPICES, INC. (0001970129) (Filer)"
+      },
+      "links": [
+        {
+          "rel": "alternate",
+          "type": "text/html",
+          "href": "https://www.sec.gov/Archives/edgar/data/1970129/000168316825003098/0001683168-25-003098-index.htm"
+        }
+      ],
+      "link": "https://www.sec.gov/Archives/edgar/data/1970129/000168316825003098/0001683168-25-003098-index.htm",
+      "summary": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0001683168-25-003098 <b>Size:</b> 2 MB",
+      "summary_detail": {
+        "type": "text/html",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?type=10-K&action=getcurrent&output=atom",
+        "value": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0001683168-25-003098 <b>Size:</b> 2 MB"
+      },
+      "updated": "2025-05-02T19:20:09-04:00",
+      "updated_parsed": [
+        2025,
+        5,
+        2,
+        23,
+        20,
+        9,
+        4,
+        122,
+        0
+      ],
+      "tags": [
+        {
+          "term": "10-K",
+          "scheme": "https://www.sec.gov/",
+          "label": "form type"
+        }
+      ],
+      "id": "urn:tag:sec.gov,2008:accession-number=0001683168-25-003098",
+      "guidislink": false
+    },
+    {
+      "title": "10-K - DIGITAL ALLY, INC. (0001342958) (Filer)",
+      "title_detail": {
+        "type": "text/plain",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?type=10-K&action=getcurrent&output=atom",
+        "value": "10-K - DIGITAL ALLY, INC. (0001342958) (Filer)"
+      },
+      "links": [
+        {
+          "rel": "alternate",
+          "type": "text/html",
+          "href": "https://www.sec.gov/Archives/edgar/data/1342958/000164117225008420/0001641172-25-008420-index.htm"
+        }
+      ],
+      "link": "https://www.sec.gov/Archives/edgar/data/1342958/000164117225008420/0001641172-25-008420-index.htm",
+      "summary": "<b>Filed:</b> 2025-05-02 <b>AccNo:</b> 0001641172-25-008420 <b>Size:</b> 15 MB",
+      "summary_detail": {
+        "type": "text/html",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?type=10-K&action=getcurrent&output=atom",
+        "value": "<b>Filed:</b> 2025-05-02 <b>AccNo:</b> 0001641172-25-008420 <b>Size:</b> 15 MB"
+      },
+      "updated": "2025-05-02T17:17:42-04:00",
+      "updated_parsed": [
+        2025,
+        5,
+        2,
+        21,
+        17,
+        42,
+        4,
+        122,
+        0
+      ],
+      "tags": [
+        {
+          "term": "10-K",
+          "scheme": "https://www.sec.gov/",
+          "label": "form type"
+        }
+      ],
+      "id": "urn:tag:sec.gov,2008:accession-number=0001641172-25-008420",
+      "guidislink": false
+    },
+    {
+      "title": "10-K/A - Vivakor, Inc. (0001450704) (Filer)",
+      "title_detail": {
+        "type": "text/plain",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?type=10-K&action=getcurrent&output=atom",
+        "value": "10-K/A - Vivakor, Inc. (0001450704) (Filer)"
+      },
+      "links": [
+        {
+          "rel": "alternate",
+          "type": "text/html",
+          "href": "https://www.sec.gov/Archives/edgar/data/1450704/000182912625003332/0001829126-25-003332-index.htm"
+        }
+      ],
+      "link": "https://www.sec.gov/Archives/edgar/data/1450704/000182912625003332/0001829126-25-003332-index.htm",
+      "summary": "<b>Filed:</b> 2025-05-02 <b>AccNo:</b> 0001829126-25-003332 <b>Size:</b> 644 KB",
+      "summary_detail": {
+        "type": "text/html",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?type=10-K&action=getcurrent&output=atom",
+        "value": "<b>Filed:</b> 2025-05-02 <b>AccNo:</b> 0001829126-25-003332 <b>Size:</b> 644 KB"
+      },
+      "updated": "2025-05-02T17:00:25-04:00",
+      "updated_parsed": [
+        2025,
+        5,
+        2,
+        21,
+        0,
+        25,
+        4,
+        122,
+        0
+      ],
+      "tags": [
+        {
+          "term": "10-K/A",
+          "scheme": "https://www.sec.gov/",
+          "label": "form type"
+        }
+      ],
+      "id": "urn:tag:sec.gov,2008:accession-number=0001829126-25-003332",
+      "guidislink": false
+    },
+    {
+      "title": "10-K - VINCE HOLDING CORP. (0001579157) (Filer)",
+      "title_detail": {
+        "type": "text/plain",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?type=10-K&action=getcurrent&output=atom",
+        "value": "10-K - VINCE HOLDING CORP. (0001579157) (Filer)"
+      },
+      "links": [
+        {
+          "rel": "alternate",
+          "type": "text/html",
+          "href": "https://www.sec.gov/Archives/edgar/data/1579157/000095017025062847/0000950170-25-062847-index.htm"
+        }
+      ],
+      "link": "https://www.sec.gov/Archives/edgar/data/1579157/000095017025062847/0000950170-25-062847-index.htm",
+      "summary": "<b>Filed:</b> 2025-05-02 <b>AccNo:</b> 0000950170-25-062847 <b>Size:</b> 13 MB",
+      "summary_detail": {
+        "type": "text/html",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?type=10-K&action=getcurrent&output=atom",
+        "value": "<b>Filed:</b> 2025-05-02 <b>AccNo:</b> 0000950170-25-062847 <b>Size:</b> 13 MB"
+      },
+      "updated": "2025-05-02T16:35:23-04:00",
+      "updated_parsed": [
+        2025,
+        5,
+        2,
+        20,
+        35,
+        23,
+        4,
+        122,
+        0
+      ],
+      "tags": [
+        {
+          "term": "10-K",
+          "scheme": "https://www.sec.gov/",
+          "label": "form type"
+        }
+      ],
+      "id": "urn:tag:sec.gov,2008:accession-number=0000950170-25-062847",
+      "guidislink": false
+    },
+    {
+      "title": "10-K - Webstar Technology Group Inc. (0001645155) (Filer)",
+      "title_detail": {
+        "type": "text/plain",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?type=10-K&action=getcurrent&output=atom",
+        "value": "10-K - Webstar Technology Group Inc. (0001645155) (Filer)"
+      },
+      "links": [
+        {
+          "rel": "alternate",
+          "type": "text/html",
+          "href": "https://www.sec.gov/Archives/edgar/data/1645155/000164117225008374/0001641172-25-008374-index.htm"
+        }
+      ],
+      "link": "https://www.sec.gov/Archives/edgar/data/1645155/000164117225008374/0001641172-25-008374-index.htm",
+      "summary": "<b>Filed:</b> 2025-05-02 <b>AccNo:</b> 0001641172-25-008374 <b>Size:</b> 3 MB",
+      "summary_detail": {
+        "type": "text/html",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?type=10-K&action=getcurrent&output=atom",
+        "value": "<b>Filed:</b> 2025-05-02 <b>AccNo:</b> 0001641172-25-008374 <b>Size:</b> 3 MB"
+      },
+      "updated": "2025-05-02T16:32:57-04:00",
+      "updated_parsed": [
+        2025,
+        5,
+        2,
+        20,
+        32,
+        57,
+        4,
+        122,
+        0
+      ],
+      "tags": [
+        {
+          "term": "10-K",
+          "scheme": "https://www.sec.gov/",
+          "label": "form type"
+        }
+      ],
+      "id": "urn:tag:sec.gov,2008:accession-number=0001641172-25-008374",
+      "guidislink": false
+    },
+    {
+      "title": "10-K/A - PENNANTPARK INVESTMENT CORP (0001383414) (Filer)",
+      "title_detail": {
+        "type": "text/plain",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?type=10-K&action=getcurrent&output=atom",
+        "value": "10-K/A - PENNANTPARK INVESTMENT CORP (0001383414) (Filer)"
+      },
+      "links": [
+        {
+          "rel": "alternate",
+          "type": "text/html",
+          "href": "https://www.sec.gov/Archives/edgar/data/1383414/000119312525111627/0001193125-25-111627-index.htm"
+        }
+      ],
+      "link": "https://www.sec.gov/Archives/edgar/data/1383414/000119312525111627/0001193125-25-111627-index.htm",
+      "summary": "<b>Filed:</b> 2025-05-02 <b>AccNo:</b> 0001193125-25-111627 <b>Size:</b> 1 MB",
+      "summary_detail": {
+        "type": "text/html",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?type=10-K&action=getcurrent&output=atom",
+        "value": "<b>Filed:</b> 2025-05-02 <b>AccNo:</b> 0001193125-25-111627 <b>Size:</b> 1 MB"
+      },
+      "updated": "2025-05-02T16:13:07-04:00",
+      "updated_parsed": [
+        2025,
+        5,
+        2,
+        20,
+        13,
+        7,
+        4,
+        122,
+        0
+      ],
+      "tags": [
+        {
+          "term": "10-K/A",
+          "scheme": "https://www.sec.gov/",
+          "label": "form type"
+        }
+      ],
+      "id": "urn:tag:sec.gov,2008:accession-number=0001193125-25-111627",
+      "guidislink": false
+    },
+    {
+      "title": "10-K/A - GULF ISLAND FABRICATION INC (0001031623) (Filer)",
+      "title_detail": {
+        "type": "text/plain",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?type=10-K&action=getcurrent&output=atom",
+        "value": "10-K/A - GULF ISLAND FABRICATION INC (0001031623) (Filer)"
+      },
+      "links": [
+        {
+          "rel": "alternate",
+          "type": "text/html",
+          "href": "https://www.sec.gov/Archives/edgar/data/1031623/000095017025062768/0000950170-25-062768-index.htm"
+        }
+      ],
+      "link": "https://www.sec.gov/Archives/edgar/data/1031623/000095017025062768/0000950170-25-062768-index.htm",
+      "summary": "<b>Filed:</b> 2025-05-02 <b>AccNo:</b> 0000950170-25-062768 <b>Size:</b> 448 KB",
+      "summary_detail": {
+        "type": "text/html",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?type=10-K&action=getcurrent&output=atom",
+        "value": "<b>Filed:</b> 2025-05-02 <b>AccNo:</b> 0000950170-25-062768 <b>Size:</b> 448 KB"
+      },
+      "updated": "2025-05-02T16:10:03-04:00",
+      "updated_parsed": [
+        2025,
+        5,
+        2,
+        20,
+        10,
+        3,
+        4,
+        122,
+        0
+      ],
+      "tags": [
+        {
+          "term": "10-K/A",
+          "scheme": "https://www.sec.gov/",
+          "label": "form type"
+        }
+      ],
+      "id": "urn:tag:sec.gov,2008:accession-number=0000950170-25-062768",
+      "guidislink": false
+    },
+    {
+      "title": "10-K - KIRKLAND'S, INC (0001056285) (Filer)",
+      "title_detail": {
+        "type": "text/plain",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?type=10-K&action=getcurrent&output=atom",
+        "value": "10-K - KIRKLAND'S, INC (0001056285) (Filer)"
+      },
+      "links": [
+        {
+          "rel": "alternate",
+          "type": "text/html",
+          "href": "https://www.sec.gov/Archives/edgar/data/1056285/000095017025062753/0000950170-25-062753-index.htm"
+        }
+      ],
+      "link": "https://www.sec.gov/Archives/edgar/data/1056285/000095017025062753/0000950170-25-062753-index.htm",
+      "summary": "<b>Filed:</b> 2025-05-02 <b>AccNo:</b> 0000950170-25-062753 <b>Size:</b> 10 MB",
+      "summary_detail": {
+        "type": "text/html",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?type=10-K&action=getcurrent&output=atom",
+        "value": "<b>Filed:</b> 2025-05-02 <b>AccNo:</b> 0000950170-25-062753 <b>Size:</b> 10 MB"
+      },
+      "updated": "2025-05-02T16:07:06-04:00",
+      "updated_parsed": [
+        2025,
+        5,
+        2,
+        20,
+        7,
+        6,
+        4,
+        122,
+        0
+      ],
+      "tags": [
+        {
+          "term": "10-K",
+          "scheme": "https://www.sec.gov/",
+          "label": "form type"
+        }
+      ],
+      "id": "urn:tag:sec.gov,2008:accession-number=0000950170-25-062753",
+      "guidislink": false
+    },
+    {
+      "title": "10-K/A - McEwen Mining Inc. (0000314203) (Filer)",
+      "title_detail": {
+        "type": "text/plain",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?type=10-K&action=getcurrent&output=atom",
+        "value": "10-K/A - McEwen Mining Inc. (0000314203) (Filer)"
+      },
+      "links": [
+        {
+          "rel": "alternate",
+          "type": "text/html",
+          "href": "https://www.sec.gov/Archives/edgar/data/314203/000155837025006193/0001558370-25-006193-index.htm"
+        }
+      ],
+      "link": "https://www.sec.gov/Archives/edgar/data/314203/000155837025006193/0001558370-25-006193-index.htm",
+      "summary": "<b>Filed:</b> 2025-05-02 <b>AccNo:</b> 0001558370-25-006193 <b>Size:</b> 1 MB",
+      "summary_detail": {
+        "type": "text/html",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?type=10-K&action=getcurrent&output=atom",
+        "value": "<b>Filed:</b> 2025-05-02 <b>AccNo:</b> 0001558370-25-006193 <b>Size:</b> 1 MB"
+      },
+      "updated": "2025-05-02T16:05:44-04:00",
+      "updated_parsed": [
+        2025,
+        5,
+        2,
+        20,
+        5,
+        44,
+        4,
+        122,
+        0
+      ],
+      "tags": [
+        {
+          "term": "10-K/A",
+          "scheme": "https://www.sec.gov/",
+          "label": "form type"
+        }
+      ],
+      "id": "urn:tag:sec.gov,2008:accession-number=0001558370-25-006193",
+      "guidislink": false
+    },
+    {
+      "title": "10-K - Edgemode, Inc. (0001652958) (Filer)",
+      "title_detail": {
+        "type": "text/plain",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?type=10-K&action=getcurrent&output=atom",
+        "value": "10-K - Edgemode, Inc. (0001652958) (Filer)"
+      },
+      "links": [
+        {
+          "rel": "alternate",
+          "type": "text/html",
+          "href": "https://www.sec.gov/Archives/edgar/data/1652958/000168316825003051/0001683168-25-003051-index.htm"
+        }
+      ],
+      "link": "https://www.sec.gov/Archives/edgar/data/1652958/000168316825003051/0001683168-25-003051-index.htm",
+      "summary": "<b>Filed:</b> 2025-05-02 <b>AccNo:</b> 0001683168-25-003051 <b>Size:</b> 4 MB",
+      "summary_detail": {
+        "type": "text/html",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?type=10-K&action=getcurrent&output=atom",
+        "value": "<b>Filed:</b> 2025-05-02 <b>AccNo:</b> 0001683168-25-003051 <b>Size:</b> 4 MB"
+      },
+      "updated": "2025-05-02T12:43:30-04:00",
+      "updated_parsed": [
+        2025,
+        5,
+        2,
+        16,
+        43,
+        30,
+        4,
+        122,
+        0
+      ],
+      "tags": [
+        {
+          "term": "10-K",
+          "scheme": "https://www.sec.gov/",
+          "label": "form type"
+        }
+      ],
+      "id": "urn:tag:sec.gov,2008:accession-number=0001683168-25-003051",
+      "guidislink": false
+    },
+    {
+      "title": "10-K - STREAMLINE HEALTH SOLUTIONS INC. (0001008586) (Filer)",
+      "title_detail": {
+        "type": "text/plain",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?type=10-K&action=getcurrent&output=atom",
+        "value": "10-K - STREAMLINE HEALTH SOLUTIONS INC. (0001008586) (Filer)"
+      },
+      "links": [
+        {
+          "rel": "alternate",
+          "type": "text/html",
+          "href": "https://www.sec.gov/Archives/edgar/data/1008586/000143774925014208/0001437749-25-014208-index.htm"
+        }
+      ],
+      "link": "https://www.sec.gov/Archives/edgar/data/1008586/000143774925014208/0001437749-25-014208-index.htm",
+      "summary": "<b>Filed:</b> 2025-05-02 <b>AccNo:</b> 0001437749-25-014208 <b>Size:</b> 11 MB",
+      "summary_detail": {
+        "type": "text/html",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?type=10-K&action=getcurrent&output=atom",
+        "value": "<b>Filed:</b> 2025-05-02 <b>AccNo:</b> 0001437749-25-014208 <b>Size:</b> 11 MB"
+      },
+      "updated": "2025-05-02T09:15:44-04:00",
+      "updated_parsed": [
+        2025,
+        5,
+        2,
+        13,
+        15,
+        44,
+        4,
+        122,
+        0
+      ],
+      "tags": [
+        {
+          "term": "10-K",
+          "scheme": "https://www.sec.gov/",
+          "label": "form type"
+        }
+      ],
+      "id": "urn:tag:sec.gov,2008:accession-number=0001437749-25-014208",
+      "guidislink": false
+    },
+    {
+      "title": "10-K/A - DIRTT ENVIRONMENTAL SOLUTIONS LTD (0001340476) (Filer)",
+      "title_detail": {
+        "type": "text/plain",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?type=10-K&action=getcurrent&output=atom",
+        "value": "10-K/A - DIRTT ENVIRONMENTAL SOLUTIONS LTD (0001340476) (Filer)"
+      },
+      "links": [
+        {
+          "rel": "alternate",
+          "type": "text/html",
+          "href": "https://www.sec.gov/Archives/edgar/data/1340476/000095017025062260/0000950170-25-062260-index.htm"
+        }
+      ],
+      "link": "https://www.sec.gov/Archives/edgar/data/1340476/000095017025062260/0000950170-25-062260-index.htm",
+      "summary": "<b>Filed:</b> 2025-05-02 <b>AccNo:</b> 0000950170-25-062260 <b>Size:</b> 5 MB",
+      "summary_detail": {
+        "type": "text/html",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?type=10-K&action=getcurrent&output=atom",
+        "value": "<b>Filed:</b> 2025-05-02 <b>AccNo:</b> 0000950170-25-062260 <b>Size:</b> 5 MB"
+      },
+      "updated": "2025-05-02T07:58:15-04:00",
+      "updated_parsed": [
+        2025,
+        5,
+        2,
+        11,
+        58,
+        15,
+        4,
+        122,
+        0
+      ],
+      "tags": [
+        {
+          "term": "10-K/A",
+          "scheme": "https://www.sec.gov/",
+          "label": "form type"
+        }
+      ],
+      "id": "urn:tag:sec.gov,2008:accession-number=0000950170-25-062260",
+      "guidislink": false
+    },
+    {
+      "title": "10-K - Vislink Technologies, Inc. (0001565228) (Filer)",
+      "title_detail": {
+        "type": "text/plain",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?type=10-K&action=getcurrent&output=atom",
+        "value": "10-K - Vislink Technologies, Inc. (0001565228) (Filer)"
+      },
+      "links": [
+        {
+          "rel": "alternate",
+          "type": "text/html",
+          "href": "https://www.sec.gov/Archives/edgar/data/1565228/000164117225008150/0001641172-25-008150-index.htm"
+        }
+      ],
+      "link": "https://www.sec.gov/Archives/edgar/data/1565228/000164117225008150/0001641172-25-008150-index.htm",
+      "summary": "<b>Filed:</b> 2025-05-02 <b>AccNo:</b> 0001641172-25-008150 <b>Size:</b> 14 MB",
+      "summary_detail": {
+        "type": "text/html",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?type=10-K&action=getcurrent&output=atom",
+        "value": "<b>Filed:</b> 2025-05-02 <b>AccNo:</b> 0001641172-25-008150 <b>Size:</b> 14 MB"
+      },
+      "updated": "2025-05-01T21:36:54-04:00",
+      "updated_parsed": [
+        2025,
+        5,
+        2,
+        1,
+        36,
+        54,
+        4,
+        122,
+        0
+      ],
+      "tags": [
+        {
+          "term": "10-K",
+          "scheme": "https://www.sec.gov/",
+          "label": "form type"
+        }
+      ],
+      "id": "urn:tag:sec.gov,2008:accession-number=0001641172-25-008150",
+      "guidislink": false
+    },
+    {
+      "title": "10-K/A - Apimeds Pharmaceuticals US, Inc. (0001894525) (Filer)",
+      "title_detail": {
+        "type": "text/plain",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?type=10-K&action=getcurrent&output=atom",
+        "value": "10-K/A - Apimeds Pharmaceuticals US, Inc. (0001894525) (Filer)"
+      },
+      "links": [
+        {
+          "rel": "alternate",
+          "type": "text/html",
+          "href": "https://www.sec.gov/Archives/edgar/data/1894525/000121390025038644/0001213900-25-038644-index.htm"
+        }
+      ],
+      "link": "https://www.sec.gov/Archives/edgar/data/1894525/000121390025038644/0001213900-25-038644-index.htm",
+      "summary": "<b>Filed:</b> 2025-05-02 <b>AccNo:</b> 0001213900-25-038644 <b>Size:</b> 294 KB",
+      "summary_detail": {
+        "type": "text/html",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?type=10-K&action=getcurrent&output=atom",
+        "value": "<b>Filed:</b> 2025-05-02 <b>AccNo:</b> 0001213900-25-038644 <b>Size:</b> 294 KB"
+      },
+      "updated": "2025-05-01T21:09:08-04:00",
+      "updated_parsed": [
+        2025,
+        5,
+        2,
+        1,
+        9,
+        8,
+        4,
+        122,
+        0
+      ],
+      "tags": [
+        {
+          "term": "10-K/A",
+          "scheme": "https://www.sec.gov/",
+          "label": "form type"
+        }
+      ],
+      "id": "urn:tag:sec.gov,2008:accession-number=0001213900-25-038644",
+      "guidislink": false
+    },
+    {
+      "title": "10-K - LIBERTY STAR URANIUM & METALS CORP. (0001172178) (Filer)",
+      "title_detail": {
+        "type": "text/plain",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?type=10-K&action=getcurrent&output=atom",
+        "value": "10-K - LIBERTY STAR URANIUM & METALS CORP. (0001172178) (Filer)"
+      },
+      "links": [
+        {
+          "rel": "alternate",
+          "type": "text/html",
+          "href": "https://www.sec.gov/Archives/edgar/data/1172178/000164117225008127/0001641172-25-008127-index.htm"
+        }
+      ],
+      "link": "https://www.sec.gov/Archives/edgar/data/1172178/000164117225008127/0001641172-25-008127-index.htm",
+      "summary": "<b>Filed:</b> 2025-05-01 <b>AccNo:</b> 0001641172-25-008127 <b>Size:</b> 7 MB",
+      "summary_detail": {
+        "type": "text/html",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?type=10-K&action=getcurrent&output=atom",
+        "value": "<b>Filed:</b> 2025-05-01 <b>AccNo:</b> 0001641172-25-008127 <b>Size:</b> 7 MB"
+      },
+      "updated": "2025-05-01T16:57:26-04:00",
+      "updated_parsed": [
+        2025,
+        5,
+        1,
+        20,
+        57,
+        26,
+        3,
+        121,
+        0
+      ],
+      "tags": [
+        {
+          "term": "10-K",
+          "scheme": "https://www.sec.gov/",
+          "label": "form type"
+        }
+      ],
+      "id": "urn:tag:sec.gov,2008:accession-number=0001641172-25-008127",
+      "guidislink": false
+    },
+    {
+      "title": "10-K/A - TOMI Environmental Solutions, Inc. (0000314227) (Filer)",
+      "title_detail": {
+        "type": "text/plain",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?type=10-K&action=getcurrent&output=atom",
+        "value": "10-K/A - TOMI Environmental Solutions, Inc. (0000314227) (Filer)"
+      },
+      "links": [
+        {
+          "rel": "alternate",
+          "type": "text/html",
+          "href": "https://www.sec.gov/Archives/edgar/data/314227/000165495425004993/0001654954-25-004993-index.htm"
+        }
+      ],
+      "link": "https://www.sec.gov/Archives/edgar/data/314227/000165495425004993/0001654954-25-004993-index.htm",
+      "summary": "<b>Filed:</b> 2025-05-01 <b>AccNo:</b> 0001654954-25-004993 <b>Size:</b> 657 KB",
+      "summary_detail": {
+        "type": "text/html",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?type=10-K&action=getcurrent&output=atom",
+        "value": "<b>Filed:</b> 2025-05-01 <b>AccNo:</b> 0001654954-25-004993 <b>Size:</b> 657 KB"
+      },
+      "updated": "2025-05-01T16:35:19-04:00",
+      "updated_parsed": [
+        2025,
+        5,
+        1,
+        20,
+        35,
+        19,
+        3,
+        121,
+        0
+      ],
+      "tags": [
+        {
+          "term": "10-K/A",
+          "scheme": "https://www.sec.gov/",
+          "label": "form type"
+        }
+      ],
+      "id": "urn:tag:sec.gov,2008:accession-number=0001654954-25-004993",
+      "guidislink": false
+    },
+    {
+      "title": "10-K/A - Shattuck Labs, Inc. (0001680367) (Filer)",
+      "title_detail": {
+        "type": "text/plain",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?type=10-K&action=getcurrent&output=atom",
+        "value": "10-K/A - Shattuck Labs, Inc. (0001680367) (Filer)"
+      },
+      "links": [
+        {
+          "rel": "alternate",
+          "type": "text/html",
+          "href": "https://www.sec.gov/Archives/edgar/data/1680367/000168036725000028/0001680367-25-000028-index.htm"
+        }
+      ],
+      "link": "https://www.sec.gov/Archives/edgar/data/1680367/000168036725000028/0001680367-25-000028-index.htm",
+      "summary": "<b>Filed:</b> 2025-05-01 <b>AccNo:</b> 0001680367-25-000028 <b>Size:</b> 913 KB",
+      "summary_detail": {
+        "type": "text/html",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?type=10-K&action=getcurrent&output=atom",
+        "value": "<b>Filed:</b> 2025-05-01 <b>AccNo:</b> 0001680367-25-000028 <b>Size:</b> 913 KB"
+      },
+      "updated": "2025-05-01T16:14:05-04:00",
+      "updated_parsed": [
+        2025,
+        5,
+        1,
+        20,
+        14,
+        5,
+        3,
+        121,
+        0
+      ],
+      "tags": [
+        {
+          "term": "10-K/A",
+          "scheme": "https://www.sec.gov/",
+          "label": "form type"
+        }
+      ],
+      "id": "urn:tag:sec.gov,2008:accession-number=0001680367-25-000028",
+      "guidislink": false
+    },
+    {
+      "title": "10-K - Perma-Pipe International Holdings, Inc. (0000914122) (Filer)",
+      "title_detail": {
+        "type": "text/plain",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?type=10-K&action=getcurrent&output=atom",
+        "value": "10-K - Perma-Pipe International Holdings, Inc. (0000914122) (Filer)"
+      },
+      "links": [
+        {
+          "rel": "alternate",
+          "type": "text/html",
+          "href": "https://www.sec.gov/Archives/edgar/data/914122/000143774925014095/0001437749-25-014095-index.htm"
+        }
+      ],
+      "link": "https://www.sec.gov/Archives/edgar/data/914122/000143774925014095/0001437749-25-014095-index.htm",
+      "summary": "<b>Filed:</b> 2025-05-01 <b>AccNo:</b> 0001437749-25-014095 <b>Size:</b> 10 MB",
+      "summary_detail": {
+        "type": "text/html",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?type=10-K&action=getcurrent&output=atom",
+        "value": "<b>Filed:</b> 2025-05-01 <b>AccNo:</b> 0001437749-25-014095 <b>Size:</b> 10 MB"
+      },
+      "updated": "2025-05-01T16:12:35-04:00",
+      "updated_parsed": [
+        2025,
+        5,
+        1,
+        20,
+        12,
+        35,
+        3,
+        121,
+        0
+      ],
+      "tags": [
+        {
+          "term": "10-K",
+          "scheme": "https://www.sec.gov/",
+          "label": "form type"
+        }
+      ],
+      "id": "urn:tag:sec.gov,2008:accession-number=0001437749-25-014095",
+      "guidislink": false
+    },
+    {
+      "title": "10-K/A - BT Brands, Inc. (0001718224) (Filer)",
+      "title_detail": {
+        "type": "text/plain",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?type=10-K&action=getcurrent&output=atom",
+        "value": "10-K/A - BT Brands, Inc. (0001718224) (Filer)"
+      },
+      "links": [
+        {
+          "rel": "alternate",
+          "type": "text/html",
+          "href": "https://www.sec.gov/Archives/edgar/data/1718224/000147793225003198/0001477932-25-003198-index.htm"
+        }
+      ],
+      "link": "https://www.sec.gov/Archives/edgar/data/1718224/000147793225003198/0001477932-25-003198-index.htm",
+      "summary": "<b>Filed:</b> 2025-05-01 <b>AccNo:</b> 0001477932-25-003198 <b>Size:</b> 306 KB",
+      "summary_detail": {
+        "type": "text/html",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?type=10-K&action=getcurrent&output=atom",
+        "value": "<b>Filed:</b> 2025-05-01 <b>AccNo:</b> 0001477932-25-003198 <b>Size:</b> 306 KB"
+      },
+      "updated": "2025-05-01T14:48:03-04:00",
+      "updated_parsed": [
+        2025,
+        5,
+        1,
+        18,
+        48,
+        3,
+        3,
+        121,
+        0
+      ],
+      "tags": [
+        {
+          "term": "10-K/A",
+          "scheme": "https://www.sec.gov/",
+          "label": "form type"
+        }
+      ],
+      "id": "urn:tag:sec.gov,2008:accession-number=0001477932-25-003198",
+      "guidislink": false
+    },
+    {
+      "title": "10-K/A - Vocodia Holdings Corp (0001880431) (Filer)",
+      "title_detail": {
+        "type": "text/plain",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?type=10-K&action=getcurrent&output=atom",
+        "value": "10-K/A - Vocodia Holdings Corp (0001880431) (Filer)"
+      },
+      "links": [
+        {
+          "rel": "alternate",
+          "type": "text/html",
+          "href": "https://www.sec.gov/Archives/edgar/data/1880431/000121390025038108/0001213900-25-038108-index.htm"
+        }
+      ],
+      "link": "https://www.sec.gov/Archives/edgar/data/1880431/000121390025038108/0001213900-25-038108-index.htm",
+      "summary": "<b>Filed:</b> 2025-05-01 <b>AccNo:</b> 0001213900-25-038108 <b>Size:</b> 6 MB",
+      "summary_detail": {
+        "type": "text/html",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?type=10-K&action=getcurrent&output=atom",
+        "value": "<b>Filed:</b> 2025-05-01 <b>AccNo:</b> 0001213900-25-038108 <b>Size:</b> 6 MB"
+      },
+      "updated": "2025-05-01T10:14:28-04:00",
+      "updated_parsed": [
+        2025,
+        5,
+        1,
+        14,
+        14,
+        28,
+        3,
+        121,
+        0
+      ],
+      "tags": [
+        {
+          "term": "10-K/A",
+          "scheme": "https://www.sec.gov/",
+          "label": "form type"
+        }
+      ],
+      "id": "urn:tag:sec.gov,2008:accession-number=0001213900-25-038108",
+      "guidislink": false
+    },
+    {
+      "title": "10-K/A - PACCAR FINANCIAL CORP (0000731288) (Filer)",
+      "title_detail": {
+        "type": "text/plain",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?type=10-K&action=getcurrent&output=atom",
+        "value": "10-K/A - PACCAR FINANCIAL CORP (0000731288) (Filer)"
+      },
+      "links": [
+        {
+          "rel": "alternate",
+          "type": "text/html",
+          "href": "https://www.sec.gov/Archives/edgar/data/731288/000095017025061451/0000950170-25-061451-index.htm"
+        }
+      ],
+      "link": "https://www.sec.gov/Archives/edgar/data/731288/000095017025061451/0000950170-25-061451-index.htm",
+      "summary": "<b>Filed:</b> 2025-05-01 <b>AccNo:</b> 0000950170-25-061451 <b>Size:</b> 501 KB",
+      "summary_detail": {
+        "type": "text/html",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?type=10-K&action=getcurrent&output=atom",
+        "value": "<b>Filed:</b> 2025-05-01 <b>AccNo:</b> 0000950170-25-061451 <b>Size:</b> 501 KB"
+      },
+      "updated": "2025-05-01T08:05:09-04:00",
+      "updated_parsed": [
+        2025,
+        5,
+        1,
+        12,
+        5,
+        9,
+        3,
+        121,
+        0
+      ],
+      "tags": [
+        {
+          "term": "10-K/A",
+          "scheme": "https://www.sec.gov/",
+          "label": "form type"
+        }
+      ],
+      "id": "urn:tag:sec.gov,2008:accession-number=0000950170-25-061451",
+      "guidislink": false
+    },
+    {
+      "title": "10-K - INNSUITES HOSPITALITY TRUST (0000082473) (Filer)",
+      "title_detail": {
+        "type": "text/plain",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?type=10-K&action=getcurrent&output=atom",
+        "value": "10-K - INNSUITES HOSPITALITY TRUST (0000082473) (Filer)"
+      },
+      "links": [
+        {
+          "rel": "alternate",
+          "type": "text/html",
+          "href": "https://www.sec.gov/Archives/edgar/data/82473/000164117225007998/0001641172-25-007998-index.htm"
+        }
+      ],
+      "link": "https://www.sec.gov/Archives/edgar/data/82473/000164117225007998/0001641172-25-007998-index.htm",
+      "summary": "<b>Filed:</b> 2025-05-01 <b>AccNo:</b> 0001641172-25-007998 <b>Size:</b> 7 MB",
+      "summary_detail": {
+        "type": "text/html",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?type=10-K&action=getcurrent&output=atom",
+        "value": "<b>Filed:</b> 2025-05-01 <b>AccNo:</b> 0001641172-25-007998 <b>Size:</b> 7 MB"
+      },
+      "updated": "2025-05-01T06:25:22-04:00",
+      "updated_parsed": [
+        2025,
+        5,
+        1,
+        10,
+        25,
+        22,
+        3,
+        121,
+        0
+      ],
+      "tags": [
+        {
+          "term": "10-K",
+          "scheme": "https://www.sec.gov/",
+          "label": "form type"
+        }
+      ],
+      "id": "urn:tag:sec.gov,2008:accession-number=0001641172-25-007998",
+      "guidislink": false
+    }
+  ]
+}

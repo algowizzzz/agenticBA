@@ -44,3 +44,6 @@ data/processed/
 # earnings_transcripts_backup.tar.gz
 # *.bson
 # *.tar.gz
+
+# Large files to ignore
+news_collector/data/raw/ccnews/CC-NEWS-20250505161556-01969.warc.gz

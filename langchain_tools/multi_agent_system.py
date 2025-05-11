@@ -262,7 +262,6 @@ class MultiAgentSystem:
         
         # Initialize LLM
         self.llm = ChatAnthropic(
-            api_key=api_key,
             model="claude-3-haiku-20240307"
         )
         

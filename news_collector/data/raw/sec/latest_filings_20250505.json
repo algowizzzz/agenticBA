@@ -1,0 +1,1851 @@
+{
+  "feed_info": {
+    "title": "Latest Filings - Mon, 05 May 2025 16:49:08 EDT",
+    "title_detail": {
+      "type": "text/plain",
+      "language": null,
+      "base": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcurrent&CIK=&type=&company=&dateb=&owner=include&start=0&count=40&output=atom",
+      "value": "Latest Filings - Mon, 05 May 2025 16:49:08 EDT"
+    },
+    "links": [
+      {
+        "rel": "alternate",
+        "href": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcurrent",
+        "type": "text/html"
+      },
+      {
+        "rel": "self",
+        "href": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcurrent",
+        "type": "application/atom+xml"
+      }
+    ],
+    "link": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcurrent",
+    "id": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcurrent",
+    "guidislink": false,
+    "authors": [
+      {
+        "name": "Webmaster",
+        "email": "webmaster@sec.gov"
+      }
+    ],
+    "author_detail": {
+      "name": "Webmaster",
+      "email": "webmaster@sec.gov"
+    },
+    "author": "Webmaster (webmaster@sec.gov)",
+    "updated": "2025-05-05T16:49:08-04:00",
+    "updated_parsed": [
+      2025,
+      5,
+      5,
+      20,
+      49,
+      8,
+      0,
+      125,
+      0
+    ]
+  },
+  "entries": [
+    {
+      "title": "4 - GeneDx Holdings Corp. (0001818331) (Issuer)",
+      "title_detail": {
+        "type": "text/plain",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcurrent&CIK=&type=&company=&dateb=&owner=include&start=0&count=40&output=atom",
+        "value": "4 - GeneDx Holdings Corp. (0001818331) (Issuer)"
+      },
+      "links": [
+        {
+          "rel": "alternate",
+          "type": "text/html",
+          "href": "https://www.sec.gov/Archives/edgar/data/1818331/000141588925011978/0001415889-25-011978-index.htm"
+        }
+      ],
+      "link": "https://www.sec.gov/Archives/edgar/data/1818331/000141588925011978/0001415889-25-011978-index.htm",
+      "summary": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0001415889-25-011978 <b>Size:</b> 7 KB",
+      "summary_detail": {
+        "type": "text/html",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcurrent&CIK=&type=&company=&dateb=&owner=include&start=0&count=40&output=atom",
+        "value": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0001415889-25-011978 <b>Size:</b> 7 KB"
+      },
+      "updated": "2025-05-05T16:48:43-04:00",
+      "updated_parsed": [
+        2025,
+        5,
+        5,
+        20,
+        48,
+        43,
+        0,
+        125,
+        0
+      ],
+      "tags": [
+        {
+          "term": "4",
+          "scheme": "https://www.sec.gov/",
+          "label": "form type"
+        }
+      ],
+      "id": "urn:tag:sec.gov,2008:accession-number=0001415889-25-011978",
+      "guidislink": false
+    },
+    {
+      "title": "4 - PFENNIGER RICHARD C JR (0001200796) (Reporting)",
+      "title_detail": {
+        "type": "text/plain",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcurrent&CIK=&type=&company=&dateb=&owner=include&start=0&count=40&output=atom",
+        "value": "4 - PFENNIGER RICHARD C JR (0001200796) (Reporting)"
+      },
+      "links": [
+        {
+          "rel": "alternate",
+          "type": "text/html",
+          "href": "https://www.sec.gov/Archives/edgar/data/1200796/000141588925011978/0001415889-25-011978-index.htm"
+        }
+      ],
+      "link": "https://www.sec.gov/Archives/edgar/data/1200796/000141588925011978/0001415889-25-011978-index.htm",
+      "summary": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0001415889-25-011978 <b>Size:</b> 7 KB",
+      "summary_detail": {
+        "type": "text/html",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcurrent&CIK=&type=&company=&dateb=&owner=include&start=0&count=40&output=atom",
+        "value": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0001415889-25-011978 <b>Size:</b> 7 KB"
+      },
+      "updated": "2025-05-05T16:48:43-04:00",
+      "updated_parsed": [
+        2025,
+        5,
+        5,
+        20,
+        48,
+        43,
+        0,
+        125,
+        0
+      ],
+      "tags": [
+        {
+          "term": "4",
+          "scheme": "https://www.sec.gov/",
+          "label": "form type"
+        }
+      ],
+      "id": "urn:tag:sec.gov,2008:accession-number=0001415889-25-011978",
+      "guidislink": false
+    },
+    {
+      "title": "8-K - Central Plains Bancshares, Inc. (0001979332) (Filer)",
+      "title_detail": {
+        "type": "text/plain",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcurrent&CIK=&type=&company=&dateb=&owner=include&start=0&count=40&output=atom",
+        "value": "8-K - Central Plains Bancshares, Inc. (0001979332) (Filer)"
+      },
+      "links": [
+        {
+          "rel": "alternate",
+          "type": "text/html",
+          "href": "https://www.sec.gov/Archives/edgar/data/1979332/000094337425000187/0000943374-25-000187-index.htm"
+        }
+      ],
+      "link": "https://www.sec.gov/Archives/edgar/data/1979332/000094337425000187/0000943374-25-000187-index.htm",
+      "summary": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0000943374-25-000187 <b>Size:</b> 164 KB\n<br />Item 5.02: Departure of Directors or Certain Officers; Election of Directors; Appointment of Certain Officers: Compensatory Arrangements of Certain Officers\n<br />Item 9.01: Financial Statements and Exhibits",
+      "summary_detail": {
+        "type": "text/html",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcurrent&CIK=&type=&company=&dateb=&owner=include&start=0&count=40&output=atom",
+        "value": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0000943374-25-000187 <b>Size:</b> 164 KB\n<br />Item 5.02: Departure of Directors or Certain Officers; Election of Directors; Appointment of Certain Officers: Compensatory Arrangements of Certain Officers\n<br />Item 9.01: Financial Statements and Exhibits"
+      },
+      "updated": "2025-05-05T16:48:40-04:00",
+      "updated_parsed": [
+        2025,
+        5,
+        5,
+        20,
+        48,
+        40,
+        0,
+        125,
+        0
+      ],
+      "tags": [
+        {
+          "term": "8-K",
+          "scheme": "https://www.sec.gov/",
+          "label": "form type"
+        }
+      ],
+      "id": "urn:tag:sec.gov,2008:accession-number=0000943374-25-000187",
+      "guidislink": false
+    },
+    {
+      "title": "4 - Franklin Chris (0001390811) (Reporting)",
+      "title_detail": {
+        "type": "text/plain",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcurrent&CIK=&type=&company=&dateb=&owner=include&start=0&count=40&output=atom",
+        "value": "4 - Franklin Chris (0001390811) (Reporting)"
+      },
+      "links": [
+        {
+          "rel": "alternate",
+          "type": "text/html",
+          "href": "https://www.sec.gov/Archives/edgar/data/1390811/000113031025000087/0001130310-25-000087-index.htm"
+        }
+      ],
+      "link": "https://www.sec.gov/Archives/edgar/data/1390811/000113031025000087/0001130310-25-000087-index.htm",
+      "summary": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0001130310-25-000087 <b>Size:</b> 4 KB",
+      "summary_detail": {
+        "type": "text/html",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcurrent&CIK=&type=&company=&dateb=&owner=include&start=0&count=40&output=atom",
+        "value": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0001130310-25-000087 <b>Size:</b> 4 KB"
+      },
+      "updated": "2025-05-05T16:48:40-04:00",
+      "updated_parsed": [
+        2025,
+        5,
+        5,
+        20,
+        48,
+        40,
+        0,
+        125,
+        0
+      ],
+      "tags": [
+        {
+          "term": "4",
+          "scheme": "https://www.sec.gov/",
+          "label": "form type"
+        }
+      ],
+      "id": "urn:tag:sec.gov,2008:accession-number=0001130310-25-000087",
+      "guidislink": false
+    },
+    {
+      "title": "4 - CENTERPOINT ENERGY INC (0001130310) (Issuer)",
+      "title_detail": {
+        "type": "text/plain",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcurrent&CIK=&type=&company=&dateb=&owner=include&start=0&count=40&output=atom",
+        "value": "4 - CENTERPOINT ENERGY INC (0001130310) (Issuer)"
+      },
+      "links": [
+        {
+          "rel": "alternate",
+          "type": "text/html",
+          "href": "https://www.sec.gov/Archives/edgar/data/1130310/000113031025000087/0001130310-25-000087-index.htm"
+        }
+      ],
+      "link": "https://www.sec.gov/Archives/edgar/data/1130310/000113031025000087/0001130310-25-000087-index.htm",
+      "summary": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0001130310-25-000087 <b>Size:</b> 4 KB",
+      "summary_detail": {
+        "type": "text/html",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcurrent&CIK=&type=&company=&dateb=&owner=include&start=0&count=40&output=atom",
+        "value": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0001130310-25-000087 <b>Size:</b> 4 KB"
+      },
+      "updated": "2025-05-05T16:48:40-04:00",
+      "updated_parsed": [
+        2025,
+        5,
+        5,
+        20,
+        48,
+        40,
+        0,
+        125,
+        0
+      ],
+      "tags": [
+        {
+          "term": "4",
+          "scheme": "https://www.sec.gov/",
+          "label": "form type"
+        }
+      ],
+      "id": "urn:tag:sec.gov,2008:accession-number=0001130310-25-000087",
+      "guidislink": false
+    },
+    {
+      "title": "DEFA14A - TRUSTCO BANK CORP N Y (0000357301) (Filer)",
+      "title_detail": {
+        "type": "text/plain",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcurrent&CIK=&type=&company=&dateb=&owner=include&start=0&count=40&output=atom",
+        "value": "DEFA14A - TRUSTCO BANK CORP N Y (0000357301) (Filer)"
+      },
+      "links": [
+        {
+          "rel": "alternate",
+          "type": "text/html",
+          "href": "https://www.sec.gov/Archives/edgar/data/357301/000114036125017358/0001140361-25-017358-index.htm"
+        }
+      ],
+      "link": "https://www.sec.gov/Archives/edgar/data/357301/000114036125017358/0001140361-25-017358-index.htm",
+      "summary": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0001140361-25-017358 <b>Size:</b> 204 KB",
+      "summary_detail": {
+        "type": "text/html",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcurrent&CIK=&type=&company=&dateb=&owner=include&start=0&count=40&output=atom",
+        "value": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0001140361-25-017358 <b>Size:</b> 204 KB"
+      },
+      "updated": "2025-05-05T16:48:34-04:00",
+      "updated_parsed": [
+        2025,
+        5,
+        5,
+        20,
+        48,
+        34,
+        0,
+        125,
+        0
+      ],
+      "tags": [
+        {
+          "term": "DEFA14A",
+          "scheme": "https://www.sec.gov/",
+          "label": "form type"
+        }
+      ],
+      "id": "urn:tag:sec.gov,2008:accession-number=0001140361-25-017358",
+      "guidislink": false
+    },
+    {
+      "title": "424B2 - BofA Finance LLC (0001682472) (Filer)",
+      "title_detail": {
+        "type": "text/plain",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcurrent&CIK=&type=&company=&dateb=&owner=include&start=0&count=40&output=atom",
+        "value": "424B2 - BofA Finance LLC (0001682472) (Filer)"
+      },
+      "links": [
+        {
+          "rel": "alternate",
+          "type": "text/html",
+          "href": "https://www.sec.gov/Archives/edgar/data/1682472/000191870425007689/0001918704-25-007689-index.htm"
+        }
+      ],
+      "link": "https://www.sec.gov/Archives/edgar/data/1682472/000191870425007689/0001918704-25-007689-index.htm",
+      "summary": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0001918704-25-007689 <b>Size:</b> 750 KB",
+      "summary_detail": {
+        "type": "text/html",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcurrent&CIK=&type=&company=&dateb=&owner=include&start=0&count=40&output=atom",
+        "value": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0001918704-25-007689 <b>Size:</b> 750 KB"
+      },
+      "updated": "2025-05-05T16:48:33-04:00",
+      "updated_parsed": [
+        2025,
+        5,
+        5,
+        20,
+        48,
+        33,
+        0,
+        125,
+        0
+      ],
+      "tags": [
+        {
+          "term": "424B2",
+          "scheme": "https://www.sec.gov/",
+          "label": "form type"
+        }
+      ],
+      "id": "urn:tag:sec.gov,2008:accession-number=0001918704-25-007689",
+      "guidislink": false
+    },
+    {
+      "title": "424B2 - BANK OF AMERICA CORP /DE/ (0000070858) (Filer)",
+      "title_detail": {
+        "type": "text/plain",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcurrent&CIK=&type=&company=&dateb=&owner=include&start=0&count=40&output=atom",
+        "value": "424B2 - BANK OF AMERICA CORP /DE/ (0000070858) (Filer)"
+      },
+      "links": [
+        {
+          "rel": "alternate",
+          "type": "text/html",
+          "href": "https://www.sec.gov/Archives/edgar/data/70858/000191870425007689/0001918704-25-007689-index.htm"
+        }
+      ],
+      "link": "https://www.sec.gov/Archives/edgar/data/70858/000191870425007689/0001918704-25-007689-index.htm",
+      "summary": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0001918704-25-007689 <b>Size:</b> 750 KB",
+      "summary_detail": {
+        "type": "text/html",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcurrent&CIK=&type=&company=&dateb=&owner=include&start=0&count=40&output=atom",
+        "value": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0001918704-25-007689 <b>Size:</b> 750 KB"
+      },
+      "updated": "2025-05-05T16:48:33-04:00",
+      "updated_parsed": [
+        2025,
+        5,
+        5,
+        20,
+        48,
+        33,
+        0,
+        125,
+        0
+      ],
+      "tags": [
+        {
+          "term": "424B2",
+          "scheme": "https://www.sec.gov/",
+          "label": "form type"
+        }
+      ],
+      "id": "urn:tag:sec.gov,2008:accession-number=0001918704-25-007689",
+      "guidislink": false
+    },
+    {
+      "title": "8-K - HORTON D R INC /DE/ (0000882184) (Filer)",
+      "title_detail": {
+        "type": "text/plain",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcurrent&CIK=&type=&company=&dateb=&owner=include&start=0&count=40&output=atom",
+        "value": "8-K - HORTON D R INC /DE/ (0000882184) (Filer)"
+      },
+      "links": [
+        {
+          "rel": "alternate",
+          "type": "text/html",
+          "href": "https://www.sec.gov/Archives/edgar/data/882184/000119312525112839/0001193125-25-112839-index.htm"
+        }
+      ],
+      "link": "https://www.sec.gov/Archives/edgar/data/882184/000119312525112839/0001193125-25-112839-index.htm",
+      "summary": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0001193125-25-112839 <b>Size:</b> 426 KB\n<br />Item 1.01: Entry into a Material Definitive Agreement\n<br />Item 9.01: Financial Statements and Exhibits",
+      "summary_detail": {
+        "type": "text/html",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcurrent&CIK=&type=&company=&dateb=&owner=include&start=0&count=40&output=atom",
+        "value": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0001193125-25-112839 <b>Size:</b> 426 KB\n<br />Item 1.01: Entry into a Material Definitive Agreement\n<br />Item 9.01: Financial Statements and Exhibits"
+      },
+      "updated": "2025-05-05T16:48:20-04:00",
+      "updated_parsed": [
+        2025,
+        5,
+        5,
+        20,
+        48,
+        20,
+        0,
+        125,
+        0
+      ],
+      "tags": [
+        {
+          "term": "8-K",
+          "scheme": "https://www.sec.gov/",
+          "label": "form type"
+        }
+      ],
+      "id": "urn:tag:sec.gov,2008:accession-number=0001193125-25-112839",
+      "guidislink": false
+    },
+    {
+      "title": "8-K - COUSINS PROPERTIES INC (0000025232) (Filer)",
+      "title_detail": {
+        "type": "text/plain",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcurrent&CIK=&type=&company=&dateb=&owner=include&start=0&count=40&output=atom",
+        "value": "8-K - COUSINS PROPERTIES INC (0000025232) (Filer)"
+      },
+      "links": [
+        {
+          "rel": "alternate",
+          "type": "text/html",
+          "href": "https://www.sec.gov/Archives/edgar/data/25232/000002523225000033/0000025232-25-000033-index.htm"
+        }
+      ],
+      "link": "https://www.sec.gov/Archives/edgar/data/25232/000002523225000033/0000025232-25-000033-index.htm",
+      "summary": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0000025232-25-000033 <b>Size:</b> 10 MB\n<br />Item 7.01: Regulation FD Disclosure\n<br />Item 9.01: Financial Statements and Exhibits",
+      "summary_detail": {
+        "type": "text/html",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcurrent&CIK=&type=&company=&dateb=&owner=include&start=0&count=40&output=atom",
+        "value": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0000025232-25-000033 <b>Size:</b> 10 MB\n<br />Item 7.01: Regulation FD Disclosure\n<br />Item 9.01: Financial Statements and Exhibits"
+      },
+      "updated": "2025-05-05T16:48:14-04:00",
+      "updated_parsed": [
+        2025,
+        5,
+        5,
+        20,
+        48,
+        14,
+        0,
+        125,
+        0
+      ],
+      "tags": [
+        {
+          "term": "8-K",
+          "scheme": "https://www.sec.gov/",
+          "label": "form type"
+        }
+      ],
+      "id": "urn:tag:sec.gov,2008:accession-number=0000025232-25-000033",
+      "guidislink": false
+    },
+    {
+      "title": "10-Q - TIDEWATER INC (0000098222) (Filer)",
+      "title_detail": {
+        "type": "text/plain",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcurrent&CIK=&type=&company=&dateb=&owner=include&start=0&count=40&output=atom",
+        "value": "10-Q - TIDEWATER INC (0000098222) (Filer)"
+      },
+      "links": [
+        {
+          "rel": "alternate",
+          "type": "text/html",
+          "href": "https://www.sec.gov/Archives/edgar/data/98222/000143774925014565/0001437749-25-014565-index.htm"
+        }
+      ],
+      "link": "https://www.sec.gov/Archives/edgar/data/98222/000143774925014565/0001437749-25-014565-index.htm",
+      "summary": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0001437749-25-014565 <b>Size:</b> 6 MB",
+      "summary_detail": {
+        "type": "text/html",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcurrent&CIK=&type=&company=&dateb=&owner=include&start=0&count=40&output=atom",
+        "value": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0001437749-25-014565 <b>Size:</b> 6 MB"
+      },
+      "updated": "2025-05-05T16:48:02-04:00",
+      "updated_parsed": [
+        2025,
+        5,
+        5,
+        20,
+        48,
+        2,
+        0,
+        125,
+        0
+      ],
+      "tags": [
+        {
+          "term": "10-Q",
+          "scheme": "https://www.sec.gov/",
+          "label": "form type"
+        }
+      ],
+      "id": "urn:tag:sec.gov,2008:accession-number=0001437749-25-014565",
+      "guidislink": false
+    },
+    {
+      "title": "4 - Paolini John F. (0001741533) (Reporting)",
+      "title_detail": {
+        "type": "text/plain",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcurrent&CIK=&type=&company=&dateb=&owner=include&start=0&count=40&output=atom",
+        "value": "4 - Paolini John F. (0001741533) (Reporting)"
+      },
+      "links": [
+        {
+          "rel": "alternate",
+          "type": "text/html",
+          "href": "https://www.sec.gov/Archives/edgar/data/1741533/000141588925011975/0001415889-25-011975-index.htm"
+        }
+      ],
+      "link": "https://www.sec.gov/Archives/edgar/data/1741533/000141588925011975/0001415889-25-011975-index.htm",
+      "summary": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0001415889-25-011975 <b>Size:</b> 13 KB",
+      "summary_detail": {
+        "type": "text/html",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcurrent&CIK=&type=&company=&dateb=&owner=include&start=0&count=40&output=atom",
+        "value": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0001415889-25-011975 <b>Size:</b> 13 KB"
+      },
+      "updated": "2025-05-05T16:47:42-04:00",
+      "updated_parsed": [
+        2025,
+        5,
+        5,
+        20,
+        47,
+        42,
+        0,
+        125,
+        0
+      ],
+      "tags": [
+        {
+          "term": "4",
+          "scheme": "https://www.sec.gov/",
+          "label": "form type"
+        }
+      ],
+      "id": "urn:tag:sec.gov,2008:accession-number=0001415889-25-011975",
+      "guidislink": false
+    },
+    {
+      "title": "4 - Kiniksa Pharmaceuticals International, plc (0001730430) (Issuer)",
+      "title_detail": {
+        "type": "text/plain",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcurrent&CIK=&type=&company=&dateb=&owner=include&start=0&count=40&output=atom",
+        "value": "4 - Kiniksa Pharmaceuticals International, plc (0001730430) (Issuer)"
+      },
+      "links": [
+        {
+          "rel": "alternate",
+          "type": "text/html",
+          "href": "https://www.sec.gov/Archives/edgar/data/1730430/000141588925011975/0001415889-25-011975-index.htm"
+        }
+      ],
+      "link": "https://www.sec.gov/Archives/edgar/data/1730430/000141588925011975/0001415889-25-011975-index.htm",
+      "summary": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0001415889-25-011975 <b>Size:</b> 13 KB",
+      "summary_detail": {
+        "type": "text/html",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcurrent&CIK=&type=&company=&dateb=&owner=include&start=0&count=40&output=atom",
+        "value": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0001415889-25-011975 <b>Size:</b> 13 KB"
+      },
+      "updated": "2025-05-05T16:47:42-04:00",
+      "updated_parsed": [
+        2025,
+        5,
+        5,
+        20,
+        47,
+        42,
+        0,
+        125,
+        0
+      ],
+      "tags": [
+        {
+          "term": "4",
+          "scheme": "https://www.sec.gov/",
+          "label": "form type"
+        }
+      ],
+      "id": "urn:tag:sec.gov,2008:accession-number=0001415889-25-011975",
+      "guidislink": false
+    },
+    {
+      "title": "10-Q - Axsome Therapeutics, Inc. (0001579428) (Filer)",
+      "title_detail": {
+        "type": "text/plain",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcurrent&CIK=&type=&company=&dateb=&owner=include&start=0&count=40&output=atom",
+        "value": "10-Q - Axsome Therapeutics, Inc. (0001579428) (Filer)"
+      },
+      "links": [
+        {
+          "rel": "alternate",
+          "type": "text/html",
+          "href": "https://www.sec.gov/Archives/edgar/data/1579428/000095017025063634/0000950170-25-063634-index.htm"
+        }
+      ],
+      "link": "https://www.sec.gov/Archives/edgar/data/1579428/000095017025063634/0000950170-25-063634-index.htm",
+      "summary": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0000950170-25-063634 <b>Size:</b> 11 MB",
+      "summary_detail": {
+        "type": "text/html",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcurrent&CIK=&type=&company=&dateb=&owner=include&start=0&count=40&output=atom",
+        "value": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0000950170-25-063634 <b>Size:</b> 11 MB"
+      },
+      "updated": "2025-05-05T16:47:38-04:00",
+      "updated_parsed": [
+        2025,
+        5,
+        5,
+        20,
+        47,
+        38,
+        0,
+        125,
+        0
+      ],
+      "tags": [
+        {
+          "term": "10-Q",
+          "scheme": "https://www.sec.gov/",
+          "label": "form type"
+        }
+      ],
+      "id": "urn:tag:sec.gov,2008:accession-number=0000950170-25-063634",
+      "guidislink": false
+    },
+    {
+      "title": "485BXT - EA Series Trust (0001592900) (Filer)",
+      "title_detail": {
+        "type": "text/plain",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcurrent&CIK=&type=&company=&dateb=&owner=include&start=0&count=40&output=atom",
+        "value": "485BXT - EA Series Trust (0001592900) (Filer)"
+      },
+      "links": [
+        {
+          "rel": "alternate",
+          "type": "text/html",
+          "href": "https://www.sec.gov/Archives/edgar/data/1592900/000159290025001076/0001592900-25-001076-index.htm"
+        }
+      ],
+      "link": "https://www.sec.gov/Archives/edgar/data/1592900/000159290025001076/0001592900-25-001076-index.htm",
+      "summary": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0001592900-25-001076 <b>Size:</b> 39 KB",
+      "summary_detail": {
+        "type": "text/html",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcurrent&CIK=&type=&company=&dateb=&owner=include&start=0&count=40&output=atom",
+        "value": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0001592900-25-001076 <b>Size:</b> 39 KB"
+      },
+      "updated": "2025-05-05T16:47:29-04:00",
+      "updated_parsed": [
+        2025,
+        5,
+        5,
+        20,
+        47,
+        29,
+        0,
+        125,
+        0
+      ],
+      "tags": [
+        {
+          "term": "485BXT",
+          "scheme": "https://www.sec.gov/",
+          "label": "form type"
+        }
+      ],
+      "id": "urn:tag:sec.gov,2008:accession-number=0001592900-25-001076",
+      "guidislink": false
+    },
+    {
+      "title": "485BXT - EA Series Trust (0001592900) (Filer)",
+      "title_detail": {
+        "type": "text/plain",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcurrent&CIK=&type=&company=&dateb=&owner=include&start=0&count=40&output=atom",
+        "value": "485BXT - EA Series Trust (0001592900) (Filer)"
+      },
+      "links": [
+        {
+          "rel": "alternate",
+          "type": "text/html",
+          "href": "https://www.sec.gov/Archives/edgar/data/1592900/000159290025001076/0001592900-25-001076-index.htm"
+        }
+      ],
+      "link": "https://www.sec.gov/Archives/edgar/data/1592900/000159290025001076/0001592900-25-001076-index.htm",
+      "summary": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0001592900-25-001076 <b>Size:</b> 39 KB",
+      "summary_detail": {
+        "type": "text/html",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcurrent&CIK=&type=&company=&dateb=&owner=include&start=0&count=40&output=atom",
+        "value": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0001592900-25-001076 <b>Size:</b> 39 KB"
+      },
+      "updated": "2025-05-05T16:47:29-04:00",
+      "updated_parsed": [
+        2025,
+        5,
+        5,
+        20,
+        47,
+        29,
+        0,
+        125,
+        0
+      ],
+      "tags": [
+        {
+          "term": "485BXT",
+          "scheme": "https://www.sec.gov/",
+          "label": "form type"
+        }
+      ],
+      "id": "urn:tag:sec.gov,2008:accession-number=0001592900-25-001076",
+      "guidislink": false
+    },
+    {
+      "title": "4 - DUGANIER BARBARA J (0001588011) (Reporting)",
+      "title_detail": {
+        "type": "text/plain",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcurrent&CIK=&type=&company=&dateb=&owner=include&start=0&count=40&output=atom",
+        "value": "4 - DUGANIER BARBARA J (0001588011) (Reporting)"
+      },
+      "links": [
+        {
+          "rel": "alternate",
+          "type": "text/html",
+          "href": "https://www.sec.gov/Archives/edgar/data/1588011/000113031025000086/0001130310-25-000086-index.htm"
+        }
+      ],
+      "link": "https://www.sec.gov/Archives/edgar/data/1588011/000113031025000086/0001130310-25-000086-index.htm",
+      "summary": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0001130310-25-000086 <b>Size:</b> 4 KB",
+      "summary_detail": {
+        "type": "text/html",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcurrent&CIK=&type=&company=&dateb=&owner=include&start=0&count=40&output=atom",
+        "value": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0001130310-25-000086 <b>Size:</b> 4 KB"
+      },
+      "updated": "2025-05-05T16:47:23-04:00",
+      "updated_parsed": [
+        2025,
+        5,
+        5,
+        20,
+        47,
+        23,
+        0,
+        125,
+        0
+      ],
+      "tags": [
+        {
+          "term": "4",
+          "scheme": "https://www.sec.gov/",
+          "label": "form type"
+        }
+      ],
+      "id": "urn:tag:sec.gov,2008:accession-number=0001130310-25-000086",
+      "guidislink": false
+    },
+    {
+      "title": "4 - CENTERPOINT ENERGY INC (0001130310) (Issuer)",
+      "title_detail": {
+        "type": "text/plain",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcurrent&CIK=&type=&company=&dateb=&owner=include&start=0&count=40&output=atom",
+        "value": "4 - CENTERPOINT ENERGY INC (0001130310) (Issuer)"
+      },
+      "links": [
+        {
+          "rel": "alternate",
+          "type": "text/html",
+          "href": "https://www.sec.gov/Archives/edgar/data/1130310/000113031025000086/0001130310-25-000086-index.htm"
+        }
+      ],
+      "link": "https://www.sec.gov/Archives/edgar/data/1130310/000113031025000086/0001130310-25-000086-index.htm",
+      "summary": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0001130310-25-000086 <b>Size:</b> 4 KB",
+      "summary_detail": {
+        "type": "text/html",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcurrent&CIK=&type=&company=&dateb=&owner=include&start=0&count=40&output=atom",
+        "value": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0001130310-25-000086 <b>Size:</b> 4 KB"
+      },
+      "updated": "2025-05-05T16:47:23-04:00",
+      "updated_parsed": [
+        2025,
+        5,
+        5,
+        20,
+        47,
+        23,
+        0,
+        125,
+        0
+      ],
+      "tags": [
+        {
+          "term": "4",
+          "scheme": "https://www.sec.gov/",
+          "label": "form type"
+        }
+      ],
+      "id": "urn:tag:sec.gov,2008:accession-number=0001130310-25-000086",
+      "guidislink": false
+    },
+    {
+      "title": "4 - Viljoen Natascha (0001994131) (Reporting)",
+      "title_detail": {
+        "type": "text/plain",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcurrent&CIK=&type=&company=&dateb=&owner=include&start=0&count=40&output=atom",
+        "value": "4 - Viljoen Natascha (0001994131) (Reporting)"
+      },
+      "links": [
+        {
+          "rel": "alternate",
+          "type": "text/html",
+          "href": "https://www.sec.gov/Archives/edgar/data/1994131/000106299325008485/0001062993-25-008485-index.htm"
+        }
+      ],
+      "link": "https://www.sec.gov/Archives/edgar/data/1994131/000106299325008485/0001062993-25-008485-index.htm",
+      "summary": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0001062993-25-008485 <b>Size:</b> 4 KB",
+      "summary_detail": {
+        "type": "text/html",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcurrent&CIK=&type=&company=&dateb=&owner=include&start=0&count=40&output=atom",
+        "value": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0001062993-25-008485 <b>Size:</b> 4 KB"
+      },
+      "updated": "2025-05-05T16:47:18-04:00",
+      "updated_parsed": [
+        2025,
+        5,
+        5,
+        20,
+        47,
+        18,
+        0,
+        125,
+        0
+      ],
+      "tags": [
+        {
+          "term": "4",
+          "scheme": "https://www.sec.gov/",
+          "label": "form type"
+        }
+      ],
+      "id": "urn:tag:sec.gov,2008:accession-number=0001062993-25-008485",
+      "guidislink": false
+    },
+    {
+      "title": "4 - NEWMONT Corp /DE/ (0001164727) (Issuer)",
+      "title_detail": {
+        "type": "text/plain",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcurrent&CIK=&type=&company=&dateb=&owner=include&start=0&count=40&output=atom",
+        "value": "4 - NEWMONT Corp /DE/ (0001164727) (Issuer)"
+      },
+      "links": [
+        {
+          "rel": "alternate",
+          "type": "text/html",
+          "href": "https://www.sec.gov/Archives/edgar/data/1164727/000106299325008485/0001062993-25-008485-index.htm"
+        }
+      ],
+      "link": "https://www.sec.gov/Archives/edgar/data/1164727/000106299325008485/0001062993-25-008485-index.htm",
+      "summary": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0001062993-25-008485 <b>Size:</b> 4 KB",
+      "summary_detail": {
+        "type": "text/html",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcurrent&CIK=&type=&company=&dateb=&owner=include&start=0&count=40&output=atom",
+        "value": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0001062993-25-008485 <b>Size:</b> 4 KB"
+      },
+      "updated": "2025-05-05T16:47:18-04:00",
+      "updated_parsed": [
+        2025,
+        5,
+        5,
+        20,
+        47,
+        18,
+        0,
+        125,
+        0
+      ],
+      "tags": [
+        {
+          "term": "4",
+          "scheme": "https://www.sec.gov/",
+          "label": "form type"
+        }
+      ],
+      "id": "urn:tag:sec.gov,2008:accession-number=0001062993-25-008485",
+      "guidislink": false
+    },
+    {
+      "title": "4 - WYATT E LEE (0001227859) (Reporting)",
+      "title_detail": {
+        "type": "text/plain",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcurrent&CIK=&type=&company=&dateb=&owner=include&start=0&count=40&output=atom",
+        "value": "4 - WYATT E LEE (0001227859) (Reporting)"
+      },
+      "links": [
+        {
+          "rel": "alternate",
+          "type": "text/html",
+          "href": "https://www.sec.gov/Archives/edgar/data/1227859/000154571125000013/0001545711-25-000013-index.htm"
+        }
+      ],
+      "link": "https://www.sec.gov/Archives/edgar/data/1227859/000154571125000013/0001545711-25-000013-index.htm",
+      "summary": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0001545711-25-000013 <b>Size:</b> 4 KB",
+      "summary_detail": {
+        "type": "text/html",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcurrent&CIK=&type=&company=&dateb=&owner=include&start=0&count=40&output=atom",
+        "value": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0001545711-25-000013 <b>Size:</b> 4 KB"
+      },
+      "updated": "2025-05-05T16:47:17-04:00",
+      "updated_parsed": [
+        2025,
+        5,
+        5,
+        20,
+        47,
+        17,
+        0,
+        125,
+        0
+      ],
+      "tags": [
+        {
+          "term": "4",
+          "scheme": "https://www.sec.gov/",
+          "label": "form type"
+        }
+      ],
+      "id": "urn:tag:sec.gov,2008:accession-number=0001545711-25-000013",
+      "guidislink": false
+    },
+    {
+      "title": "4 - INTERPUBLIC GROUP OF COMPANIES, INC. (0000051644) (Issuer)",
+      "title_detail": {
+        "type": "text/plain",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcurrent&CIK=&type=&company=&dateb=&owner=include&start=0&count=40&output=atom",
+        "value": "4 - INTERPUBLIC GROUP OF COMPANIES, INC. (0000051644) (Issuer)"
+      },
+      "links": [
+        {
+          "rel": "alternate",
+          "type": "text/html",
+          "href": "https://www.sec.gov/Archives/edgar/data/51644/000154571125000013/0001545711-25-000013-index.htm"
+        }
+      ],
+      "link": "https://www.sec.gov/Archives/edgar/data/51644/000154571125000013/0001545711-25-000013-index.htm",
+      "summary": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0001545711-25-000013 <b>Size:</b> 4 KB",
+      "summary_detail": {
+        "type": "text/html",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcurrent&CIK=&type=&company=&dateb=&owner=include&start=0&count=40&output=atom",
+        "value": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0001545711-25-000013 <b>Size:</b> 4 KB"
+      },
+      "updated": "2025-05-05T16:47:17-04:00",
+      "updated_parsed": [
+        2025,
+        5,
+        5,
+        20,
+        47,
+        17,
+        0,
+        125,
+        0
+      ],
+      "tags": [
+        {
+          "term": "4",
+          "scheme": "https://www.sec.gov/",
+          "label": "form type"
+        }
+      ],
+      "id": "urn:tag:sec.gov,2008:accession-number=0001545711-25-000013",
+      "guidislink": false
+    },
+    {
+      "title": "8-K - Intrepid Potash, Inc. (0001421461) (Filer)",
+      "title_detail": {
+        "type": "text/plain",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcurrent&CIK=&type=&company=&dateb=&owner=include&start=0&count=40&output=atom",
+        "value": "8-K - Intrepid Potash, Inc. (0001421461) (Filer)"
+      },
+      "links": [
+        {
+          "rel": "alternate",
+          "type": "text/html",
+          "href": "https://www.sec.gov/Archives/edgar/data/1421461/000142146125000014/0001421461-25-000014-index.htm"
+        }
+      ],
+      "link": "https://www.sec.gov/Archives/edgar/data/1421461/000142146125000014/0001421461-25-000014-index.htm",
+      "summary": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0001421461-25-000014 <b>Size:</b> 793 KB\n<br />Item 2.02: Results of Operations and Financial Condition\n<br />Item 9.01: Financial Statements and Exhibits",
+      "summary_detail": {
+        "type": "text/html",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcurrent&CIK=&type=&company=&dateb=&owner=include&start=0&count=40&output=atom",
+        "value": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0001421461-25-000014 <b>Size:</b> 793 KB\n<br />Item 2.02: Results of Operations and Financial Condition\n<br />Item 9.01: Financial Statements and Exhibits"
+      },
+      "updated": "2025-05-05T16:46:56-04:00",
+      "updated_parsed": [
+        2025,
+        5,
+        5,
+        20,
+        46,
+        56,
+        0,
+        125,
+        0
+      ],
+      "tags": [
+        {
+          "term": "8-K",
+          "scheme": "https://www.sec.gov/",
+          "label": "form type"
+        }
+      ],
+      "id": "urn:tag:sec.gov,2008:accession-number=0001421461-25-000014",
+      "guidislink": false
+    },
+    {
+      "title": "8-K - Inmune Bio, Inc. (0001711754) (Filer)",
+      "title_detail": {
+        "type": "text/plain",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcurrent&CIK=&type=&company=&dateb=&owner=include&start=0&count=40&output=atom",
+        "value": "8-K - Inmune Bio, Inc. (0001711754) (Filer)"
+      },
+      "links": [
+        {
+          "rel": "alternate",
+          "type": "text/html",
+          "href": "https://www.sec.gov/Archives/edgar/data/1711754/000121390025039733/0001213900-25-039733-index.htm"
+        }
+      ],
+      "link": "https://www.sec.gov/Archives/edgar/data/1711754/000121390025039733/0001213900-25-039733-index.htm",
+      "summary": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0001213900-25-039733 <b>Size:</b> 212 KB\n<br />Item 8.01: Other Events\n<br />Item 9.01: Financial Statements and Exhibits",
+      "summary_detail": {
+        "type": "text/html",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcurrent&CIK=&type=&company=&dateb=&owner=include&start=0&count=40&output=atom",
+        "value": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0001213900-25-039733 <b>Size:</b> 212 KB\n<br />Item 8.01: Other Events\n<br />Item 9.01: Financial Statements and Exhibits"
+      },
+      "updated": "2025-05-05T16:46:52-04:00",
+      "updated_parsed": [
+        2025,
+        5,
+        5,
+        20,
+        46,
+        52,
+        0,
+        125,
+        0
+      ],
+      "tags": [
+        {
+          "term": "8-K",
+          "scheme": "https://www.sec.gov/",
+          "label": "form type"
+        }
+      ],
+      "id": "urn:tag:sec.gov,2008:accession-number=0001213900-25-039733",
+      "guidislink": false
+    },
+    {
+      "title": "10-Q - UPWORK, INC (0001627475) (Filer)",
+      "title_detail": {
+        "type": "text/plain",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcurrent&CIK=&type=&company=&dateb=&owner=include&start=0&count=40&output=atom",
+        "value": "10-Q - UPWORK, INC (0001627475) (Filer)"
+      },
+      "links": [
+        {
+          "rel": "alternate",
+          "type": "text/html",
+          "href": "https://www.sec.gov/Archives/edgar/data/1627475/000162747525000033/0001627475-25-000033-index.htm"
+        }
+      ],
+      "link": "https://www.sec.gov/Archives/edgar/data/1627475/000162747525000033/0001627475-25-000033-index.htm",
+      "summary": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0001627475-25-000033 <b>Size:</b> 5 MB",
+      "summary_detail": {
+        "type": "text/html",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcurrent&CIK=&type=&company=&dateb=&owner=include&start=0&count=40&output=atom",
+        "value": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0001627475-25-000033 <b>Size:</b> 5 MB"
+      },
+      "updated": "2025-05-05T16:46:37-04:00",
+      "updated_parsed": [
+        2025,
+        5,
+        5,
+        20,
+        46,
+        37,
+        0,
+        125,
+        0
+      ],
+      "tags": [
+        {
+          "term": "10-Q",
+          "scheme": "https://www.sec.gov/",
+          "label": "form type"
+        }
+      ],
+      "id": "urn:tag:sec.gov,2008:accession-number=0001627475-25-000033",
+      "guidislink": false
+    },
+    {
+      "title": "4 - Breighner Robert G. JR (0001472553) (Reporting)",
+      "title_detail": {
+        "type": "text/plain",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcurrent&CIK=&type=&company=&dateb=&owner=include&start=0&count=40&output=atom",
+        "value": "4 - Breighner Robert G. JR (0001472553) (Reporting)"
+      },
+      "links": [
+        {
+          "rel": "alternate",
+          "type": "text/html",
+          "href": "https://www.sec.gov/Archives/edgar/data/1472553/000141588925011973/0001415889-25-011973-index.htm"
+        }
+      ],
+      "link": "https://www.sec.gov/Archives/edgar/data/1472553/000141588925011973/0001415889-25-011973-index.htm",
+      "summary": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0001415889-25-011973 <b>Size:</b> 4 KB",
+      "summary_detail": {
+        "type": "text/html",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcurrent&CIK=&type=&company=&dateb=&owner=include&start=0&count=40&output=atom",
+        "value": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0001415889-25-011973 <b>Size:</b> 4 KB"
+      },
+      "updated": "2025-05-05T16:46:36-04:00",
+      "updated_parsed": [
+        2025,
+        5,
+        5,
+        20,
+        46,
+        36,
+        0,
+        125,
+        0
+      ],
+      "tags": [
+        {
+          "term": "4",
+          "scheme": "https://www.sec.gov/",
+          "label": "form type"
+        }
+      ],
+      "id": "urn:tag:sec.gov,2008:accession-number=0001415889-25-011973",
+      "guidislink": false
+    },
+    {
+      "title": "4 - SELECT MEDICAL HOLDINGS CORP (0001320414) (Issuer)",
+      "title_detail": {
+        "type": "text/plain",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcurrent&CIK=&type=&company=&dateb=&owner=include&start=0&count=40&output=atom",
+        "value": "4 - SELECT MEDICAL HOLDINGS CORP (0001320414) (Issuer)"
+      },
+      "links": [
+        {
+          "rel": "alternate",
+          "type": "text/html",
+          "href": "https://www.sec.gov/Archives/edgar/data/1320414/000141588925011973/0001415889-25-011973-index.htm"
+        }
+      ],
+      "link": "https://www.sec.gov/Archives/edgar/data/1320414/000141588925011973/0001415889-25-011973-index.htm",
+      "summary": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0001415889-25-011973 <b>Size:</b> 4 KB",
+      "summary_detail": {
+        "type": "text/html",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcurrent&CIK=&type=&company=&dateb=&owner=include&start=0&count=40&output=atom",
+        "value": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0001415889-25-011973 <b>Size:</b> 4 KB"
+      },
+      "updated": "2025-05-05T16:46:36-04:00",
+      "updated_parsed": [
+        2025,
+        5,
+        5,
+        20,
+        46,
+        36,
+        0,
+        125,
+        0
+      ],
+      "tags": [
+        {
+          "term": "4",
+          "scheme": "https://www.sec.gov/",
+          "label": "form type"
+        }
+      ],
+      "id": "urn:tag:sec.gov,2008:accession-number=0001415889-25-011973",
+      "guidislink": false
+    },
+    {
+      "title": "8-K - BRINKER INTERNATIONAL, INC (0000703351) (Filer)",
+      "title_detail": {
+        "type": "text/plain",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcurrent&CIK=&type=&company=&dateb=&owner=include&start=0&count=40&output=atom",
+        "value": "8-K - BRINKER INTERNATIONAL, INC (0000703351) (Filer)"
+      },
+      "links": [
+        {
+          "rel": "alternate",
+          "type": "text/html",
+          "href": "https://www.sec.gov/Archives/edgar/data/703351/000070335125000020/0000703351-25-000020-index.htm"
+        }
+      ],
+      "link": "https://www.sec.gov/Archives/edgar/data/703351/000070335125000020/0000703351-25-000020-index.htm",
+      "summary": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0000703351-25-000020 <b>Size:</b> 54 MB\n<br />Item 1.01: Entry into a Material Definitive Agreement\n<br />Item 2.03: Creation of a Direct Financial Obligation or an Obligation under an Off-Balance Sheet Arrangement of a Registrant\n<br />Item 9.01: Financial Statements and Exhibits",
+      "summary_detail": {
+        "type": "text/html",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcurrent&CIK=&type=&company=&dateb=&owner=include&start=0&count=40&output=atom",
+        "value": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0000703351-25-000020 <b>Size:</b> 54 MB\n<br />Item 1.01: Entry into a Material Definitive Agreement\n<br />Item 2.03: Creation of a Direct Financial Obligation or an Obligation under an Off-Balance Sheet Arrangement of a Registrant\n<br />Item 9.01: Financial Statements and Exhibits"
+      },
+      "updated": "2025-05-05T16:46:35-04:00",
+      "updated_parsed": [
+        2025,
+        5,
+        5,
+        20,
+        46,
+        35,
+        0,
+        125,
+        0
+      ],
+      "tags": [
+        {
+          "term": "8-K",
+          "scheme": "https://www.sec.gov/",
+          "label": "form type"
+        }
+      ],
+      "id": "urn:tag:sec.gov,2008:accession-number=0000703351-25-000020",
+      "guidislink": false
+    },
+    {
+      "title": "4 - Sharp Scott (0002061483) (Reporting)",
+      "title_detail": {
+        "type": "text/plain",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcurrent&CIK=&type=&company=&dateb=&owner=include&start=0&count=40&output=atom",
+        "value": "4 - Sharp Scott (0002061483) (Reporting)"
+      },
+      "links": [
+        {
+          "rel": "alternate",
+          "type": "text/html",
+          "href": "https://www.sec.gov/Archives/edgar/data/2061483/000007290325000099/0000072903-25-000099-index.htm"
+        }
+      ],
+      "link": "https://www.sec.gov/Archives/edgar/data/2061483/000007290325000099/0000072903-25-000099-index.htm",
+      "summary": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0000072903-25-000099 <b>Size:</b> 4 KB",
+      "summary_detail": {
+        "type": "text/html",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcurrent&CIK=&type=&company=&dateb=&owner=include&start=0&count=40&output=atom",
+        "value": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0000072903-25-000099 <b>Size:</b> 4 KB"
+      },
+      "updated": "2025-05-05T16:46:29-04:00",
+      "updated_parsed": [
+        2025,
+        5,
+        5,
+        20,
+        46,
+        29,
+        0,
+        125,
+        0
+      ],
+      "tags": [
+        {
+          "term": "4",
+          "scheme": "https://www.sec.gov/",
+          "label": "form type"
+        }
+      ],
+      "id": "urn:tag:sec.gov,2008:accession-number=0000072903-25-000099",
+      "guidislink": false
+    },
+    {
+      "title": "4 - XCEL ENERGY INC (0000072903) (Issuer)",
+      "title_detail": {
+        "type": "text/plain",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcurrent&CIK=&type=&company=&dateb=&owner=include&start=0&count=40&output=atom",
+        "value": "4 - XCEL ENERGY INC (0000072903) (Issuer)"
+      },
+      "links": [
+        {
+          "rel": "alternate",
+          "type": "text/html",
+          "href": "https://www.sec.gov/Archives/edgar/data/72903/000007290325000099/0000072903-25-000099-index.htm"
+        }
+      ],
+      "link": "https://www.sec.gov/Archives/edgar/data/72903/000007290325000099/0000072903-25-000099-index.htm",
+      "summary": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0000072903-25-000099 <b>Size:</b> 4 KB",
+      "summary_detail": {
+        "type": "text/html",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcurrent&CIK=&type=&company=&dateb=&owner=include&start=0&count=40&output=atom",
+        "value": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0000072903-25-000099 <b>Size:</b> 4 KB"
+      },
+      "updated": "2025-05-05T16:46:29-04:00",
+      "updated_parsed": [
+        2025,
+        5,
+        5,
+        20,
+        46,
+        29,
+        0,
+        125,
+        0
+      ],
+      "tags": [
+        {
+          "term": "4",
+          "scheme": "https://www.sec.gov/",
+          "label": "form type"
+        }
+      ],
+      "id": "urn:tag:sec.gov,2008:accession-number=0000072903-25-000099",
+      "guidislink": false
+    },
+    {
+      "title": "144 - Kronenberg Anne C. (0001715483) (Reporting)",
+      "title_detail": {
+        "type": "text/plain",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcurrent&CIK=&type=&company=&dateb=&owner=include&start=0&count=40&output=atom",
+        "value": "144 - Kronenberg Anne C. (0001715483) (Reporting)"
+      },
+      "links": [
+        {
+          "rel": "alternate",
+          "type": "text/html",
+          "href": "https://www.sec.gov/Archives/edgar/data/1715483/000196858225000309/0001968582-25-000309-index.htm"
+        }
+      ],
+      "link": "https://www.sec.gov/Archives/edgar/data/1715483/000196858225000309/0001968582-25-000309-index.htm",
+      "summary": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0001968582-25-000309 <b>Size:</b> 5 KB",
+      "summary_detail": {
+        "type": "text/html",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcurrent&CIK=&type=&company=&dateb=&owner=include&start=0&count=40&output=atom",
+        "value": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0001968582-25-000309 <b>Size:</b> 5 KB"
+      },
+      "updated": "2025-05-05T16:46:25-04:00",
+      "updated_parsed": [
+        2025,
+        5,
+        5,
+        20,
+        46,
+        25,
+        0,
+        125,
+        0
+      ],
+      "tags": [
+        {
+          "term": "144",
+          "scheme": "https://www.sec.gov/",
+          "label": "form type"
+        }
+      ],
+      "id": "urn:tag:sec.gov,2008:accession-number=0001968582-25-000309",
+      "guidislink": false
+    },
+    {
+      "title": "144 - Kinsale Capital Group, Inc. (0001669162) (Subject)",
+      "title_detail": {
+        "type": "text/plain",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcurrent&CIK=&type=&company=&dateb=&owner=include&start=0&count=40&output=atom",
+        "value": "144 - Kinsale Capital Group, Inc. (0001669162) (Subject)"
+      },
+      "links": [
+        {
+          "rel": "alternate",
+          "type": "text/html",
+          "href": "https://www.sec.gov/Archives/edgar/data/1669162/000196858225000309/0001968582-25-000309-index.htm"
+        }
+      ],
+      "link": "https://www.sec.gov/Archives/edgar/data/1669162/000196858225000309/0001968582-25-000309-index.htm",
+      "summary": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0001968582-25-000309 <b>Size:</b> 5 KB",
+      "summary_detail": {
+        "type": "text/html",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcurrent&CIK=&type=&company=&dateb=&owner=include&start=0&count=40&output=atom",
+        "value": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0001968582-25-000309 <b>Size:</b> 5 KB"
+      },
+      "updated": "2025-05-05T16:46:25-04:00",
+      "updated_parsed": [
+        2025,
+        5,
+        5,
+        20,
+        46,
+        25,
+        0,
+        125,
+        0
+      ],
+      "tags": [
+        {
+          "term": "144",
+          "scheme": "https://www.sec.gov/",
+          "label": "form type"
+        }
+      ],
+      "id": "urn:tag:sec.gov,2008:accession-number=0001968582-25-000309",
+      "guidislink": false
+    },
+    {
+      "title": "4 - Cloonan Wendolynn Montoya (0001847454) (Reporting)",
+      "title_detail": {
+        "type": "text/plain",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcurrent&CIK=&type=&company=&dateb=&owner=include&start=0&count=40&output=atom",
+        "value": "4 - Cloonan Wendolynn Montoya (0001847454) (Reporting)"
+      },
+      "links": [
+        {
+          "rel": "alternate",
+          "type": "text/html",
+          "href": "https://www.sec.gov/Archives/edgar/data/1847454/000113031025000085/0001130310-25-000085-index.htm"
+        }
+      ],
+      "link": "https://www.sec.gov/Archives/edgar/data/1847454/000113031025000085/0001130310-25-000085-index.htm",
+      "summary": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0001130310-25-000085 <b>Size:</b> 4 KB",
+      "summary_detail": {
+        "type": "text/html",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcurrent&CIK=&type=&company=&dateb=&owner=include&start=0&count=40&output=atom",
+        "value": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0001130310-25-000085 <b>Size:</b> 4 KB"
+      },
+      "updated": "2025-05-05T16:46:18-04:00",
+      "updated_parsed": [
+        2025,
+        5,
+        5,
+        20,
+        46,
+        18,
+        0,
+        125,
+        0
+      ],
+      "tags": [
+        {
+          "term": "4",
+          "scheme": "https://www.sec.gov/",
+          "label": "form type"
+        }
+      ],
+      "id": "urn:tag:sec.gov,2008:accession-number=0001130310-25-000085",
+      "guidislink": false
+    },
+    {
+      "title": "4 - CENTERPOINT ENERGY INC (0001130310) (Issuer)",
+      "title_detail": {
+        "type": "text/plain",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcurrent&CIK=&type=&company=&dateb=&owner=include&start=0&count=40&output=atom",
+        "value": "4 - CENTERPOINT ENERGY INC (0001130310) (Issuer)"
+      },
+      "links": [
+        {
+          "rel": "alternate",
+          "type": "text/html",
+          "href": "https://www.sec.gov/Archives/edgar/data/1130310/000113031025000085/0001130310-25-000085-index.htm"
+        }
+      ],
+      "link": "https://www.sec.gov/Archives/edgar/data/1130310/000113031025000085/0001130310-25-000085-index.htm",
+      "summary": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0001130310-25-000085 <b>Size:</b> 4 KB",
+      "summary_detail": {
+        "type": "text/html",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcurrent&CIK=&type=&company=&dateb=&owner=include&start=0&count=40&output=atom",
+        "value": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0001130310-25-000085 <b>Size:</b> 4 KB"
+      },
+      "updated": "2025-05-05T16:46:18-04:00",
+      "updated_parsed": [
+        2025,
+        5,
+        5,
+        20,
+        46,
+        18,
+        0,
+        125,
+        0
+      ],
+      "tags": [
+        {
+          "term": "4",
+          "scheme": "https://www.sec.gov/",
+          "label": "form type"
+        }
+      ],
+      "id": "urn:tag:sec.gov,2008:accession-number=0001130310-25-000085",
+      "guidislink": false
+    },
+    {
+      "title": "6-K - BROOKFIELD Corp /ON/ (0001001085) (Filer)",
+      "title_detail": {
+        "type": "text/plain",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcurrent&CIK=&type=&company=&dateb=&owner=include&start=0&count=40&output=atom",
+        "value": "6-K - BROOKFIELD Corp /ON/ (0001001085) (Filer)"
+      },
+      "links": [
+        {
+          "rel": "alternate",
+          "type": "text/html",
+          "href": "https://www.sec.gov/Archives/edgar/data/1001085/000110465925044552/0001104659-25-044552-index.htm"
+        }
+      ],
+      "link": "https://www.sec.gov/Archives/edgar/data/1001085/000110465925044552/0001104659-25-044552-index.htm",
+      "summary": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0001104659-25-044552 <b>Size:</b> 2 MB",
+      "summary_detail": {
+        "type": "text/html",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcurrent&CIK=&type=&company=&dateb=&owner=include&start=0&count=40&output=atom",
+        "value": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0001104659-25-044552 <b>Size:</b> 2 MB"
+      },
+      "updated": "2025-05-05T16:46:18-04:00",
+      "updated_parsed": [
+        2025,
+        5,
+        5,
+        20,
+        46,
+        18,
+        0,
+        125,
+        0
+      ],
+      "tags": [
+        {
+          "term": "6-K",
+          "scheme": "https://www.sec.gov/",
+          "label": "form type"
+        }
+      ],
+      "id": "urn:tag:sec.gov,2008:accession-number=0001104659-25-044552",
+      "guidislink": false
+    },
+    {
+      "title": "4 - Hankinson Garth (0001797763) (Reporting)",
+      "title_detail": {
+        "type": "text/plain",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcurrent&CIK=&type=&company=&dateb=&owner=include&start=0&count=40&output=atom",
+        "value": "4 - Hankinson Garth (0001797763) (Reporting)"
+      },
+      "links": [
+        {
+          "rel": "alternate",
+          "type": "text/html",
+          "href": "https://www.sec.gov/Archives/edgar/data/1797763/000001691825000053/0000016918-25-000053-index.htm"
+        }
+      ],
+      "link": "https://www.sec.gov/Archives/edgar/data/1797763/000001691825000053/0000016918-25-000053-index.htm",
+      "summary": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0000016918-25-000053 <b>Size:</b> 15 KB",
+      "summary_detail": {
+        "type": "text/html",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcurrent&CIK=&type=&company=&dateb=&owner=include&start=0&count=40&output=atom",
+        "value": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0000016918-25-000053 <b>Size:</b> 15 KB"
+      },
+      "updated": "2025-05-05T16:46:15-04:00",
+      "updated_parsed": [
+        2025,
+        5,
+        5,
+        20,
+        46,
+        15,
+        0,
+        125,
+        0
+      ],
+      "tags": [
+        {
+          "term": "4",
+          "scheme": "https://www.sec.gov/",
+          "label": "form type"
+        }
+      ],
+      "id": "urn:tag:sec.gov,2008:accession-number=0000016918-25-000053",
+      "guidislink": false
+    },
+    {
+      "title": "4 - CONSTELLATION BRANDS, INC. (0000016918) (Issuer)",
+      "title_detail": {
+        "type": "text/plain",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcurrent&CIK=&type=&company=&dateb=&owner=include&start=0&count=40&output=atom",
+        "value": "4 - CONSTELLATION BRANDS, INC. (0000016918) (Issuer)"
+      },
+      "links": [
+        {
+          "rel": "alternate",
+          "type": "text/html",
+          "href": "https://www.sec.gov/Archives/edgar/data/16918/000001691825000053/0000016918-25-000053-index.htm"
+        }
+      ],
+      "link": "https://www.sec.gov/Archives/edgar/data/16918/000001691825000053/0000016918-25-000053-index.htm",
+      "summary": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0000016918-25-000053 <b>Size:</b> 15 KB",
+      "summary_detail": {
+        "type": "text/html",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcurrent&CIK=&type=&company=&dateb=&owner=include&start=0&count=40&output=atom",
+        "value": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0000016918-25-000053 <b>Size:</b> 15 KB"
+      },
+      "updated": "2025-05-05T16:46:15-04:00",
+      "updated_parsed": [
+        2025,
+        5,
+        5,
+        20,
+        46,
+        15,
+        0,
+        125,
+        0
+      ],
+      "tags": [
+        {
+          "term": "4",
+          "scheme": "https://www.sec.gov/",
+          "label": "form type"
+        }
+      ],
+      "id": "urn:tag:sec.gov,2008:accession-number=0000016918-25-000053",
+      "guidislink": false
+    },
+    {
+      "title": "485BXT - EA Series Trust (0001592900) (Filer)",
+      "title_detail": {
+        "type": "text/plain",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcurrent&CIK=&type=&company=&dateb=&owner=include&start=0&count=40&output=atom",
+        "value": "485BXT - EA Series Trust (0001592900) (Filer)"
+      },
+      "links": [
+        {
+          "rel": "alternate",
+          "type": "text/html",
+          "href": "https://www.sec.gov/Archives/edgar/data/1592900/000159290025001075/0001592900-25-001075-index.htm"
+        }
+      ],
+      "link": "https://www.sec.gov/Archives/edgar/data/1592900/000159290025001075/0001592900-25-001075-index.htm",
+      "summary": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0001592900-25-001075 <b>Size:</b> 39 KB",
+      "summary_detail": {
+        "type": "text/html",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcurrent&CIK=&type=&company=&dateb=&owner=include&start=0&count=40&output=atom",
+        "value": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0001592900-25-001075 <b>Size:</b> 39 KB"
+      },
+      "updated": "2025-05-05T16:46:12-04:00",
+      "updated_parsed": [
+        2025,
+        5,
+        5,
+        20,
+        46,
+        12,
+        0,
+        125,
+        0
+      ],
+      "tags": [
+        {
+          "term": "485BXT",
+          "scheme": "https://www.sec.gov/",
+          "label": "form type"
+        }
+      ],
+      "id": "urn:tag:sec.gov,2008:accession-number=0001592900-25-001075",
+      "guidislink": false
+    },
+    {
+      "title": "485BXT - EA Series Trust (0001592900) (Filer)",
+      "title_detail": {
+        "type": "text/plain",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcurrent&CIK=&type=&company=&dateb=&owner=include&start=0&count=40&output=atom",
+        "value": "485BXT - EA Series Trust (0001592900) (Filer)"
+      },
+      "links": [
+        {
+          "rel": "alternate",
+          "type": "text/html",
+          "href": "https://www.sec.gov/Archives/edgar/data/1592900/000159290025001075/0001592900-25-001075-index.htm"
+        }
+      ],
+      "link": "https://www.sec.gov/Archives/edgar/data/1592900/000159290025001075/0001592900-25-001075-index.htm",
+      "summary": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0001592900-25-001075 <b>Size:</b> 39 KB",
+      "summary_detail": {
+        "type": "text/html",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcurrent&CIK=&type=&company=&dateb=&owner=include&start=0&count=40&output=atom",
+        "value": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0001592900-25-001075 <b>Size:</b> 39 KB"
+      },
+      "updated": "2025-05-05T16:46:12-04:00",
+      "updated_parsed": [
+        2025,
+        5,
+        5,
+        20,
+        46,
+        12,
+        0,
+        125,
+        0
+      ],
+      "tags": [
+        {
+          "term": "485BXT",
+          "scheme": "https://www.sec.gov/",
+          "label": "form type"
+        }
+      ],
+      "id": "urn:tag:sec.gov,2008:accession-number=0001592900-25-001075",
+      "guidislink": false
+    },
+    {
+      "title": "4 - Cannucciari Christopher (0002043740) (Reporting)",
+      "title_detail": {
+        "type": "text/plain",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcurrent&CIK=&type=&company=&dateb=&owner=include&start=0&count=40&output=atom",
+        "value": "4 - Cannucciari Christopher (0002043740) (Reporting)"
+      },
+      "links": [
+        {
+          "rel": "alternate",
+          "type": "text/html",
+          "href": "https://www.sec.gov/Archives/edgar/data/2043740/000143774925014563/0001437749-25-014563-index.htm"
+        }
+      ],
+      "link": "https://www.sec.gov/Archives/edgar/data/2043740/000143774925014563/0001437749-25-014563-index.htm",
+      "summary": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0001437749-25-014563 <b>Size:</b> 10 KB",
+      "summary_detail": {
+        "type": "text/html",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcurrent&CIK=&type=&company=&dateb=&owner=include&start=0&count=40&output=atom",
+        "value": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0001437749-25-014563 <b>Size:</b> 10 KB"
+      },
+      "updated": "2025-05-05T16:46:02-04:00",
+      "updated_parsed": [
+        2025,
+        5,
+        5,
+        20,
+        46,
+        2,
+        0,
+        125,
+        0
+      ],
+      "tags": [
+        {
+          "term": "4",
+          "scheme": "https://www.sec.gov/",
+          "label": "form type"
+        }
+      ],
+      "id": "urn:tag:sec.gov,2008:accession-number=0001437749-25-014563",
+      "guidislink": false
+    }
+  ]
+}

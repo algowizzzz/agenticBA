@@ -1,0 +1,16 @@
+==== NEWS COLLECTION SYSTEM REPORT ====
+
+Report generated: 20250505_155555
+
+Total articles collected: 0
+Companies analyzed: 6
+Companies with articles: 0
+
+Top companies by article count:
+1. JPM (JPMorgan Chase & Co.): 0 articles
+2. GS (Goldman Sachs Group Inc.): 0 articles
+3. MSFT (Microsoft Corporation): 0 articles
+4. AAPL (Apple Inc.): 0 articles
+5. XOM (Exxon Mobil Corporation): 0 articles
+
+Sample headlines:

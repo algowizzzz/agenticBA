@@ -1,0 +1,182 @@
+[
+  {
+    "name": "JPMorgan Chase & Co.",
+    "ticker": "JPM",
+    "country": "US",
+    "cik": null
+  },
+  {
+    "name": "Bank of America Corporation",
+    "ticker": "BAC",
+    "country": "US",
+    "cik": null
+  },
+  {
+    "name": "Citigroup Inc.",
+    "ticker": "C",
+    "country": "US",
+    "cik": null
+  },
+  {
+    "name": "Wells Fargo & Company",
+    "ticker": "WFC",
+    "country": "US",
+    "cik": null
+  },
+  {
+    "name": "Goldman Sachs Group Inc.",
+    "ticker": "GS",
+    "country": "US",
+    "cik": null
+  },
+  {
+    "name": "Morgan Stanley",
+    "ticker": "MS",
+    "country": "US",
+    "cik": null
+  },
+  {
+    "name": "U.S. Bancorp",
+    "ticker": "USB",
+    "country": "US",
+    "cik": null
+  },
+  {
+    "name": "Truist Financial Corporation",
+    "ticker": "TFC",
+    "country": "US",
+    "cik": null
+  },
+  {
+    "name": "PNC Financial Services Group",
+    "ticker": "PNC",
+    "country": "US",
+    "cik": null
+  },
+  {
+    "name": "HSBC Holdings plc",
+    "ticker": "HSBC",
+    "country": "UK",
+    "cik": null
+  },
+  {
+    "name": "BNP Paribas",
+    "ticker": "BNPQY",
+    "country": "France",
+    "cik": null
+  },
+  {
+    "name": "UBS Group AG",
+    "ticker": "UBS",
+    "country": "Switzerland",
+    "cik": null
+  },
+  {
+    "name": "Deutsche Bank AG",
+    "ticker": "DB",
+    "country": "Germany",
+    "cik": null
+  },
+  {
+    "name": "Barclays plc",
+    "ticker": "BCS",
+    "country": "UK",
+    "cik": null
+  },
+  {
+    "name": "Credit Suisse Group AG",
+    "ticker": "CS",
+    "country": "Switzerland",
+    "cik": null
+  },
+  {
+    "name": "Banco Santander, S.A.",
+    "ticker": "SAN",
+    "country": "Spain",
+    "cik": null
+  },
+  {
+    "name": "Royal Bank of Canada",
+    "ticker": "RY",
+    "country": "Canada",
+    "cik": null
+  },
+  {
+    "name": "Toronto-Dominion Bank",
+    "ticker": "TD",
+    "country": "Canada",
+    "cik": null
+  },
+  {
+    "name": "Bank of Nova Scotia",
+    "ticker": "BNS",
+    "country": "Canada",
+    "cik": null
+  },
+  {
+    "name": "Bank of Montreal",
+    "ticker": "BMO",
+    "country": "Canada",
+    "cik": null
+  },
+  {
+    "name": "Canadian Imperial Bank of Commerce",
+    "ticker": "CM",
+    "country": "Canada",
+    "cik": null
+  },
+  {
+    "name": "Mitsubishi UFJ Financial Group",
+    "ticker": "MUFG",
+    "country": "Japan",
+    "cik": null
+  },
+  {
+    "name": "Industrial and Commercial Bank of China",
+    "ticker": "IDCBY",
+    "country": "China",
+    "cik": null
+  },
+  {
+    "name": "China Construction Bank",
+    "ticker": "CICHY",
+    "country": "China",
+    "cik": null
+  },
+  {
+    "name": "Agricultural Bank of China",
+    "ticker": "ACGBY",
+    "country": "China",
+    "cik": null
+  },
+  {
+    "name": "Bank of China",
+    "ticker": "BACHY",
+    "country": "China",
+    "cik": null
+  },
+  {
+    "name": "Sumitomo Mitsui Financial Group",
+    "ticker": "SMFG",
+    "country": "Japan",
+    "cik": null
+  },
+  {
+    "name": "Mizuho Financial Group",
+    "ticker": "MFG",
+    "country": "Japan",
+    "cik": null
+  },
+  {
+    "name": "DBS Group Holdings",
+    "ticker": "DBSDY",
+    "country": "Singapore",
+    "cik": null
+  },
+  {
+    "name": "HDFC Bank Limited",
+    "ticker": "HDB",
+    "country": "India",
+    "cik": null
+  }
+]

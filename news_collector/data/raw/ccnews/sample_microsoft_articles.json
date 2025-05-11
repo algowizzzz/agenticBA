@@ -1,0 +1,23 @@
+[
+  {
+    "title": "Microsoft Reports Strong Q1 Earnings, Cloud Growth",
+    "text": "Microsoft Corporation (MSFT) reported better-than-expected quarterly results, driven by continued strength in its cloud computing business. The company's Azure cloud service grew revenue by 27% year-over-year...",
+    "url": "https://example.com/news/microsoft-earnings-q1",
+    "pub_date": "2025-05-04T14:47:54.522629",
+    "source": "Sample Financial News"
+  },
+  {
+    "title": "Microsoft Announces New AI Features for Office 365",
+    "text": "Microsoft today unveiled a slate of new artificial intelligence features for its flagship Office 365 suite. The new capabilities, powered by OpenAI technology, will help users draft documents, analyze data, and create presentations more efficiently...",
+    "url": "https://example.com/news/microsoft-office-ai",
+    "pub_date": "2025-05-03T14:47:54.522637",
+    "source": "Sample Tech News"
+  },
+  {
+    "title": "Tech Sector Analysis: MSFT, AAPL Lead Market Recovery",
+    "text": "The technology sector led a market rebound today, with Microsoft (MSFT) and Apple (AAPL) both posting gains of over 2%. Investors responded positively to recent product announcements and the Federal Reserve's comments on future interest rate policies...",
+    "url": "https://example.com/news/tech-sector-analysis",
+    "pub_date": "2025-05-02T14:47:54.522641",
+    "source": "Sample Market News"
+  }
+]

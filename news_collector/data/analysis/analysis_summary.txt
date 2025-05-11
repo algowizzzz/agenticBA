@@ -1,0 +1,24 @@
+
+    SEC FILING ANALYSIS SUMMARY
+    ==============================
+    Generated: 2025-05-05 17:16:34
+    
+    OVERVIEW:
+    - Total Filings: 7610
+    - Companies Analyzed: 1
+    - Date Range: 1994-04-25 to 2025-05-05
+    - Most Common Form Type: 424B2
+    
+    TOP FORM TYPES:
+    form_type
+424B2           3793
+FWP             3690
+6-K               43
+424B3             40
+SCHEDULE 13G       7
+    
+    FILINGS BY COMPANY:
+    name
+BANK OF MONTREAL    7610
+    
+    

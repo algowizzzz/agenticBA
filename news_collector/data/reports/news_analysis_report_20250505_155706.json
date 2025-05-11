@@ -1,0 +1,15 @@
+{
+  "timestamp": "2025-05-05T15:57:06.146495",
+  "total_articles": 0,
+  "companies_analyzed": 6,
+  "companies_with_articles": 0,
+  "article_counts": {
+    "JPM": 0,
+    "GS": 0,
+    "MSFT": 0,
+    "AAPL": 0,
+    "XOM": 0,
+    "TSLA": 0
+  },
+  "company_analyses": {}
+}

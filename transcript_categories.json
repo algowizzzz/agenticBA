@@ -1,0 +1,52 @@
+[
+  {
+    "category_id": "077deca3-7e7e-4c48-b848-6f8cfcf84b5c",
+    "sample_doc_id": "715669b7-9ff5-4250-b5a5-6653e896cff8",
+    "sample_doc_name": null
+  },
+  {
+    "category_id": "1598ce28-8bb0-4787-ad40-f5227d3a72a6",
+    "sample_doc_id": "f53ee310-328c-45f4-be7a-917f61577afe",
+    "sample_doc_name": null
+  },
+  {
+    "category_id": "5602d908-a5c5-43c1-b888-975dff32a2c4",
+    "sample_doc_id": "f182684d-b21a-4111-b8f5-df819f9a236c",
+    "sample_doc_name": null
+  },
+  {
+    "category_id": "5d1b4d21-59cb-4ff3-bae1-fe9f1129cf18",
+    "sample_doc_id": "093ef433-7944-4437-b42b-898af33385ab",
+    "sample_doc_name": null
+  },
+  {
+    "category_id": "989b35ce-b8fd-44dc-b53f-2d3233a85706",
+    "sample_doc_id": "053065d9-d452-4891-9ad9-19fcc952051b",
+    "sample_doc_name": null
+  },
+  {
+    "category_id": "AAPL",
+    "sample_doc_id": "847ed110-b532-4a67-ac52-f2e2dc3aa9df",
+    "sample_doc_name": null
+  },
+  {
+    "category_id": "AMZN",
+    "sample_doc_id": "ae5e9f7b-f64a-4be4-8fa2-8d6989a1d6e3",
+    "sample_doc_name": null
+  },
+  {
+    "category_id": "INTC",
+    "sample_doc_id": "e257fce7-01cc-4cb3-b15f-034a038f062a",
+    "sample_doc_name": null
+  },
+  {
+    "category_id": "MU",
+    "sample_doc_id": "a447b829-5612-400a-8459-95487ae22e1e",
+    "sample_doc_name": null
+  },
+  {
+    "category_id": "f39dc51b-689e-424d-af9b-0ba2d2c0bb86",
+    "sample_doc_id": "3299680c-e027-4b9b-a2d2-a55a89726654",
+    "sample_doc_name": null
+  }
+]

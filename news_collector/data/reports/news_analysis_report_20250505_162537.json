@@ -1,0 +1,91 @@
+{
+  "timestamp": "2025-05-05T16:25:36.394517",
+  "total_articles": 3,
+  "companies_analyzed": 6,
+  "companies_with_articles": 3,
+  "article_counts": {
+    "JPM": 1,
+    "GS": 1,
+    "MSFT": 1,
+    "AAPL": 0,
+    "XOM": 0,
+    "TSLA": 0
+  },
+  "company_analyses": {
+    "JPM": {
+      "ticker": "JPM",
+      "company_info": {
+        "ticker": "JPM",
+        "company": "JPMorgan Chase & Co.",
+        "sector": "Financial",
+        "aliases": [
+          "JPMorgan",
+          "JPMorgan Chase",
+          "JP Morgan",
+          "Chase Bank",
+          "Jamie Dimon"
+        ],
+        "country": "US"
+      },
+      "total_articles": 1,
+      "unique_domains": 0,
+      "top_domains": [],
+      "date_distribution": [],
+      "articles_sample": [
+        {
+          "title": "Zimmer Biomet Holdings, Inc. (ZBH) Q1 2025 Earnings Call Transcript",
+          "url": "https://seekingalpha.com/article/4781856-zimmer-biomet-holdings-inc-zbh-q1-2025-earnings-call-transcript?source=feed_all_articles"
+        }
+      ]
+    },
+    "GS": {
+      "ticker": "GS",
+      "company_info": {
+        "ticker": "GS",
+        "company": "Goldman Sachs Group Inc.",
+        "sector": "Financial",
+        "aliases": [
+          "Goldman",
+          "Goldman Sachs",
+          "GS"
+        ],
+        "country": "US"
+      },
+      "total_articles": 1,
+      "unique_domains": 0,
+      "top_domains": [],
+      "date_distribution": [],
+      "articles_sample": [
+        {
+          "title": "Zimmer Biomet Holdings, Inc. (ZBH) Q1 2025 Earnings Call Transcript",
+          "url": "https://seekingalpha.com/article/4781856-zimmer-biomet-holdings-inc-zbh-q1-2025-earnings-call-transcript?source=feed_all_articles"
+        }
+      ]
+    },
+    "MSFT": {
+      "ticker": "MSFT",
+      "company_info": {
+        "ticker": "MSFT",
+        "company": "Microsoft Corporation",
+        "sector": "Technology",
+        "aliases": [
+          "Microsoft",
+          "MSFT",
+          "Microsoft Corp",
+          "Satya Nadella"
+        ],
+        "country": "US"
+      },
+      "total_articles": 1,
+      "unique_domains": 0,
+      "top_domains": [],
+      "date_distribution": [],
+      "articles_sample": [
+        {
+          "title": "FFA: Delivering A Steady Distribution From This Call Writing CEF (NYSE:FFA)",
+          "url": "https://seekingalpha.com/article/4781834-ffa-steady-distribution-from-call-writing-cef?source=feed_all_articles"
+        }
+      ]
+    }
+  }
+}

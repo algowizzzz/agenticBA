@@ -1,0 +1,56 @@
+{
+  "total_records_sampled": 200,
+  "html_records": 99,
+  "microsoft_mentions": 12,
+  "top_domains": [
+    [
+      "petel.bg",
+      3
+    ],
+    [
+      "www.hindustantimes.com",
+      2
+    ],
+    [
+      "www.dcnews.ro",
+      2
+    ],
+    [
+      "www.gazeta.ru",
+      2
+    ],
+    [
+      "www.falkirkherald.co.uk",
+      2
+    ],
+    [
+      "atlantico.fr",
+      2
+    ],
+    [
+      "hindi.latestly.com",
+      2
+    ],
+    [
+      "news.finance.ua",
+      2
+    ],
+    [
+      "www.finmarket.ru",
+      2
+    ],
+    [
+      "www.971theriver.com",
+      2
+    ]
+  ],
+  "date_range": "From 2021-02-17 to 2026-01-03",
+  "unique_dates": 93,
+  "microsoft_urls": [
+    "https://www.dcnews.ro/mapn-precizari-privitoare-la-o-dezinformare-aparuta-pe-tiktok_992723.html",
+    "https://www.upi.com/Top_News/World-News/2025/05/05/boat-capsize-Guizhou-Qianxi-river/4231746454664/",
+    "https://www.timeslive.co.za/motoring/news/2025-05-05-these-were-south-africas-top-selling-cars-as-market-booms-in-april/",
+    "https://ladiaria.com.uy/politica/articulo/2025/5/elecciones-departamentales-de-rocha-candidatos-donde-voto-y-todo-lo-que-tenes-que-saber/",
+    "https://udn.com/news/story/7239/8719326"
+  ]
+}

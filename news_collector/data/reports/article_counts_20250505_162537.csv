@@ -1,0 +1,7 @@
+Ticker,Article Count,Company,Sector
+JPM,1,JPMorgan Chase & Co.,Financial
+GS,1,Goldman Sachs Group Inc.,Financial
+MSFT,1,Microsoft Corporation,Technology
+AAPL,0,Apple Inc.,Technology
+XOM,0,Exxon Mobil Corporation,Energy
+TSLA,0,"Tesla, Inc.",Automotive

@@ -1,0 +1,1079 @@
+{
+  "feed_info": {
+    "language": "en",
+    "title": "Press Releases",
+    "title_detail": {
+      "type": "text/plain",
+      "language": "en",
+      "base": "https://www.sec.gov/",
+      "value": "Press Releases"
+    },
+    "links": [
+      {
+        "rel": "alternate",
+        "type": "text/html",
+        "href": "https://www.sec.gov/"
+      }
+    ],
+    "link": "https://www.sec.gov/",
+    "subtitle": "Official announcements highlighting recent actions taken by the SEC and other newsworthy information.",
+    "subtitle_detail": {
+      "type": "text/html",
+      "language": "en",
+      "base": "https://www.sec.gov/",
+      "value": "Official announcements highlighting recent actions taken by the SEC and other newsworthy information."
+    }
+  },
+  "entries": [
+    {
+      "title": "SEC Announces Agenda, Panelists for Roundtable on Tokenization Plus Date Change for Roundtable on DeFi",
+      "title_detail": {
+        "type": "text/plain",
+        "language": "en",
+        "base": "https://www.sec.gov/",
+        "value": "SEC Announces Agenda, Panelists for Roundtable on Tokenization Plus Date Change for Roundtable on DeFi"
+      },
+      "links": [
+        {
+          "rel": "alternate",
+          "type": "text/html",
+          "href": "https://www.sec.gov/newsroom/press-releases/2025-72"
+        }
+      ],
+      "link": "https://www.sec.gov/newsroom/press-releases/2025-72",
+      "summary": "The Securities and Exchange Commission\u2019s Crypto Task Force has announced the&nbsp;agenda and panelists for its May 12 roundtable, \u201cTokenization \u2014 Moving Assets Onchain: Where TradFi and DeFi Meet.\u201d\n\n\u201cTokenization is a technological development that could\u2026",
+      "summary_detail": {
+        "type": "text/html",
+        "language": "en",
+        "base": "https://www.sec.gov/",
+        "value": "The Securities and Exchange Commission\u2019s Crypto Task Force has announced the&nbsp;agenda and panelists for its May 12 roundtable, \u201cTokenization \u2014 Moving Assets Onchain: Where TradFi and DeFi Meet.\u201d\n\n\u201cTokenization is a technological development that could\u2026"
+      },
+      "published": "Mon, 05 May 2025 09:00:00 -0400",
+      "published_parsed": [
+        2025,
+        5,
+        5,
+        13,
+        0,
+        0,
+        0,
+        125,
+        0
+      ],
+      "authors": [
+        {}
+      ],
+      "author": "",
+      "id": "6a5df558-aab5-41b4-a701-83c2e607374d",
+      "guidislink": false
+    },
+    {
+      "title": "SEC Charges Three Texans with Defrauding Investors in $91 Million Ponzi Scheme",
+      "title_detail": {
+        "type": "text/plain",
+        "language": "en",
+        "base": "https://www.sec.gov/",
+        "value": "SEC Charges Three Texans with Defrauding Investors in $91 Million Ponzi Scheme"
+      },
+      "links": [
+        {
+          "rel": "alternate",
+          "type": "text/html",
+          "href": "https://www.sec.gov/newsroom/press-releases/2025-71"
+        }
+      ],
+      "link": "https://www.sec.gov/newsroom/press-releases/2025-71",
+      "summary": "The Securities and Exchange Commission today announced charges against Dallas-Fort Worth residents Kenneth W. Alexander II, Robert D. Welsh, and Caedrynn E. Conner for operating a Ponzi scheme that raised at least $91 million from more than 200 investors\u2026",
+      "summary_detail": {
+        "type": "text/html",
+        "language": "en",
+        "base": "https://www.sec.gov/",
+        "value": "The Securities and Exchange Commission today announced charges against Dallas-Fort Worth residents Kenneth W. Alexander II, Robert D. Welsh, and Caedrynn E. Conner for operating a Ponzi scheme that raised at least $91 million from more than 200 investors\u2026"
+      },
+      "published": "Tue, 29 Apr 2025 12:02:23 -0400",
+      "published_parsed": [
+        2025,
+        4,
+        29,
+        16,
+        2,
+        23,
+        1,
+        119,
+        0
+      ],
+      "authors": [
+        {}
+      ],
+      "author": "",
+      "id": "d0d2efe9-d90d-4fc9-9807-4c8d4d230536",
+      "guidislink": false
+    },
+    {
+      "title": "SEC Publishes New Market Data, Analysis, and Visualizations",
+      "title_detail": {
+        "type": "text/plain",
+        "language": "en",
+        "base": "https://www.sec.gov/",
+        "value": "SEC Publishes New Market Data, Analysis, and Visualizations"
+      },
+      "links": [
+        {
+          "rel": "alternate",
+          "type": "text/html",
+          "href": "https://www.sec.gov/newsroom/press-releases/2025-70"
+        }
+      ],
+      "link": "https://www.sec.gov/newsroom/press-releases/2025-70",
+      "summary": "The Securities and Exchange Commission\u2019s Division of Economic and Risk Analysis (DERA) has published new data and analysis on the key market areas of public issuers, exempt offerings, Commercial Mortgage-Backed Securities (CMBS), Asset-Backed Securities\u2026",
+      "summary_detail": {
+        "type": "text/html",
+        "language": "en",
+        "base": "https://www.sec.gov/",
+        "value": "The Securities and Exchange Commission\u2019s Division of Economic and Risk Analysis (DERA) has published new data and analysis on the key market areas of public issuers, exempt offerings, Commercial Mortgage-Backed Securities (CMBS), Asset-Backed Securities\u2026"
+      },
+      "published": "Mon, 28 Apr 2025 12:55:17 -0400",
+      "published_parsed": [
+        2025,
+        4,
+        28,
+        16,
+        55,
+        17,
+        0,
+        118,
+        0
+      ],
+      "authors": [
+        {}
+      ],
+      "author": "",
+      "id": "1520060f-e988-453f-9aae-89cc5152936c",
+      "guidislink": false
+    },
+    {
+      "title": "SEC Charges PGI Global Founder with $198 Million Crypto Asset and Foreign Exchange Fraud Scheme",
+      "title_detail": {
+        "type": "text/plain",
+        "language": "en",
+        "base": "https://www.sec.gov/",
+        "value": "SEC Charges PGI Global Founder with $198 Million Crypto Asset and Foreign Exchange Fraud Scheme"
+      },
+      "links": [
+        {
+          "rel": "alternate",
+          "type": "text/html",
+          "href": "https://www.sec.gov/newsroom/press-releases/2025-69"
+        }
+      ],
+      "link": "https://www.sec.gov/newsroom/press-releases/2025-69",
+      "summary": "The Securities and Exchange Commission today charged Ramil Palafox for orchestrating a fraudulent scheme that raised approximately $198 million from investors worldwide and for misappropriating more than $57 million of investor funds.\n\nAccording to the\u2026",
+      "summary_detail": {
+        "type": "text/html",
+        "language": "en",
+        "base": "https://www.sec.gov/",
+        "value": "The Securities and Exchange Commission today charged Ramil Palafox for orchestrating a fraudulent scheme that raised approximately $198 million from investors worldwide and for misappropriating more than $57 million of investor funds.\n\nAccording to the\u2026"
+      },
+      "published": "Tue, 22 Apr 2025 10:22:25 -0400",
+      "published_parsed": [
+        2025,
+        4,
+        22,
+        14,
+        22,
+        25,
+        1,
+        112,
+        0
+      ],
+      "authors": [
+        {}
+      ],
+      "author": "",
+      "id": "abc3423e-1af2-4ba6-8d0b-9db9215a596c",
+      "guidislink": false
+    },
+    {
+      "title": "Paul S. Atkins Sworn In as SEC Chairman",
+      "title_detail": {
+        "type": "text/plain",
+        "language": "en",
+        "base": "https://www.sec.gov/",
+        "value": "Paul S. Atkins Sworn In as SEC Chairman"
+      },
+      "links": [
+        {
+          "rel": "alternate",
+          "type": "text/html",
+          "href": "https://www.sec.gov/newsroom/press-releases/2025-68"
+        }
+      ],
+      "link": "https://www.sec.gov/newsroom/press-releases/2025-68",
+      "summary": "Paul S. Atkins was sworn into office today as the 34th Chairman of the Securities and Exchange Commission.\n\nChairman Atkins was nominated by President Donald J. Trump on January 20, 2025, and confirmed by the U.S. Senate on April 9, 2025.\n\n\u201cI am honored\u2026",
+      "summary_detail": {
+        "type": "text/html",
+        "language": "en",
+        "base": "https://www.sec.gov/",
+        "value": "Paul S. Atkins was sworn into office today as the 34th Chairman of the Securities and Exchange Commission.\n\nChairman Atkins was nominated by President Donald J. Trump on January 20, 2025, and confirmed by the U.S. Senate on April 9, 2025.\n\n\u201cI am honored\u2026"
+      },
+      "published": "Mon, 21 Apr 2025 17:39:25 -0400",
+      "published_parsed": [
+        2025,
+        4,
+        21,
+        21,
+        39,
+        25,
+        0,
+        111,
+        0
+      ],
+      "authors": [
+        {}
+      ],
+      "author": "",
+      "id": "4dac78c2-bae8-4b9e-a82a-361b1e5d24ed",
+      "guidislink": false
+    },
+    {
+      "title": "SEC Awards $6 Million to Joint Whistleblowers",
+      "title_detail": {
+        "type": "text/plain",
+        "language": "en",
+        "base": "https://www.sec.gov/",
+        "value": "SEC Awards $6 Million to Joint Whistleblowers"
+      },
+      "links": [
+        {
+          "rel": "alternate",
+          "type": "text/html",
+          "href": "https://www.sec.gov/newsroom/press-releases/2025-67"
+        }
+      ],
+      "link": "https://www.sec.gov/newsroom/press-releases/2025-67",
+      "summary": "The Securities and Exchange Commission today announced an award of approximately $6 million to joint whistleblowers who provided new information that led to the opening of an examination and provided a roadmap for an enforcement action that resulted in\u2026",
+      "summary_detail": {
+        "type": "text/html",
+        "language": "en",
+        "base": "https://www.sec.gov/",
+        "value": "The Securities and Exchange Commission today announced an award of approximately $6 million to joint whistleblowers who provided new information that led to the opening of an examination and provided a roadmap for an enforcement action that resulted in\u2026"
+      },
+      "published": "Mon, 21 Apr 2025 12:41:05 -0400",
+      "published_parsed": [
+        2025,
+        4,
+        21,
+        16,
+        41,
+        5,
+        0,
+        111,
+        0
+      ],
+      "authors": [
+        {}
+      ],
+      "author": "",
+      "id": "d9350f20-4cf8-42e8-9428-25ad4f0b46d1",
+      "guidislink": false
+    },
+    {
+      "title": "SEC Small Business Advisory Committee to Explore Regulation A",
+      "title_detail": {
+        "type": "text/plain",
+        "language": "en",
+        "base": "https://www.sec.gov/",
+        "value": "SEC Small Business Advisory Committee to Explore Regulation A"
+      },
+      "links": [
+        {
+          "rel": "alternate",
+          "type": "text/html",
+          "href": "https://www.sec.gov/newsroom/press-releases/2025-66"
+        }
+      ],
+      "link": "https://www.sec.gov/newsroom/press-releases/2025-66",
+      "summary": "The Securities and Exchange Commission\u2019s Small Business Capital Formation Advisory Committee announced that its meeting on Tuesday, May 6, 2025, will focus on the practical market considerations and regulatory challenges of Regulation A. Members of the\u2026",
+      "summary_detail": {
+        "type": "text/html",
+        "language": "en",
+        "base": "https://www.sec.gov/",
+        "value": "The Securities and Exchange Commission\u2019s Small Business Capital Formation Advisory Committee announced that its meeting on Tuesday, May 6, 2025, will focus on the practical market considerations and regulatory challenges of Regulation A. Members of the\u2026"
+      },
+      "published": "Thu, 17 Apr 2025 09:34:29 -0400",
+      "published_parsed": [
+        2025,
+        4,
+        17,
+        13,
+        34,
+        29,
+        3,
+        107,
+        0
+      ],
+      "authors": [
+        {}
+      ],
+      "author": "",
+      "id": "0736980d-8a4e-4e24-bf48-cfd43482bcee",
+      "guidislink": false
+    },
+    {
+      "title": "SEC Announces Agenda, Panelists for Roundtable on Crypto Custody",
+      "title_detail": {
+        "type": "text/plain",
+        "language": "en",
+        "base": "https://www.sec.gov/",
+        "value": "SEC Announces Agenda, Panelists for Roundtable on Crypto Custody"
+      },
+      "links": [
+        {
+          "rel": "alternate",
+          "type": "text/html",
+          "href": "https://www.sec.gov/newsroom/press-releases/2025-65"
+        }
+      ],
+      "link": "https://www.sec.gov/newsroom/press-releases/2025-65",
+      "summary": "The Securities and Exchange Commission\u2019s Crypto Task Force has announced the&nbsp;agenda and panelists for its April 25 roundtable, \u201cKnow Your Custodian: Key Considerations for Crypto Custody.\u201d\n\n\u201cIt is important for the SEC to grapple with custody issues\u2026",
+      "summary_detail": {
+        "type": "text/html",
+        "language": "en",
+        "base": "https://www.sec.gov/",
+        "value": "The Securities and Exchange Commission\u2019s Crypto Task Force has announced the&nbsp;agenda and panelists for its April 25 roundtable, \u201cKnow Your Custodian: Key Considerations for Crypto Custody.\u201d\n\n\u201cIt is important for the SEC to grapple with custody issues\u2026"
+      },
+      "published": "Wed, 16 Apr 2025 13:02:16 -0400",
+      "published_parsed": [
+        2025,
+        4,
+        16,
+        17,
+        2,
+        16,
+        2,
+        106,
+        0
+      ],
+      "authors": [
+        {}
+      ],
+      "author": "",
+      "id": "4bf54432-03ae-4709-8258-80d01fcf8352",
+      "guidislink": false
+    },
+    {
+      "title": "SEC Extends Effective and Compliance Dates for Amendments to Investment Company Reporting Requirements",
+      "title_detail": {
+        "type": "text/plain",
+        "language": "en",
+        "base": "https://www.sec.gov/",
+        "value": "SEC Extends Effective and Compliance Dates for Amendments to Investment Company Reporting Requirements"
+      },
+      "links": [
+        {
+          "rel": "alternate",
+          "type": "text/html",
+          "href": "https://www.sec.gov/newsroom/press-releases/2025-64"
+        }
+      ],
+      "link": "https://www.sec.gov/newsroom/press-releases/2025-64",
+      "summary": "The Securities and Exchange Commission today announced a two-year extension of the effective and compliance dates for rule amendments adopted in August 2024 that require many types of registered funds to more frequently report portfolio-related\u2026",
+      "summary_detail": {
+        "type": "text/html",
+        "language": "en",
+        "base": "https://www.sec.gov/",
+        "value": "The Securities and Exchange Commission today announced a two-year extension of the effective and compliance dates for rule amendments adopted in August 2024 that require many types of registered funds to more frequently report portfolio-related\u2026"
+      },
+      "published": "Wed, 16 Apr 2025 13:00:00 -0400",
+      "published_parsed": [
+        2025,
+        4,
+        16,
+        17,
+        0,
+        0,
+        2,
+        106,
+        0
+      ],
+      "authors": [
+        {}
+      ],
+      "author": "",
+      "id": "ccfc0b40-7ac5-4d21-9a67-fd579ded25b0",
+      "guidislink": false
+    },
+    {
+      "title": "SEC\u2019s Anti-Fraud Public Service Campaign Warns Investors About Relationship Investment Scams",
+      "title_detail": {
+        "type": "text/plain",
+        "language": "en",
+        "base": "https://www.sec.gov/",
+        "value": "SEC\u2019s Anti-Fraud Public Service Campaign Warns Investors About Relationship Investment Scams"
+      },
+      "links": [
+        {
+          "rel": "alternate",
+          "type": "text/html",
+          "href": "https://www.sec.gov/newsroom/press-releases/2025-63"
+        }
+      ],
+      "link": "https://www.sec.gov/newsroom/press-releases/2025-63",
+      "summary": "The SEC\u2019s Office of Investor Education and Advocacy unveiled its anti-fraud public service campaign, which warns investors about the devastating impact relationship investment scams can have on their financial future.",
+      "summary_detail": {
+        "type": "text/html",
+        "language": "en",
+        "base": "https://www.sec.gov/",
+        "value": "The SEC\u2019s Office of Investor Education and Advocacy unveiled its anti-fraud public service campaign, which warns investors about the devastating impact relationship investment scams can have on their financial future."
+      },
+      "published": "Wed, 16 Apr 2025 09:45:06 -0400",
+      "published_parsed": [
+        2025,
+        4,
+        16,
+        13,
+        45,
+        6,
+        2,
+        106,
+        0
+      ],
+      "authors": [
+        {}
+      ],
+      "author": "",
+      "id": "3b1da4d2-c598-4500-aa33-b186904926b5",
+      "guidislink": false
+    },
+    {
+      "title": "SEC Publishes New Data and Analysis About Registered Investment Companies and Money Market Funds",
+      "title_detail": {
+        "type": "text/plain",
+        "language": "en",
+        "base": "https://www.sec.gov/",
+        "value": "SEC Publishes New Data and Analysis About Registered Investment Companies and Money Market Funds"
+      },
+      "links": [
+        {
+          "rel": "alternate",
+          "type": "text/html",
+          "href": "https://www.sec.gov/newsroom/press-releases/2025-62"
+        }
+      ],
+      "link": "https://www.sec.gov/newsroom/press-releases/2025-62",
+      "summary": "The Securities and Exchange Commission today published new data and analysis in a pair of reports that provide the investing public with updated key information about registered investment companies and money market funds. &nbsp;\n\n\u201cIt is important that\u2026",
+      "summary_detail": {
+        "type": "text/html",
+        "language": "en",
+        "base": "https://www.sec.gov/",
+        "value": "The Securities and Exchange Commission today published new data and analysis in a pair of reports that provide the investing public with updated key information about registered investment companies and money market funds. &nbsp;\n\n\u201cIt is important that\u2026"
+      },
+      "published": "Mon, 14 Apr 2025 10:00:00 -0400",
+      "published_parsed": [
+        2025,
+        4,
+        14,
+        14,
+        0,
+        0,
+        0,
+        104,
+        0
+      ],
+      "authors": [
+        {}
+      ],
+      "author": "",
+      "id": "7c2e7bee-8be1-4597-ba5f-962ac580e984",
+      "guidislink": false
+    },
+    {
+      "title": "SEC Announces Agenda, Panelists for Roundtable on Crypto Trading",
+      "title_detail": {
+        "type": "text/plain",
+        "language": "en",
+        "base": "https://www.sec.gov/",
+        "value": "SEC Announces Agenda, Panelists for Roundtable on Crypto Trading"
+      },
+      "links": [
+        {
+          "rel": "alternate",
+          "type": "text/html",
+          "href": "https://www.sec.gov/newsroom/press-releases/2025-61"
+        }
+      ],
+      "link": "https://www.sec.gov/newsroom/press-releases/2025-61",
+      "summary": "The Securities and Exchange Commission\u2019s Crypto Task Force has announced the&nbsp;agenda and panelists for its April 11 roundtable, \u201cBetween a Block and a Hard Place: Tailoring Regulation for Crypto Trading.\u201d\n\n\u201cHearing the public\u2019s concerns and\u2026",
+      "summary_detail": {
+        "type": "text/html",
+        "language": "en",
+        "base": "https://www.sec.gov/",
+        "value": "The Securities and Exchange Commission\u2019s Crypto Task Force has announced the&nbsp;agenda and panelists for its April 11 roundtable, \u201cBetween a Block and a Hard Place: Tailoring Regulation for Crypto Trading.\u201d\n\n\u201cHearing the public\u2019s concerns and\u2026"
+      },
+      "published": "Mon, 07 Apr 2025 08:26:17 -0400",
+      "published_parsed": [
+        2025,
+        4,
+        7,
+        12,
+        26,
+        17,
+        0,
+        97,
+        0
+      ],
+      "authors": [
+        {}
+      ],
+      "author": "",
+      "id": "fe00fd8b-5ba2-4ef9-aaf6-7aba4f231b34",
+      "guidislink": false
+    },
+    {
+      "title": "By Building Wealth, Investors Power U.S. Economy",
+      "title_detail": {
+        "type": "text/plain",
+        "language": "en",
+        "base": "https://www.sec.gov/",
+        "value": "By Building Wealth, Investors Power U.S. Economy"
+      },
+      "links": [
+        {
+          "rel": "alternate",
+          "type": "text/html",
+          "href": "https://www.sec.gov/newsroom/press-releases/2025-60"
+        }
+      ],
+      "link": "https://www.sec.gov/newsroom/press-releases/2025-60",
+      "summary": "April is Financial Literacy Month, and the SEC is encouraging investors to utilize the agency\u2019s saving and investing resources on Investor.gov.",
+      "summary_detail": {
+        "type": "text/html",
+        "language": "en",
+        "base": "https://www.sec.gov/",
+        "value": "April is Financial Literacy Month, and the SEC is encouraging investors to utilize the agency\u2019s saving and investing resources on Investor.gov."
+      },
+      "published": "Wed, 02 Apr 2025 11:23:00 -0400",
+      "published_parsed": [
+        2025,
+        4,
+        2,
+        15,
+        23,
+        0,
+        2,
+        92,
+        0
+      ],
+      "authors": [
+        {}
+      ],
+      "author": "",
+      "id": "98a8433e-a725-4a3a-8753-7479e1495de5",
+      "guidislink": false
+    },
+    {
+      "title": "SEC Charges Three Arizona Individuals with Defrauding Investors in $284 Million Municipal Bond Offering That Financed Sports Complex",
+      "title_detail": {
+        "type": "text/plain",
+        "language": "en",
+        "base": "https://www.sec.gov/",
+        "value": "SEC Charges Three Arizona Individuals with Defrauding Investors in $284 Million Municipal Bond Offering That Financed Sports Complex"
+      },
+      "links": [
+        {
+          "rel": "alternate",
+          "type": "text/html",
+          "href": "https://www.sec.gov/newsroom/press-releases/2025-59"
+        }
+      ],
+      "link": "https://www.sec.gov/newsroom/press-releases/2025-59",
+      "summary": "The Securities and Exchange Commission today charged Randall \u201cRandy\u201d Miller, Chad Miller, and Jeffrey De Laveaga with creating false documents that were provided to investors in two municipal bond offerings that raised $284 million to build one of the\u2026",
+      "summary_detail": {
+        "type": "text/html",
+        "language": "en",
+        "base": "https://www.sec.gov/",
+        "value": "The Securities and Exchange Commission today charged Randall \u201cRandy\u201d Miller, Chad Miller, and Jeffrey De Laveaga with creating false documents that were provided to investors in two municipal bond offerings that raised $284 million to build one of the\u2026"
+      },
+      "published": "Tue, 01 Apr 2025 13:19:14 -0400",
+      "published_parsed": [
+        2025,
+        4,
+        1,
+        17,
+        19,
+        14,
+        1,
+        91,
+        0
+      ],
+      "authors": [
+        {}
+      ],
+      "author": "",
+      "id": "8dd8815d-c864-4a6f-b293-f75dd769def5",
+      "guidislink": false
+    },
+    {
+      "title": "SEC Votes to End Defense of Climate Disclosure Rules",
+      "title_detail": {
+        "type": "text/plain",
+        "language": "en",
+        "base": "https://www.sec.gov/",
+        "value": "SEC Votes to End Defense of Climate Disclosure Rules"
+      },
+      "links": [
+        {
+          "rel": "alternate",
+          "type": "text/html",
+          "href": "https://www.sec.gov/newsroom/press-releases/2025-58"
+        }
+      ],
+      "link": "https://www.sec.gov/newsroom/press-releases/2025-58",
+      "summary": "The Securities and Exchange Commission today voted to end its defense of the rules requiring disclosure of climate-related risks and greenhouse gas emissions.\n\nSEC Acting Chairman Mark T. Uyeda said, \u201cThe goal of today\u2019s Commission action and\u2026",
+      "summary_detail": {
+        "type": "text/html",
+        "language": "en",
+        "base": "https://www.sec.gov/",
+        "value": "The Securities and Exchange Commission today voted to end its defense of the rules requiring disclosure of climate-related risks and greenhouse gas emissions.\n\nSEC Acting Chairman Mark T. Uyeda said, \u201cThe goal of today\u2019s Commission action and\u2026"
+      },
+      "published": "Thu, 27 Mar 2025 16:05:00 -0400",
+      "published_parsed": [
+        2025,
+        3,
+        27,
+        20,
+        5,
+        0,
+        3,
+        86,
+        0
+      ],
+      "authors": [
+        {}
+      ],
+      "author": "",
+      "id": "1fa95fc2-b949-466a-af32-05a6a91f8947",
+      "guidislink": false
+    },
+    {
+      "title": "SEC Crypto Task Force to Host Four More Roundtables",
+      "title_detail": {
+        "type": "text/plain",
+        "language": "en",
+        "base": "https://www.sec.gov/",
+        "value": "SEC Crypto Task Force to Host Four More Roundtables"
+      },
+      "links": [
+        {
+          "rel": "alternate",
+          "type": "text/html",
+          "href": "https://www.sec.gov/newsroom/press-releases/2025-57"
+        }
+      ],
+      "link": "https://www.sec.gov/newsroom/press-releases/2025-57",
+      "summary": "The SEC&amp;#039;s Crypto Task Force will hold four more&nbsp;roundtables&nbsp;in its ongoing series discussing crypto asset regulation.",
+      "summary_detail": {
+        "type": "text/html",
+        "language": "en",
+        "base": "https://www.sec.gov/",
+        "value": "The SEC&amp;#039;s Crypto Task Force will hold four more&nbsp;roundtables&nbsp;in its ongoing series discussing crypto asset regulation."
+      },
+      "published": "Tue, 25 Mar 2025 15:33:21 -0400",
+      "published_parsed": [
+        2025,
+        3,
+        25,
+        19,
+        33,
+        21,
+        1,
+        84,
+        0
+      ],
+      "authors": [
+        {}
+      ],
+      "author": "",
+      "id": "2cb909ea-4df4-4cc5-8430-44cd6e36b486",
+      "guidislink": false
+    },
+    {
+      "title": "SEC Announces Agenda, Panelists for Roundtable on Artificial Intelligence",
+      "title_detail": {
+        "type": "text/plain",
+        "language": "en",
+        "base": "https://www.sec.gov/",
+        "value": "SEC Announces Agenda, Panelists for Roundtable on Artificial Intelligence"
+      },
+      "links": [
+        {
+          "rel": "alternate",
+          "type": "text/html",
+          "href": "https://www.sec.gov/newsroom/press-releases/2025-56"
+        }
+      ],
+      "link": "https://www.sec.gov/newsroom/press-releases/2025-56",
+      "summary": "The Securities and Exchange Commission today announced the&nbsp;agenda and panelists for the March 27 roundtable on artificial intelligence in the financial industry. &nbsp;\n\n\u201cI look forward to hearing from the panelists on how emerging technologies,\u2026",
+      "summary_detail": {
+        "type": "text/html",
+        "language": "en",
+        "base": "https://www.sec.gov/",
+        "value": "The Securities and Exchange Commission today announced the&nbsp;agenda and panelists for the March 27 roundtable on artificial intelligence in the financial industry. &nbsp;\n\n\u201cI look forward to hearing from the panelists on how emerging technologies,\u2026"
+      },
+      "published": "Thu, 20 Mar 2025 11:26:47 -0400",
+      "published_parsed": [
+        2025,
+        3,
+        20,
+        15,
+        26,
+        47,
+        3,
+        79,
+        0
+      ],
+      "authors": [
+        {}
+      ],
+      "author": "",
+      "id": "d84e702a-8917-4812-85f6-daa2a851a8b2",
+      "guidislink": false
+    },
+    {
+      "title": "SEC Charges New Jersey Investment Adviser and His Firm with Fraud and Other Violations",
+      "title_detail": {
+        "type": "text/plain",
+        "language": "en",
+        "base": "https://www.sec.gov/",
+        "value": "SEC Charges New Jersey Investment Adviser and His Firm with Fraud and Other Violations"
+      },
+      "links": [
+        {
+          "rel": "alternate",
+          "type": "text/html",
+          "href": "https://www.sec.gov/newsroom/press-releases/2025-55"
+        }
+      ],
+      "link": "https://www.sec.gov/newsroom/press-releases/2025-55",
+      "summary": "The Securities and Exchange Commission today announced that it has filed charges against David Yow Shang Chiueh&nbsp;of East Hanover, New Jersey and his investment advisory firm, Upright Financial Corp., for misconduct and for investing more than 25\u2026",
+      "summary_detail": {
+        "type": "text/html",
+        "language": "en",
+        "base": "https://www.sec.gov/",
+        "value": "The Securities and Exchange Commission today announced that it has filed charges against David Yow Shang Chiueh&nbsp;of East Hanover, New Jersey and his investment advisory firm, Upright Financial Corp., for misconduct and for investing more than 25\u2026"
+      },
+      "published": "Mon, 17 Mar 2025 14:47:45 -0400",
+      "published_parsed": [
+        2025,
+        3,
+        17,
+        18,
+        47,
+        45,
+        0,
+        76,
+        0
+      ],
+      "authors": [
+        {}
+      ],
+      "author": "",
+      "id": "6cc84d11-3074-40bc-9212-af6f23a2dea9",
+      "guidislink": false
+    },
+    {
+      "title": "SEC Extends Compliance Dates for Amendments to Investment Company Names Rule",
+      "title_detail": {
+        "type": "text/plain",
+        "language": "en",
+        "base": "https://www.sec.gov/",
+        "value": "SEC Extends Compliance Dates for Amendments to Investment Company Names Rule"
+      },
+      "links": [
+        {
+          "rel": "alternate",
+          "type": "text/html",
+          "href": "https://www.sec.gov/newsroom/press-releases/2025-54"
+        }
+      ],
+      "link": "https://www.sec.gov/newsroom/press-releases/2025-54",
+      "summary": "The Securities and Exchange Commission today announced a six-month extension of the compliance dates for amendments adopted in September 2023 to the Investment Company Act \u201cNames Rule,\u201d which addresses fund names likely to mislead investors about a fund\u2019\u2026",
+      "summary_detail": {
+        "type": "text/html",
+        "language": "en",
+        "base": "https://www.sec.gov/",
+        "value": "The Securities and Exchange Commission today announced a six-month extension of the compliance dates for amendments adopted in September 2023 to the Investment Company Act \u201cNames Rule,\u201d which addresses fund names likely to mislead investors about a fund\u2019\u2026"
+      },
+      "published": "Fri, 14 Mar 2025 18:12:45 -0400",
+      "published_parsed": [
+        2025,
+        3,
+        14,
+        22,
+        12,
+        45,
+        4,
+        73,
+        0
+      ],
+      "authors": [
+        {}
+      ],
+      "author": "",
+      "id": "569d23e1-1b0d-47fa-921b-7c8e55cb7415",
+      "guidislink": false
+    },
+    {
+      "title": "SEC Charges Investment Adviser and Two Officers for Misuse of Fund and Portfolio Company Assets",
+      "title_detail": {
+        "type": "text/plain",
+        "language": "en",
+        "base": "https://www.sec.gov/",
+        "value": "SEC Charges Investment Adviser and Two Officers for Misuse of Fund and Portfolio Company Assets"
+      },
+      "links": [
+        {
+          "rel": "alternate",
+          "type": "text/html",
+          "href": "https://www.sec.gov/newsroom/press-releases/2025-53"
+        }
+      ],
+      "link": "https://www.sec.gov/newsroom/press-releases/2025-53",
+      "summary": "The Securities and Exchange Commission today filed settled charges against registered investment adviser Momentum Advisors LLC, its former managing partner Allan J. Boomer, and its former chief operating officer and partner Tiffany L. Hawkins, for\u2026",
+      "summary_detail": {
+        "type": "text/html",
+        "language": "en",
+        "base": "https://www.sec.gov/",
+        "value": "The Securities and Exchange Commission today filed settled charges against registered investment adviser Momentum Advisors LLC, its former managing partner Allan J. Boomer, and its former chief operating officer and partner Tiffany L. Hawkins, for\u2026"
+      },
+      "published": "Fri, 07 Mar 2025 10:45:27 -0500",
+      "published_parsed": [
+        2025,
+        3,
+        7,
+        15,
+        45,
+        27,
+        4,
+        66,
+        0
+      ],
+      "authors": [
+        {}
+      ],
+      "author": "",
+      "id": "ce5bf470-2f9f-4c28-95b2-1bcf893cdba1",
+      "guidislink": false
+    },
+    {
+      "title": "Filer Transition to New and Improved EDGAR Begins March 24",
+      "title_detail": {
+        "type": "text/plain",
+        "language": "en",
+        "base": "https://www.sec.gov/",
+        "value": "Filer Transition to New and Improved EDGAR Begins March 24"
+      },
+      "links": [
+        {
+          "rel": "alternate",
+          "type": "text/html",
+          "href": "https://www.sec.gov/newsroom/press-releases/2025-52"
+        }
+      ],
+      "link": "https://www.sec.gov/newsroom/press-releases/2025-52",
+      "summary": "The Securities and Exchange Commission is providing extensive guidance and resources to assist filers with upcoming access and account management enhancements to the security of the agency\u2019s Electronic Data Gathering, Analysis, and Retrieval (EDGAR)\u2026",
+      "summary_detail": {
+        "type": "text/html",
+        "language": "en",
+        "base": "https://www.sec.gov/",
+        "value": "The Securities and Exchange Commission is providing extensive guidance and resources to assist filers with upcoming access and account management enhancements to the security of the agency\u2019s Electronic Data Gathering, Analysis, and Retrieval (EDGAR)\u2026"
+      },
+      "published": "Thu, 06 Mar 2025 14:35:00 -0500",
+      "published_parsed": [
+        2025,
+        3,
+        6,
+        19,
+        35,
+        0,
+        3,
+        65,
+        0
+      ],
+      "authors": [
+        {}
+      ],
+      "author": "",
+      "id": "e07a7300-05bb-4579-8ed2-0b76fea49dc4",
+      "guidislink": false
+    },
+    {
+      "title": "SEC Crypto Task Force to Host Roundtable on Security Status",
+      "title_detail": {
+        "type": "text/plain",
+        "language": "en",
+        "base": "https://www.sec.gov/",
+        "value": "SEC Crypto Task Force to Host Roundtable on Security Status"
+      },
+      "links": [
+        {
+          "rel": "alternate",
+          "type": "text/html",
+          "href": "https://www.sec.gov/newsroom/press-releases/2025-51"
+        }
+      ],
+      "link": "https://www.sec.gov/newsroom/press-releases/2025-51",
+      "summary": "The SEC&amp;#039;s Crypto Task Force will host a series of roundtables to discuss key areas of interest in the regulation of crypto assets.",
+      "summary_detail": {
+        "type": "text/html",
+        "language": "en",
+        "base": "https://www.sec.gov/",
+        "value": "The SEC&amp;#039;s Crypto Task Force will host a series of roundtables to discuss key areas of interest in the regulation of crypto assets."
+      },
+      "published": "Mon, 03 Mar 2025 17:45:16 -0500",
+      "published_parsed": [
+        2025,
+        3,
+        3,
+        22,
+        45,
+        16,
+        0,
+        62,
+        0
+      ],
+      "authors": [
+        {}
+      ],
+      "author": "",
+      "id": "9f668094-eaf2-434f-aa37-1b685cdf7d4d",
+      "guidislink": false
+    },
+    {
+      "title": "SEC Staff Facilitates Capital Formation for Companies Planning Public Offerings",
+      "title_detail": {
+        "type": "text/plain",
+        "language": "en",
+        "base": "https://www.sec.gov/",
+        "value": "SEC Staff Facilitates Capital Formation for Companies Planning Public Offerings"
+      },
+      "links": [
+        {
+          "rel": "alternate",
+          "type": "text/html",
+          "href": "https://www.sec.gov/newsroom/press-releases/2025-50"
+        }
+      ],
+      "link": "https://www.sec.gov/newsroom/press-releases/2025-50",
+      "summary": "The Securities and Exchange Commission today announced that its Division of Corporation Finance is further facilitating capital formation by enhancing the accommodations available to companies for nonpublic review of draft registration statements.\n\nIn\u2026",
+      "summary_detail": {
+        "type": "text/html",
+        "language": "en",
+        "base": "https://www.sec.gov/",
+        "value": "The Securities and Exchange Commission today announced that its Division of Corporation Finance is further facilitating capital formation by enhancing the accommodations available to companies for nonpublic review of draft registration statements.\n\nIn\u2026"
+      },
+      "published": "Mon, 03 Mar 2025 17:35:00 -0500",
+      "published_parsed": [
+        2025,
+        3,
+        3,
+        22,
+        35,
+        0,
+        0,
+        62,
+        0
+      ],
+      "authors": [
+        {}
+      ],
+      "author": "",
+      "id": "0e9515a8-9172-4583-983a-891e7453f60c",
+      "guidislink": false
+    },
+    {
+      "title": "Commissioner Hester Peirce Announces Crypto Task Force Staff",
+      "title_detail": {
+        "type": "text/plain",
+        "language": "en",
+        "base": "https://www.sec.gov/",
+        "value": "Commissioner Hester Peirce Announces Crypto Task Force Staff"
+      },
+      "links": [
+        {
+          "rel": "alternate",
+          "type": "text/html",
+          "href": "https://www.sec.gov/newsroom/press-releases/2025-49"
+        }
+      ],
+      "link": "https://www.sec.gov/newsroom/press-releases/2025-49",
+      "summary": "The Securities and Exchange Commission today announced the members of the Crypto Task Force staff, which is advising the Commission on matters related to crypto.\n\n\n\nThe task force is composed of staff from the Acting Chairman\u2019s office and other divisions\u2026",
+      "summary_detail": {
+        "type": "text/html",
+        "language": "en",
+        "base": "https://www.sec.gov/",
+        "value": "The Securities and Exchange Commission today announced the members of the Crypto Task Force staff, which is advising the Commission on matters related to crypto.\n\n\n\nThe task force is composed of staff from the Acting Chairman\u2019s office and other divisions\u2026"
+      },
+      "published": "Mon, 03 Mar 2025 15:00:00 -0500",
+      "published_parsed": [
+        2025,
+        3,
+        3,
+        20,
+        0,
+        0,
+        0,
+        62,
+        0
+      ],
+      "authors": [
+        {}
+      ],
+      "author": "",
+      "id": "11a68ff5-8bca-4b31-b298-22bc8bf02b86",
+      "guidislink": false
+    },
+    {
+      "title": "SEC to Host Roundtable on Artificial Intelligence",
+      "title_detail": {
+        "type": "text/plain",
+        "language": "en",
+        "base": "https://www.sec.gov/",
+        "value": "SEC to Host Roundtable on Artificial Intelligence"
+      },
+      "links": [
+        {
+          "rel": "alternate",
+          "type": "text/html",
+          "href": "https://www.sec.gov/newsroom/press-releases/2025-48"
+        }
+      ],
+      "link": "https://www.sec.gov/newsroom/press-releases/2025-48",
+      "summary": "The SEC will hold a roundtable discussion on artificial intelligence and examine the risks, benefits, and governance of it in the financial industry.",
+      "summary_detail": {
+        "type": "text/html",
+        "language": "en",
+        "base": "https://www.sec.gov/",
+        "value": "The SEC will hold a roundtable discussion on artificial intelligence and examine the risks, benefits, and governance of it in the financial industry."
+      },
+      "published": "Fri, 28 Feb 2025 08:50:13 -0500",
+      "published_parsed": [
+        2025,
+        2,
+        28,
+        13,
+        50,
+        13,
+        4,
+        59,
+        0
+      ],
+      "authors": [
+        {}
+      ],
+      "author": "",
+      "id": "6bb9ef5a-7d0a-480e-b022-dc4fab1a6f46",
+      "guidislink": false
+    }
+  ]
+}

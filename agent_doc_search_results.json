@@ -1,0 +1,6 @@
+{
+  "What was Apple's iPhone revenue in Q1 2020?": "Error: Transcript analysis failed. Details: AuthenticationError: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}}",
+  "How has Amazon's AWS business grown over time?": "Error: Transcript analysis failed. Details: AuthenticationError: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}}",
+  "What challenges did Intel face with manufacturing in 2019?": "Error: Transcript analysis failed. Details: AuthenticationError: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}}",
+  "Explain NVIDIA's AI strategy as discussed in their 2020 earnings calls.": "Error: Transcript analysis failed. Details: AuthenticationError: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}}"
+}

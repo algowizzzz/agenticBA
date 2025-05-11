@@ -1,0 +1,25 @@
+==== NEWS COLLECTION SYSTEM REPORT ====
+
+Report generated: 20250505_162537
+
+Total articles collected: 3
+Companies analyzed: 6
+Companies with articles: 3
+
+Top companies by article count:
+1. JPM (JPMorgan Chase & Co.): 1 articles
+2. GS (Goldman Sachs Group Inc.): 1 articles
+3. MSFT (Microsoft Corporation): 1 articles
+4. AAPL (Apple Inc.): 0 articles
+5. XOM (Exxon Mobil Corporation): 0 articles
+
+Sample headlines:
+
+JPM (JPMorgan Chase & Co.):
+1. Zimmer Biomet Holdings, Inc. (ZBH) Q1 2025 Earnings Call Transcript
+
+GS (Goldman Sachs Group Inc.):
+1. Zimmer Biomet Holdings, Inc. (ZBH) Q1 2025 Earnings Call Transcript
+
+MSFT (Microsoft Corporation):
+1. FFA: Delivering A Steady Distribution From This Call Writing CEF (NYSE:FFA)

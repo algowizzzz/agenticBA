@@ -1,0 +1,1851 @@
+{
+  "feed_info": {
+    "title": "Latest Filings - Mon, 05 May 2025 16:49:08 EDT",
+    "title_detail": {
+      "type": "text/plain",
+      "language": null,
+      "base": "https://www.sec.gov/cgi-bin/browse-edgar?type=8-K&action=getcurrent&output=atom",
+      "value": "Latest Filings - Mon, 05 May 2025 16:49:08 EDT"
+    },
+    "links": [
+      {
+        "rel": "alternate",
+        "href": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcurrent",
+        "type": "text/html"
+      },
+      {
+        "rel": "self",
+        "href": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcurrent",
+        "type": "application/atom+xml"
+      }
+    ],
+    "link": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcurrent",
+    "id": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcurrent",
+    "guidislink": false,
+    "authors": [
+      {
+        "name": "Webmaster",
+        "email": "webmaster@sec.gov"
+      }
+    ],
+    "author_detail": {
+      "name": "Webmaster",
+      "email": "webmaster@sec.gov"
+    },
+    "author": "Webmaster (webmaster@sec.gov)",
+    "updated": "2025-05-05T16:49:08-04:00",
+    "updated_parsed": [
+      2025,
+      5,
+      5,
+      20,
+      49,
+      8,
+      0,
+      125,
+      0
+    ]
+  },
+  "entries": [
+    {
+      "title": "8-K - Central Plains Bancshares, Inc. (0001979332) (Filer)",
+      "title_detail": {
+        "type": "text/plain",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?type=8-K&action=getcurrent&output=atom",
+        "value": "8-K - Central Plains Bancshares, Inc. (0001979332) (Filer)"
+      },
+      "links": [
+        {
+          "rel": "alternate",
+          "type": "text/html",
+          "href": "https://www.sec.gov/Archives/edgar/data/1979332/000094337425000187/0000943374-25-000187-index.htm"
+        }
+      ],
+      "link": "https://www.sec.gov/Archives/edgar/data/1979332/000094337425000187/0000943374-25-000187-index.htm",
+      "summary": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0000943374-25-000187 <b>Size:</b> 164 KB\n<br />Item 5.02: Departure of Directors or Certain Officers; Election of Directors; Appointment of Certain Officers: Compensatory Arrangements of Certain Officers\n<br />Item 9.01: Financial Statements and Exhibits",
+      "summary_detail": {
+        "type": "text/html",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?type=8-K&action=getcurrent&output=atom",
+        "value": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0000943374-25-000187 <b>Size:</b> 164 KB\n<br />Item 5.02: Departure of Directors or Certain Officers; Election of Directors; Appointment of Certain Officers: Compensatory Arrangements of Certain Officers\n<br />Item 9.01: Financial Statements and Exhibits"
+      },
+      "updated": "2025-05-05T16:48:40-04:00",
+      "updated_parsed": [
+        2025,
+        5,
+        5,
+        20,
+        48,
+        40,
+        0,
+        125,
+        0
+      ],
+      "tags": [
+        {
+          "term": "8-K",
+          "scheme": "https://www.sec.gov/",
+          "label": "form type"
+        }
+      ],
+      "id": "urn:tag:sec.gov,2008:accession-number=0000943374-25-000187",
+      "guidislink": false
+    },
+    {
+      "title": "8-K - HORTON D R INC /DE/ (0000882184) (Filer)",
+      "title_detail": {
+        "type": "text/plain",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?type=8-K&action=getcurrent&output=atom",
+        "value": "8-K - HORTON D R INC /DE/ (0000882184) (Filer)"
+      },
+      "links": [
+        {
+          "rel": "alternate",
+          "type": "text/html",
+          "href": "https://www.sec.gov/Archives/edgar/data/882184/000119312525112839/0001193125-25-112839-index.htm"
+        }
+      ],
+      "link": "https://www.sec.gov/Archives/edgar/data/882184/000119312525112839/0001193125-25-112839-index.htm",
+      "summary": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0001193125-25-112839 <b>Size:</b> 426 KB\n<br />Item 1.01: Entry into a Material Definitive Agreement\n<br />Item 9.01: Financial Statements and Exhibits",
+      "summary_detail": {
+        "type": "text/html",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?type=8-K&action=getcurrent&output=atom",
+        "value": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0001193125-25-112839 <b>Size:</b> 426 KB\n<br />Item 1.01: Entry into a Material Definitive Agreement\n<br />Item 9.01: Financial Statements and Exhibits"
+      },
+      "updated": "2025-05-05T16:48:20-04:00",
+      "updated_parsed": [
+        2025,
+        5,
+        5,
+        20,
+        48,
+        20,
+        0,
+        125,
+        0
+      ],
+      "tags": [
+        {
+          "term": "8-K",
+          "scheme": "https://www.sec.gov/",
+          "label": "form type"
+        }
+      ],
+      "id": "urn:tag:sec.gov,2008:accession-number=0001193125-25-112839",
+      "guidislink": false
+    },
+    {
+      "title": "8-K - COUSINS PROPERTIES INC (0000025232) (Filer)",
+      "title_detail": {
+        "type": "text/plain",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?type=8-K&action=getcurrent&output=atom",
+        "value": "8-K - COUSINS PROPERTIES INC (0000025232) (Filer)"
+      },
+      "links": [
+        {
+          "rel": "alternate",
+          "type": "text/html",
+          "href": "https://www.sec.gov/Archives/edgar/data/25232/000002523225000033/0000025232-25-000033-index.htm"
+        }
+      ],
+      "link": "https://www.sec.gov/Archives/edgar/data/25232/000002523225000033/0000025232-25-000033-index.htm",
+      "summary": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0000025232-25-000033 <b>Size:</b> 10 MB\n<br />Item 7.01: Regulation FD Disclosure\n<br />Item 9.01: Financial Statements and Exhibits",
+      "summary_detail": {
+        "type": "text/html",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?type=8-K&action=getcurrent&output=atom",
+        "value": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0000025232-25-000033 <b>Size:</b> 10 MB\n<br />Item 7.01: Regulation FD Disclosure\n<br />Item 9.01: Financial Statements and Exhibits"
+      },
+      "updated": "2025-05-05T16:48:14-04:00",
+      "updated_parsed": [
+        2025,
+        5,
+        5,
+        20,
+        48,
+        14,
+        0,
+        125,
+        0
+      ],
+      "tags": [
+        {
+          "term": "8-K",
+          "scheme": "https://www.sec.gov/",
+          "label": "form type"
+        }
+      ],
+      "id": "urn:tag:sec.gov,2008:accession-number=0000025232-25-000033",
+      "guidislink": false
+    },
+    {
+      "title": "8-K - Intrepid Potash, Inc. (0001421461) (Filer)",
+      "title_detail": {
+        "type": "text/plain",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?type=8-K&action=getcurrent&output=atom",
+        "value": "8-K - Intrepid Potash, Inc. (0001421461) (Filer)"
+      },
+      "links": [
+        {
+          "rel": "alternate",
+          "type": "text/html",
+          "href": "https://www.sec.gov/Archives/edgar/data/1421461/000142146125000014/0001421461-25-000014-index.htm"
+        }
+      ],
+      "link": "https://www.sec.gov/Archives/edgar/data/1421461/000142146125000014/0001421461-25-000014-index.htm",
+      "summary": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0001421461-25-000014 <b>Size:</b> 793 KB\n<br />Item 2.02: Results of Operations and Financial Condition\n<br />Item 9.01: Financial Statements and Exhibits",
+      "summary_detail": {
+        "type": "text/html",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?type=8-K&action=getcurrent&output=atom",
+        "value": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0001421461-25-000014 <b>Size:</b> 793 KB\n<br />Item 2.02: Results of Operations and Financial Condition\n<br />Item 9.01: Financial Statements and Exhibits"
+      },
+      "updated": "2025-05-05T16:46:56-04:00",
+      "updated_parsed": [
+        2025,
+        5,
+        5,
+        20,
+        46,
+        56,
+        0,
+        125,
+        0
+      ],
+      "tags": [
+        {
+          "term": "8-K",
+          "scheme": "https://www.sec.gov/",
+          "label": "form type"
+        }
+      ],
+      "id": "urn:tag:sec.gov,2008:accession-number=0001421461-25-000014",
+      "guidislink": false
+    },
+    {
+      "title": "8-K - Inmune Bio, Inc. (0001711754) (Filer)",
+      "title_detail": {
+        "type": "text/plain",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?type=8-K&action=getcurrent&output=atom",
+        "value": "8-K - Inmune Bio, Inc. (0001711754) (Filer)"
+      },
+      "links": [
+        {
+          "rel": "alternate",
+          "type": "text/html",
+          "href": "https://www.sec.gov/Archives/edgar/data/1711754/000121390025039733/0001213900-25-039733-index.htm"
+        }
+      ],
+      "link": "https://www.sec.gov/Archives/edgar/data/1711754/000121390025039733/0001213900-25-039733-index.htm",
+      "summary": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0001213900-25-039733 <b>Size:</b> 212 KB\n<br />Item 8.01: Other Events\n<br />Item 9.01: Financial Statements and Exhibits",
+      "summary_detail": {
+        "type": "text/html",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?type=8-K&action=getcurrent&output=atom",
+        "value": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0001213900-25-039733 <b>Size:</b> 212 KB\n<br />Item 8.01: Other Events\n<br />Item 9.01: Financial Statements and Exhibits"
+      },
+      "updated": "2025-05-05T16:46:52-04:00",
+      "updated_parsed": [
+        2025,
+        5,
+        5,
+        20,
+        46,
+        52,
+        0,
+        125,
+        0
+      ],
+      "tags": [
+        {
+          "term": "8-K",
+          "scheme": "https://www.sec.gov/",
+          "label": "form type"
+        }
+      ],
+      "id": "urn:tag:sec.gov,2008:accession-number=0001213900-25-039733",
+      "guidislink": false
+    },
+    {
+      "title": "8-K - BRINKER INTERNATIONAL, INC (0000703351) (Filer)",
+      "title_detail": {
+        "type": "text/plain",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?type=8-K&action=getcurrent&output=atom",
+        "value": "8-K - BRINKER INTERNATIONAL, INC (0000703351) (Filer)"
+      },
+      "links": [
+        {
+          "rel": "alternate",
+          "type": "text/html",
+          "href": "https://www.sec.gov/Archives/edgar/data/703351/000070335125000020/0000703351-25-000020-index.htm"
+        }
+      ],
+      "link": "https://www.sec.gov/Archives/edgar/data/703351/000070335125000020/0000703351-25-000020-index.htm",
+      "summary": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0000703351-25-000020 <b>Size:</b> 54 MB\n<br />Item 1.01: Entry into a Material Definitive Agreement\n<br />Item 2.03: Creation of a Direct Financial Obligation or an Obligation under an Off-Balance Sheet Arrangement of a Registrant\n<br />Item 9.01: Financial Statements and Exhibits",
+      "summary_detail": {
+        "type": "text/html",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?type=8-K&action=getcurrent&output=atom",
+        "value": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0000703351-25-000020 <b>Size:</b> 54 MB\n<br />Item 1.01: Entry into a Material Definitive Agreement\n<br />Item 2.03: Creation of a Direct Financial Obligation or an Obligation under an Off-Balance Sheet Arrangement of a Registrant\n<br />Item 9.01: Financial Statements and Exhibits"
+      },
+      "updated": "2025-05-05T16:46:35-04:00",
+      "updated_parsed": [
+        2025,
+        5,
+        5,
+        20,
+        46,
+        35,
+        0,
+        125,
+        0
+      ],
+      "tags": [
+        {
+          "term": "8-K",
+          "scheme": "https://www.sec.gov/",
+          "label": "form type"
+        }
+      ],
+      "id": "urn:tag:sec.gov,2008:accession-number=0000703351-25-000020",
+      "guidislink": false
+    },
+    {
+      "title": "8-K - Viatris Inc (0001792044) (Filer)",
+      "title_detail": {
+        "type": "text/plain",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?type=8-K&action=getcurrent&output=atom",
+        "value": "8-K - Viatris Inc (0001792044) (Filer)"
+      },
+      "links": [
+        {
+          "rel": "alternate",
+          "type": "text/html",
+          "href": "https://www.sec.gov/Archives/edgar/data/1792044/000114036125017356/0001140361-25-017356-index.htm"
+        }
+      ],
+      "link": "https://www.sec.gov/Archives/edgar/data/1792044/000114036125017356/0001140361-25-017356-index.htm",
+      "summary": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0001140361-25-017356 <b>Size:</b> 208 KB\n<br />Item 5.02: Departure of Directors or Certain Officers; Election of Directors; Appointment of Certain Officers: Compensatory Arrangements of Certain Officers\n<br />Item 7.01: Regulation FD Disclosure\n<br />Item 9.01: Financial Statements and Exhibits",
+      "summary_detail": {
+        "type": "text/html",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?type=8-K&action=getcurrent&output=atom",
+        "value": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0001140361-25-017356 <b>Size:</b> 208 KB\n<br />Item 5.02: Departure of Directors or Certain Officers; Election of Directors; Appointment of Certain Officers: Compensatory Arrangements of Certain Officers\n<br />Item 7.01: Regulation FD Disclosure\n<br />Item 9.01: Financial Statements and Exhibits"
+      },
+      "updated": "2025-05-05T16:45:23-04:00",
+      "updated_parsed": [
+        2025,
+        5,
+        5,
+        20,
+        45,
+        23,
+        0,
+        125,
+        0
+      ],
+      "tags": [
+        {
+          "term": "8-K",
+          "scheme": "https://www.sec.gov/",
+          "label": "form type"
+        }
+      ],
+      "id": "urn:tag:sec.gov,2008:accession-number=0001140361-25-017356",
+      "guidislink": false
+    },
+    {
+      "title": "8-K - TIDEWATER INC (0000098222) (Filer)",
+      "title_detail": {
+        "type": "text/plain",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?type=8-K&action=getcurrent&output=atom",
+        "value": "8-K - TIDEWATER INC (0000098222) (Filer)"
+      },
+      "links": [
+        {
+          "rel": "alternate",
+          "type": "text/html",
+          "href": "https://www.sec.gov/Archives/edgar/data/98222/000143774925014562/0001437749-25-014562-index.htm"
+        }
+      ],
+      "link": "https://www.sec.gov/Archives/edgar/data/98222/000143774925014562/0001437749-25-014562-index.htm",
+      "summary": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0001437749-25-014562 <b>Size:</b> 3 MB\n<br />Item 2.02: Results of Operations and Financial Condition\n<br />Item 9.01: Financial Statements and Exhibits",
+      "summary_detail": {
+        "type": "text/html",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?type=8-K&action=getcurrent&output=atom",
+        "value": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0001437749-25-014562 <b>Size:</b> 3 MB\n<br />Item 2.02: Results of Operations and Financial Condition\n<br />Item 9.01: Financial Statements and Exhibits"
+      },
+      "updated": "2025-05-05T16:45:18-04:00",
+      "updated_parsed": [
+        2025,
+        5,
+        5,
+        20,
+        45,
+        18,
+        0,
+        125,
+        0
+      ],
+      "tags": [
+        {
+          "term": "8-K",
+          "scheme": "https://www.sec.gov/",
+          "label": "form type"
+        }
+      ],
+      "id": "urn:tag:sec.gov,2008:accession-number=0001437749-25-014562",
+      "guidislink": false
+    },
+    {
+      "title": "8-K - UNITIL CORP (0000755001) (Filer)",
+      "title_detail": {
+        "type": "text/plain",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?type=8-K&action=getcurrent&output=atom",
+        "value": "8-K - UNITIL CORP (0000755001) (Filer)"
+      },
+      "links": [
+        {
+          "rel": "alternate",
+          "type": "text/html",
+          "href": "https://www.sec.gov/Archives/edgar/data/755001/000119312525112835/0001193125-25-112835-index.htm"
+        }
+      ],
+      "link": "https://www.sec.gov/Archives/edgar/data/755001/000119312525112835/0001193125-25-112835-index.htm",
+      "summary": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0001193125-25-112835 <b>Size:</b> 155 KB\n<br />Item 5.07: Submission of Matters to a Vote of Security Holders",
+      "summary_detail": {
+        "type": "text/html",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?type=8-K&action=getcurrent&output=atom",
+        "value": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0001193125-25-112835 <b>Size:</b> 155 KB\n<br />Item 5.07: Submission of Matters to a Vote of Security Holders"
+      },
+      "updated": "2025-05-05T16:45:13-04:00",
+      "updated_parsed": [
+        2025,
+        5,
+        5,
+        20,
+        45,
+        13,
+        0,
+        125,
+        0
+      ],
+      "tags": [
+        {
+          "term": "8-K",
+          "scheme": "https://www.sec.gov/",
+          "label": "form type"
+        }
+      ],
+      "id": "urn:tag:sec.gov,2008:accession-number=0001193125-25-112835",
+      "guidislink": false
+    },
+    {
+      "title": "8-K - ScanTech AI Systems Inc. (0001994624) (Filer)",
+      "title_detail": {
+        "type": "text/plain",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?type=8-K&action=getcurrent&output=atom",
+        "value": "8-K - ScanTech AI Systems Inc. (0001994624) (Filer)"
+      },
+      "links": [
+        {
+          "rel": "alternate",
+          "type": "text/html",
+          "href": "https://www.sec.gov/Archives/edgar/data/1994624/000110465925044549/0001104659-25-044549-index.htm"
+        }
+      ],
+      "link": "https://www.sec.gov/Archives/edgar/data/1994624/000110465925044549/0001104659-25-044549-index.htm",
+      "summary": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0001104659-25-044549 <b>Size:</b> 511 KB\n<br />Item 1.01: Entry into a Material Definitive Agreement\n<br />Item 1.02: Termination of a Material Definitive Agreement\n<br />Item 2.03: Creation of a Direct Financial Obligation or an Obligation under an Off-Balance Sheet Arrangement of a Registrant\n<br />Item 3.02: Unregistered Sales of Equity Securities\n<br />Item 9.01: Financial Statements and Exhibits",
+      "summary_detail": {
+        "type": "text/html",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?type=8-K&action=getcurrent&output=atom",
+        "value": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0001104659-25-044549 <b>Size:</b> 511 KB\n<br />Item 1.01: Entry into a Material Definitive Agreement\n<br />Item 1.02: Termination of a Material Definitive Agreement\n<br />Item 2.03: Creation of a Direct Financial Obligation or an Obligation under an Off-Balance Sheet Arrangement of a Registrant\n<br />Item 3.02: Unregistered Sales of Equity Securities\n<br />Item 9.01: Financial Statements and Exhibits"
+      },
+      "updated": "2025-05-05T16:43:10-04:00",
+      "updated_parsed": [
+        2025,
+        5,
+        5,
+        20,
+        43,
+        10,
+        0,
+        125,
+        0
+      ],
+      "tags": [
+        {
+          "term": "8-K",
+          "scheme": "https://www.sec.gov/",
+          "label": "form type"
+        }
+      ],
+      "id": "urn:tag:sec.gov,2008:accession-number=0001104659-25-044549",
+      "guidislink": false
+    },
+    {
+      "title": "8-K - ZIONS BANCORPORATION, NATIONAL ASSOCIATION /UT/ (0000109380) (Filer)",
+      "title_detail": {
+        "type": "text/plain",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?type=8-K&action=getcurrent&output=atom",
+        "value": "8-K - ZIONS BANCORPORATION, NATIONAL ASSOCIATION /UT/ (0000109380) (Filer)"
+      },
+      "links": [
+        {
+          "rel": "alternate",
+          "type": "text/html",
+          "href": "https://www.sec.gov/Archives/edgar/data/109380/000010938025000062/0000109380-25-000062-index.htm"
+        }
+      ],
+      "link": "https://www.sec.gov/Archives/edgar/data/109380/000010938025000062/0000109380-25-000062-index.htm",
+      "summary": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0000109380-25-000062 <b>Size:</b> 223 KB\n<br />Item 5.07: Submission of Matters to a Vote of Security Holders",
+      "summary_detail": {
+        "type": "text/html",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?type=8-K&action=getcurrent&output=atom",
+        "value": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0000109380-25-000062 <b>Size:</b> 223 KB\n<br />Item 5.07: Submission of Matters to a Vote of Security Holders"
+      },
+      "updated": "2025-05-05T16:42:56-04:00",
+      "updated_parsed": [
+        2025,
+        5,
+        5,
+        20,
+        42,
+        56,
+        0,
+        125,
+        0
+      ],
+      "tags": [
+        {
+          "term": "8-K",
+          "scheme": "https://www.sec.gov/",
+          "label": "form type"
+        }
+      ],
+      "id": "urn:tag:sec.gov,2008:accession-number=0000109380-25-000062",
+      "guidislink": false
+    },
+    {
+      "title": "8-K - TERADATA CORP /DE/ (0000816761) (Filer)",
+      "title_detail": {
+        "type": "text/plain",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?type=8-K&action=getcurrent&output=atom",
+        "value": "8-K - TERADATA CORP /DE/ (0000816761) (Filer)"
+      },
+      "links": [
+        {
+          "rel": "alternate",
+          "type": "text/html",
+          "href": "https://www.sec.gov/Archives/edgar/data/816761/000081676125000101/0000816761-25-000101-index.htm"
+        }
+      ],
+      "link": "https://www.sec.gov/Archives/edgar/data/816761/000081676125000101/0000816761-25-000101-index.htm",
+      "summary": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0000816761-25-000101 <b>Size:</b> 244 KB\n<br />Item 5.02: Departure of Directors or Certain Officers; Election of Directors; Appointment of Certain Officers: Compensatory Arrangements of Certain Officers",
+      "summary_detail": {
+        "type": "text/html",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?type=8-K&action=getcurrent&output=atom",
+        "value": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0000816761-25-000101 <b>Size:</b> 244 KB\n<br />Item 5.02: Departure of Directors or Certain Officers; Election of Directors; Appointment of Certain Officers: Compensatory Arrangements of Certain Officers"
+      },
+      "updated": "2025-05-05T16:42:16-04:00",
+      "updated_parsed": [
+        2025,
+        5,
+        5,
+        20,
+        42,
+        16,
+        0,
+        125,
+        0
+      ],
+      "tags": [
+        {
+          "term": "8-K",
+          "scheme": "https://www.sec.gov/",
+          "label": "form type"
+        }
+      ],
+      "id": "urn:tag:sec.gov,2008:accession-number=0000816761-25-000101",
+      "guidislink": false
+    },
+    {
+      "title": "8-K - EASTERN CO (0000031107) (Filer)",
+      "title_detail": {
+        "type": "text/plain",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?type=8-K&action=getcurrent&output=atom",
+        "value": "8-K - EASTERN CO (0000031107) (Filer)"
+      },
+      "links": [
+        {
+          "rel": "alternate",
+          "type": "text/html",
+          "href": "https://www.sec.gov/Archives/edgar/data/31107/000165495425005083/0001654954-25-005083-index.htm"
+        }
+      ],
+      "link": "https://www.sec.gov/Archives/edgar/data/31107/000165495425005083/0001654954-25-005083-index.htm",
+      "summary": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0001654954-25-005083 <b>Size:</b> 166 KB\n<br />Item 5.02: Departure of Directors or Certain Officers; Election of Directors; Appointment of Certain Officers: Compensatory Arrangements of Certain Officers\n<br />Item 7.01: Regulation FD Disclosure\n<br />Item 9.01: Financial Statements and Exhibits",
+      "summary_detail": {
+        "type": "text/html",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?type=8-K&action=getcurrent&output=atom",
+        "value": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0001654954-25-005083 <b>Size:</b> 166 KB\n<br />Item 5.02: Departure of Directors or Certain Officers; Election of Directors; Appointment of Certain Officers: Compensatory Arrangements of Certain Officers\n<br />Item 7.01: Regulation FD Disclosure\n<br />Item 9.01: Financial Statements and Exhibits"
+      },
+      "updated": "2025-05-05T16:41:42-04:00",
+      "updated_parsed": [
+        2025,
+        5,
+        5,
+        20,
+        41,
+        42,
+        0,
+        125,
+        0
+      ],
+      "tags": [
+        {
+          "term": "8-K",
+          "scheme": "https://www.sec.gov/",
+          "label": "form type"
+        }
+      ],
+      "id": "urn:tag:sec.gov,2008:accession-number=0001654954-25-005083",
+      "guidislink": false
+    },
+    {
+      "title": "8-K - EVANS BANCORP INC (0000842518) (Filer)",
+      "title_detail": {
+        "type": "text/plain",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?type=8-K&action=getcurrent&output=atom",
+        "value": "8-K - EVANS BANCORP INC (0000842518) (Filer)"
+      },
+      "links": [
+        {
+          "rel": "alternate",
+          "type": "text/html",
+          "href": "https://www.sec.gov/Archives/edgar/data/842518/000114036125017352/0001140361-25-017352-index.htm"
+        }
+      ],
+      "link": "https://www.sec.gov/Archives/edgar/data/842518/000114036125017352/0001140361-25-017352-index.htm",
+      "summary": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0001140361-25-017352 <b>Size:</b> 178 KB\n<br />Item 2.01: Completion of Acquisition or Disposition of Assets\n<br />Item 3.01: Notice of Delisting or Failure to Satisfy a Continued Listing Rule or Standard; Transfer of Listing\n<br />Item 3.03: Material Modifications to Rights of Security Holders\n<br />Item 5.01: Changes in Control of Registrant\n<br />Item 5.02: Departure of Directors or Certain Officers; Election of Directors; Appointment of Certain Officers: Compensatory Arrangements of Certain Officers\n<br />Item 5.03: Amendments to Articles of Incorporation or Bylaws; Change in Fiscal Year\n<br />Item 9.01: Financial Statements and Exhibits",
+      "summary_detail": {
+        "type": "text/html",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?type=8-K&action=getcurrent&output=atom",
+        "value": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0001140361-25-017352 <b>Size:</b> 178 KB\n<br />Item 2.01: Completion of Acquisition or Disposition of Assets\n<br />Item 3.01: Notice of Delisting or Failure to Satisfy a Continued Listing Rule or Standard; Transfer of Listing\n<br />Item 3.03: Material Modifications to Rights of Security Holders\n<br />Item 5.01: Changes in Control of Registrant\n<br />Item 5.02: Departure of Directors or Certain Officers; Election of Directors; Appointment of Certain Officers: Compensatory Arrangements of Certain Officers\n<br />Item 5.03: Amendments to Articles of Incorporation or Bylaws; Change in Fiscal Year\n<br />Item 9.01: Financial Statements and Exhibits"
+      },
+      "updated": "2025-05-05T16:40:43-04:00",
+      "updated_parsed": [
+        2025,
+        5,
+        5,
+        20,
+        40,
+        43,
+        0,
+        125,
+        0
+      ],
+      "tags": [
+        {
+          "term": "8-K",
+          "scheme": "https://www.sec.gov/",
+          "label": "form type"
+        }
+      ],
+      "id": "urn:tag:sec.gov,2008:accession-number=0001140361-25-017352",
+      "guidislink": false
+    },
+    {
+      "title": "8-K - CHART INDUSTRIES INC (0000892553) (Filer)",
+      "title_detail": {
+        "type": "text/plain",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?type=8-K&action=getcurrent&output=atom",
+        "value": "8-K - CHART INDUSTRIES INC (0000892553) (Filer)"
+      },
+      "links": [
+        {
+          "rel": "alternate",
+          "type": "text/html",
+          "href": "https://www.sec.gov/Archives/edgar/data/892553/000119312525112831/0001193125-25-112831-index.htm"
+        }
+      ],
+      "link": "https://www.sec.gov/Archives/edgar/data/892553/000119312525112831/0001193125-25-112831-index.htm",
+      "summary": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0001193125-25-112831 <b>Size:</b> 197 KB\n<br />Item 1.01: Entry into a Material Definitive Agreement\n<br />Item 1.02: Termination of a Material Definitive Agreement",
+      "summary_detail": {
+        "type": "text/html",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?type=8-K&action=getcurrent&output=atom",
+        "value": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0001193125-25-112831 <b>Size:</b> 197 KB\n<br />Item 1.01: Entry into a Material Definitive Agreement\n<br />Item 1.02: Termination of a Material Definitive Agreement"
+      },
+      "updated": "2025-05-05T16:40:38-04:00",
+      "updated_parsed": [
+        2025,
+        5,
+        5,
+        20,
+        40,
+        38,
+        0,
+        125,
+        0
+      ],
+      "tags": [
+        {
+          "term": "8-K",
+          "scheme": "https://www.sec.gov/",
+          "label": "form type"
+        }
+      ],
+      "id": "urn:tag:sec.gov,2008:accession-number=0001193125-25-112831",
+      "guidislink": false
+    },
+    {
+      "title": "8-K - HIGH WIRE NETWORKS, INC. (0001413891) (Filer)",
+      "title_detail": {
+        "type": "text/plain",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?type=8-K&action=getcurrent&output=atom",
+        "value": "8-K - HIGH WIRE NETWORKS, INC. (0001413891) (Filer)"
+      },
+      "links": [
+        {
+          "rel": "alternate",
+          "type": "text/html",
+          "href": "https://www.sec.gov/Archives/edgar/data/1413891/000121390025039723/0001213900-25-039723-index.htm"
+        }
+      ],
+      "link": "https://www.sec.gov/Archives/edgar/data/1413891/000121390025039723/0001213900-25-039723-index.htm",
+      "summary": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0001213900-25-039723 <b>Size:</b> 617 KB\n<br />Item 1.01: Entry into a Material Definitive Agreement\n<br />Item 3.02: Unregistered Sales of Equity Securities\n<br />Item 5.03: Amendments to Articles of Incorporation or Bylaws; Change in Fiscal Year\n<br />Item 9.01: Financial Statements and Exhibits",
+      "summary_detail": {
+        "type": "text/html",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?type=8-K&action=getcurrent&output=atom",
+        "value": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0001213900-25-039723 <b>Size:</b> 617 KB\n<br />Item 1.01: Entry into a Material Definitive Agreement\n<br />Item 3.02: Unregistered Sales of Equity Securities\n<br />Item 5.03: Amendments to Articles of Incorporation or Bylaws; Change in Fiscal Year\n<br />Item 9.01: Financial Statements and Exhibits"
+      },
+      "updated": "2025-05-05T16:39:28-04:00",
+      "updated_parsed": [
+        2025,
+        5,
+        5,
+        20,
+        39,
+        28,
+        0,
+        125,
+        0
+      ],
+      "tags": [
+        {
+          "term": "8-K",
+          "scheme": "https://www.sec.gov/",
+          "label": "form type"
+        }
+      ],
+      "id": "urn:tag:sec.gov,2008:accession-number=0001213900-25-039723",
+      "guidislink": false
+    },
+    {
+      "title": "8-K - DESTINY MEDIA TECHNOLOGIES INC (0001099369) (Filer)",
+      "title_detail": {
+        "type": "text/plain",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?type=8-K&action=getcurrent&output=atom",
+        "value": "8-K - DESTINY MEDIA TECHNOLOGIES INC (0001099369) (Filer)"
+      },
+      "links": [
+        {
+          "rel": "alternate",
+          "type": "text/html",
+          "href": "https://www.sec.gov/Archives/edgar/data/1099369/000106299325008479/0001062993-25-008479-index.htm"
+        }
+      ],
+      "link": "https://www.sec.gov/Archives/edgar/data/1099369/000106299325008479/0001062993-25-008479-index.htm",
+      "summary": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0001062993-25-008479 <b>Size:</b> 222 KB\n<br />Item 5.02: Departure of Directors or Certain Officers; Election of Directors; Appointment of Certain Officers: Compensatory Arrangements of Certain Officers",
+      "summary_detail": {
+        "type": "text/html",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?type=8-K&action=getcurrent&output=atom",
+        "value": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0001062993-25-008479 <b>Size:</b> 222 KB\n<br />Item 5.02: Departure of Directors or Certain Officers; Election of Directors; Appointment of Certain Officers: Compensatory Arrangements of Certain Officers"
+      },
+      "updated": "2025-05-05T16:37:51-04:00",
+      "updated_parsed": [
+        2025,
+        5,
+        5,
+        20,
+        37,
+        51,
+        0,
+        125,
+        0
+      ],
+      "tags": [
+        {
+          "term": "8-K",
+          "scheme": "https://www.sec.gov/",
+          "label": "form type"
+        }
+      ],
+      "id": "urn:tag:sec.gov,2008:accession-number=0001062993-25-008479",
+      "guidislink": false
+    },
+    {
+      "title": "8-K - SEMrush Holdings, Inc. (0001831840) (Filer)",
+      "title_detail": {
+        "type": "text/plain",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?type=8-K&action=getcurrent&output=atom",
+        "value": "8-K - SEMrush Holdings, Inc. (0001831840) (Filer)"
+      },
+      "links": [
+        {
+          "rel": "alternate",
+          "type": "text/html",
+          "href": "https://www.sec.gov/Archives/edgar/data/1831840/000162828025022212/0001628280-25-022212-index.htm"
+        }
+      ],
+      "link": "https://www.sec.gov/Archives/edgar/data/1831840/000162828025022212/0001628280-25-022212-index.htm",
+      "summary": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0001628280-25-022212 <b>Size:</b> 188 KB\n<br />Item 5.02: Departure of Directors or Certain Officers; Election of Directors; Appointment of Certain Officers: Compensatory Arrangements of Certain Officers\n<br />Item 7.01: Regulation FD Disclosure\n<br />Item 9.01: Financial Statements and Exhibits",
+      "summary_detail": {
+        "type": "text/html",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?type=8-K&action=getcurrent&output=atom",
+        "value": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0001628280-25-022212 <b>Size:</b> 188 KB\n<br />Item 5.02: Departure of Directors or Certain Officers; Election of Directors; Appointment of Certain Officers: Compensatory Arrangements of Certain Officers\n<br />Item 7.01: Regulation FD Disclosure\n<br />Item 9.01: Financial Statements and Exhibits"
+      },
+      "updated": "2025-05-05T16:36:33-04:00",
+      "updated_parsed": [
+        2025,
+        5,
+        5,
+        20,
+        36,
+        33,
+        0,
+        125,
+        0
+      ],
+      "tags": [
+        {
+          "term": "8-K",
+          "scheme": "https://www.sec.gov/",
+          "label": "form type"
+        }
+      ],
+      "id": "urn:tag:sec.gov,2008:accession-number=0001628280-25-022212",
+      "guidislink": false
+    },
+    {
+      "title": "8-K - DILLARD'S, INC. (0000028917) (Filer)",
+      "title_detail": {
+        "type": "text/plain",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?type=8-K&action=getcurrent&output=atom",
+        "value": "8-K - DILLARD'S, INC. (0000028917) (Filer)"
+      },
+      "links": [
+        {
+          "rel": "alternate",
+          "type": "text/html",
+          "href": "https://www.sec.gov/Archives/edgar/data/28917/000002891725000008/0000028917-25-000008-index.htm"
+        }
+      ],
+      "link": "https://www.sec.gov/Archives/edgar/data/28917/000002891725000008/0000028917-25-000008-index.htm",
+      "summary": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0000028917-25-000008 <b>Size:</b> 164 KB\n<br />Item 5.02: Departure of Directors or Certain Officers; Election of Directors; Appointment of Certain Officers: Compensatory Arrangements of Certain Officers",
+      "summary_detail": {
+        "type": "text/html",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?type=8-K&action=getcurrent&output=atom",
+        "value": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0000028917-25-000008 <b>Size:</b> 164 KB\n<br />Item 5.02: Departure of Directors or Certain Officers; Election of Directors; Appointment of Certain Officers: Compensatory Arrangements of Certain Officers"
+      },
+      "updated": "2025-05-05T16:36:13-04:00",
+      "updated_parsed": [
+        2025,
+        5,
+        5,
+        20,
+        36,
+        13,
+        0,
+        125,
+        0
+      ],
+      "tags": [
+        {
+          "term": "8-K",
+          "scheme": "https://www.sec.gov/",
+          "label": "form type"
+        }
+      ],
+      "id": "urn:tag:sec.gov,2008:accession-number=0000028917-25-000008",
+      "guidislink": false
+    },
+    {
+      "title": "8-K - Shift4 Payments, Inc. (0001794669) (Filer)",
+      "title_detail": {
+        "type": "text/plain",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?type=8-K&action=getcurrent&output=atom",
+        "value": "8-K - Shift4 Payments, Inc. (0001794669) (Filer)"
+      },
+      "links": [
+        {
+          "rel": "alternate",
+          "type": "text/html",
+          "href": "https://www.sec.gov/Archives/edgar/data/1794669/000119312525112827/0001193125-25-112827-index.htm"
+        }
+      ],
+      "link": "https://www.sec.gov/Archives/edgar/data/1794669/000119312525112827/0001193125-25-112827-index.htm",
+      "summary": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0001193125-25-112827 <b>Size:</b> 1 MB\n<br />Item 1.01: Entry into a Material Definitive Agreement\n<br />Item 3.03: Material Modifications to Rights of Security Holders\n<br />Item 5.03: Amendments to Articles of Incorporation or Bylaws; Change in Fiscal Year\n<br />Item 8.01: Other Events\n<br />Item 9.01: Financial Statements and Exhibits",
+      "summary_detail": {
+        "type": "text/html",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?type=8-K&action=getcurrent&output=atom",
+        "value": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0001193125-25-112827 <b>Size:</b> 1 MB\n<br />Item 1.01: Entry into a Material Definitive Agreement\n<br />Item 3.03: Material Modifications to Rights of Security Holders\n<br />Item 5.03: Amendments to Articles of Incorporation or Bylaws; Change in Fiscal Year\n<br />Item 8.01: Other Events\n<br />Item 9.01: Financial Statements and Exhibits"
+      },
+      "updated": "2025-05-05T16:35:52-04:00",
+      "updated_parsed": [
+        2025,
+        5,
+        5,
+        20,
+        35,
+        52,
+        0,
+        125,
+        0
+      ],
+      "tags": [
+        {
+          "term": "8-K",
+          "scheme": "https://www.sec.gov/",
+          "label": "form type"
+        }
+      ],
+      "id": "urn:tag:sec.gov,2008:accession-number=0001193125-25-112827",
+      "guidislink": false
+    },
+    {
+      "title": "8-K - JELD-WEN Holding, Inc. (0001674335) (Filer)",
+      "title_detail": {
+        "type": "text/plain",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?type=8-K&action=getcurrent&output=atom",
+        "value": "8-K - JELD-WEN Holding, Inc. (0001674335) (Filer)"
+      },
+      "links": [
+        {
+          "rel": "alternate",
+          "type": "text/html",
+          "href": "https://www.sec.gov/Archives/edgar/data/1674335/000167433525000093/0001674335-25-000093-index.htm"
+        }
+      ],
+      "link": "https://www.sec.gov/Archives/edgar/data/1674335/000167433525000093/0001674335-25-000093-index.htm",
+      "summary": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0001674335-25-000093 <b>Size:</b> 552 KB\n<br />Item 2.02: Results of Operations and Financial Condition\n<br />Item 7.01: Regulation FD Disclosure\n<br />Item 9.01: Financial Statements and Exhibits",
+      "summary_detail": {
+        "type": "text/html",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?type=8-K&action=getcurrent&output=atom",
+        "value": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0001674335-25-000093 <b>Size:</b> 552 KB\n<br />Item 2.02: Results of Operations and Financial Condition\n<br />Item 7.01: Regulation FD Disclosure\n<br />Item 9.01: Financial Statements and Exhibits"
+      },
+      "updated": "2025-05-05T16:35:03-04:00",
+      "updated_parsed": [
+        2025,
+        5,
+        5,
+        20,
+        35,
+        3,
+        0,
+        125,
+        0
+      ],
+      "tags": [
+        {
+          "term": "8-K",
+          "scheme": "https://www.sec.gov/",
+          "label": "form type"
+        }
+      ],
+      "id": "urn:tag:sec.gov,2008:accession-number=0001674335-25-000093",
+      "guidislink": false
+    },
+    {
+      "title": "8-K - DIVERSIFIED HEALTHCARE TRUST (0001075415) (Filer)",
+      "title_detail": {
+        "type": "text/plain",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?type=8-K&action=getcurrent&output=atom",
+        "value": "8-K - DIVERSIFIED HEALTHCARE TRUST (0001075415) (Filer)"
+      },
+      "links": [
+        {
+          "rel": "alternate",
+          "type": "text/html",
+          "href": "https://www.sec.gov/Archives/edgar/data/1075415/000107541525000021/0001075415-25-000021-index.htm"
+        }
+      ],
+      "link": "https://www.sec.gov/Archives/edgar/data/1075415/000107541525000021/0001075415-25-000021-index.htm",
+      "summary": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0001075415-25-000021 <b>Size:</b> 9 MB\n<br />Item 2.02: Results of Operations and Financial Condition\n<br />Item 9.01: Financial Statements and Exhibits",
+      "summary_detail": {
+        "type": "text/html",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?type=8-K&action=getcurrent&output=atom",
+        "value": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0001075415-25-000021 <b>Size:</b> 9 MB\n<br />Item 2.02: Results of Operations and Financial Condition\n<br />Item 9.01: Financial Statements and Exhibits"
+      },
+      "updated": "2025-05-05T16:35:00-04:00",
+      "updated_parsed": [
+        2025,
+        5,
+        5,
+        20,
+        35,
+        0,
+        0,
+        125,
+        0
+      ],
+      "tags": [
+        {
+          "term": "8-K",
+          "scheme": "https://www.sec.gov/",
+          "label": "form type"
+        }
+      ],
+      "id": "urn:tag:sec.gov,2008:accession-number=0001075415-25-000021",
+      "guidislink": false
+    },
+    {
+      "title": "8-K - GLACIER BANCORP, INC. (0000868671) (Filer)",
+      "title_detail": {
+        "type": "text/plain",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?type=8-K&action=getcurrent&output=atom",
+        "value": "8-K - GLACIER BANCORP, INC. (0000868671) (Filer)"
+      },
+      "links": [
+        {
+          "rel": "alternate",
+          "type": "text/html",
+          "href": "https://www.sec.gov/Archives/edgar/data/868671/000086867125000072/0000868671-25-000072-index.htm"
+        }
+      ],
+      "link": "https://www.sec.gov/Archives/edgar/data/868671/000086867125000072/0000868671-25-000072-index.htm",
+      "summary": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0000868671-25-000072 <b>Size:</b> 7 MB\n<br />Item 7.01: Regulation FD Disclosure\n<br />Item 9.01: Financial Statements and Exhibits",
+      "summary_detail": {
+        "type": "text/html",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?type=8-K&action=getcurrent&output=atom",
+        "value": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0000868671-25-000072 <b>Size:</b> 7 MB\n<br />Item 7.01: Regulation FD Disclosure\n<br />Item 9.01: Financial Statements and Exhibits"
+      },
+      "updated": "2025-05-05T16:34:57-04:00",
+      "updated_parsed": [
+        2025,
+        5,
+        5,
+        20,
+        34,
+        57,
+        0,
+        125,
+        0
+      ],
+      "tags": [
+        {
+          "term": "8-K",
+          "scheme": "https://www.sec.gov/",
+          "label": "form type"
+        }
+      ],
+      "id": "urn:tag:sec.gov,2008:accession-number=0000868671-25-000072",
+      "guidislink": false
+    },
+    {
+      "title": "8-K - LIVEPERSON INC (0001102993) (Filer)",
+      "title_detail": {
+        "type": "text/plain",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?type=8-K&action=getcurrent&output=atom",
+        "value": "8-K - LIVEPERSON INC (0001102993) (Filer)"
+      },
+      "links": [
+        {
+          "rel": "alternate",
+          "type": "text/html",
+          "href": "https://www.sec.gov/Archives/edgar/data/1102993/000110299325000044/0001102993-25-000044-index.htm"
+        }
+      ],
+      "link": "https://www.sec.gov/Archives/edgar/data/1102993/000110299325000044/0001102993-25-000044-index.htm",
+      "summary": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0001102993-25-000044 <b>Size:</b> 182 KB\n<br />Item 3.01: Notice of Delisting or Failure to Satisfy a Continued Listing Rule or Standard; Transfer of Listing",
+      "summary_detail": {
+        "type": "text/html",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?type=8-K&action=getcurrent&output=atom",
+        "value": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0001102993-25-000044 <b>Size:</b> 182 KB\n<br />Item 3.01: Notice of Delisting or Failure to Satisfy a Continued Listing Rule or Standard; Transfer of Listing"
+      },
+      "updated": "2025-05-05T16:33:59-04:00",
+      "updated_parsed": [
+        2025,
+        5,
+        5,
+        20,
+        33,
+        59,
+        0,
+        125,
+        0
+      ],
+      "tags": [
+        {
+          "term": "8-K",
+          "scheme": "https://www.sec.gov/",
+          "label": "form type"
+        }
+      ],
+      "id": "urn:tag:sec.gov,2008:accession-number=0001102993-25-000044",
+      "guidislink": false
+    },
+    {
+      "title": "8-K - Atlas Energy Solutions Inc. (0001984060) (Filer)",
+      "title_detail": {
+        "type": "text/plain",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?type=8-K&action=getcurrent&output=atom",
+        "value": "8-K - Atlas Energy Solutions Inc. (0001984060) (Filer)"
+      },
+      "links": [
+        {
+          "rel": "alternate",
+          "type": "text/html",
+          "href": "https://www.sec.gov/Archives/edgar/data/1984060/000095017025063610/0000950170-25-063610-index.htm"
+        }
+      ],
+      "link": "https://www.sec.gov/Archives/edgar/data/1984060/000095017025063610/0000950170-25-063610-index.htm",
+      "summary": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0000950170-25-063610 <b>Size:</b> 1 MB\n<br />Item 2.02: Results of Operations and Financial Condition\n<br />Item 7.01: Regulation FD Disclosure\n<br />Item 9.01: Financial Statements and Exhibits",
+      "summary_detail": {
+        "type": "text/html",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?type=8-K&action=getcurrent&output=atom",
+        "value": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0000950170-25-063610 <b>Size:</b> 1 MB\n<br />Item 2.02: Results of Operations and Financial Condition\n<br />Item 7.01: Regulation FD Disclosure\n<br />Item 9.01: Financial Statements and Exhibits"
+      },
+      "updated": "2025-05-05T16:32:56-04:00",
+      "updated_parsed": [
+        2025,
+        5,
+        5,
+        20,
+        32,
+        56,
+        0,
+        125,
+        0
+      ],
+      "tags": [
+        {
+          "term": "8-K",
+          "scheme": "https://www.sec.gov/",
+          "label": "form type"
+        }
+      ],
+      "id": "urn:tag:sec.gov,2008:accession-number=0000950170-25-063610",
+      "guidislink": false
+    },
+    {
+      "title": "8-K - EQUITY LIFESTYLE PROPERTIES INC (0000895417) (Filer)",
+      "title_detail": {
+        "type": "text/plain",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?type=8-K&action=getcurrent&output=atom",
+        "value": "8-K - EQUITY LIFESTYLE PROPERTIES INC (0000895417) (Filer)"
+      },
+      "links": [
+        {
+          "rel": "alternate",
+          "type": "text/html",
+          "href": "https://www.sec.gov/Archives/edgar/data/895417/000089541725000057/0000895417-25-000057-index.htm"
+        }
+      ],
+      "link": "https://www.sec.gov/Archives/edgar/data/895417/000089541725000057/0000895417-25-000057-index.htm",
+      "summary": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0000895417-25-000057 <b>Size:</b> 6 MB\n<br />Item 7.01: Regulation FD Disclosure\n<br />Item 9.01: Financial Statements and Exhibits",
+      "summary_detail": {
+        "type": "text/html",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?type=8-K&action=getcurrent&output=atom",
+        "value": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0000895417-25-000057 <b>Size:</b> 6 MB\n<br />Item 7.01: Regulation FD Disclosure\n<br />Item 9.01: Financial Statements and Exhibits"
+      },
+      "updated": "2025-05-05T16:32:09-04:00",
+      "updated_parsed": [
+        2025,
+        5,
+        5,
+        20,
+        32,
+        9,
+        0,
+        125,
+        0
+      ],
+      "tags": [
+        {
+          "term": "8-K",
+          "scheme": "https://www.sec.gov/",
+          "label": "form type"
+        }
+      ],
+      "id": "urn:tag:sec.gov,2008:accession-number=0000895417-25-000057",
+      "guidislink": false
+    },
+    {
+      "title": "8-K - AGL Private Credit Income Fund (0002011498) (Filer)",
+      "title_detail": {
+        "type": "text/plain",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?type=8-K&action=getcurrent&output=atom",
+        "value": "8-K - AGL Private Credit Income Fund (0002011498) (Filer)"
+      },
+      "links": [
+        {
+          "rel": "alternate",
+          "type": "text/html",
+          "href": "https://www.sec.gov/Archives/edgar/data/2011498/000119312525112823/0001193125-25-112823-index.htm"
+        }
+      ],
+      "link": "https://www.sec.gov/Archives/edgar/data/2011498/000119312525112823/0001193125-25-112823-index.htm",
+      "summary": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0001193125-25-112823 <b>Size:</b> 217 KB\n<br />Item 1.01: Entry into a Material Definitive Agreement\n<br />Item 2.03: Creation of a Direct Financial Obligation or an Obligation under an Off-Balance Sheet Arrangement of a Registrant\n<br />Item 9.01: Financial Statements and Exhibits",
+      "summary_detail": {
+        "type": "text/html",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?type=8-K&action=getcurrent&output=atom",
+        "value": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0001193125-25-112823 <b>Size:</b> 217 KB\n<br />Item 1.01: Entry into a Material Definitive Agreement\n<br />Item 2.03: Creation of a Direct Financial Obligation or an Obligation under an Off-Balance Sheet Arrangement of a Registrant\n<br />Item 9.01: Financial Statements and Exhibits"
+      },
+      "updated": "2025-05-05T16:31:45-04:00",
+      "updated_parsed": [
+        2025,
+        5,
+        5,
+        20,
+        31,
+        45,
+        0,
+        125,
+        0
+      ],
+      "tags": [
+        {
+          "term": "8-K",
+          "scheme": "https://www.sec.gov/",
+          "label": "form type"
+        }
+      ],
+      "id": "urn:tag:sec.gov,2008:accession-number=0001193125-25-112823",
+      "guidislink": false
+    },
+    {
+      "title": "8-K - BWX Technologies, Inc. (0001486957) (Filer)",
+      "title_detail": {
+        "type": "text/plain",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?type=8-K&action=getcurrent&output=atom",
+        "value": "8-K - BWX Technologies, Inc. (0001486957) (Filer)"
+      },
+      "links": [
+        {
+          "rel": "alternate",
+          "type": "text/html",
+          "href": "https://www.sec.gov/Archives/edgar/data/1486957/000148695725000025/0001486957-25-000025-index.htm"
+        }
+      ],
+      "link": "https://www.sec.gov/Archives/edgar/data/1486957/000148695725000025/0001486957-25-000025-index.htm",
+      "summary": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0001486957-25-000025 <b>Size:</b> 719 KB\n<br />Item 2.02: Results of Operations and Financial Condition\n<br />Item 9.01: Financial Statements and Exhibits",
+      "summary_detail": {
+        "type": "text/html",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?type=8-K&action=getcurrent&output=atom",
+        "value": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0001486957-25-000025 <b>Size:</b> 719 KB\n<br />Item 2.02: Results of Operations and Financial Condition\n<br />Item 9.01: Financial Statements and Exhibits"
+      },
+      "updated": "2025-05-05T16:31:25-04:00",
+      "updated_parsed": [
+        2025,
+        5,
+        5,
+        20,
+        31,
+        25,
+        0,
+        125,
+        0
+      ],
+      "tags": [
+        {
+          "term": "8-K",
+          "scheme": "https://www.sec.gov/",
+          "label": "form type"
+        }
+      ],
+      "id": "urn:tag:sec.gov,2008:accession-number=0001486957-25-000025",
+      "guidislink": false
+    },
+    {
+      "title": "8-K - Hyperscale Data, Inc. (0000896493) (Filer)",
+      "title_detail": {
+        "type": "text/plain",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?type=8-K&action=getcurrent&output=atom",
+        "value": "8-K - Hyperscale Data, Inc. (0000896493) (Filer)"
+      },
+      "links": [
+        {
+          "rel": "alternate",
+          "type": "text/html",
+          "href": "https://www.sec.gov/Archives/edgar/data/896493/000121465925006956/0001214659-25-006956-index.htm"
+        }
+      ],
+      "link": "https://www.sec.gov/Archives/edgar/data/896493/000121465925006956/0001214659-25-006956-index.htm",
+      "summary": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0001214659-25-006956 <b>Size:</b> 299 KB\n<br />Item 2.02: Results of Operations and Financial Condition\n<br />Item 9.01: Financial Statements and Exhibits",
+      "summary_detail": {
+        "type": "text/html",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?type=8-K&action=getcurrent&output=atom",
+        "value": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0001214659-25-006956 <b>Size:</b> 299 KB\n<br />Item 2.02: Results of Operations and Financial Condition\n<br />Item 9.01: Financial Statements and Exhibits"
+      },
+      "updated": "2025-05-05T16:30:43-04:00",
+      "updated_parsed": [
+        2025,
+        5,
+        5,
+        20,
+        30,
+        43,
+        0,
+        125,
+        0
+      ],
+      "tags": [
+        {
+          "term": "8-K",
+          "scheme": "https://www.sec.gov/",
+          "label": "form type"
+        }
+      ],
+      "id": "urn:tag:sec.gov,2008:accession-number=0001214659-25-006956",
+      "guidislink": false
+    },
+    {
+      "title": "8-K - WILLIAMS COMPANIES, INC. (0000107263) (Filer)",
+      "title_detail": {
+        "type": "text/plain",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?type=8-K&action=getcurrent&output=atom",
+        "value": "8-K - WILLIAMS COMPANIES, INC. (0000107263) (Filer)"
+      },
+      "links": [
+        {
+          "rel": "alternate",
+          "type": "text/html",
+          "href": "https://www.sec.gov/Archives/edgar/data/107263/000119312525112822/0001193125-25-112822-index.htm"
+        }
+      ],
+      "link": "https://www.sec.gov/Archives/edgar/data/107263/000119312525112822/0001193125-25-112822-index.htm",
+      "summary": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0001193125-25-112822 <b>Size:</b> 183 KB\n<br />Item 5.02: Departure of Directors or Certain Officers; Election of Directors; Appointment of Certain Officers: Compensatory Arrangements of Certain Officers\n<br />Item 7.01: Regulation FD Disclosure\n<br />Item 8.01: Other Events\n<br />Item 9.01: Financial Statements and Exhibits",
+      "summary_detail": {
+        "type": "text/html",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?type=8-K&action=getcurrent&output=atom",
+        "value": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0001193125-25-112822 <b>Size:</b> 183 KB\n<br />Item 5.02: Departure of Directors or Certain Officers; Election of Directors; Appointment of Certain Officers: Compensatory Arrangements of Certain Officers\n<br />Item 7.01: Regulation FD Disclosure\n<br />Item 8.01: Other Events\n<br />Item 9.01: Financial Statements and Exhibits"
+      },
+      "updated": "2025-05-05T16:30:43-04:00",
+      "updated_parsed": [
+        2025,
+        5,
+        5,
+        20,
+        30,
+        43,
+        0,
+        125,
+        0
+      ],
+      "tags": [
+        {
+          "term": "8-K",
+          "scheme": "https://www.sec.gov/",
+          "label": "form type"
+        }
+      ],
+      "id": "urn:tag:sec.gov,2008:accession-number=0001193125-25-112822",
+      "guidislink": false
+    },
+    {
+      "title": "8-K - NEW JERSEY RESOURCES CORP (0000356309) (Filer)",
+      "title_detail": {
+        "type": "text/plain",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?type=8-K&action=getcurrent&output=atom",
+        "value": "8-K - NEW JERSEY RESOURCES CORP (0000356309) (Filer)"
+      },
+      "links": [
+        {
+          "rel": "alternate",
+          "type": "text/html",
+          "href": "https://www.sec.gov/Archives/edgar/data/356309/000114036125017345/0001140361-25-017345-index.htm"
+        }
+      ],
+      "link": "https://www.sec.gov/Archives/edgar/data/356309/000114036125017345/0001140361-25-017345-index.htm",
+      "summary": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0001140361-25-017345 <b>Size:</b> 8 MB\n<br />Item 2.02: Results of Operations and Financial Condition\n<br />Item 7.01: Regulation FD Disclosure\n<br />Item 9.01: Financial Statements and Exhibits",
+      "summary_detail": {
+        "type": "text/html",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?type=8-K&action=getcurrent&output=atom",
+        "value": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0001140361-25-017345 <b>Size:</b> 8 MB\n<br />Item 2.02: Results of Operations and Financial Condition\n<br />Item 7.01: Regulation FD Disclosure\n<br />Item 9.01: Financial Statements and Exhibits"
+      },
+      "updated": "2025-05-05T16:30:40-04:00",
+      "updated_parsed": [
+        2025,
+        5,
+        5,
+        20,
+        30,
+        40,
+        0,
+        125,
+        0
+      ],
+      "tags": [
+        {
+          "term": "8-K",
+          "scheme": "https://www.sec.gov/",
+          "label": "form type"
+        }
+      ],
+      "id": "urn:tag:sec.gov,2008:accession-number=0001140361-25-017345",
+      "guidislink": false
+    },
+    {
+      "title": "8-K - Babcock & Wilcox Enterprises, Inc. (0001630805) (Filer)",
+      "title_detail": {
+        "type": "text/plain",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?type=8-K&action=getcurrent&output=atom",
+        "value": "8-K - Babcock & Wilcox Enterprises, Inc. (0001630805) (Filer)"
+      },
+      "links": [
+        {
+          "rel": "alternate",
+          "type": "text/html",
+          "href": "https://www.sec.gov/Archives/edgar/data/1630805/000110465925044533/0001104659-25-044533-index.htm"
+        }
+      ],
+      "link": "https://www.sec.gov/Archives/edgar/data/1630805/000110465925044533/0001104659-25-044533-index.htm",
+      "summary": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0001104659-25-044533 <b>Size:</b> 352 KB\n<br />Item 1.01: Entry into a Material Definitive Agreement\n<br />Item 2.01: Completion of Acquisition or Disposition of Assets\n<br />Item 9.01: Financial Statements and Exhibits",
+      "summary_detail": {
+        "type": "text/html",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?type=8-K&action=getcurrent&output=atom",
+        "value": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0001104659-25-044533 <b>Size:</b> 352 KB\n<br />Item 1.01: Entry into a Material Definitive Agreement\n<br />Item 2.01: Completion of Acquisition or Disposition of Assets\n<br />Item 9.01: Financial Statements and Exhibits"
+      },
+      "updated": "2025-05-05T16:30:33-04:00",
+      "updated_parsed": [
+        2025,
+        5,
+        5,
+        20,
+        30,
+        33,
+        0,
+        125,
+        0
+      ],
+      "tags": [
+        {
+          "term": "8-K",
+          "scheme": "https://www.sec.gov/",
+          "label": "form type"
+        }
+      ],
+      "id": "urn:tag:sec.gov,2008:accession-number=0001104659-25-044533",
+      "guidislink": false
+    },
+    {
+      "title": "8-K - Walker & Dunlop, Inc. (0001497770) (Filer)",
+      "title_detail": {
+        "type": "text/plain",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?type=8-K&action=getcurrent&output=atom",
+        "value": "8-K - Walker & Dunlop, Inc. (0001497770) (Filer)"
+      },
+      "links": [
+        {
+          "rel": "alternate",
+          "type": "text/html",
+          "href": "https://www.sec.gov/Archives/edgar/data/1497770/000110465925044532/0001104659-25-044532-index.htm"
+        }
+      ],
+      "link": "https://www.sec.gov/Archives/edgar/data/1497770/000110465925044532/0001104659-25-044532-index.htm",
+      "summary": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0001104659-25-044532 <b>Size:</b> 216 KB\n<br />Item 5.07: Submission of Matters to a Vote of Security Holders",
+      "summary_detail": {
+        "type": "text/html",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?type=8-K&action=getcurrent&output=atom",
+        "value": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0001104659-25-044532 <b>Size:</b> 216 KB\n<br />Item 5.07: Submission of Matters to a Vote of Security Holders"
+      },
+      "updated": "2025-05-05T16:30:31-04:00",
+      "updated_parsed": [
+        2025,
+        5,
+        5,
+        20,
+        30,
+        31,
+        0,
+        125,
+        0
+      ],
+      "tags": [
+        {
+          "term": "8-K",
+          "scheme": "https://www.sec.gov/",
+          "label": "form type"
+        }
+      ],
+      "id": "urn:tag:sec.gov,2008:accession-number=0001104659-25-044532",
+      "guidislink": false
+    },
+    {
+      "title": "8-K - LUXURBAN HOTELS INC. (0001893311) (Filer)",
+      "title_detail": {
+        "type": "text/plain",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?type=8-K&action=getcurrent&output=atom",
+        "value": "8-K - LUXURBAN HOTELS INC. (0001893311) (Filer)"
+      },
+      "links": [
+        {
+          "rel": "alternate",
+          "type": "text/html",
+          "href": "https://www.sec.gov/Archives/edgar/data/1893311/000182912625003401/0001829126-25-003401-index.htm"
+        }
+      ],
+      "link": "https://www.sec.gov/Archives/edgar/data/1893311/000182912625003401/0001829126-25-003401-index.htm",
+      "summary": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0001829126-25-003401 <b>Size:</b> 245 KB\n<br />Item 5.02: Departure of Directors or Certain Officers; Election of Directors; Appointment of Certain Officers: Compensatory Arrangements of Certain Officers",
+      "summary_detail": {
+        "type": "text/html",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?type=8-K&action=getcurrent&output=atom",
+        "value": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0001829126-25-003401 <b>Size:</b> 245 KB\n<br />Item 5.02: Departure of Directors or Certain Officers; Election of Directors; Appointment of Certain Officers: Compensatory Arrangements of Certain Officers"
+      },
+      "updated": "2025-05-05T16:30:13-04:00",
+      "updated_parsed": [
+        2025,
+        5,
+        5,
+        20,
+        30,
+        13,
+        0,
+        125,
+        0
+      ],
+      "tags": [
+        {
+          "term": "8-K",
+          "scheme": "https://www.sec.gov/",
+          "label": "form type"
+        }
+      ],
+      "id": "urn:tag:sec.gov,2008:accession-number=0001829126-25-003401",
+      "guidislink": false
+    },
+    {
+      "title": "8-K - RADIAN GROUP INC (0000890926) (Filer)",
+      "title_detail": {
+        "type": "text/plain",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?type=8-K&action=getcurrent&output=atom",
+        "value": "8-K - RADIAN GROUP INC (0000890926) (Filer)"
+      },
+      "links": [
+        {
+          "rel": "alternate",
+          "type": "text/html",
+          "href": "https://www.sec.gov/Archives/edgar/data/890926/000119312525112820/0001193125-25-112820-index.htm"
+        }
+      ],
+      "link": "https://www.sec.gov/Archives/edgar/data/890926/000119312525112820/0001193125-25-112820-index.htm",
+      "summary": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0001193125-25-112820 <b>Size:</b> 769 KB\n<br />Item 1.01: Entry into a Material Definitive Agreement\n<br />Item 2.03: Creation of a Direct Financial Obligation or an Obligation under an Off-Balance Sheet Arrangement of a Registrant\n<br />Item 9.01: Financial Statements and Exhibits",
+      "summary_detail": {
+        "type": "text/html",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?type=8-K&action=getcurrent&output=atom",
+        "value": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0001193125-25-112820 <b>Size:</b> 769 KB\n<br />Item 1.01: Entry into a Material Definitive Agreement\n<br />Item 2.03: Creation of a Direct Financial Obligation or an Obligation under an Off-Balance Sheet Arrangement of a Registrant\n<br />Item 9.01: Financial Statements and Exhibits"
+      },
+      "updated": "2025-05-05T16:30:06-04:00",
+      "updated_parsed": [
+        2025,
+        5,
+        5,
+        20,
+        30,
+        6,
+        0,
+        125,
+        0
+      ],
+      "tags": [
+        {
+          "term": "8-K",
+          "scheme": "https://www.sec.gov/",
+          "label": "form type"
+        }
+      ],
+      "id": "urn:tag:sec.gov,2008:accession-number=0001193125-25-112820",
+      "guidislink": false
+    },
+    {
+      "title": "8-K - Polaris Inc. (0000931015) (Filer)",
+      "title_detail": {
+        "type": "text/plain",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?type=8-K&action=getcurrent&output=atom",
+        "value": "8-K - Polaris Inc. (0000931015) (Filer)"
+      },
+      "links": [
+        {
+          "rel": "alternate",
+          "type": "text/html",
+          "href": "https://www.sec.gov/Archives/edgar/data/931015/000162828025022206/0001628280-25-022206-index.htm"
+        }
+      ],
+      "link": "https://www.sec.gov/Archives/edgar/data/931015/000162828025022206/0001628280-25-022206-index.htm",
+      "summary": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0001628280-25-022206 <b>Size:</b> 167 KB\n<br />Item 5.07: Submission of Matters to a Vote of Security Holders\n<br />Item 9.01: Financial Statements and Exhibits",
+      "summary_detail": {
+        "type": "text/html",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?type=8-K&action=getcurrent&output=atom",
+        "value": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0001628280-25-022206 <b>Size:</b> 167 KB\n<br />Item 5.07: Submission of Matters to a Vote of Security Holders\n<br />Item 9.01: Financial Statements and Exhibits"
+      },
+      "updated": "2025-05-05T16:29:04-04:00",
+      "updated_parsed": [
+        2025,
+        5,
+        5,
+        20,
+        29,
+        4,
+        0,
+        125,
+        0
+      ],
+      "tags": [
+        {
+          "term": "8-K",
+          "scheme": "https://www.sec.gov/",
+          "label": "form type"
+        }
+      ],
+      "id": "urn:tag:sec.gov,2008:accession-number=0001628280-25-022206",
+      "guidislink": false
+    },
+    {
+      "title": "8-K - Mission Produce, Inc. (0001802974) (Filer)",
+      "title_detail": {
+        "type": "text/plain",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?type=8-K&action=getcurrent&output=atom",
+        "value": "8-K - Mission Produce, Inc. (0001802974) (Filer)"
+      },
+      "links": [
+        {
+          "rel": "alternate",
+          "type": "text/html",
+          "href": "https://www.sec.gov/Archives/edgar/data/1802974/000180297425000016/0001802974-25-000016-index.htm"
+        }
+      ],
+      "link": "https://www.sec.gov/Archives/edgar/data/1802974/000180297425000016/0001802974-25-000016-index.htm",
+      "summary": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0001802974-25-000016 <b>Size:</b> 194 KB\n<br />Item 5.02: Departure of Directors or Certain Officers; Election of Directors; Appointment of Certain Officers: Compensatory Arrangements of Certain Officers\n<br />Item 9.01: Financial Statements and Exhibits",
+      "summary_detail": {
+        "type": "text/html",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?type=8-K&action=getcurrent&output=atom",
+        "value": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0001802974-25-000016 <b>Size:</b> 194 KB\n<br />Item 5.02: Departure of Directors or Certain Officers; Election of Directors; Appointment of Certain Officers: Compensatory Arrangements of Certain Officers\n<br />Item 9.01: Financial Statements and Exhibits"
+      },
+      "updated": "2025-05-05T16:28:59-04:00",
+      "updated_parsed": [
+        2025,
+        5,
+        5,
+        20,
+        28,
+        59,
+        0,
+        125,
+        0
+      ],
+      "tags": [
+        {
+          "term": "8-K",
+          "scheme": "https://www.sec.gov/",
+          "label": "form type"
+        }
+      ],
+      "id": "urn:tag:sec.gov,2008:accession-number=0001802974-25-000016",
+      "guidislink": false
+    },
+    {
+      "title": "8-K - DIGITAL ALLY, INC. (0001342958) (Filer)",
+      "title_detail": {
+        "type": "text/plain",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?type=8-K&action=getcurrent&output=atom",
+        "value": "8-K - DIGITAL ALLY, INC. (0001342958) (Filer)"
+      },
+      "links": [
+        {
+          "rel": "alternate",
+          "type": "text/html",
+          "href": "https://www.sec.gov/Archives/edgar/data/1342958/000164117225008690/0001641172-25-008690-index.htm"
+        }
+      ],
+      "link": "https://www.sec.gov/Archives/edgar/data/1342958/000164117225008690/0001641172-25-008690-index.htm",
+      "summary": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0001641172-25-008690 <b>Size:</b> 205 KB\n<br />Item 8.01: Other Events",
+      "summary_detail": {
+        "type": "text/html",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?type=8-K&action=getcurrent&output=atom",
+        "value": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0001641172-25-008690 <b>Size:</b> 205 KB\n<br />Item 8.01: Other Events"
+      },
+      "updated": "2025-05-05T16:28:43-04:00",
+      "updated_parsed": [
+        2025,
+        5,
+        5,
+        20,
+        28,
+        43,
+        0,
+        125,
+        0
+      ],
+      "tags": [
+        {
+          "term": "8-K",
+          "scheme": "https://www.sec.gov/",
+          "label": "form type"
+        }
+      ],
+      "id": "urn:tag:sec.gov,2008:accession-number=0001641172-25-008690",
+      "guidislink": false
+    },
+    {
+      "title": "8-K - Boot Barn Holdings, Inc. (0001610250) (Filer)",
+      "title_detail": {
+        "type": "text/plain",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?type=8-K&action=getcurrent&output=atom",
+        "value": "8-K - Boot Barn Holdings, Inc. (0001610250) (Filer)"
+      },
+      "links": [
+        {
+          "rel": "alternate",
+          "type": "text/html",
+          "href": "https://www.sec.gov/Archives/edgar/data/1610250/000155837025006307/0001558370-25-006307-index.htm"
+        }
+      ],
+      "link": "https://www.sec.gov/Archives/edgar/data/1610250/000155837025006307/0001558370-25-006307-index.htm",
+      "summary": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0001558370-25-006307 <b>Size:</b> 184 KB\n<br />Item 5.02: Departure of Directors or Certain Officers; Election of Directors; Appointment of Certain Officers: Compensatory Arrangements of Certain Officers\n<br />Item 7.01: Regulation FD Disclosure\n<br />Item 9.01: Financial Statements and Exhibits",
+      "summary_detail": {
+        "type": "text/html",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?type=8-K&action=getcurrent&output=atom",
+        "value": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0001558370-25-006307 <b>Size:</b> 184 KB\n<br />Item 5.02: Departure of Directors or Certain Officers; Election of Directors; Appointment of Certain Officers: Compensatory Arrangements of Certain Officers\n<br />Item 7.01: Regulation FD Disclosure\n<br />Item 9.01: Financial Statements and Exhibits"
+      },
+      "updated": "2025-05-05T16:28:14-04:00",
+      "updated_parsed": [
+        2025,
+        5,
+        5,
+        20,
+        28,
+        14,
+        0,
+        125,
+        0
+      ],
+      "tags": [
+        {
+          "term": "8-K",
+          "scheme": "https://www.sec.gov/",
+          "label": "form type"
+        }
+      ],
+      "id": "urn:tag:sec.gov,2008:accession-number=0001558370-25-006307",
+      "guidislink": false
+    },
+    {
+      "title": "8-K - UNITED STATES LIME & MINERALS INC (0000082020) (Filer)",
+      "title_detail": {
+        "type": "text/plain",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?type=8-K&action=getcurrent&output=atom",
+        "value": "8-K - UNITED STATES LIME & MINERALS INC (0000082020) (Filer)"
+      },
+      "links": [
+        {
+          "rel": "alternate",
+          "type": "text/html",
+          "href": "https://www.sec.gov/Archives/edgar/data/82020/000155837025006305/0001558370-25-006305-index.htm"
+        }
+      ],
+      "link": "https://www.sec.gov/Archives/edgar/data/82020/000155837025006305/0001558370-25-006305-index.htm",
+      "summary": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0001558370-25-006305 <b>Size:</b> 186 KB\n<br />Item 5.07: Submission of Matters to a Vote of Security Holders",
+      "summary_detail": {
+        "type": "text/html",
+        "language": null,
+        "base": "https://www.sec.gov/cgi-bin/browse-edgar?type=8-K&action=getcurrent&output=atom",
+        "value": "<b>Filed:</b> 2025-05-05 <b>AccNo:</b> 0001558370-25-006305 <b>Size:</b> 186 KB\n<br />Item 5.07: Submission of Matters to a Vote of Security Holders"
+      },
+      "updated": "2025-05-05T16:26:55-04:00",
+      "updated_parsed": [
+        2025,
+        5,
+        5,
+        20,
+        26,
+        55,
+        0,
+        125,
+        0
+      ],
+      "tags": [
+        {
+          "term": "8-K",
+          "scheme": "https://www.sec.gov/",
+          "label": "form type"
+        }
+      ],
+      "id": "urn:tag:sec.gov,2008:accession-number=0001558370-25-006305",
+      "guidislink": false
+    }
+  ]
+}

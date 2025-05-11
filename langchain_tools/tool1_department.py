@@ -264,9 +264,9 @@ def department_summary_tool(query: str, api_key: str, department_id: str = None)
 
         # Initialize the LLM
         llm = ChatAnthropic(
-            model="claude-3-5-sonnet-20240620",
+            api_key=api_key,
+            model="claude-3-haiku-20240307",
             temperature=0,
-            anthropic_api_key=api_key
         )
         
         # Format the prompt

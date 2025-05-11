@@ -1,0 +1,13 @@
+{
+  "ticker": "JPM",
+  "company": "JPMorgan Chase & Co.",
+  "title": "SAMPLE - JPMorgan Chase Reports Strong First Quarter 2025 Results",
+  "link": "https://www.sec.gov/example/jpm-q1-2025",
+  "published": "2025-05-05T16:45:00.843293",
+  "summary": "JPMorgan Chase & Co. (NYSE: JPM) reported net income of $15.4 billion for the first quarter of 2025.",
+  "content": "\n            JPMorgan Chase & Co. (NYSE: JPM) has reported financial results for the first quarter of 2025.\n            \n            Financial Highlights:\n            - Net income: $15.4 billion, up 12% year-over-year\n            - Revenue: $42.5 billion, up 8% year-over-year\n            - Earnings per share: $5.12, compared with $4.65 in the prior year\n            \n            Jamie Dimon, Chairman and CEO, commented: \"JPMorgan Chase delivered strong results across all our businesses. \n            Our commercial banking and asset & wealth management divisions performed exceptionally well, while our \n            investment banking division saw moderate growth in a challenging market environment.\"\n            \n            The firm maintained a strong capital position with a CET1 ratio of 14.2% and total liquidity resources of $1.4 trillion.\n            \n            This is a sample filing for demonstration purposes.\n        ",
+  "entry_id": "sample-jpm-filing-20250505164500",
+  "filing_type": "8-K",
+  "cik": "0000019617",
+  "processed_date": "2025-05-05T16:45:00.843310"
+}

@@ -1,0 +1,822 @@
+{
+  "NVIDIA AI strategy in 2020": [
+    {
+      "document_id": "c61f5ead-aa70-47e9-8092-bc06aa9815fc",
+      "document_name": "NVDA - Q2 2020 Earnings Call (2019-08-15)",
+      "category_id": "5602d908-a5c5-43c1-b888-975dff32a2c4",
+      "ticker": "NVDA",
+      "similarity": "-3.19%",
+      "has_summary": false
+    },
+    {
+      "document_id": "d2993e0b-6e56-4ef4-aa77-83f97de99c32",
+      "document_name": "NVDA - Q4 2020 Earnings Call (2020-02-13)",
+      "category_id": "5602d908-a5c5-43c1-b888-975dff32a2c4",
+      "ticker": "NVDA",
+      "similarity": "-3.29%",
+      "has_summary": false
+    },
+    {
+      "document_id": "73dedba4-4c22-46b7-974b-719bf54bf76b",
+      "document_name": "NVDA - Q3 2020 Earnings Call (2019-11-14)",
+      "category_id": "5602d908-a5c5-43c1-b888-975dff32a2c4",
+      "ticker": "NVDA",
+      "similarity": "-4.20%",
+      "has_summary": false
+    },
+    {
+      "document_id": "3863678d-4d9c-40ba-8bac-9f441d5c5f6e",
+      "document_name": "NVDA - Q1 2020 Earnings Call (2019-05-16)",
+      "category_id": "5602d908-a5c5-43c1-b888-975dff32a2c4",
+      "ticker": "NVDA",
+      "similarity": "-5.12%",
+      "has_summary": false
+    },
+    {
+      "document_id": "e4d53107-35e9-4bae-a626-182dff5d2893",
+      "document_name": "NVDA - Q1 2021 Earnings Call (2020-05-21)",
+      "category_id": "5602d908-a5c5-43c1-b888-975dff32a2c4",
+      "ticker": "NVDA",
+      "similarity": "-5.31%",
+      "has_summary": false
+    },
+    {
+      "document_id": "1bb659b7-96c3-4be3-af0a-6e690a89a36e",
+      "document_name": "NVDA - Q2 2021 Earnings Call (2020-08-19)",
+      "category_id": "5602d908-a5c5-43c1-b888-975dff32a2c4",
+      "ticker": "NVDA",
+      "similarity": "-6.15%",
+      "has_summary": false
+    },
+    {
+      "document_id": "b34ae7f4-20dd-4d8d-933f-53fb5795b97b",
+      "document_name": "NVDA - Q2 2019 Earnings Call (2018-08-16)",
+      "category_id": "5602d908-a5c5-43c1-b888-975dff32a2c4",
+      "ticker": "NVDA",
+      "similarity": "-6.22%",
+      "has_summary": false
+    },
+    {
+      "document_id": "dad186a9-fee5-4f56-a768-4db94e110b6c",
+      "document_name": "NVDA - Q3 2019 Earnings Call (2018-11-15)",
+      "category_id": "5602d908-a5c5-43c1-b888-975dff32a2c4",
+      "ticker": "NVDA",
+      "similarity": "-7.20%",
+      "has_summary": false
+    },
+    {
+      "document_id": "468379f8-e7ee-449e-b2de-9c4e26859a44",
+      "document_name": "NVDA - Q4 2019 Earnings Call (2019-02-14)",
+      "category_id": "5602d908-a5c5-43c1-b888-975dff32a2c4",
+      "ticker": "NVDA",
+      "similarity": "-7.72%",
+      "has_summary": false
+    },
+    {
+      "document_id": "ec0fc8a2-ec5b-4beb-836c-563242dee228",
+      "document_name": "NVDA - Q4 2018 Earnings Call (2018-02-08)",
+      "category_id": "5602d908-a5c5-43c1-b888-975dff32a2c4",
+      "ticker": "NVDA",
+      "similarity": "-8.09%",
+      "has_summary": false
+    }
+  ],
+  "Microsoft cloud business growth in 2019": [
+    {
+      "document_id": "d3427db7-3f62-4127-b86b-3a24cccf6f7e",
+      "document_name": "AMZN - Q1 2020 Earnings Call (2020-04-30)",
+      "category_id": "AMZN",
+      "ticker": "AMZN",
+      "similarity": "2.93%",
+      "has_summary": true
+    },
+    {
+      "document_id": "ae5e9f7b-f64a-4be4-8fa2-8d6989a1d6e3",
+      "document_name": "AMZN - Q4 2019 Earnings Call (2020-01-30)",
+      "category_id": "AMZN",
+      "ticker": "AMZN",
+      "similarity": "1.67%",
+      "has_summary": true
+    },
+    {
+      "document_id": "88270af8-bfd6-41e8-989a-d9ca9b41d701",
+      "document_name": "AMZN - Q2 2019 Earnings Call (2019-07-25)",
+      "category_id": "AMZN",
+      "ticker": "AMZN",
+      "similarity": "0.66%",
+      "has_summary": true
+    },
+    {
+      "document_id": "a1865281-b3b2-4fa0-8500-bb9678a63824",
+      "document_name": "AMZN - Q1 2019 Earnings Call (2019-04-25)",
+      "category_id": "AMZN",
+      "ticker": "AMZN",
+      "similarity": "0.63%",
+      "has_summary": true
+    },
+    {
+      "document_id": "e64e6c04-9a86-4c8b-9802-868c62930f5e",
+      "document_name": "AMZN - Q3 2019 Earnings Call (2019-10-24)",
+      "category_id": "AMZN",
+      "ticker": "AMZN",
+      "similarity": "-0.09%",
+      "has_summary": true
+    },
+    {
+      "document_id": "bde3a713-e38f-43db-962a-2b7a293d5d4a",
+      "document_name": "AMZN - Q4 2016 Earnings Call (2017-02-02)",
+      "category_id": "AMZN",
+      "ticker": "AMZN",
+      "similarity": "-1.40%",
+      "has_summary": true
+    },
+    {
+      "document_id": "103d1cca-4f2c-49f7-ad49-059bc3cd96f6",
+      "document_name": "MSFT - Q1 2019 Earnings Call (2018-10-24)",
+      "category_id": "5d1b4d21-59cb-4ff3-bae1-fe9f1129cf18",
+      "ticker": "MSFT",
+      "similarity": "-2.24%",
+      "has_summary": false
+    },
+    {
+      "document_id": "bdfea008-0170-4326-a95f-3f17c5fdebf1",
+      "document_name": "MSFT - Q4 2019 Earnings Call (2019-07-18)",
+      "category_id": "5d1b4d21-59cb-4ff3-bae1-fe9f1129cf18",
+      "ticker": "MSFT",
+      "similarity": "-2.70%",
+      "has_summary": false
+    },
+    {
+      "document_id": "b92169b2-5243-4fba-aad2-b385fa618cdb",
+      "document_name": "MSFT - Q2 2019 Earnings Call (2019-01-30)",
+      "category_id": "5d1b4d21-59cb-4ff3-bae1-fe9f1129cf18",
+      "ticker": "MSFT",
+      "similarity": "-3.50%",
+      "has_summary": false
+    },
+    {
+      "document_id": "e7de3719-f064-4e1b-b178-aa6ef3bcbe16",
+      "document_name": "MSFT - Q3 2019 Earnings Call (2019-04-24)",
+      "category_id": "5d1b4d21-59cb-4ff3-bae1-fe9f1129cf18",
+      "ticker": "MSFT",
+      "similarity": "-3.86%",
+      "has_summary": false
+    }
+  ],
+  "Apple iPhone revenue in Q1 2020": [
+    {
+      "document_id": "9fd97e6f-b821-44f3-a531-6345ae617344",
+      "document_name": "AAPL - Q1 2020 Earnings Call (2020-01-28)",
+      "category_id": "AAPL",
+      "ticker": "AAPL",
+      "similarity": "29.83%",
+      "has_summary": true
+    },
+    {
+      "document_id": "eddc7334-742e-4c8d-971c-768c3b4d20c3",
+      "document_name": "AAPL - Q3 2020 Earnings Call (2020-07-30)",
+      "category_id": "AAPL",
+      "ticker": "AAPL",
+      "similarity": "28.50%",
+      "has_summary": true
+    },
+    {
+      "document_id": "5da7677f-f71c-4ebb-a7bc-75bd23bbeb1b",
+      "document_name": "AAPL - Q1 2019 Earnings Call (2019-01-29)",
+      "category_id": "AAPL",
+      "ticker": "AAPL",
+      "similarity": "27.11%",
+      "has_summary": true
+    },
+    {
+      "document_id": "45247e77-068a-4ea5-8036-04a682c76abf",
+      "document_name": "AAPL - Q2 2020 Earnings Call (2020-04-30)",
+      "category_id": "AAPL",
+      "ticker": "AAPL",
+      "similarity": "25.83%",
+      "has_summary": true
+    },
+    {
+      "document_id": "cfd47f1f-65da-4358-af09-9cccd212632f",
+      "document_name": "AAPL - Q1 2016 Earnings Call (2016-01-26)",
+      "category_id": "AAPL",
+      "ticker": "AAPL",
+      "similarity": "20.52%",
+      "has_summary": true
+    },
+    {
+      "document_id": "5003d409-a441-4a17-8ecb-4354cd4f3f37",
+      "document_name": "AAPL - Q2 2019 Earnings Call (2019-04-30)",
+      "category_id": "AAPL",
+      "ticker": "AAPL",
+      "similarity": "20.12%",
+      "has_summary": true
+    },
+    {
+      "document_id": "945c9089-eb71-4b6a-8b1d-4eb0004bb27f",
+      "document_name": "AAPL - Q2 2017 Earnings Call (2017-05-02)",
+      "category_id": "AAPL",
+      "ticker": "AAPL",
+      "similarity": "19.99%",
+      "has_summary": true
+    },
+    {
+      "document_id": "e66b33bf-af3f-4681-8aae-94011f332c4d",
+      "document_name": "AAPL - Q2 2016 Earnings Call (2016-04-26)",
+      "category_id": "AAPL",
+      "ticker": "AAPL",
+      "similarity": "17.98%",
+      "has_summary": true
+    },
+    {
+      "document_id": "847ed110-b532-4a67-ac52-f2e2dc3aa9df",
+      "document_name": "AAPL - Q2 2018 Earnings Call (2018-05-01)",
+      "category_id": "AAPL",
+      "ticker": "AAPL",
+      "similarity": "17.94%",
+      "has_summary": true
+    },
+    {
+      "document_id": "ac563310-91d8-4d9d-b030-3c9cdd18674c",
+      "document_name": "AAPL - Q3 2018 Earnings Call (2018-07-31)",
+      "category_id": "AAPL",
+      "ticker": "AAPL",
+      "similarity": "17.48%",
+      "has_summary": true
+    }
+  ],
+  "AMD product roadmap for 2019": [
+    {
+      "document_id": "4c80d92e-c91e-4ed9-bdab-562d41d5b462",
+      "document_name": "INTC - Q3 2019 Earnings Call (2019-10-24)",
+      "category_id": "INTC",
+      "ticker": "INTC",
+      "similarity": "0.26%",
+      "has_summary": true
+    },
+    {
+      "document_id": "57ef51e8-3ceb-4d11-b6c6-5c0eaac309e2",
+      "document_name": "INTC - Q1 2019 Earnings Call (2019-04-25)",
+      "category_id": "INTC",
+      "ticker": "INTC",
+      "similarity": "0.16%",
+      "has_summary": true
+    },
+    {
+      "document_id": "7a96ae04-b737-4650-9afb-80e37c31422e",
+      "document_name": "MU - Q3 2019 Earnings Call (2019-06-25)",
+      "category_id": "MU",
+      "ticker": "MU",
+      "similarity": "-3.54%",
+      "has_summary": true
+    },
+    {
+      "document_id": "898a3819-d404-4d78-84b1-7e0452801c66",
+      "document_name": "INTC - Q4 2019 Earnings Call (2020-01-23)",
+      "category_id": "INTC",
+      "ticker": "INTC",
+      "similarity": "-4.49%",
+      "has_summary": true
+    },
+    {
+      "document_id": "f9bb933f-f2f6-4007-b410-e939b9dc2399",
+      "document_name": "MU - Q2 2017 Earnings Call (2017-03-23)",
+      "category_id": "MU",
+      "ticker": "MU",
+      "similarity": "-5.16%",
+      "has_summary": true
+    },
+    {
+      "document_id": "a8e5eb78-1844-41a6-8d08-832453349e95",
+      "document_name": "INTC - Q3 2018 Earnings Call (2018-10-25)",
+      "category_id": "INTC",
+      "ticker": "INTC",
+      "similarity": "-6.58%",
+      "has_summary": true
+    },
+    {
+      "document_id": "3e8787b3-177d-4912-a49c-e64d083e2c4c",
+      "document_name": "INTC - Q1 2018 Earnings Call (2018-04-26)",
+      "category_id": "INTC",
+      "ticker": "INTC",
+      "similarity": "-7.08%",
+      "has_summary": true
+    },
+    {
+      "document_id": "8036abf5-cc0f-4eee-9ac0-09986941c5e1",
+      "document_name": "MU - Q3 2016 Earnings Call (2016-06-30)",
+      "category_id": "MU",
+      "ticker": "MU",
+      "similarity": "-8.21%",
+      "has_summary": true
+    },
+    {
+      "document_id": "345230d4-d49e-449a-b66e-7368cdae4b83",
+      "document_name": "INTC - Q1 2020 Earnings Call (2020-04-23)",
+      "category_id": "INTC",
+      "ticker": "INTC",
+      "similarity": "-9.61%",
+      "has_summary": true
+    },
+    {
+      "document_id": "a82150cc-4c7f-4276-addc-6bf81cc14098",
+      "document_name": "MU - Q3 2020 Earnings Call (2020-06-29)",
+      "category_id": "MU",
+      "ticker": "MU",
+      "similarity": "-10.29%",
+      "has_summary": true
+    }
+  ],
+  "Intel manufacturing challenges": [
+    {
+      "document_id": "4c80d92e-c91e-4ed9-bdab-562d41d5b462",
+      "document_name": "INTC - Q3 2019 Earnings Call (2019-10-24)",
+      "category_id": "INTC",
+      "ticker": "INTC",
+      "similarity": "-2.07%",
+      "has_summary": true
+    },
+    {
+      "document_id": "56f537d5-9d89-4bd1-879f-09bf4787b076",
+      "document_name": "INTC - Q1 2017 Earnings Call (2017-04-27)",
+      "category_id": "INTC",
+      "ticker": "INTC",
+      "similarity": "-2.42%",
+      "has_summary": true
+    },
+    {
+      "document_id": "95169fd9-70cf-49ed-bb34-cf82a84b6e9b",
+      "document_name": "INTC - Q3 2017 Earnings Call (2017-10-26)",
+      "category_id": "INTC",
+      "ticker": "INTC",
+      "similarity": "-3.29%",
+      "has_summary": true
+    },
+    {
+      "document_id": "a8e5eb78-1844-41a6-8d08-832453349e95",
+      "document_name": "INTC - Q3 2018 Earnings Call (2018-10-25)",
+      "category_id": "INTC",
+      "ticker": "INTC",
+      "similarity": "-4.06%",
+      "has_summary": true
+    },
+    {
+      "document_id": "2a3434ba-5fbc-4c44-b29e-12f7e0a4cbc5",
+      "document_name": "INTC - Q4 2017 Earnings Call (2018-01-25)",
+      "category_id": "INTC",
+      "ticker": "INTC",
+      "similarity": "-4.18%",
+      "has_summary": true
+    },
+    {
+      "document_id": "b5ee749b-6296-44e0-b11a-6bf71b3e7a24",
+      "document_name": "INTC - Q2 2018 Earnings Call (2018-07-26)",
+      "category_id": "INTC",
+      "ticker": "INTC",
+      "similarity": "-4.60%",
+      "has_summary": true
+    },
+    {
+      "document_id": "674ddfcb-c397-4b4b-b4c3-1370a18aa9e1",
+      "document_name": "INTC - Q3 2016 Earnings Call (2016-10-18)",
+      "category_id": "INTC",
+      "ticker": "INTC",
+      "similarity": "-5.44%",
+      "has_summary": true
+    },
+    {
+      "document_id": "7a1511a3-7142-47f4-811b-08f3747c84a5",
+      "document_name": "INTC - Q2 2019 Earnings Call (2019-07-25)",
+      "category_id": "INTC",
+      "ticker": "INTC",
+      "similarity": "-5.55%",
+      "has_summary": true
+    },
+    {
+      "document_id": "3e8787b3-177d-4912-a49c-e64d083e2c4c",
+      "document_name": "INTC - Q1 2018 Earnings Call (2018-04-26)",
+      "category_id": "INTC",
+      "ticker": "INTC",
+      "similarity": "-5.66%",
+      "has_summary": true
+    },
+    {
+      "document_id": "dce50f58-a2dd-441e-9e36-be510ea8f9b3",
+      "document_name": "INTC - Q2 2017 Earnings Call (2017-07-27)",
+      "category_id": "INTC",
+      "ticker": "INTC",
+      "similarity": "-6.28%",
+      "has_summary": true
+    }
+  ],
+  "ASML EUV lithography adoption": [
+    {
+      "document_id": "f9bb933f-f2f6-4007-b410-e939b9dc2399",
+      "document_name": "MU - Q2 2017 Earnings Call (2017-03-23)",
+      "category_id": "MU",
+      "ticker": "MU",
+      "similarity": "-47.25%",
+      "has_summary": true
+    },
+    {
+      "document_id": "8036abf5-cc0f-4eee-9ac0-09986941c5e1",
+      "document_name": "MU - Q3 2016 Earnings Call (2016-06-30)",
+      "category_id": "MU",
+      "ticker": "MU",
+      "similarity": "-47.80%",
+      "has_summary": true
+    },
+    {
+      "document_id": "acd35cb9-12ab-4a34-9ce0-18a2c3b62eda",
+      "document_name": "AMD - Q2 2020 Earnings Call (2020-07-28)",
+      "category_id": "1598ce28-8bb0-4787-ad40-f5227d3a72a6",
+      "ticker": "AMD",
+      "similarity": "-47.83%",
+      "has_summary": false
+    },
+    {
+      "document_id": "82bd3b7a-d865-4006-96c3-6be46c18cc0c",
+      "document_name": "MU - Q1 2017 Earnings Call (2016-12-21)",
+      "category_id": "MU",
+      "ticker": "MU",
+      "similarity": "-51.07%",
+      "has_summary": true
+    },
+    {
+      "document_id": "05d1609b-1930-463c-82ab-3d93bc598d14",
+      "document_name": "AMD - Q1 2020 Earnings Call (2020-04-28)",
+      "category_id": "1598ce28-8bb0-4787-ad40-f5227d3a72a6",
+      "ticker": "AMD",
+      "similarity": "-52.07%",
+      "has_summary": false
+    },
+    {
+      "document_id": "7a96ae04-b737-4650-9afb-80e37c31422e",
+      "document_name": "MU - Q3 2019 Earnings Call (2019-06-25)",
+      "category_id": "MU",
+      "ticker": "MU",
+      "similarity": "-52.66%",
+      "has_summary": true
+    },
+    {
+      "document_id": "083e4790-dd41-45ca-bdd7-70da09ca8f7b",
+      "document_name": "MU - Q2 2016 Earnings Call (2016-03-30)",
+      "category_id": "MU",
+      "ticker": "MU",
+      "similarity": "-52.92%",
+      "has_summary": false
+    },
+    {
+      "document_id": "58f6d727-f1ab-41f9-a02b-321ad7e5f7b0",
+      "document_name": "AMD - Q4 2019 Earnings Call (2020-01-28)",
+      "category_id": "1598ce28-8bb0-4787-ad40-f5227d3a72a6",
+      "ticker": "AMD",
+      "similarity": "-52.97%",
+      "has_summary": false
+    },
+    {
+      "document_id": "5162f6f9-a506-4d9d-8387-333a74e6ff57",
+      "document_name": "MU - Q3 2017 Earnings Call (2017-06-29)",
+      "category_id": "MU",
+      "ticker": "MU",
+      "similarity": "-53.13%",
+      "has_summary": false
+    },
+    {
+      "document_id": "30a5e8f2-117e-4540-8703-dd8b4f957677",
+      "document_name": "MU - Q4 2016 Earnings Call (2016-10-04)",
+      "category_id": "MU",
+      "ticker": "MU",
+      "similarity": "-53.57%",
+      "has_summary": true
+    }
+  ],
+  "Amazon AWS revenue growth": [
+    {
+      "document_id": "0a5ee092-d490-44f3-b3ca-c1e9f5bbf7ec",
+      "document_name": "AMZN - Q1 2018 Earnings Call (2018-04-26)",
+      "category_id": "AMZN",
+      "ticker": "AMZN",
+      "similarity": "49.84%",
+      "has_summary": true
+    },
+    {
+      "document_id": "3066867a-c8e7-4a7d-ba6f-d396374aa645",
+      "document_name": "AMZN - Q3 2018 Earnings Call (2018-10-25)",
+      "category_id": "AMZN",
+      "ticker": "AMZN",
+      "similarity": "42.84%",
+      "has_summary": true
+    },
+    {
+      "document_id": "ae5e9f7b-f64a-4be4-8fa2-8d6989a1d6e3",
+      "document_name": "AMZN - Q4 2019 Earnings Call (2020-01-30)",
+      "category_id": "AMZN",
+      "ticker": "AMZN",
+      "similarity": "41.34%",
+      "has_summary": true
+    },
+    {
+      "document_id": "e64e6c04-9a86-4c8b-9802-868c62930f5e",
+      "document_name": "AMZN - Q3 2019 Earnings Call (2019-10-24)",
+      "category_id": "AMZN",
+      "ticker": "AMZN",
+      "similarity": "40.77%",
+      "has_summary": true
+    },
+    {
+      "document_id": "4514ce72-36f3-4478-9854-65348be1bcd9",
+      "document_name": "AMZN - Q4 2015 Earnings Call (2016-01-28)",
+      "category_id": "AMZN",
+      "ticker": "AMZN",
+      "similarity": "40.73%",
+      "has_summary": true
+    },
+    {
+      "document_id": "29db40d9-7313-4c3b-9d52-b82457f5cf68",
+      "document_name": "AMZN - Q2 2017 Earnings Call (2017-07-27)",
+      "category_id": "AMZN",
+      "ticker": "AMZN",
+      "similarity": "40.18%",
+      "has_summary": true
+    },
+    {
+      "document_id": "bde3a713-e38f-43db-962a-2b7a293d5d4a",
+      "document_name": "AMZN - Q4 2016 Earnings Call (2017-02-02)",
+      "category_id": "AMZN",
+      "ticker": "AMZN",
+      "similarity": "37.99%",
+      "has_summary": true
+    },
+    {
+      "document_id": "7e538606-f18b-410f-8284-59e5929f2aaa",
+      "document_name": "AMZN - Q1 2016 Earnings Call (2016-04-28)",
+      "category_id": "AMZN",
+      "ticker": "AMZN",
+      "similarity": "37.78%",
+      "has_summary": true
+    },
+    {
+      "document_id": "88270af8-bfd6-41e8-989a-d9ca9b41d701",
+      "document_name": "AMZN - Q2 2019 Earnings Call (2019-07-25)",
+      "category_id": "AMZN",
+      "ticker": "AMZN",
+      "similarity": "36.26%",
+      "has_summary": true
+    },
+    {
+      "document_id": "7e407d90-f242-4e0a-8adc-652ac34e0064",
+      "document_name": "AMZN - Q2 2018 Earnings Call (2018-07-26)",
+      "category_id": "AMZN",
+      "ticker": "AMZN",
+      "similarity": "36.25%",
+      "has_summary": true
+    }
+  ],
+  "Cisco network security initiatives": [
+    {
+      "document_id": "00c344b6-b05d-475c-85db-7e054152070e",
+      "document_name": "CSCO - Q2 2018 Earnings Call (2018-02-14)",
+      "category_id": "f39dc51b-689e-424d-af9b-0ba2d2c0bb86",
+      "ticker": "CSCO",
+      "similarity": "4.44%",
+      "has_summary": false
+    },
+    {
+      "document_id": "f2d8759a-4908-4659-b1b3-c3f6670308a4",
+      "document_name": "CSCO - Q3 2017 Earnings Call (2017-05-17)",
+      "category_id": "f39dc51b-689e-424d-af9b-0ba2d2c0bb86",
+      "ticker": "CSCO",
+      "similarity": "3.63%",
+      "has_summary": false
+    },
+    {
+      "document_id": "e379a135-ee39-4e52-9e4d-1e7891914f79",
+      "document_name": "CSCO - Q2 2020 Earnings Call (2020-02-12)",
+      "category_id": "f39dc51b-689e-424d-af9b-0ba2d2c0bb86",
+      "ticker": "CSCO",
+      "similarity": "3.56%",
+      "has_summary": false
+    },
+    {
+      "document_id": "976ae4db-7948-4434-ae65-a6538989a15e",
+      "document_name": "CSCO - Q2 2019 Earnings Call (2019-02-13)",
+      "category_id": "f39dc51b-689e-424d-af9b-0ba2d2c0bb86",
+      "ticker": "CSCO",
+      "similarity": "3.46%",
+      "has_summary": false
+    },
+    {
+      "document_id": "8a7034dd-aeac-413e-b55c-7c19a82a7b9c",
+      "document_name": "CSCO - Q3 2018 Earnings Call (2018-05-16)",
+      "category_id": "f39dc51b-689e-424d-af9b-0ba2d2c0bb86",
+      "ticker": "CSCO",
+      "similarity": "3.19%",
+      "has_summary": false
+    },
+    {
+      "document_id": "68ad0bf4-815d-46b5-b2a7-58b018dbcbe3",
+      "document_name": "CSCO - Q4 2018 Earnings Call (2018-08-15)",
+      "category_id": "f39dc51b-689e-424d-af9b-0ba2d2c0bb86",
+      "ticker": "CSCO",
+      "similarity": "3.18%",
+      "has_summary": false
+    },
+    {
+      "document_id": "4367451b-7b02-4f58-ba64-4a5fd4fb5729",
+      "document_name": "CSCO - Q1 2018 Earnings Call (2017-11-15)",
+      "category_id": "f39dc51b-689e-424d-af9b-0ba2d2c0bb86",
+      "ticker": "CSCO",
+      "similarity": "2.99%",
+      "has_summary": false
+    },
+    {
+      "document_id": "fec74e8d-aef4-4c80-aded-b86ca26b3ad3",
+      "document_name": "CSCO - Q2 2017 Earnings Call (2017-02-15)",
+      "category_id": "f39dc51b-689e-424d-af9b-0ba2d2c0bb86",
+      "ticker": "CSCO",
+      "similarity": "2.35%",
+      "has_summary": false
+    },
+    {
+      "document_id": "14c2c798-8b70-4522-b372-12a0726e9b40",
+      "document_name": "CSCO - Q3 2019 Earnings Call (2019-05-15)",
+      "category_id": "f39dc51b-689e-424d-af9b-0ba2d2c0bb86",
+      "ticker": "CSCO",
+      "similarity": "1.88%",
+      "has_summary": false
+    },
+    {
+      "document_id": "ed50c9ff-de0a-4b51-bda4-b65ec87e04e7",
+      "document_name": "CSCO - Q3 2020 Earnings Call (2020-05-13)",
+      "category_id": "f39dc51b-689e-424d-af9b-0ba2d2c0bb86",
+      "ticker": "CSCO",
+      "similarity": "1.88%",
+      "has_summary": false
+    }
+  ],
+  "Google cloud computing market share": [
+    {
+      "document_id": "1d3f7e0b-6a20-4522-9a22-e424e5430f71",
+      "document_name": "GOOGL - Q4 2017 Earnings Call (2018-02-01)",
+      "category_id": "989b35ce-b8fd-44dc-b53f-2d3233a85706",
+      "ticker": "GOOGL",
+      "similarity": "-22.52%",
+      "has_summary": false
+    },
+    {
+      "document_id": "57bc2240-b0c1-45ad-ad13-ac16f6010329",
+      "document_name": "GOOGL - Q1 2018 Earnings Call (2018-04-23)",
+      "category_id": "989b35ce-b8fd-44dc-b53f-2d3233a85706",
+      "ticker": "GOOGL",
+      "similarity": "-22.52%",
+      "has_summary": false
+    },
+    {
+      "document_id": "ae5e9f7b-f64a-4be4-8fa2-8d6989a1d6e3",
+      "document_name": "AMZN - Q4 2019 Earnings Call (2020-01-30)",
+      "category_id": "AMZN",
+      "ticker": "AMZN",
+      "similarity": "-22.96%",
+      "has_summary": true
+    },
+    {
+      "document_id": "592fcaa2-0ae1-4f3f-b34f-54d84bddbd92",
+      "document_name": "GOOGL - Q2 2017 Earnings Call (2017-07-24)",
+      "category_id": "989b35ce-b8fd-44dc-b53f-2d3233a85706",
+      "ticker": "GOOGL",
+      "similarity": "-23.37%",
+      "has_summary": false
+    },
+    {
+      "document_id": "d3427db7-3f62-4127-b86b-3a24cccf6f7e",
+      "document_name": "AMZN - Q1 2020 Earnings Call (2020-04-30)",
+      "category_id": "AMZN",
+      "ticker": "AMZN",
+      "similarity": "-23.38%",
+      "has_summary": true
+    },
+    {
+      "document_id": "9cd19c8a-f066-4144-a996-7c43627a0906",
+      "document_name": "GOOGL - Q3 2017 Earnings Call (2017-10-26)",
+      "category_id": "989b35ce-b8fd-44dc-b53f-2d3233a85706",
+      "ticker": "GOOGL",
+      "similarity": "-23.85%",
+      "has_summary": false
+    },
+    {
+      "document_id": "88270af8-bfd6-41e8-989a-d9ca9b41d701",
+      "document_name": "AMZN - Q2 2019 Earnings Call (2019-07-25)",
+      "category_id": "AMZN",
+      "ticker": "AMZN",
+      "similarity": "-24.06%",
+      "has_summary": true
+    },
+    {
+      "document_id": "49993f1f-daa7-4f09-8d97-f08330aa49f1",
+      "document_name": "GOOGL - Q4 2016 Earnings Call (2017-01-26)",
+      "category_id": "989b35ce-b8fd-44dc-b53f-2d3233a85706",
+      "ticker": "GOOGL",
+      "similarity": "-25.38%",
+      "has_summary": false
+    },
+    {
+      "document_id": "0a5ee092-d490-44f3-b3ca-c1e9f5bbf7ec",
+      "document_name": "AMZN - Q1 2018 Earnings Call (2018-04-26)",
+      "category_id": "AMZN",
+      "ticker": "AMZN",
+      "similarity": "-25.97%",
+      "has_summary": true
+    },
+    {
+      "document_id": "a7c2a04a-1580-4cda-b5a7-2af4847e6166",
+      "document_name": "GOOGL - Q3 2016 Earnings Call (2016-10-27)",
+      "category_id": "989b35ce-b8fd-44dc-b53f-2d3233a85706",
+      "ticker": "GOOGL",
+      "similarity": "-26.32%",
+      "has_summary": false
+    }
+  ],
+  "Micron memory chip demand trends": [
+    {
+      "document_id": "f9bb933f-f2f6-4007-b410-e939b9dc2399",
+      "document_name": "MU - Q2 2017 Earnings Call (2017-03-23)",
+      "category_id": "MU",
+      "ticker": "MU",
+      "similarity": "42.27%",
+      "has_summary": true
+    },
+    {
+      "document_id": "82bd3b7a-d865-4006-96c3-6be46c18cc0c",
+      "document_name": "MU - Q1 2017 Earnings Call (2016-12-21)",
+      "category_id": "MU",
+      "ticker": "MU",
+      "similarity": "35.10%",
+      "has_summary": true
+    },
+    {
+      "document_id": "8036abf5-cc0f-4eee-9ac0-09986941c5e1",
+      "document_name": "MU - Q3 2016 Earnings Call (2016-06-30)",
+      "category_id": "MU",
+      "ticker": "MU",
+      "similarity": "33.90%",
+      "has_summary": true
+    },
+    {
+      "document_id": "2cf0da85-42da-4a49-9a1a-197e9d626947",
+      "document_name": "MU - Q2 2020 Earnings Call (2020-03-25)",
+      "category_id": "MU",
+      "ticker": "MU",
+      "similarity": "29.08%",
+      "has_summary": true
+    },
+    {
+      "document_id": "7a96ae04-b737-4650-9afb-80e37c31422e",
+      "document_name": "MU - Q3 2019 Earnings Call (2019-06-25)",
+      "category_id": "MU",
+      "ticker": "MU",
+      "similarity": "27.55%",
+      "has_summary": true
+    },
+    {
+      "document_id": "23c41af9-e593-4d57-8239-7a5d7ed1d1d4",
+      "document_name": "MU - Q1 2020 Earnings Call (2019-12-18)",
+      "category_id": "MU",
+      "ticker": "MU",
+      "similarity": "26.65%",
+      "has_summary": true
+    },
+    {
+      "document_id": "a82150cc-4c7f-4276-addc-6bf81cc14098",
+      "document_name": "MU - Q3 2020 Earnings Call (2020-06-29)",
+      "category_id": "MU",
+      "ticker": "MU",
+      "similarity": "26.36%",
+      "has_summary": true
+    },
+    {
+      "document_id": "0fd5a117-76d3-4509-a08f-00e8989ffd14",
+      "document_name": "MU - Q2 2019 Earnings Call (2019-03-20)",
+      "category_id": "MU",
+      "ticker": "MU",
+      "similarity": "23.73%",
+      "has_summary": true
+    },
+    {
+      "document_id": "f46a4c65-5d4d-47ab-90ae-21f36d504c94",
+      "document_name": "MU - Q4 2017 Earnings Call (2017-09-26)",
+      "category_id": "MU",
+      "ticker": "MU",
+      "similarity": "22.58%",
+      "has_summary": true
+    },
+    {
+      "document_id": "30a5e8f2-117e-4540-8703-dd8b4f957677",
+      "document_name": "MU - Q4 2016 Earnings Call (2016-10-04)",
+      "category_id": "MU",
+      "ticker": "MU",
+      "similarity": "22.01%",
+      "has_summary": true
+    }
+  ]
+}

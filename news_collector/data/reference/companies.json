@@ -1,0 +1,74 @@
+{
+  "JPM": {
+    "ticker": "JPM",
+    "company": "JPMorgan Chase & Co.",
+    "sector": "Financial",
+    "aliases": [
+      "JPMorgan",
+      "JPMorgan Chase",
+      "JP Morgan",
+      "Chase Bank",
+      "Jamie Dimon"
+    ],
+    "country": "US"
+  },
+  "GS": {
+    "ticker": "GS",
+    "company": "Goldman Sachs Group Inc.",
+    "sector": "Financial",
+    "aliases": [
+      "Goldman",
+      "Goldman Sachs",
+      "GS"
+    ],
+    "country": "US"
+  },
+  "MSFT": {
+    "ticker": "MSFT",
+    "company": "Microsoft Corporation",
+    "sector": "Technology",
+    "aliases": [
+      "Microsoft",
+      "MSFT",
+      "Microsoft Corp",
+      "Satya Nadella"
+    ],
+    "country": "US"
+  },
+  "AAPL": {
+    "ticker": "AAPL",
+    "company": "Apple Inc.",
+    "sector": "Technology",
+    "aliases": [
+      "Apple",
+      "AAPL",
+      "Apple Inc",
+      "Tim Cook"
+    ],
+    "country": "US"
+  },
+  "XOM": {
+    "ticker": "XOM",
+    "company": "Exxon Mobil Corporation",
+    "sector": "Energy",
+    "aliases": [
+      "Exxon",
+      "ExxonMobil",
+      "Exxon Mobil",
+      "XOM"
+    ],
+    "country": "US"
+  },
+  "TSLA": {
+    "ticker": "TSLA",
+    "company": "Tesla, Inc.",
+    "sector": "Automotive",
+    "aliases": [
+      "Tesla",
+      "TSLA",
+      "Tesla Motors",
+      "Elon Musk"
+    ],
+    "country": "US"
+  }
+}

@@ -1,0 +1,1754 @@
+{
+  "AMZN": {
+    "name": "AMZN",
+    "time_periods": {
+      "Q4 2019": {
+        "documents": [
+          {
+            "document_id": "ae5e9f7b-f64a-4be4-8fa2-8d6989a1d6e3",
+            "date": "2020-01-30",
+            "has_summary": true
+          }
+        ]
+      },
+      "Q1 2016": {
+        "documents": [
+          {
+            "document_id": "7e538606-f18b-410f-8284-59e5929f2aaa",
+            "date": "2016-04-28",
+            "has_summary": true
+          }
+        ]
+      },
+      "Q3 2019": {
+        "documents": [
+          {
+            "document_id": "e64e6c04-9a86-4c8b-9802-868c62930f5e",
+            "date": "2019-10-24",
+            "has_summary": true
+          }
+        ]
+      },
+      "Q1 2020": {
+        "documents": [
+          {
+            "document_id": "d3427db7-3f62-4127-b86b-3a24cccf6f7e",
+            "date": "2020-04-30",
+            "has_summary": true
+          }
+        ]
+      },
+      "Q1 2019": {
+        "documents": [
+          {
+            "document_id": "a1865281-b3b2-4fa0-8500-bb9678a63824",
+            "date": "2019-04-25",
+            "has_summary": true
+          }
+        ]
+      },
+      "Q2 2017": {
+        "documents": [
+          {
+            "document_id": "29db40d9-7313-4c3b-9d52-b82457f5cf68",
+            "date": "2017-07-27",
+            "has_summary": true
+          }
+        ]
+      },
+      "Q2 2018": {
+        "documents": [
+          {
+            "document_id": "7e407d90-f242-4e0a-8adc-652ac34e0064",
+            "date": "2018-07-26",
+            "has_summary": true
+          }
+        ]
+      },
+      "Q3 2018": {
+        "documents": [
+          {
+            "document_id": "3066867a-c8e7-4a7d-ba6f-d396374aa645",
+            "date": "2018-10-25",
+            "has_summary": true
+          }
+        ]
+      },
+      "Q4 2015": {
+        "documents": [
+          {
+            "document_id": "4514ce72-36f3-4478-9854-65348be1bcd9",
+            "date": "2016-01-28",
+            "has_summary": true
+          }
+        ]
+      },
+      "Q4 2017": {
+        "documents": [
+          {
+            "document_id": "36c904fa-4403-4c80-9ed4-6d929edd8796",
+            "date": "2018-02-01",
+            "has_summary": true
+          }
+        ]
+      },
+      "Q2 2020": {
+        "documents": [
+          {
+            "document_id": "b8b246b9-baa7-42f1-8d7a-9101e426550a",
+            "date": "2020-07-30",
+            "has_summary": true
+          }
+        ]
+      },
+      "Q2 2019": {
+        "documents": [
+          {
+            "document_id": "88270af8-bfd6-41e8-989a-d9ca9b41d701",
+            "date": "2019-07-25",
+            "has_summary": true
+          }
+        ]
+      },
+      "Q1 2017": {
+        "documents": [
+          {
+            "document_id": "8e1cdb0f-46c1-4862-97dd-4eaefa73288d",
+            "date": "2017-04-27",
+            "has_summary": true
+          }
+        ]
+      },
+      "Q4 2018": {
+        "documents": [
+          {
+            "document_id": "dff131fb-62f7-4f23-9727-977ecf92a4b1",
+            "date": "2019-01-31",
+            "has_summary": true
+          }
+        ]
+      },
+      "Q1 2018": {
+        "documents": [
+          {
+            "document_id": "0a5ee092-d490-44f3-b3ca-c1e9f5bbf7ec",
+            "date": "2018-04-26",
+            "has_summary": true
+          }
+        ]
+      },
+      "Q3 2016": {
+        "documents": [
+          {
+            "document_id": "a3a6d5e3-1944-4cfc-a95b-46e6d6a79406",
+            "date": "2016-10-27",
+            "has_summary": true
+          }
+        ]
+      },
+      "Q4 2016": {
+        "documents": [
+          {
+            "document_id": "bde3a713-e38f-43db-962a-2b7a293d5d4a",
+            "date": "2017-02-02",
+            "has_summary": true
+          }
+        ]
+      },
+      "Q2 2016": {
+        "documents": [
+          {
+            "document_id": "96d65eb1-4f00-456b-81b3-728d80f280c9",
+            "date": "2016-07-28",
+            "has_summary": true
+          }
+        ]
+      },
+      "Q3 2017": {
+        "documents": [
+          {
+            "document_id": "8e26c676-2ac4-46cb-9382-d1991351f163",
+            "date": "2017-10-26",
+            "has_summary": true
+          }
+        ]
+      }
+    },
+    "has_category_summary": true
+  },
+  "AAPL": {
+    "name": "AAPL",
+    "time_periods": {
+      "Q2 2018": {
+        "documents": [
+          {
+            "document_id": "847ed110-b532-4a67-ac52-f2e2dc3aa9df",
+            "date": "2018-05-01",
+            "has_summary": true
+          }
+        ]
+      },
+      "Q4 2019": {
+        "documents": [
+          {
+            "document_id": "2d39dab3-1c1e-408a-88d9-53f5bba43403",
+            "date": "2019-10-30",
+            "has_summary": true
+          }
+        ]
+      },
+      "Q1 2016": {
+        "documents": [
+          {
+            "document_id": "cfd47f1f-65da-4358-af09-9cccd212632f",
+            "date": "2016-01-26",
+            "has_summary": true
+          }
+        ]
+      },
+      "Q3 2020": {
+        "documents": [
+          {
+            "document_id": "eddc7334-742e-4c8d-971c-768c3b4d20c3",
+            "date": "2020-07-30",
+            "has_summary": true
+          }
+        ]
+      },
+      "Q3 2017": {
+        "documents": [
+          {
+            "document_id": "dc8167db-d406-4774-9d1a-da8c9b8273eb",
+            "date": "2017-08-01",
+            "has_summary": true
+          }
+        ]
+      },
+      "Q1 2020": {
+        "documents": [
+          {
+            "document_id": "9fd97e6f-b821-44f3-a531-6345ae617344",
+            "date": "2020-01-28",
+            "has_summary": true
+          }
+        ]
+      },
+      "Q2 2016": {
+        "documents": [
+          {
+            "document_id": "e66b33bf-af3f-4681-8aae-94011f332c4d",
+            "date": "2016-04-26",
+            "has_summary": true
+          }
+        ]
+      },
+      "Q1 2017": {
+        "documents": [
+          {
+            "document_id": "1c245c5a-1bfe-45c6-a44f-5f37511c5d42",
+            "date": "2017-01-31",
+            "has_summary": true
+          }
+        ]
+      },
+      "Q2 2019": {
+        "documents": [
+          {
+            "document_id": "5003d409-a441-4a17-8ecb-4354cd4f3f37",
+            "date": "2019-04-30",
+            "has_summary": true
+          }
+        ]
+      },
+      "Q4 2017": {
+        "documents": [
+          {
+            "document_id": "b96ccaa3-78d2-42d8-aa47-fdd487775119",
+            "date": "2017-11-02",
+            "has_summary": true
+          }
+        ]
+      },
+      "Q4 2016": {
+        "documents": [
+          {
+            "document_id": "169593a1-62d3-4376-a6e9-db3443ae9658",
+            "date": "2016-10-25",
+            "has_summary": true
+          }
+        ]
+      },
+      "Q3 2016": {
+        "documents": [
+          {
+            "document_id": "5969ece6-a45a-4726-ab3c-419450cdf146",
+            "date": "2016-07-26",
+            "has_summary": true
+          }
+        ]
+      },
+      "Q2 2017": {
+        "documents": [
+          {
+            "document_id": "945c9089-eb71-4b6a-8b1d-4eb0004bb27f",
+            "date": "2017-05-02",
+            "has_summary": true
+          }
+        ]
+      },
+      "Q3 2019": {
+        "documents": [
+          {
+            "document_id": "29c41506-6a49-4ebe-8f13-76607b4c117a",
+            "date": "2019-07-30",
+            "has_summary": true
+          }
+        ]
+      },
+      "Q1 2019": {
+        "documents": [
+          {
+            "document_id": "5da7677f-f71c-4ebb-a7bc-75bd23bbeb1b",
+            "date": "2019-01-29",
+            "has_summary": true
+          }
+        ]
+      },
+      "Q3 2018": {
+        "documents": [
+          {
+            "document_id": "ac563310-91d8-4d9d-b030-3c9cdd18674c",
+            "date": "2018-07-31",
+            "has_summary": true
+          }
+        ]
+      },
+      "Q1 2018": {
+        "documents": [
+          {
+            "document_id": "286b72ac-a473-4eaa-a71e-8c9a53eb899b",
+            "date": "2018-02-01",
+            "has_summary": true
+          }
+        ]
+      },
+      "Q4 2018": {
+        "documents": [
+          {
+            "document_id": "cbe9aced-b988-4785-9eb9-175ae77de51d",
+            "date": "2018-11-01",
+            "has_summary": true
+          }
+        ]
+      },
+      "Q2 2020": {
+        "documents": [
+          {
+            "document_id": "45247e77-068a-4ea5-8036-04a682c76abf",
+            "date": "2020-04-30",
+            "has_summary": true
+          }
+        ]
+      }
+    },
+    "has_category_summary": true
+  },
+  "INTC": {
+    "name": "INTC",
+    "time_periods": {
+      "Q4 2018": {
+        "documents": [
+          {
+            "document_id": "e257fce7-01cc-4cb3-b15f-034a038f062a",
+            "date": "2019-01-24",
+            "has_summary": true
+          }
+        ]
+      },
+      "Q3 2019": {
+        "documents": [
+          {
+            "document_id": "4c80d92e-c91e-4ed9-bdab-562d41d5b462",
+            "date": "2019-10-24",
+            "has_summary": true
+          }
+        ]
+      },
+      "Q1 2019": {
+        "documents": [
+          {
+            "document_id": "57ef51e8-3ceb-4d11-b6c6-5c0eaac309e2",
+            "date": "2019-04-25",
+            "has_summary": true
+          }
+        ]
+      },
+      "Q2 2017": {
+        "documents": [
+          {
+            "document_id": "dce50f58-a2dd-441e-9e36-be510ea8f9b3",
+            "date": "2017-07-27",
+            "has_summary": true
+          }
+        ]
+      },
+      "Q2 2016": {
+        "documents": [
+          {
+            "document_id": "5bef4285-80d1-45bd-a0c2-4e25f8089920",
+            "date": "2016-07-20",
+            "has_summary": true
+          }
+        ]
+      },
+      "Q2 2018": {
+        "documents": [
+          {
+            "document_id": "b5ee749b-6296-44e0-b11a-6bf71b3e7a24",
+            "date": "2018-07-26",
+            "has_summary": true
+          }
+        ]
+      },
+      "Q3 2018": {
+        "documents": [
+          {
+            "document_id": "a8e5eb78-1844-41a6-8d08-832453349e95",
+            "date": "2018-10-25",
+            "has_summary": true
+          }
+        ]
+      },
+      "Q4 2017": {
+        "documents": [
+          {
+            "document_id": "2a3434ba-5fbc-4c44-b29e-12f7e0a4cbc5",
+            "date": "2018-01-25",
+            "has_summary": true
+          }
+        ]
+      },
+      "Q2 2020": {
+        "documents": [
+          {
+            "document_id": "db245149-a508-4457-9136-4302e3e87516",
+            "date": "2020-07-23",
+            "has_summary": true
+          }
+        ]
+      },
+      "Q2 2019": {
+        "documents": [
+          {
+            "document_id": "7a1511a3-7142-47f4-811b-08f3747c84a5",
+            "date": "2019-07-25",
+            "has_summary": true
+          }
+        ]
+      },
+      "Q1 2017": {
+        "documents": [
+          {
+            "document_id": "56f537d5-9d89-4bd1-879f-09bf4787b076",
+            "date": "2017-04-27",
+            "has_summary": true
+          }
+        ]
+      },
+      "Q1 2018": {
+        "documents": [
+          {
+            "document_id": "3e8787b3-177d-4912-a49c-e64d083e2c4c",
+            "date": "2018-04-26",
+            "has_summary": true
+          }
+        ]
+      },
+      "Q3 2016": {
+        "documents": [
+          {
+            "document_id": "674ddfcb-c397-4b4b-b4c3-1370a18aa9e1",
+            "date": "2016-10-18",
+            "has_summary": true
+          }
+        ]
+      },
+      "Q1 2020": {
+        "documents": [
+          {
+            "document_id": "345230d4-d49e-449a-b66e-7368cdae4b83",
+            "date": "2020-04-23",
+            "has_summary": true
+          }
+        ]
+      },
+      "Q4 2016": {
+        "documents": [
+          {
+            "document_id": "d06c92db-d7b8-46bf-a7a3-164dbf2d5b41",
+            "date": "2017-01-26",
+            "has_summary": true
+          }
+        ]
+      },
+      "Q4 2015": {
+        "documents": [
+          {
+            "document_id": "0bbc8cf7-f020-4d4d-94ae-66c95587b4ea",
+            "date": "2016-01-14",
+            "has_summary": true
+          }
+        ]
+      },
+      "Q1 2016": {
+        "documents": [
+          {
+            "document_id": "8644566d-4632-4c5a-9f2d-27634819e04b",
+            "date": "2016-04-19",
+            "has_summary": true
+          }
+        ]
+      },
+      "Q3 2017": {
+        "documents": [
+          {
+            "document_id": "95169fd9-70cf-49ed-bb34-cf82a84b6e9b",
+            "date": "2017-10-26",
+            "has_summary": true
+          }
+        ]
+      },
+      "Q4 2019": {
+        "documents": [
+          {
+            "document_id": "898a3819-d404-4d78-84b1-7e0452801c66",
+            "date": "2020-01-23",
+            "has_summary": true
+          }
+        ]
+      }
+    },
+    "has_category_summary": true
+  },
+  "MU": {
+    "name": "MU",
+    "time_periods": {
+      "Q4 2018": {
+        "documents": [
+          {
+            "document_id": "a447b829-5612-400a-8459-95487ae22e1e",
+            "date": "2018-09-20",
+            "has_summary": true
+          }
+        ]
+      },
+      "Q2 2019": {
+        "documents": [
+          {
+            "document_id": "0fd5a117-76d3-4509-a08f-00e8989ffd14",
+            "date": "2019-03-20",
+            "has_summary": true
+          }
+        ]
+      },
+      "Q1 2020": {
+        "documents": [
+          {
+            "document_id": "23c41af9-e593-4d57-8239-7a5d7ed1d1d4",
+            "date": "2019-12-18",
+            "has_summary": true
+          }
+        ]
+      },
+      "Q1 2017": {
+        "documents": [
+          {
+            "document_id": "82bd3b7a-d865-4006-96c3-6be46c18cc0c",
+            "date": "2016-12-21",
+            "has_summary": true
+          }
+        ]
+      },
+      "Q4 2016": {
+        "documents": [
+          {
+            "document_id": "30a5e8f2-117e-4540-8703-dd8b4f957677",
+            "date": "2016-10-04",
+            "has_summary": true
+          }
+        ]
+      },
+      "Q2 2017": {
+        "documents": [
+          {
+            "document_id": "f9bb933f-f2f6-4007-b410-e939b9dc2399",
+            "date": "2017-03-23",
+            "has_summary": true
+          }
+        ]
+      },
+      "Q3 2020": {
+        "documents": [
+          {
+            "document_id": "a82150cc-4c7f-4276-addc-6bf81cc14098",
+            "date": "2020-06-29",
+            "has_summary": true
+          }
+        ]
+      },
+      "Q2 2018": {
+        "documents": [
+          {
+            "document_id": "21d2e3bc-c815-4f6c-a597-12dc843a94cd",
+            "date": "2018-03-22",
+            "has_summary": true
+          }
+        ]
+      },
+      "Q3 2019": {
+        "documents": [
+          {
+            "document_id": "7a96ae04-b737-4650-9afb-80e37c31422e",
+            "date": "2019-06-25",
+            "has_summary": true
+          }
+        ]
+      },
+      "Q1 2018": {
+        "documents": [
+          {
+            "document_id": "4611a704-1186-4c4a-ac05-a46b60833522",
+            "date": "2017-12-19",
+            "has_summary": true
+          }
+        ]
+      },
+      "Q1 2019": {
+        "documents": [
+          {
+            "document_id": "1253b37b-09a1-4e11-9b02-38759d525a6d",
+            "date": "2018-12-18",
+            "has_summary": true
+          }
+        ]
+      },
+      "Q2 2020": {
+        "documents": [
+          {
+            "document_id": "2cf0da85-42da-4a49-9a1a-197e9d626947",
+            "date": "2020-03-25",
+            "has_summary": true
+          }
+        ]
+      },
+      "Q4 2019": {
+        "documents": [
+          {
+            "document_id": "8f8e68b8-bb8e-4e2d-a07e-dec0d9586d9e",
+            "date": "2019-09-26",
+            "has_summary": true
+          }
+        ]
+      },
+      "Q3 2016": {
+        "documents": [
+          {
+            "document_id": "8036abf5-cc0f-4eee-9ac0-09986941c5e1",
+            "date": "2016-06-30",
+            "has_summary": true
+          }
+        ]
+      },
+      "Q4 2017": {
+        "documents": [
+          {
+            "document_id": "f46a4c65-5d4d-47ab-90ae-21f36d504c94",
+            "date": "2017-09-26",
+            "has_summary": true
+          }
+        ]
+      },
+      "Q3 2017": {
+        "documents": [
+          {
+            "document_id": "5162f6f9-a506-4d9d-8387-333a74e6ff57",
+            "date": "2017-06-29",
+            "has_summary": false
+          }
+        ]
+      },
+      "Q2 2016": {
+        "documents": [
+          {
+            "document_id": "083e4790-dd41-45ca-bdd7-70da09ca8f7b",
+            "date": "2016-03-30",
+            "has_summary": false
+          }
+        ]
+      }
+    },
+    "has_category_summary": true
+  },
+  "989b35ce-b8fd-44dc-b53f-2d3233a85706": {
+    "name": "989b35ce-b8fd-44dc-b53f-2d3233a85706",
+    "time_periods": {
+      "Q2 2018": {
+        "documents": [
+          {
+            "document_id": "053065d9-d452-4891-9ad9-19fcc952051b",
+            "date": "2018-07-23",
+            "has_summary": false
+          }
+        ]
+      },
+      "Q1 2020": {
+        "documents": [
+          {
+            "document_id": "f3805a44-567e-4ff3-9a91-e40c4bed0a0c",
+            "date": "2020-04-28",
+            "has_summary": false
+          }
+        ]
+      },
+      "Q1 2017": {
+        "documents": [
+          {
+            "document_id": "eff74107-717d-4d2c-a3ec-5b4bc2164fe2",
+            "date": "2017-04-27",
+            "has_summary": false
+          }
+        ]
+      },
+      "Q3 2019": {
+        "documents": [
+          {
+            "document_id": "e93b73f9-617f-467f-8cc1-42a1fc5a1cb2",
+            "date": "2019-10-28",
+            "has_summary": false
+          }
+        ]
+      },
+      "Q2 2017": {
+        "documents": [
+          {
+            "document_id": "592fcaa2-0ae1-4f3f-b34f-54d84bddbd92",
+            "date": "2017-07-24",
+            "has_summary": false
+          }
+        ]
+      },
+      "Q2 2016": {
+        "documents": [
+          {
+            "document_id": "8276ae38-0456-40d8-ab01-ccd11f5b0d86",
+            "date": "2016-07-28",
+            "has_summary": false
+          }
+        ]
+      },
+      "Q2 2019": {
+        "documents": [
+          {
+            "document_id": "06cfa48b-3494-44d6-bcfc-b81c325b9881",
+            "date": "2019-07-25",
+            "has_summary": false
+          }
+        ]
+      },
+      "Q4 2018": {
+        "documents": [
+          {
+            "document_id": "b84b4c29-a373-4108-a7a3-3adcdcdc6f6c",
+            "date": "2019-02-04",
+            "has_summary": false
+          }
+        ]
+      },
+      "Q3 2018": {
+        "documents": [
+          {
+            "document_id": "bd69e55d-7ee5-4fe1-ba00-06df6988ef97",
+            "date": "2018-10-25",
+            "has_summary": false
+          }
+        ]
+      },
+      "Q1 2016": {
+        "documents": [
+          {
+            "document_id": "7b58cd2b-8a0e-4083-886e-920f52d3da66",
+            "date": "2016-04-21",
+            "has_summary": false
+          }
+        ]
+      },
+      "Q3 2016": {
+        "documents": [
+          {
+            "document_id": "a7c2a04a-1580-4cda-b5a7-2af4847e6166",
+            "date": "2016-10-27",
+            "has_summary": false
+          }
+        ]
+      },
+      "Q1 2018": {
+        "documents": [
+          {
+            "document_id": "57bc2240-b0c1-45ad-ad13-ac16f6010329",
+            "date": "2018-04-23",
+            "has_summary": false
+          }
+        ]
+      },
+      "Q3 2017": {
+        "documents": [
+          {
+            "document_id": "9cd19c8a-f066-4144-a996-7c43627a0906",
+            "date": "2017-10-26",
+            "has_summary": false
+          }
+        ]
+      },
+      "Q1 2019": {
+        "documents": [
+          {
+            "document_id": "2dd5297e-bf9e-47a5-94f6-668992b8f99b",
+            "date": "2019-04-29",
+            "has_summary": false
+          }
+        ]
+      },
+      "Q4 2015": {
+        "documents": [
+          {
+            "document_id": "56ad116f-101b-4890-b0e0-5df305fd4c0f",
+            "date": "2016-02-01",
+            "has_summary": false
+          }
+        ]
+      },
+      "Q2 2020": {
+        "documents": [
+          {
+            "document_id": "e761cbf9-2ca9-42e6-b91e-4867d82a0f3e",
+            "date": "2020-07-30",
+            "has_summary": false
+          }
+        ]
+      },
+      "Q4 2016": {
+        "documents": [
+          {
+            "document_id": "49993f1f-daa7-4f09-8d97-f08330aa49f1",
+            "date": "2017-01-26",
+            "has_summary": false
+          }
+        ]
+      },
+      "Q4 2017": {
+        "documents": [
+          {
+            "document_id": "1d3f7e0b-6a20-4522-9a22-e424e5430f71",
+            "date": "2018-02-01",
+            "has_summary": false
+          }
+        ]
+      },
+      "Q4 2019": {
+        "documents": [
+          {
+            "document_id": "076d0f02-1e35-4127-a079-844c810f9bec",
+            "date": "2020-02-03",
+            "has_summary": false
+          }
+        ]
+      }
+    },
+    "has_category_summary": false
+  },
+  "5d1b4d21-59cb-4ff3-bae1-fe9f1129cf18": {
+    "name": "5d1b4d21-59cb-4ff3-bae1-fe9f1129cf18",
+    "time_periods": {
+      "Q4 2017": {
+        "documents": [
+          {
+            "document_id": "093ef433-7944-4437-b42b-898af33385ab",
+            "date": "2017-07-20",
+            "has_summary": false
+          }
+        ]
+      },
+      "Q4 2016": {
+        "documents": [
+          {
+            "document_id": "7188289f-df52-49b4-a071-e40a4c0ba6a9",
+            "date": "2016-07-19",
+            "has_summary": false
+          }
+        ]
+      },
+      "Q4 2019": {
+        "documents": [
+          {
+            "document_id": "bdfea008-0170-4326-a95f-3f17c5fdebf1",
+            "date": "2019-07-18",
+            "has_summary": false
+          }
+        ]
+      },
+      "Q2 2016": {
+        "documents": [
+          {
+            "document_id": "8a9fc652-df69-4bea-b8d5-1eefe564cab7",
+            "date": "2016-01-28",
+            "has_summary": false
+          }
+        ]
+      },
+      "Q4 2020": {
+        "documents": [
+          {
+            "document_id": "bac93873-eb84-47c4-b691-73b79e25582a",
+            "date": "2020-07-22",
+            "has_summary": false
+          }
+        ]
+      },
+      "Q3 2019": {
+        "documents": [
+          {
+            "document_id": "e7de3719-f064-4e1b-b178-aa6ef3bcbe16",
+            "date": "2019-04-24",
+            "has_summary": false
+          }
+        ]
+      },
+      "Q4 2018": {
+        "documents": [
+          {
+            "document_id": "501190b8-5902-45a1-9e2b-cfa400ba4177",
+            "date": "2018-07-19",
+            "has_summary": false
+          }
+        ]
+      },
+      "Q1 2020": {
+        "documents": [
+          {
+            "document_id": "d11b7132-b9cf-4400-9d0e-9a9c34e6d7f9",
+            "date": "2019-10-23",
+            "has_summary": false
+          }
+        ]
+      },
+      "Q1 2019": {
+        "documents": [
+          {
+            "document_id": "103d1cca-4f2c-49f7-ad49-059bc3cd96f6",
+            "date": "2018-10-24",
+            "has_summary": false
+          }
+        ]
+      },
+      "Q3 2020": {
+        "documents": [
+          {
+            "document_id": "ffe59cbf-41ee-42f0-adb4-7f3e9f0c2060",
+            "date": "2020-04-29",
+            "has_summary": false
+          }
+        ]
+      },
+      "Q3 2017": {
+        "documents": [
+          {
+            "document_id": "1a3a9d25-bdd4-4c6c-8b34-7c42bf9e7b3b",
+            "date": "2017-04-27",
+            "has_summary": false
+          }
+        ]
+      },
+      "Q3 2016": {
+        "documents": [
+          {
+            "document_id": "f3a51ea8-299d-4ef5-89be-f221b2f2e2a0",
+            "date": "2016-04-21",
+            "has_summary": false
+          }
+        ]
+      },
+      "Q2 2019": {
+        "documents": [
+          {
+            "document_id": "b92169b2-5243-4fba-aad2-b385fa618cdb",
+            "date": "2019-01-30",
+            "has_summary": false
+          }
+        ]
+      },
+      "Q3 2018": {
+        "documents": [
+          {
+            "document_id": "2aaf362c-ba42-47c3-b9da-5cf91cf18c66",
+            "date": "2018-04-26",
+            "has_summary": false
+          }
+        ]
+      },
+      "Q2 2020": {
+        "documents": [
+          {
+            "document_id": "2d1f3215-16b5-4350-b4e7-de5e8c23b3e4",
+            "date": "2020-01-29",
+            "has_summary": false
+          }
+        ]
+      },
+      "Q1 2017": {
+        "documents": [
+          {
+            "document_id": "cabb3bf8-234b-4bef-bc67-c213d5e3c703",
+            "date": "2016-10-20",
+            "has_summary": false
+          }
+        ]
+      },
+      "Q2 2018": {
+        "documents": [
+          {
+            "document_id": "a7aa3c72-6b8b-4a1e-a502-1a6ebf3e9696",
+            "date": "2018-01-31",
+            "has_summary": false
+          }
+        ]
+      },
+      "Q1 2018": {
+        "documents": [
+          {
+            "document_id": "bceb8cc8-27b5-429b-b114-d86388447e9a",
+            "date": "2017-10-26",
+            "has_summary": false
+          }
+        ]
+      },
+      "Q2 2017": {
+        "documents": [
+          {
+            "document_id": "2be26ac6-61af-47e3-9e06-2cc5b8880e8d",
+            "date": "2017-01-26",
+            "has_summary": false
+          }
+        ]
+      }
+    },
+    "has_category_summary": false
+  },
+  "1598ce28-8bb0-4787-ad40-f5227d3a72a6": {
+    "name": "1598ce28-8bb0-4787-ad40-f5227d3a72a6",
+    "time_periods": {
+      "Q4 2018": {
+        "documents": [
+          {
+            "document_id": "f53ee310-328c-45f4-be7a-917f61577afe",
+            "date": "2019-01-29",
+            "has_summary": false
+          }
+        ]
+      },
+      "Q4 2016": {
+        "documents": [
+          {
+            "document_id": "b5293366-d043-43d2-9ee4-c76f6652c08e",
+            "date": "2017-01-31",
+            "has_summary": false
+          }
+        ]
+      },
+      "Q1 2018": {
+        "documents": [
+          {
+            "document_id": "aba29516-22e2-4759-b55b-0954266aa16f",
+            "date": "2018-04-25",
+            "has_summary": false
+          }
+        ]
+      },
+      "Q4 2017": {
+        "documents": [
+          {
+            "document_id": "c164632e-6847-4005-a9ad-ef2e61489dbd",
+            "date": "2018-01-30",
+            "has_summary": false
+          }
+        ]
+      },
+      "Q1 2017": {
+        "documents": [
+          {
+            "document_id": "6c9d5d9e-15f5-4abd-b1e1-9caf14db73ef",
+            "date": "2017-05-01",
+            "has_summary": false
+          }
+        ]
+      },
+      "Q2 2020": {
+        "documents": [
+          {
+            "document_id": "acd35cb9-12ab-4a34-9ce0-18a2c3b62eda",
+            "date": "2020-07-28",
+            "has_summary": false
+          }
+        ]
+      },
+      "Q2 2018": {
+        "documents": [
+          {
+            "document_id": "b8c0b45e-5ee1-4851-acd3-a786e867cca6",
+            "date": "2018-07-25",
+            "has_summary": false
+          }
+        ]
+      },
+      "Q3 2017": {
+        "documents": [
+          {
+            "document_id": "709852d9-ea87-4577-b799-d01d79251be7",
+            "date": "2017-10-24",
+            "has_summary": false
+          }
+        ]
+      },
+      "Q3 2018": {
+        "documents": [
+          {
+            "document_id": "9e63d314-eb9a-4a74-857f-c8df3b5730f8",
+            "date": "2018-10-24",
+            "has_summary": false
+          }
+        ]
+      },
+      "Q2 2017": {
+        "documents": [
+          {
+            "document_id": "2770bc43-8695-49de-85b7-e4641bdc69fc",
+            "date": "2017-07-25",
+            "has_summary": false
+          }
+        ]
+      },
+      "Q1 2020": {
+        "documents": [
+          {
+            "document_id": "05d1609b-1930-463c-82ab-3d93bc598d14",
+            "date": "2020-04-28",
+            "has_summary": false
+          }
+        ]
+      },
+      "Q2 2019": {
+        "documents": [
+          {
+            "document_id": "49b3c41a-04d0-4296-8f67-fba0ccfd4476",
+            "date": "2019-07-30",
+            "has_summary": false
+          }
+        ]
+      },
+      "Q4 2019": {
+        "documents": [
+          {
+            "document_id": "58f6d727-f1ab-41f9-a02b-321ad7e5f7b0",
+            "date": "2020-01-28",
+            "has_summary": false
+          }
+        ]
+      },
+      "Q4 2015": {
+        "documents": [
+          {
+            "document_id": "72eef596-0f03-404a-b397-cdcefbeb98cf",
+            "date": "2016-01-19",
+            "has_summary": false
+          }
+        ]
+      },
+      "Q2 2016": {
+        "documents": [
+          {
+            "document_id": "d839691f-e394-4395-99d6-6ebc51ac1838",
+            "date": "2016-07-21",
+            "has_summary": false
+          }
+        ]
+      },
+      "Q3 2019": {
+        "documents": [
+          {
+            "document_id": "834fbc6a-9ac3-44b0-88e2-14ad0ea3919f",
+            "date": "2019-10-29",
+            "has_summary": false
+          }
+        ]
+      },
+      "Q3 2016": {
+        "documents": [
+          {
+            "document_id": "b0e55d81-4c1d-46d5-8cae-f81b22a8dc6b",
+            "date": "2016-10-20",
+            "has_summary": false
+          }
+        ]
+      },
+      "Q1 2016": {
+        "documents": [
+          {
+            "document_id": "6bdf0a12-4534-402b-9e75-15ed837ad9a3",
+            "date": "2016-04-21",
+            "has_summary": false
+          }
+        ]
+      },
+      "Q1 2019": {
+        "documents": [
+          {
+            "document_id": "42365b15-af5e-4316-bf19-3b416762a413",
+            "date": "2019-04-30",
+            "has_summary": false
+          }
+        ]
+      }
+    },
+    "has_category_summary": false
+  },
+  "077deca3-7e7e-4c48-b848-6f8cfcf84b5c": {
+    "name": "077deca3-7e7e-4c48-b848-6f8cfcf84b5c",
+    "time_periods": {
+      "Q3 2016": {
+        "documents": [
+          {
+            "document_id": "715669b7-9ff5-4250-b5a5-6653e896cff8",
+            "date": "2016-10-19",
+            "has_summary": false
+          }
+        ]
+      },
+      "Q1 2018": {
+        "documents": [
+          {
+            "document_id": "14daef31-42c0-46d3-9c6a-6fb67463c2c0",
+            "date": "2018-04-18",
+            "has_summary": false
+          }
+        ]
+      },
+      "Q1 2017": {
+        "documents": [
+          {
+            "document_id": "f123e1d5-3a1e-4c0a-b3f0-5233a41878ee",
+            "date": "2017-04-19",
+            "has_summary": false
+          }
+        ]
+      },
+      "Q1 2016": {
+        "documents": [
+          {
+            "document_id": "16817656-cb4f-45ad-b1ab-ec8a5cdb3e9d",
+            "date": "2016-04-20",
+            "has_summary": false
+          }
+        ]
+      },
+      "Q4 2019": {
+        "documents": [
+          {
+            "document_id": "2143a293-8bad-4096-961f-643d0af762c5",
+            "date": "2020-01-22",
+            "has_summary": false
+          }
+        ]
+      },
+      "Q2 2019": {
+        "documents": [
+          {
+            "document_id": "2f8c9e36-ee58-4a71-a7eb-f5b58e0d77d6",
+            "date": "2019-07-17",
+            "has_summary": false
+          }
+        ]
+      },
+      "Q3 2017": {
+        "documents": [
+          {
+            "document_id": "d8f6e679-117f-4780-a72f-f9f7f7745545",
+            "date": "2017-10-18",
+            "has_summary": false
+          }
+        ]
+      },
+      "Q2 2020": {
+        "documents": [
+          {
+            "document_id": "030d2ed4-8f7e-41c8-85a6-7093d8308159",
+            "date": "2020-07-15",
+            "has_summary": false
+          }
+        ]
+      },
+      "Q4 2016": {
+        "documents": [
+          {
+            "document_id": "768a5e03-1f9b-404f-b855-fd6760b74c1a",
+            "date": "2017-01-18",
+            "has_summary": false
+          }
+        ]
+      },
+      "Q4 2015": {
+        "documents": [
+          {
+            "document_id": "d16176fd-88cf-47a5-806d-434b565a3c01",
+            "date": "2016-01-20",
+            "has_summary": false
+          }
+        ]
+      },
+      "Q1 2019": {
+        "documents": [
+          {
+            "document_id": "b6ee9f5e-2e6c-4f3c-b5b4-75af52c9880c",
+            "date": "2019-04-17",
+            "has_summary": false
+          }
+        ]
+      },
+      "Q3 2018": {
+        "documents": [
+          {
+            "document_id": "7d5b239c-6ab4-4e40-afc8-1e80595d42e6",
+            "date": "2018-10-17",
+            "has_summary": false
+          }
+        ]
+      },
+      "Q1 2020": {
+        "documents": [
+          {
+            "document_id": "2bdbd2f4-be1c-40a8-af44-3849cc736201",
+            "date": "2020-04-15",
+            "has_summary": false
+          }
+        ]
+      },
+      "Q4 2017": {
+        "documents": [
+          {
+            "document_id": "15b2f408-e15a-48e0-bee6-216b3ddefdfa",
+            "date": "2018-01-17",
+            "has_summary": false
+          }
+        ]
+      },
+      "Q4 2018": {
+        "documents": [
+          {
+            "document_id": "7a4ef79b-56b1-462a-9fae-dc3871fa0f5c",
+            "date": "2019-01-23",
+            "has_summary": false
+          }
+        ]
+      },
+      "Q2 2018": {
+        "documents": [
+          {
+            "document_id": "5f3b25c6-0ba5-488a-96fb-771908f625ba",
+            "date": "2018-07-18",
+            "has_summary": false
+          }
+        ]
+      },
+      "Q2 2017": {
+        "documents": [
+          {
+            "document_id": "a7aad8b7-2b45-4059-9ee8-78381b3f9161",
+            "date": "2017-07-19",
+            "has_summary": false
+          }
+        ]
+      },
+      "Q3 2019": {
+        "documents": [
+          {
+            "document_id": "47b32556-12bb-4bb8-bd9d-7cc98327f937",
+            "date": "2019-10-16",
+            "has_summary": false
+          }
+        ]
+      },
+      "Q2 2016": {
+        "documents": [
+          {
+            "document_id": "c9905f88-3873-4695-a25a-10fc6c6c48cd",
+            "date": "2016-07-20",
+            "has_summary": false
+          }
+        ]
+      }
+    },
+    "has_category_summary": false
+  },
+  "5602d908-a5c5-43c1-b888-975dff32a2c4": {
+    "name": "5602d908-a5c5-43c1-b888-975dff32a2c4",
+    "time_periods": {
+      "Q1 2017": {
+        "documents": [
+          {
+            "document_id": "f182684d-b21a-4111-b8f5-df819f9a236c",
+            "date": "2016-05-12",
+            "has_summary": false
+          }
+        ]
+      },
+      "Q4 2016": {
+        "documents": [
+          {
+            "document_id": "2a8700a4-4c95-4033-9db7-8ac2824fef70",
+            "date": "2016-02-17",
+            "has_summary": false
+          }
+        ]
+      },
+      "Q1 2018": {
+        "documents": [
+          {
+            "document_id": "b17bd158-c50f-4805-b2ca-387f2e4bf4ab",
+            "date": "2017-05-09",
+            "has_summary": false
+          }
+        ]
+      },
+      "Q2 2020": {
+        "documents": [
+          {
+            "document_id": "c61f5ead-aa70-47e9-8092-bc06aa9815fc",
+            "date": "2019-08-15",
+            "has_summary": false
+          }
+        ]
+      },
+      "Q4 2020": {
+        "documents": [
+          {
+            "document_id": "d2993e0b-6e56-4ef4-aa77-83f97de99c32",
+            "date": "2020-02-13",
+            "has_summary": false
+          }
+        ]
+      },
+      "Q3 2017": {
+        "documents": [
+          {
+            "document_id": "f70aa508-9dbb-4740-a31e-b6953e41c955",
+            "date": "2016-11-10",
+            "has_summary": false
+          }
+        ]
+      },
+      "Q2 2018": {
+        "documents": [
+          {
+            "document_id": "151ef257-0874-44e9-8584-15a8e62e3ae8",
+            "date": "2017-08-10",
+            "has_summary": false
+          }
+        ]
+      },
+      "Q3 2020": {
+        "documents": [
+          {
+            "document_id": "73dedba4-4c22-46b7-974b-719bf54bf76b",
+            "date": "2019-11-14",
+            "has_summary": false
+          }
+        ]
+      },
+      "Q4 2019": {
+        "documents": [
+          {
+            "document_id": "468379f8-e7ee-449e-b2de-9c4e26859a44",
+            "date": "2019-02-14",
+            "has_summary": false
+          }
+        ]
+      },
+      "Q3 2019": {
+        "documents": [
+          {
+            "document_id": "dad186a9-fee5-4f56-a768-4db94e110b6c",
+            "date": "2018-11-15",
+            "has_summary": false
+          }
+        ]
+      },
+      "Q2 2021": {
+        "documents": [
+          {
+            "document_id": "1bb659b7-96c3-4be3-af0a-6e690a89a36e",
+            "date": "2020-08-19",
+            "has_summary": false
+          }
+        ]
+      },
+      "Q1 2020": {
+        "documents": [
+          {
+            "document_id": "3863678d-4d9c-40ba-8bac-9f441d5c5f6e",
+            "date": "2019-05-16",
+            "has_summary": false
+          }
+        ]
+      },
+      "Q1 2019": {
+        "documents": [
+          {
+            "document_id": "aca31d3a-3997-4cb9-a77a-a592bd8faa0f",
+            "date": "2018-05-10",
+            "has_summary": false
+          }
+        ]
+      },
+      "Q4 2018": {
+        "documents": [
+          {
+            "document_id": "ec0fc8a2-ec5b-4beb-836c-563242dee228",
+            "date": "2018-02-08",
+            "has_summary": false
+          }
+        ]
+      },
+      "Q1 2021": {
+        "documents": [
+          {
+            "document_id": "e4d53107-35e9-4bae-a626-182dff5d2893",
+            "date": "2020-05-21",
+            "has_summary": false
+          }
+        ]
+      },
+      "Q2 2019": {
+        "documents": [
+          {
+            "document_id": "b34ae7f4-20dd-4d8d-933f-53fb5795b97b",
+            "date": "2018-08-16",
+            "has_summary": false
+          }
+        ]
+      },
+      "Q3 2018": {
+        "documents": [
+          {
+            "document_id": "c19dbcba-bc1a-44e9-a162-41218ebe2998",
+            "date": "2017-11-09",
+            "has_summary": false
+          }
+        ]
+      },
+      "Q2 2017": {
+        "documents": [
+          {
+            "document_id": "c5ed8f03-cfa5-4282-b711-bf0c3b2afb4d",
+            "date": "2016-08-11",
+            "has_summary": false
+          }
+        ]
+      },
+      "Q4 2017": {
+        "documents": [
+          {
+            "document_id": "9ff7b015-9b87-4471-a48c-6fb9faf470af",
+            "date": "2017-02-09",
+            "has_summary": false
+          }
+        ]
+      }
+    },
+    "has_category_summary": false
+  },
+  "f39dc51b-689e-424d-af9b-0ba2d2c0bb86": {
+    "name": "f39dc51b-689e-424d-af9b-0ba2d2c0bb86",
+    "time_periods": {
+      "Q2 2016": {
+        "documents": [
+          {
+            "document_id": "3299680c-e027-4b9b-a2d2-a55a89726654",
+            "date": "2016-02-10",
+            "has_summary": false
+          }
+        ]
+      },
+      "Q3 2019": {
+        "documents": [
+          {
+            "document_id": "14c2c798-8b70-4522-b372-12a0726e9b40",
+            "date": "2019-05-15",
+            "has_summary": false
+          }
+        ]
+      },
+      "Q4 2018": {
+        "documents": [
+          {
+            "document_id": "68ad0bf4-815d-46b5-b2a7-58b018dbcbe3",
+            "date": "2018-08-15",
+            "has_summary": false
+          }
+        ]
+      },
+      "Q2 2020": {
+        "documents": [
+          {
+            "document_id": "e379a135-ee39-4e52-9e4d-1e7891914f79",
+            "date": "2020-02-12",
+            "has_summary": false
+          }
+        ]
+      },
+      "Q4 2019": {
+        "documents": [
+          {
+            "document_id": "cdb476fc-7209-4527-9e75-21a64993db96",
+            "date": "2019-08-14",
+            "has_summary": false
+          }
+        ]
+      },
+      "Q1 2017": {
+        "documents": [
+          {
+            "document_id": "61200619-e0f5-4766-a78b-ab481487d591",
+            "date": "2016-11-16",
+            "has_summary": false
+          }
+        ]
+      },
+      "Q3 2016": {
+        "documents": [
+          {
+            "document_id": "dd1e2c0f-cc2c-4862-ae6e-b7869a22074c",
+            "date": "2016-05-18",
+            "has_summary": false
+          }
+        ]
+      },
+      "Q4 2017": {
+        "documents": [
+          {
+            "document_id": "5ab00814-587c-40b9-b1de-2874b6b0ceb8",
+            "date": "2017-08-16",
+            "has_summary": false
+          }
+        ]
+      },
+      "Q1 2019": {
+        "documents": [
+          {
+            "document_id": "828c1a7c-50c6-4668-a662-d37865b7468c",
+            "date": "2018-11-14",
+            "has_summary": false
+          }
+        ]
+      },
+      "Q2 2018": {
+        "documents": [
+          {
+            "document_id": "00c344b6-b05d-475c-85db-7e054152070e",
+            "date": "2018-02-14",
+            "has_summary": false
+          }
+        ]
+      },
+      "Q1 2020": {
+        "documents": [
+          {
+            "document_id": "b8afb776-fe88-41ad-94ab-1cc3792e66cc",
+            "date": "2019-11-13",
+            "has_summary": false
+          }
+        ]
+      },
+      "Q2 2019": {
+        "documents": [
+          {
+            "document_id": "976ae4db-7948-4434-ae65-a6538989a15e",
+            "date": "2019-02-13",
+            "has_summary": false
+          }
+        ]
+      },
+      "Q4 2020": {
+        "documents": [
+          {
+            "document_id": "10c1d6b7-8435-46ab-a016-069faf73573f",
+            "date": "2020-08-12",
+            "has_summary": false
+          }
+        ]
+      },
+      "Q2 2017": {
+        "documents": [
+          {
+            "document_id": "fec74e8d-aef4-4c80-aded-b86ca26b3ad3",
+            "date": "2017-02-15",
+            "has_summary": false
+          }
+        ]
+      },
+      "Q1 2018": {
+        "documents": [
+          {
+            "document_id": "4367451b-7b02-4f58-ba64-4a5fd4fb5729",
+            "date": "2017-11-15",
+            "has_summary": false
+          }
+        ]
+      },
+      "Q3 2018": {
+        "documents": [
+          {
+            "document_id": "8a7034dd-aeac-413e-b55c-7c19a82a7b9c",
+            "date": "2018-05-16",
+            "has_summary": false
+          }
+        ]
+      },
+      "Q3 2017": {
+        "documents": [
+          {
+            "document_id": "f2d8759a-4908-4659-b1b3-c3f6670308a4",
+            "date": "2017-05-17",
+            "has_summary": false
+          }
+        ]
+      },
+      "Q3 2020": {
+        "documents": [
+          {
+            "document_id": "ed50c9ff-de0a-4b51-bda4-b65ec87e04e7",
+            "date": "2020-05-13",
+            "has_summary": false
+          }
+        ]
+      },
+      "Q4 2016": {
+        "documents": [
+          {
+            "document_id": "95328f4e-0af1-4374-a227-48e425f0c29b",
+            "date": "2016-08-17",
+            "has_summary": false
+          }
+        ]
+      }
+    },
+    "has_category_summary": false
+  }
+}

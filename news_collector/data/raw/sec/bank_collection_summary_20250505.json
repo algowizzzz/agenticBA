@@ -1,0 +1,86 @@
+{
+  "collection_date": "2025-05-05T16:48:11.502786",
+  "collection_duration": "0:00:01.691221",
+  "bank_type": "global",
+  "filing_types": [
+    "8-K",
+    "10-Q"
+  ],
+  "banks": [
+    {
+      "ticker": "JPM",
+      "company": "JPMorgan Chase & Co.",
+      "filings_collected": 0
+    },
+    {
+      "ticker": "BAC",
+      "company": "Bank of America Corporation",
+      "filings_collected": 0
+    },
+    {
+      "ticker": "C",
+      "company": "Citigroup Inc.",
+      "filings_collected": 0
+    },
+    {
+      "ticker": "WFC",
+      "company": "Wells Fargo & Company",
+      "filings_collected": 0
+    },
+    {
+      "ticker": "GS",
+      "company": "Goldman Sachs Group Inc.",
+      "filings_collected": 5
+    },
+    {
+      "ticker": "MS",
+      "company": "Morgan Stanley",
+      "filings_collected": 0
+    },
+    {
+      "ticker": "HSBC",
+      "company": "HSBC Holdings plc",
+      "filings_collected": 0
+    },
+    {
+      "ticker": "BCS",
+      "company": "Barclays PLC",
+      "filings_collected": 0
+    },
+    {
+      "ticker": "DB",
+      "company": "Deutsche Bank AG",
+      "filings_collected": 0
+    },
+    {
+      "ticker": "UBS",
+      "company": "UBS Group AG",
+      "filings_collected": 0
+    },
+    {
+      "ticker": "CS",
+      "company": "Credit Suisse Group AG",
+      "filings_collected": 0
+    },
+    {
+      "ticker": "MUFG",
+      "company": "Mitsubishi UFJ Financial Group, Inc.",
+      "filings_collected": 0
+    },
+    {
+      "ticker": "SMFG",
+      "company": "Sumitomo Mitsui Financial Group, Inc.",
+      "filings_collected": 0
+    },
+    {
+      "ticker": "IDCBY",
+      "company": "Industrial and Commercial Bank of China Limited",
+      "filings_collected": 0
+    },
+    {
+      "ticker": "MFG",
+      "company": "Mizuho Financial Group, Inc.",
+      "filings_collected": 0
+    }
+  ]
+}

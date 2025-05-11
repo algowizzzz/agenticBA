@@ -1,0 +1,45 @@
+================================================================================
+SEC FILING ANALYSIS REPORT - 2025-05-05
+================================================================================
+
+Total SEC filings collected: 15
+
+FILINGS BY COMPANY
+--------------------------------------------------
+GS (Goldman Sachs Group Inc.): 14 filings
+  Filing types:
+    - 4: 5
+    - 10: 3
+    - 8: 3
+  Date range: 2025-03-03 to 2025-04-28
+  Content analysis:
+    - 14 filings with content
+    - Average content length: 12492 characters
+    - Top keywords: SEC (290), revenue (45), litigation (33), compliance (33), director (31)
+
+AAPL (Apple Inc.): 1 filings
+  Date range: 2025-04-16 to 2025-04-16
+  Content analysis:
+    - 1 filings with content
+    - Average content length: 36518 characters
+    - Top keywords: SEC (81), regulatory (13), compliance (11), litigation (8), guidance (7)
+
+TOP KEYWORDS ACROSS ALL FILINGS
+--------------------------------------------------
+SEC: 371 mentions
+revenue: 45 mentions
+compliance: 44 mentions
+litigation: 41 mentions
+risk: 34 mentions
+director: 31 mentions
+guidance: 28 mentions
+share: 28 mentions
+regulatory: 25 mentions
+investigation: 18 mentions
+technology: 8 mentions
+executive: 8 mentions
+stock: 8 mentions
+
+================================================================================
+Report generated on 2025-05-05 16:37:56
+================================================================================

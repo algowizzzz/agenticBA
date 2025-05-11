@@ -14,8 +14,8 @@ import time  # Added time import
 # Import utility modules
 from .config import sanitize_json_response
 from .tool4_metadata_lookup import (
-    get_metadata_lookup_tool,
-)  # Use the modified tool factory
+    get_metadata_lookup_tool_semantic as get_metadata_lookup_tool,
+)  # Use the semantic lookup tool with alias for compatibility
 from .tool5_transcript_analysis import (
     get_document_analysis_tool,
 )  # Use the modified tool factory
@@ -166,7 +166,7 @@ def create_department_tool(api_key: Optional[str] = None) -> Callable:
     )
 
 
-def create_category_tool() -> Callable:
+def create_category_tool(api_key: Optional[str] = None) -> Callable:
     """Create category tool with validation."""
     from .tool2_category import category_summary_tool
 
@@ -195,8 +195,8 @@ def create_category_tool() -> Callable:
                 "error": "Category ID missing in input format 'query, category=<ID>'"
             }  # Return error immediately
 
-        # Call the underlying tool
-        return category_summary_tool(query, category_id)
+        # Call the underlying tool with the API key
+        return category_summary_tool(query, category_id, api_key)
 
     return create_tool_with_validation(
         category_tool_wrapper, "category_tool", validate_category_response
@@ -906,7 +906,7 @@ def create_transcript_agent_tool(
     logger.info("[Transcript Agent Tool] Initializing...")
     try:
         # 1. Create instances of the internal tools for the Transcript Agent
-        category_tool_instance = create_category_tool()
+        category_tool_instance = create_category_tool(api_key)
         metadata_lookup_tool_instance = create_metadata_lookup_tool_wrapper(api_key)
         document_analysis_tool_instance = create_document_analysis_tool_wrapper(api_key)
 
@@ -985,6 +985,8 @@ Thought:{agent_scratchpad}
                 agent=react_agent,
                 tools=internal_tools,
                 handle_parsing_errors="Check your output and make sure it conforms to the expected format!",
+                max_iterations=20,  # Increase max iterations to avoid hitting the limit
+                early_stopping_method="generate",  # Stop when a final answer is generated
             )
 
             # --- Define helper function for execution ---

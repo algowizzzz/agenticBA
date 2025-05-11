@@ -1,0 +1,754 @@
+{
+  "ae5e9f7b-f64a-4be4-8fa2-8d6989a1d6e3": {
+    "category_id": "AMZN",
+    "document_name": "2020-Jan-30-AMZN.txt"
+  },
+  "7e538606-f18b-410f-8284-59e5929f2aaa": {
+    "document_name": "2016-Apr-28-AMZN.txt",
+    "category_id": "AMZN"
+  },
+  "e64e6c04-9a86-4c8b-9802-868c62930f5e": {
+    "document_name": "2019-Oct-24-AMZN.txt",
+    "category_id": "AMZN"
+  },
+  "d3427db7-3f62-4127-b86b-3a24cccf6f7e": {
+    "document_name": "2020-Apr-30-AMZN.txt",
+    "category_id": "AMZN"
+  },
+  "a1865281-b3b2-4fa0-8500-bb9678a63824": {
+    "document_name": "2019-Apr-25-AMZN.txt",
+    "category_id": "AMZN"
+  },
+  "29db40d9-7313-4c3b-9d52-b82457f5cf68": {
+    "document_name": "2017-Jul-27-AMZN.txt",
+    "category_id": "AMZN"
+  },
+  "7e407d90-f242-4e0a-8adc-652ac34e0064": {
+    "document_name": "2018-Jul-26-AMZN.txt",
+    "category_id": "AMZN"
+  },
+  "3066867a-c8e7-4a7d-ba6f-d396374aa645": {
+    "category_id": "AMZN",
+    "document_name": "2018-Oct-25-AMZN.txt"
+  },
+  "4514ce72-36f3-4478-9854-65348be1bcd9": {
+    "document_name": "2016-Jan-28-AMZN.txt",
+    "category_id": "AMZN"
+  },
+  "36c904fa-4403-4c80-9ed4-6d929edd8796": {
+    "category_id": "AMZN",
+    "document_name": "2018-Feb-01-AMZN.txt"
+  },
+  "b8b246b9-baa7-42f1-8d7a-9101e426550a": {
+    "category_id": "AMZN",
+    "document_name": "2020-Jul-30-AMZN.txt"
+  },
+  "88270af8-bfd6-41e8-989a-d9ca9b41d701": {
+    "category_id": "AMZN",
+    "document_name": "2019-Jul-25-AMZN.txt"
+  },
+  "8e1cdb0f-46c1-4862-97dd-4eaefa73288d": {
+    "category_id": "AMZN",
+    "document_name": "2017-Apr-27-AMZN.txt"
+  },
+  "dff131fb-62f7-4f23-9727-977ecf92a4b1": {
+    "category_id": "AMZN",
+    "document_name": "2019-Jan-31-AMZN.txt"
+  },
+  "0a5ee092-d490-44f3-b3ca-c1e9f5bbf7ec": {
+    "category_id": "AMZN",
+    "document_name": "2018-Apr-26-AMZN.txt"
+  },
+  "a3a6d5e3-1944-4cfc-a95b-46e6d6a79406": {
+    "document_name": "2016-Oct-27-AMZN.txt",
+    "category_id": "AMZN"
+  },
+  "bde3a713-e38f-43db-962a-2b7a293d5d4a": {
+    "category_id": "AMZN",
+    "document_name": "2017-Feb-02-AMZN.txt"
+  },
+  "96d65eb1-4f00-456b-81b3-728d80f280c9": {
+    "category_id": "AMZN",
+    "document_name": "2016-Jul-28-AMZN.txt"
+  },
+  "8e26c676-2ac4-46cb-9382-d1991351f163": {
+    "category_id": "AMZN",
+    "document_name": "2017-Oct-26-AMZN.txt"
+  },
+  "847ed110-b532-4a67-ac52-f2e2dc3aa9df": {
+    "category_id": "AAPL",
+    "document_name": "2018-May-01-AAPL.txt"
+  },
+  "2d39dab3-1c1e-408a-88d9-53f5bba43403": {
+    "category_id": "AAPL",
+    "document_name": "2019-Oct-30-AAPL.txt"
+  },
+  "cfd47f1f-65da-4358-af09-9cccd212632f": {
+    "category_id": "AAPL",
+    "document_name": "2016-Jan-26-AAPL.txt"
+  },
+  "eddc7334-742e-4c8d-971c-768c3b4d20c3": {
+    "category_id": "AAPL",
+    "document_name": "2020-Jul-30-AAPL.txt"
+  },
+  "dc8167db-d406-4774-9d1a-da8c9b8273eb": {
+    "document_name": "2017-Aug-01-AAPL.txt",
+    "category_id": "AAPL"
+  },
+  "9fd97e6f-b821-44f3-a531-6345ae617344": {
+    "category_id": "AAPL",
+    "document_name": "2020-Jan-28-AAPL.txt"
+  },
+  "e66b33bf-af3f-4681-8aae-94011f332c4d": {
+    "document_name": "2016-Apr-26-AAPL.txt",
+    "category_id": "AAPL"
+  },
+  "1c245c5a-1bfe-45c6-a44f-5f37511c5d42": {
+    "document_name": "2017-Jan-31-AAPL.txt",
+    "category_id": "AAPL"
+  },
+  "5003d409-a441-4a17-8ecb-4354cd4f3f37": {
+    "category_id": "AAPL",
+    "document_name": "2019-Apr-30-AAPL.txt"
+  },
+  "b96ccaa3-78d2-42d8-aa47-fdd487775119": {
+    "document_name": "2017-Nov-02-AAPL.txt",
+    "category_id": "AAPL"
+  },
+  "169593a1-62d3-4376-a6e9-db3443ae9658": {
+    "category_id": "AAPL",
+    "document_name": "2016-Oct-25-AAPL.txt"
+  },
+  "5969ece6-a45a-4726-ab3c-419450cdf146": {
+    "category_id": "AAPL",
+    "document_name": "2016-Jul-26-AAPL.txt"
+  },
+  "945c9089-eb71-4b6a-8b1d-4eb0004bb27f": {
+    "category_id": "AAPL",
+    "document_name": "2017-May-02-AAPL.txt"
+  },
+  "29c41506-6a49-4ebe-8f13-76607b4c117a": {
+    "category_id": "AAPL",
+    "document_name": "2019-Jul-30-AAPL.txt"
+  },
+  "5da7677f-f71c-4ebb-a7bc-75bd23bbeb1b": {
+    "document_name": "2019-Jan-29-AAPL.txt",
+    "category_id": "AAPL"
+  },
+  "ac563310-91d8-4d9d-b030-3c9cdd18674c": {
+    "category_id": "AAPL",
+    "document_name": "2018-Jul-31-AAPL.txt"
+  },
+  "286b72ac-a473-4eaa-a71e-8c9a53eb899b": {
+    "document_name": "2018-Feb-01-AAPL.txt",
+    "category_id": "AAPL"
+  },
+  "cbe9aced-b988-4785-9eb9-175ae77de51d": {
+    "document_name": "2018-Nov-01-AAPL.txt",
+    "category_id": "AAPL"
+  },
+  "45247e77-068a-4ea5-8036-04a682c76abf": {
+    "document_name": "2020-Apr-30-AAPL.txt",
+    "category_id": "AAPL"
+  },
+  "e257fce7-01cc-4cb3-b15f-034a038f062a": {
+    "category_id": "INTC",
+    "document_name": "2019-Jan-24-INTC.txt"
+  },
+  "4c80d92e-c91e-4ed9-bdab-562d41d5b462": {
+    "document_name": "2019-Oct-24-INTC.txt",
+    "category_id": "INTC"
+  },
+  "57ef51e8-3ceb-4d11-b6c6-5c0eaac309e2": {
+    "document_name": "2019-Apr-25-INTC.txt",
+    "category_id": "INTC"
+  },
+  "dce50f58-a2dd-441e-9e36-be510ea8f9b3": {
+    "category_id": "INTC",
+    "document_name": "2017-Jul-27-INTC.txt"
+  },
+  "5bef4285-80d1-45bd-a0c2-4e25f8089920": {
+    "document_name": "2016-Jul-20-INTC.txt",
+    "category_id": "INTC"
+  },
+  "b5ee749b-6296-44e0-b11a-6bf71b3e7a24": {
+    "category_id": "INTC",
+    "document_name": "2018-Jul-26-INTC.txt"
+  },
+  "a8e5eb78-1844-41a6-8d08-832453349e95": {
+    "category_id": "INTC",
+    "document_name": "2018-Oct-25-INTC.txt"
+  },
+  "2a3434ba-5fbc-4c44-b29e-12f7e0a4cbc5": {
+    "document_name": "2018-Jan-25-INTC.txt",
+    "category_id": "INTC"
+  },
+  "db245149-a508-4457-9136-4302e3e87516": {
+    "document_name": "2020-Jul-23-INTC.txt",
+    "category_id": "INTC"
+  },
+  "7a1511a3-7142-47f4-811b-08f3747c84a5": {
+    "document_name": "2019-Jul-25-INTC.txt",
+    "category_id": "INTC"
+  },
+  "56f537d5-9d89-4bd1-879f-09bf4787b076": {
+    "document_name": "2017-Apr-27-INTC.txt",
+    "category_id": "INTC"
+  },
+  "3e8787b3-177d-4912-a49c-e64d083e2c4c": {
+    "document_name": "2018-Apr-26-INTC.txt",
+    "category_id": "INTC"
+  },
+  "674ddfcb-c397-4b4b-b4c3-1370a18aa9e1": {
+    "document_name": "2016-Oct-18-INTC.txt",
+    "category_id": "INTC"
+  },
+  "345230d4-d49e-449a-b66e-7368cdae4b83": {
+    "document_name": "2020-Apr-23-INTC.txt",
+    "category_id": "INTC"
+  },
+  "d06c92db-d7b8-46bf-a7a3-164dbf2d5b41": {
+    "document_name": "2017-Jan-26-INTC.txt",
+    "category_id": "INTC"
+  },
+  "0bbc8cf7-f020-4d4d-94ae-66c95587b4ea": {
+    "document_name": "2016-Jan-14-INTC.txt",
+    "category_id": "INTC"
+  },
+  "8644566d-4632-4c5a-9f2d-27634819e04b": {
+    "category_id": "INTC",
+    "document_name": "2016-Apr-19-INTC.txt"
+  },
+  "95169fd9-70cf-49ed-bb34-cf82a84b6e9b": {
+    "document_name": "2017-Oct-26-INTC.txt",
+    "category_id": "INTC"
+  },
+  "898a3819-d404-4d78-84b1-7e0452801c66": {
+    "category_id": "INTC",
+    "document_name": "2020-Jan-23-INTC.txt"
+  },
+  "a447b829-5612-400a-8459-95487ae22e1e": {
+    "category_id": "MU",
+    "document_name": "2018-Sep-20-MU.txt"
+  },
+  "0fd5a117-76d3-4509-a08f-00e8989ffd14": {
+    "category_id": "MU",
+    "document_name": "2019-Mar-20-MU.txt"
+  },
+  "23c41af9-e593-4d57-8239-7a5d7ed1d1d4": {
+    "category_id": "MU",
+    "document_name": "2019-Dec-18-MU.txt"
+  },
+  "82bd3b7a-d865-4006-96c3-6be46c18cc0c": {
+    "category_id": "MU",
+    "document_name": "2016-Dec-21-MU.txt"
+  },
+  "30a5e8f2-117e-4540-8703-dd8b4f957677": {
+    "document_name": "2016-Oct-04-MU.txt",
+    "category_id": "MU"
+  },
+  "f9bb933f-f2f6-4007-b410-e939b9dc2399": {
+    "category_id": "MU",
+    "document_name": "2017-Mar-23-MU.txt"
+  },
+  "a82150cc-4c7f-4276-addc-6bf81cc14098": {
+    "category_id": "MU",
+    "document_name": "2020-Jun-29-MU.txt"
+  },
+  "21d2e3bc-c815-4f6c-a597-12dc843a94cd": {
+    "document_name": "2018-Mar-22-MU.txt",
+    "category_id": "MU"
+  },
+  "7a96ae04-b737-4650-9afb-80e37c31422e": {
+    "document_name": "2019-Jun-25-MU.txt",
+    "category_id": "MU"
+  },
+  "4611a704-1186-4c4a-ac05-a46b60833522": {
+    "category_id": "MU",
+    "document_name": "2017-Dec-19-MU.txt"
+  },
+  "1253b37b-09a1-4e11-9b02-38759d525a6d": {
+    "document_name": "2018-Dec-18-MU.txt",
+    "category_id": "MU"
+  },
+  "2cf0da85-42da-4a49-9a1a-197e9d626947": {
+    "category_id": "MU",
+    "document_name": "2020-Mar-25-MU.txt"
+  },
+  "8f8e68b8-bb8e-4e2d-a07e-dec0d9586d9e": {
+    "document_name": "2019-Sep-26-MU.txt",
+    "category_id": "MU"
+  },
+  "8036abf5-cc0f-4eee-9ac0-09986941c5e1": {
+    "category_id": "MU",
+    "document_name": "2016-Jun-30-MU.txt"
+  },
+  "f46a4c65-5d4d-47ab-90ae-21f36d504c94": {
+    "document_name": "2017-Sep-26-MU.txt",
+    "category_id": "MU"
+  },
+  "5162f6f9-a506-4d9d-8387-333a74e6ff57": {
+    "document_name": "2017-Jun-29-MU.txt",
+    "category_id": "MU"
+  },
+  "083e4790-dd41-45ca-bdd7-70da09ca8f7b": {
+    "category_id": "MU",
+    "document_name": "2016-Mar-30-MU.txt"
+  },
+  "053065d9-d452-4891-9ad9-19fcc952051b": {
+    "document_name": "2018-Jul-23-GOOGL.txt",
+    "category_id": "989b35ce-b8fd-44dc-b53f-2d3233a85706"
+  },
+  "f3805a44-567e-4ff3-9a91-e40c4bed0a0c": {
+    "document_name": "2020-Apr-28-GOOGL.txt",
+    "category_id": "989b35ce-b8fd-44dc-b53f-2d3233a85706"
+  },
+  "eff74107-717d-4d2c-a3ec-5b4bc2164fe2": {
+    "document_name": "2017-Apr-27-GOOGL.txt",
+    "category_id": "989b35ce-b8fd-44dc-b53f-2d3233a85706"
+  },
+  "e93b73f9-617f-467f-8cc1-42a1fc5a1cb2": {
+    "document_name": "2019-Oct-28-GOOGL.txt",
+    "category_id": "989b35ce-b8fd-44dc-b53f-2d3233a85706"
+  },
+  "592fcaa2-0ae1-4f3f-b34f-54d84bddbd92": {
+    "document_name": "2017-Jul-24-GOOGL.txt",
+    "category_id": "989b35ce-b8fd-44dc-b53f-2d3233a85706"
+  },
+  "8276ae38-0456-40d8-ab01-ccd11f5b0d86": {
+    "document_name": "2016-Jul-28-GOOGL.txt",
+    "category_id": "989b35ce-b8fd-44dc-b53f-2d3233a85706"
+  },
+  "06cfa48b-3494-44d6-bcfc-b81c325b9881": {
+    "document_name": "2019-Jul-25-GOOGL.txt",
+    "category_id": "989b35ce-b8fd-44dc-b53f-2d3233a85706"
+  },
+  "b84b4c29-a373-4108-a7a3-3adcdcdc6f6c": {
+    "document_name": "2019-Feb-04-GOOGL.txt",
+    "category_id": "989b35ce-b8fd-44dc-b53f-2d3233a85706"
+  },
+  "bd69e55d-7ee5-4fe1-ba00-06df6988ef97": {
+    "category_id": "989b35ce-b8fd-44dc-b53f-2d3233a85706",
+    "document_name": "2018-Oct-25-GOOGL.txt"
+  },
+  "7b58cd2b-8a0e-4083-886e-920f52d3da66": {
+    "document_name": "2016-Apr-21-GOOGL.txt",
+    "category_id": "989b35ce-b8fd-44dc-b53f-2d3233a85706"
+  },
+  "a7c2a04a-1580-4cda-b5a7-2af4847e6166": {
+    "document_name": "2016-Oct-27-GOOGL.txt",
+    "category_id": "989b35ce-b8fd-44dc-b53f-2d3233a85706"
+  },
+  "57bc2240-b0c1-45ad-ad13-ac16f6010329": {
+    "category_id": "989b35ce-b8fd-44dc-b53f-2d3233a85706",
+    "document_name": "2018-Apr-23-GOOGL.txt"
+  },
+  "9cd19c8a-f066-4144-a996-7c43627a0906": {
+    "category_id": "989b35ce-b8fd-44dc-b53f-2d3233a85706",
+    "document_name": "2017-Oct-26-GOOGL.txt"
+  },
+  "2dd5297e-bf9e-47a5-94f6-668992b8f99b": {
+    "document_name": "2019-Apr-29-GOOGL.txt",
+    "category_id": "989b35ce-b8fd-44dc-b53f-2d3233a85706"
+  },
+  "56ad116f-101b-4890-b0e0-5df305fd4c0f": {
+    "document_name": "2016-Feb-01-GOOGL.txt",
+    "category_id": "989b35ce-b8fd-44dc-b53f-2d3233a85706"
+  },
+  "e761cbf9-2ca9-42e6-b91e-4867d82a0f3e": {
+    "document_name": "2020-Jul-30-GOOGL.txt",
+    "category_id": "989b35ce-b8fd-44dc-b53f-2d3233a85706"
+  },
+  "49993f1f-daa7-4f09-8d97-f08330aa49f1": {
+    "category_id": "989b35ce-b8fd-44dc-b53f-2d3233a85706",
+    "document_name": "2017-Jan-26-GOOGL.txt"
+  },
+  "1d3f7e0b-6a20-4522-9a22-e424e5430f71": {
+    "document_name": "2018-Feb-01-GOOGL.txt",
+    "category_id": "989b35ce-b8fd-44dc-b53f-2d3233a85706"
+  },
+  "076d0f02-1e35-4127-a079-844c810f9bec": {
+    "category_id": "989b35ce-b8fd-44dc-b53f-2d3233a85706",
+    "document_name": "2020-Feb-03-GOOGL.txt"
+  },
+  "093ef433-7944-4437-b42b-898af33385ab": {
+    "category_id": "5d1b4d21-59cb-4ff3-bae1-fe9f1129cf18",
+    "document_name": "2017-Jul-20-MSFT.txt"
+  },
+  "7188289f-df52-49b4-a071-e40a4c0ba6a9": {
+    "category_id": "5d1b4d21-59cb-4ff3-bae1-fe9f1129cf18",
+    "document_name": "2016-Jul-19-MSFT.txt"
+  },
+  "bdfea008-0170-4326-a95f-3f17c5fdebf1": {
+    "document_name": "2019-Jul-18-MSFT.txt",
+    "category_id": "5d1b4d21-59cb-4ff3-bae1-fe9f1129cf18"
+  },
+  "8a9fc652-df69-4bea-b8d5-1eefe564cab7": {
+    "category_id": "5d1b4d21-59cb-4ff3-bae1-fe9f1129cf18",
+    "document_name": "2016-Jan-28-MSFT.txt"
+  },
+  "bac93873-eb84-47c4-b691-73b79e25582a": {
+    "category_id": "5d1b4d21-59cb-4ff3-bae1-fe9f1129cf18",
+    "document_name": "2020-Jul-22-MSFT.txt"
+  },
+  "e7de3719-f064-4e1b-b178-aa6ef3bcbe16": {
+    "category_id": "5d1b4d21-59cb-4ff3-bae1-fe9f1129cf18",
+    "document_name": "2019-Apr-24-MSFT.txt"
+  },
+  "501190b8-5902-45a1-9e2b-cfa400ba4177": {
+    "document_name": "2018-Jul-19-MSFT.txt",
+    "category_id": "5d1b4d21-59cb-4ff3-bae1-fe9f1129cf18"
+  },
+  "d11b7132-b9cf-4400-9d0e-9a9c34e6d7f9": {
+    "document_name": "2019-Oct-23-MSFT.txt",
+    "category_id": "5d1b4d21-59cb-4ff3-bae1-fe9f1129cf18"
+  },
+  "103d1cca-4f2c-49f7-ad49-059bc3cd96f6": {
+    "category_id": "5d1b4d21-59cb-4ff3-bae1-fe9f1129cf18",
+    "document_name": "2018-Oct-24-MSFT.txt"
+  },
+  "ffe59cbf-41ee-42f0-adb4-7f3e9f0c2060": {
+    "document_name": "2020-Apr-29-MSFT.txt",
+    "category_id": "5d1b4d21-59cb-4ff3-bae1-fe9f1129cf18"
+  },
+  "1a3a9d25-bdd4-4c6c-8b34-7c42bf9e7b3b": {
+    "document_name": "2017-Apr-27-MSFT.txt",
+    "category_id": "5d1b4d21-59cb-4ff3-bae1-fe9f1129cf18"
+  },
+  "f3a51ea8-299d-4ef5-89be-f221b2f2e2a0": {
+    "category_id": "5d1b4d21-59cb-4ff3-bae1-fe9f1129cf18",
+    "document_name": "2016-Apr-21-MSFT.txt"
+  },
+  "b92169b2-5243-4fba-aad2-b385fa618cdb": {
+    "document_name": "2019-Jan-30-MSFT.txt",
+    "category_id": "5d1b4d21-59cb-4ff3-bae1-fe9f1129cf18"
+  },
+  "2aaf362c-ba42-47c3-b9da-5cf91cf18c66": {
+    "document_name": "2018-Apr-26-MSFT.txt",
+    "category_id": "5d1b4d21-59cb-4ff3-bae1-fe9f1129cf18"
+  },
+  "2d1f3215-16b5-4350-b4e7-de5e8c23b3e4": {
+    "document_name": "2020-Jan-29-MSFT.txt",
+    "category_id": "5d1b4d21-59cb-4ff3-bae1-fe9f1129cf18"
+  },
+  "cabb3bf8-234b-4bef-bc67-c213d5e3c703": {
+    "document_name": "2016-Oct-20-MSFT.txt",
+    "category_id": "5d1b4d21-59cb-4ff3-bae1-fe9f1129cf18"
+  },
+  "a7aa3c72-6b8b-4a1e-a502-1a6ebf3e9696": {
+    "category_id": "5d1b4d21-59cb-4ff3-bae1-fe9f1129cf18",
+    "document_name": "2018-Jan-31-MSFT.txt"
+  },
+  "bceb8cc8-27b5-429b-b114-d86388447e9a": {
+    "document_name": "2017-Oct-26-MSFT.txt",
+    "category_id": "5d1b4d21-59cb-4ff3-bae1-fe9f1129cf18"
+  },
+  "2be26ac6-61af-47e3-9e06-2cc5b8880e8d": {
+    "document_name": "2017-Jan-26-MSFT.txt",
+    "category_id": "5d1b4d21-59cb-4ff3-bae1-fe9f1129cf18"
+  },
+  "f53ee310-328c-45f4-be7a-917f61577afe": {
+    "document_name": "2019-Jan-29-AMD.txt",
+    "category_id": "1598ce28-8bb0-4787-ad40-f5227d3a72a6"
+  },
+  "b5293366-d043-43d2-9ee4-c76f6652c08e": {
+    "category_id": "1598ce28-8bb0-4787-ad40-f5227d3a72a6",
+    "document_name": "2017-Jan-31-AMD.txt"
+  },
+  "aba29516-22e2-4759-b55b-0954266aa16f": {
+    "category_id": "1598ce28-8bb0-4787-ad40-f5227d3a72a6",
+    "document_name": "2018-Apr-25-AMD.txt"
+  },
+  "c164632e-6847-4005-a9ad-ef2e61489dbd": {
+    "category_id": "1598ce28-8bb0-4787-ad40-f5227d3a72a6",
+    "document_name": "2018-Jan-30-AMD.txt"
+  },
+  "6c9d5d9e-15f5-4abd-b1e1-9caf14db73ef": {
+    "document_name": "2017-May-01-AMD.txt",
+    "category_id": "1598ce28-8bb0-4787-ad40-f5227d3a72a6"
+  },
+  "acd35cb9-12ab-4a34-9ce0-18a2c3b62eda": {
+    "document_name": "2020-Jul-28-AMD.txt",
+    "category_id": "1598ce28-8bb0-4787-ad40-f5227d3a72a6"
+  },
+  "b8c0b45e-5ee1-4851-acd3-a786e867cca6": {
+    "category_id": "1598ce28-8bb0-4787-ad40-f5227d3a72a6",
+    "document_name": "2018-Jul-25-AMD.txt"
+  },
+  "709852d9-ea87-4577-b799-d01d79251be7": {
+    "document_name": "2017-Oct-24-AMD.txt",
+    "category_id": "1598ce28-8bb0-4787-ad40-f5227d3a72a6"
+  },
+  "9e63d314-eb9a-4a74-857f-c8df3b5730f8": {
+    "document_name": "2018-Oct-24-AMD.txt",
+    "category_id": "1598ce28-8bb0-4787-ad40-f5227d3a72a6"
+  },
+  "2770bc43-8695-49de-85b7-e4641bdc69fc": {
+    "document_name": "2017-Jul-25-AMD.txt",
+    "category_id": "1598ce28-8bb0-4787-ad40-f5227d3a72a6"
+  },
+  "05d1609b-1930-463c-82ab-3d93bc598d14": {
+    "document_name": "2020-Apr-28-AMD.txt",
+    "category_id": "1598ce28-8bb0-4787-ad40-f5227d3a72a6"
+  },
+  "49b3c41a-04d0-4296-8f67-fba0ccfd4476": {
+    "document_name": "2019-Jul-30-AMD.txt",
+    "category_id": "1598ce28-8bb0-4787-ad40-f5227d3a72a6"
+  },
+  "58f6d727-f1ab-41f9-a02b-321ad7e5f7b0": {
+    "document_name": "2020-Jan-28-AMD.txt",
+    "category_id": "1598ce28-8bb0-4787-ad40-f5227d3a72a6"
+  },
+  "72eef596-0f03-404a-b397-cdcefbeb98cf": {
+    "category_id": "1598ce28-8bb0-4787-ad40-f5227d3a72a6",
+    "document_name": "2016-Jan-19-AMD.txt"
+  },
+  "d839691f-e394-4395-99d6-6ebc51ac1838": {
+    "document_name": "2016-Jul-21-AMD.txt",
+    "category_id": "1598ce28-8bb0-4787-ad40-f5227d3a72a6"
+  },
+  "834fbc6a-9ac3-44b0-88e2-14ad0ea3919f": {
+    "category_id": "1598ce28-8bb0-4787-ad40-f5227d3a72a6",
+    "document_name": "2019-Oct-29-AMD.txt"
+  },
+  "b0e55d81-4c1d-46d5-8cae-f81b22a8dc6b": {
+    "category_id": "1598ce28-8bb0-4787-ad40-f5227d3a72a6",
+    "document_name": "2016-Oct-20-AMD.txt"
+  },
+  "6bdf0a12-4534-402b-9e75-15ed837ad9a3": {
+    "document_name": "2016-Apr-21-AMD.txt",
+    "category_id": "1598ce28-8bb0-4787-ad40-f5227d3a72a6"
+  },
+  "42365b15-af5e-4316-bf19-3b416762a413": {
+    "category_id": "1598ce28-8bb0-4787-ad40-f5227d3a72a6",
+    "document_name": "2019-Apr-30-AMD.txt"
+  },
+  "715669b7-9ff5-4250-b5a5-6653e896cff8": {
+    "category_id": "077deca3-7e7e-4c48-b848-6f8cfcf84b5c",
+    "document_name": "2016-Oct-19-ASML.txt"
+  },
+  "14daef31-42c0-46d3-9c6a-6fb67463c2c0": {
+    "document_name": "2018-Apr-18-ASML.txt",
+    "category_id": "077deca3-7e7e-4c48-b848-6f8cfcf84b5c"
+  },
+  "f123e1d5-3a1e-4c0a-b3f0-5233a41878ee": {
+    "category_id": "077deca3-7e7e-4c48-b848-6f8cfcf84b5c",
+    "document_name": "2017-Apr-19-ASML.txt"
+  },
+  "16817656-cb4f-45ad-b1ab-ec8a5cdb3e9d": {
+    "category_id": "077deca3-7e7e-4c48-b848-6f8cfcf84b5c",
+    "document_name": "2016-Apr-20-ASML.txt"
+  },
+  "2143a293-8bad-4096-961f-643d0af762c5": {
+    "category_id": "077deca3-7e7e-4c48-b848-6f8cfcf84b5c",
+    "document_name": "2020-Jan-22-ASML.txt"
+  },
+  "2f8c9e36-ee58-4a71-a7eb-f5b58e0d77d6": {
+    "category_id": "077deca3-7e7e-4c48-b848-6f8cfcf84b5c",
+    "document_name": "2019-Jul-17-ASML.txt"
+  },
+  "d8f6e679-117f-4780-a72f-f9f7f7745545": {
+    "document_name": "2017-Oct-18-ASML.txt",
+    "category_id": "077deca3-7e7e-4c48-b848-6f8cfcf84b5c"
+  },
+  "030d2ed4-8f7e-41c8-85a6-7093d8308159": {
+    "category_id": "077deca3-7e7e-4c48-b848-6f8cfcf84b5c",
+    "document_name": "2020-Jul-15-ASML.txt"
+  },
+  "768a5e03-1f9b-404f-b855-fd6760b74c1a": {
+    "document_name": "2017-Jan-18-ASML.txt",
+    "category_id": "077deca3-7e7e-4c48-b848-6f8cfcf84b5c"
+  },
+  "d16176fd-88cf-47a5-806d-434b565a3c01": {
+    "category_id": "077deca3-7e7e-4c48-b848-6f8cfcf84b5c",
+    "document_name": "2016-Jan-20-ASML.txt"
+  },
+  "b6ee9f5e-2e6c-4f3c-b5b4-75af52c9880c": {
+    "category_id": "077deca3-7e7e-4c48-b848-6f8cfcf84b5c",
+    "document_name": "2019-Apr-17-ASML.txt"
+  },
+  "7d5b239c-6ab4-4e40-afc8-1e80595d42e6": {
+    "category_id": "077deca3-7e7e-4c48-b848-6f8cfcf84b5c",
+    "document_name": "2018-Oct-17-ASML.txt"
+  },
+  "2bdbd2f4-be1c-40a8-af44-3849cc736201": {
+    "document_name": "2020-Apr-15-ASML.txt",
+    "category_id": "077deca3-7e7e-4c48-b848-6f8cfcf84b5c"
+  },
+  "15b2f408-e15a-48e0-bee6-216b3ddefdfa": {
+    "category_id": "077deca3-7e7e-4c48-b848-6f8cfcf84b5c",
+    "document_name": "2018-Jan-17-ASML.txt"
+  },
+  "7a4ef79b-56b1-462a-9fae-dc3871fa0f5c": {
+    "document_name": "2019-Jan-23-ASML.txt",
+    "category_id": "077deca3-7e7e-4c48-b848-6f8cfcf84b5c"
+  },
+  "5f3b25c6-0ba5-488a-96fb-771908f625ba": {
+    "document_name": "2018-Jul-18-ASML.txt",
+    "category_id": "077deca3-7e7e-4c48-b848-6f8cfcf84b5c"
+  },
+  "a7aad8b7-2b45-4059-9ee8-78381b3f9161": {
+    "document_name": "2017-Jul-19-ASML.txt",
+    "category_id": "077deca3-7e7e-4c48-b848-6f8cfcf84b5c"
+  },
+  "47b32556-12bb-4bb8-bd9d-7cc98327f937": {
+    "category_id": "077deca3-7e7e-4c48-b848-6f8cfcf84b5c",
+    "document_name": "2019-Oct-16-ASML.txt"
+  },
+  "c9905f88-3873-4695-a25a-10fc6c6c48cd": {
+    "document_name": "2016-Jul-20-ASML.txt",
+    "category_id": "077deca3-7e7e-4c48-b848-6f8cfcf84b5c"
+  },
+  "f182684d-b21a-4111-b8f5-df819f9a236c": {
+    "category_id": "5602d908-a5c5-43c1-b888-975dff32a2c4",
+    "document_name": "2016-May-12-NVDA.txt"
+  },
+  "2a8700a4-4c95-4033-9db7-8ac2824fef70": {
+    "document_name": "2016-Feb-17-NVDA.txt",
+    "category_id": "5602d908-a5c5-43c1-b888-975dff32a2c4"
+  },
+  "b17bd158-c50f-4805-b2ca-387f2e4bf4ab": {
+    "category_id": "5602d908-a5c5-43c1-b888-975dff32a2c4",
+    "document_name": "2017-May-09-NVDA.txt"
+  },
+  "c61f5ead-aa70-47e9-8092-bc06aa9815fc": {
+    "category_id": "5602d908-a5c5-43c1-b888-975dff32a2c4",
+    "document_name": "2019-Aug-15-NVDA.txt"
+  },
+  "d2993e0b-6e56-4ef4-aa77-83f97de99c32": {
+    "document_name": "2020-Feb-13-NVDA.txt",
+    "category_id": "5602d908-a5c5-43c1-b888-975dff32a2c4"
+  },
+  "f70aa508-9dbb-4740-a31e-b6953e41c955": {
+    "document_name": "2016-Nov-10-NVDA.txt",
+    "category_id": "5602d908-a5c5-43c1-b888-975dff32a2c4"
+  },
+  "151ef257-0874-44e9-8584-15a8e62e3ae8": {
+    "document_name": "2017-Aug-10-NVDA.txt",
+    "category_id": "5602d908-a5c5-43c1-b888-975dff32a2c4"
+  },
+  "73dedba4-4c22-46b7-974b-719bf54bf76b": {
+    "category_id": "5602d908-a5c5-43c1-b888-975dff32a2c4",
+    "document_name": "2019-Nov-14-NVDA.txt"
+  },
+  "468379f8-e7ee-449e-b2de-9c4e26859a44": {
+    "category_id": "5602d908-a5c5-43c1-b888-975dff32a2c4",
+    "document_name": "2019-Feb-14-NVDA.txt"
+  },
+  "dad186a9-fee5-4f56-a768-4db94e110b6c": {
+    "category_id": "5602d908-a5c5-43c1-b888-975dff32a2c4",
+    "document_name": "2018-Nov-15-NVDA.txt"
+  },
+  "1bb659b7-96c3-4be3-af0a-6e690a89a36e": {
+    "document_name": "2020-Aug-19-NVDA.txt",
+    "category_id": "5602d908-a5c5-43c1-b888-975dff32a2c4"
+  },
+  "3863678d-4d9c-40ba-8bac-9f441d5c5f6e": {
+    "document_name": "2019-May-16-NVDA.txt",
+    "category_id": "5602d908-a5c5-43c1-b888-975dff32a2c4"
+  },
+  "aca31d3a-3997-4cb9-a77a-a592bd8faa0f": {
+    "document_name": "2018-May-10-NVDA.txt",
+    "category_id": "5602d908-a5c5-43c1-b888-975dff32a2c4"
+  },
+  "ec0fc8a2-ec5b-4beb-836c-563242dee228": {
+    "category_id": "5602d908-a5c5-43c1-b888-975dff32a2c4",
+    "document_name": "2018-Feb-08-NVDA.txt"
+  },
+  "e4d53107-35e9-4bae-a626-182dff5d2893": {
+    "category_id": "5602d908-a5c5-43c1-b888-975dff32a2c4",
+    "document_name": "2020-May-21-NVDA.txt"
+  },
+  "b34ae7f4-20dd-4d8d-933f-53fb5795b97b": {
+    "category_id": "5602d908-a5c5-43c1-b888-975dff32a2c4",
+    "document_name": "2018-Aug-16-NVDA.txt"
+  },
+  "c19dbcba-bc1a-44e9-a162-41218ebe2998": {
+    "category_id": "5602d908-a5c5-43c1-b888-975dff32a2c4",
+    "document_name": "2017-Nov-09-NVDA.txt"
+  },
+  "c5ed8f03-cfa5-4282-b711-bf0c3b2afb4d": {
+    "document_name": "2016-Aug-11-NVDA.txt",
+    "category_id": "5602d908-a5c5-43c1-b888-975dff32a2c4"
+  },
+  "9ff7b015-9b87-4471-a48c-6fb9faf470af": {
+    "document_name": "2017-Feb-09-NVDA.txt",
+    "category_id": "5602d908-a5c5-43c1-b888-975dff32a2c4"
+  },
+  "3299680c-e027-4b9b-a2d2-a55a89726654": {
+    "category_id": "f39dc51b-689e-424d-af9b-0ba2d2c0bb86",
+    "document_name": "2016-Feb-10-CSCO.txt"
+  },
+  "14c2c798-8b70-4522-b372-12a0726e9b40": {
+    "document_name": "2019-May-15-CSCO.txt",
+    "category_id": "f39dc51b-689e-424d-af9b-0ba2d2c0bb86"
+  },
+  "68ad0bf4-815d-46b5-b2a7-58b018dbcbe3": {
+    "document_name": "2018-Aug-15-CSCO.txt",
+    "category_id": "f39dc51b-689e-424d-af9b-0ba2d2c0bb86"
+  },
+  "e379a135-ee39-4e52-9e4d-1e7891914f79": {
+    "category_id": "f39dc51b-689e-424d-af9b-0ba2d2c0bb86",
+    "document_name": "2020-Feb-12-CSCO.txt"
+  },
+  "cdb476fc-7209-4527-9e75-21a64993db96": {
+    "category_id": "f39dc51b-689e-424d-af9b-0ba2d2c0bb86",
+    "document_name": "2019-Aug-14-CSCO.txt"
+  },
+  "61200619-e0f5-4766-a78b-ab481487d591": {
+    "document_name": "2016-Nov-16-CSCO.txt",
+    "category_id": "f39dc51b-689e-424d-af9b-0ba2d2c0bb86"
+  },
+  "dd1e2c0f-cc2c-4862-ae6e-b7869a22074c": {
+    "category_id": "f39dc51b-689e-424d-af9b-0ba2d2c0bb86",
+    "document_name": "2016-May-18-CSCO.txt"
+  },
+  "5ab00814-587c-40b9-b1de-2874b6b0ceb8": {
+    "document_name": "2017-Aug-16-CSCO.txt",
+    "category_id": "f39dc51b-689e-424d-af9b-0ba2d2c0bb86"
+  },
+  "828c1a7c-50c6-4668-a662-d37865b7468c": {
+    "category_id": "f39dc51b-689e-424d-af9b-0ba2d2c0bb86",
+    "document_name": "2018-Nov-14-CSCO.txt"
+  },
+  "00c344b6-b05d-475c-85db-7e054152070e": {
+    "document_name": "2018-Feb-14-CSCO.txt",
+    "category_id": "f39dc51b-689e-424d-af9b-0ba2d2c0bb86"
+  },
+  "b8afb776-fe88-41ad-94ab-1cc3792e66cc": {
+    "category_id": "f39dc51b-689e-424d-af9b-0ba2d2c0bb86",
+    "document_name": "2019-Nov-13-CSCO.txt"
+  },
+  "976ae4db-7948-4434-ae65-a6538989a15e": {
+    "category_id": "f39dc51b-689e-424d-af9b-0ba2d2c0bb86",
+    "document_name": "2019-Feb-13-CSCO.txt"
+  },
+  "10c1d6b7-8435-46ab-a016-069faf73573f": {
+    "document_name": "2020-Aug-12-CSCO.txt",
+    "category_id": "f39dc51b-689e-424d-af9b-0ba2d2c0bb86"
+  },
+  "fec74e8d-aef4-4c80-aded-b86ca26b3ad3": {
+    "document_name": "2017-Feb-15-CSCO.txt",
+    "category_id": "f39dc51b-689e-424d-af9b-0ba2d2c0bb86"
+  },
+  "4367451b-7b02-4f58-ba64-4a5fd4fb5729": {
+    "document_name": "2017-Nov-15-CSCO.txt",
+    "category_id": "f39dc51b-689e-424d-af9b-0ba2d2c0bb86"
+  },
+  "8a7034dd-aeac-413e-b55c-7c19a82a7b9c": {
+    "document_name": "2018-May-16-CSCO.txt",
+    "category_id": "f39dc51b-689e-424d-af9b-0ba2d2c0bb86"
+  },
+  "f2d8759a-4908-4659-b1b3-c3f6670308a4": {
+    "category_id": "f39dc51b-689e-424d-af9b-0ba2d2c0bb86",
+    "document_name": "2017-May-17-CSCO.txt"
+  },
+  "ed50c9ff-de0a-4b51-bda4-b65ec87e04e7": {
+    "category_id": "f39dc51b-689e-424d-af9b-0ba2d2c0bb86",
+    "document_name": "2020-May-13-CSCO.txt"
+  },
+  "95328f4e-0af1-4374-a227-48e425f0c29b": {
+    "category_id": "f39dc51b-689e-424d-af9b-0ba2d2c0bb86",
+    "document_name": "2016-Aug-17-CSCO.txt"
+  }
+}

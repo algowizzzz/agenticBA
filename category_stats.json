@@ -1,0 +1,42 @@
+{
+  "AMZN": {
+    "document_count": 19,
+    "ticker": "AMZN"
+  },
+  "AAPL": {
+    "document_count": 19,
+    "ticker": "AAPL"
+  },
+  "INTC": {
+    "document_count": 19,
+    "ticker": "INTC"
+  },
+  "MU": {
+    "document_count": 17,
+    "ticker": "MU"
+  },
+  "989b35ce-b8fd-44dc-b53f-2d3233a85706": {
+    "document_count": 19,
+    "ticker": "GOOGL"
+  },
+  "5d1b4d21-59cb-4ff3-bae1-fe9f1129cf18": {
+    "document_count": 19,
+    "ticker": "MSFT"
+  },
+  "1598ce28-8bb0-4787-ad40-f5227d3a72a6": {
+    "document_count": 19,
+    "ticker": "AMD"
+  },
+  "077deca3-7e7e-4c48-b848-6f8cfcf84b5c": {
+    "document_count": 19,
+    "ticker": "ASML"
+  },
+  "5602d908-a5c5-43c1-b888-975dff32a2c4": {
+    "document_count": 19,
+    "ticker": "NVDA"
+  },
+  "f39dc51b-689e-424d-af9b-0ba2d2c0bb86": {
+    "document_count": 19,
+    "ticker": "CSCO"
+  }
+}

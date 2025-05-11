@@ -1,0 +1,35 @@
+{
+  "collection_date": "2025-05-05T16:38:43.241628",
+  "companies": [
+    {
+      "ticker": "JPM",
+      "company": "JPMorgan Chase & Co.",
+      "filings_collected": 0
+    },
+    {
+      "ticker": "GS",
+      "company": "Goldman Sachs Group Inc.",
+      "filings_collected": 11
+    },
+    {
+      "ticker": "MSFT",
+      "company": "Microsoft Corporation",
+      "filings_collected": 0
+    },
+    {
+      "ticker": "AAPL",
+      "company": "Apple Inc.",
+      "filings_collected": 1
+    },
+    {
+      "ticker": "XOM",
+      "company": "Exxon Mobil Corporation",
+      "filings_collected": 0
+    },
+    {
+      "ticker": "TSLA",
+      "company": "Tesla, Inc.",
+      "filings_collected": 0
+    }
+  ]
+}

@@ -144,7 +144,7 @@ def extract_category_from_query(query: str) -> Optional[str]:
     
     return None
 
-def category_summary_tool(query: str, category_id: Optional[str] = None) -> Dict[str, Any]:
+def category_summary_tool(query: str, category_id: Optional[str] = None, api_key: Optional[str] = None) -> Dict[str, Any]:
     """
     Analyze category summaries and answer queries using LLM.
     Handles plain text Thought/Answer output from LLM.
@@ -153,6 +153,7 @@ def category_summary_tool(query: str, category_id: Optional[str] = None) -> Dict
     Args:
         query (str): The query to answer
         category_id (Optional[str]): Optional category ID to filter by
+        api_key (Optional[str]): API key for Anthropic (optional, defaults to env var)
     
     Returns:
         Dict[str, Any]: Response containing thought, answer.
@@ -196,10 +197,16 @@ def category_summary_tool(query: str, category_id: Optional[str] = None) -> Dict
     error_msg = None
 
     try:
+        # Initialize LLM
+        api_key = api_key or os.getenv("ANTHROPIC_API_KEY")
+        if not api_key:
+            logger.error("CategorySummaryTool: API Key missing.")
+            return {"error": "API Key not configured."}
+
         llm = ChatAnthropic(
-            model="claude-3-5-sonnet-20240620", 
+            model="claude-3-haiku-20240307",
             temperature=0,
-            anthropic_api_key=os.getenv("ANTHROPIC_API_KEY")
+            anthropic_api_key=api_key
         )
         
         summary_for_llm = { 

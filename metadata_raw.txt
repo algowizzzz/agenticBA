@@ -1,0 +1,1230 @@
+{
+  "categories": {
+    "AMZN": [
+      "ae5e9f7b-f64a-4be4-8fa2-8d6989a1d6e3",
+      "7e538606-f18b-410f-8284-59e5929f2aaa",
+      "e64e6c04-9a86-4c8b-9802-868c62930f5e",
+      "d3427db7-3f62-4127-b86b-3a24cccf6f7e",
+      "a1865281-b3b2-4fa0-8500-bb9678a63824",
+      "29db40d9-7313-4c3b-9d52-b82457f5cf68",
+      "7e407d90-f242-4e0a-8adc-652ac34e0064",
+      "3066867a-c8e7-4a7d-ba6f-d396374aa645",
+      "4514ce72-36f3-4478-9854-65348be1bcd9",
+      "36c904fa-4403-4c80-9ed4-6d929edd8796",
+      "b8b246b9-baa7-42f1-8d7a-9101e426550a",
+      "88270af8-bfd6-41e8-989a-d9ca9b41d701",
+      "8e1cdb0f-46c1-4862-97dd-4eaefa73288d",
+      "dff131fb-62f7-4f23-9727-977ecf92a4b1",
+      "0a5ee092-d490-44f3-b3ca-c1e9f5bbf7ec",
+      "a3a6d5e3-1944-4cfc-a95b-46e6d6a79406",
+      "bde3a713-e38f-43db-962a-2b7a293d5d4a",
+      "96d65eb1-4f00-456b-81b3-728d80f280c9",
+      "8e26c676-2ac4-46cb-9382-d1991351f163"
+    ],
+    "AAPL": [
+      "847ed110-b532-4a67-ac52-f2e2dc3aa9df",
+      "2d39dab3-1c1e-408a-88d9-53f5bba43403",
+      "cfd47f1f-65da-4358-af09-9cccd212632f",
+      "eddc7334-742e-4c8d-971c-768c3b4d20c3",
+      "dc8167db-d406-4774-9d1a-da8c9b8273eb",
+      "9fd97e6f-b821-44f3-a531-6345ae617344",
+      "e66b33bf-af3f-4681-8aae-94011f332c4d",
+      "1c245c5a-1bfe-45c6-a44f-5f37511c5d42",
+      "5003d409-a441-4a17-8ecb-4354cd4f3f37",
+      "b96ccaa3-78d2-42d8-aa47-fdd487775119",
+      "169593a1-62d3-4376-a6e9-db3443ae9658",
+      "5969ece6-a45a-4726-ab3c-419450cdf146",
+      "945c9089-eb71-4b6a-8b1d-4eb0004bb27f",
+      "29c41506-6a49-4ebe-8f13-76607b4c117a",
+      "5da7677f-f71c-4ebb-a7bc-75bd23bbeb1b",
+      "ac563310-91d8-4d9d-b030-3c9cdd18674c",
+      "286b72ac-a473-4eaa-a71e-8c9a53eb899b",
+      "cbe9aced-b988-4785-9eb9-175ae77de51d",
+      "45247e77-068a-4ea5-8036-04a682c76abf"
+    ],
+    "INTC": [
+      "e257fce7-01cc-4cb3-b15f-034a038f062a",
+      "4c80d92e-c91e-4ed9-bdab-562d41d5b462",
+      "57ef51e8-3ceb-4d11-b6c6-5c0eaac309e2",
+      "dce50f58-a2dd-441e-9e36-be510ea8f9b3",
+      "5bef4285-80d1-45bd-a0c2-4e25f8089920",
+      "b5ee749b-6296-44e0-b11a-6bf71b3e7a24",
+      "a8e5eb78-1844-41a6-8d08-832453349e95",
+      "2a3434ba-5fbc-4c44-b29e-12f7e0a4cbc5",
+      "db245149-a508-4457-9136-4302e3e87516",
+      "7a1511a3-7142-47f4-811b-08f3747c84a5",
+      "56f537d5-9d89-4bd1-879f-09bf4787b076",
+      "3e8787b3-177d-4912-a49c-e64d083e2c4c",
+      "674ddfcb-c397-4b4b-b4c3-1370a18aa9e1",
+      "345230d4-d49e-449a-b66e-7368cdae4b83",
+      "d06c92db-d7b8-46bf-a7a3-164dbf2d5b41",
+      "0bbc8cf7-f020-4d4d-94ae-66c95587b4ea",
+      "8644566d-4632-4c5a-9f2d-27634819e04b",
+      "95169fd9-70cf-49ed-bb34-cf82a84b6e9b",
+      "898a3819-d404-4d78-84b1-7e0452801c66"
+    ],
+    "MU": [
+      "a447b829-5612-400a-8459-95487ae22e1e",
+      "0fd5a117-76d3-4509-a08f-00e8989ffd14",
+      "23c41af9-e593-4d57-8239-7a5d7ed1d1d4",
+      "82bd3b7a-d865-4006-96c3-6be46c18cc0c",
+      "30a5e8f2-117e-4540-8703-dd8b4f957677",
+      "f9bb933f-f2f6-4007-b410-e939b9dc2399",
+      "a82150cc-4c7f-4276-addc-6bf81cc14098",
+      "21d2e3bc-c815-4f6c-a597-12dc843a94cd",
+      "7a96ae04-b737-4650-9afb-80e37c31422e",
+      "4611a704-1186-4c4a-ac05-a46b60833522",
+      "1253b37b-09a1-4e11-9b02-38759d525a6d",
+      "2cf0da85-42da-4a49-9a1a-197e9d626947",
+      "8f8e68b8-bb8e-4e2d-a07e-dec0d9586d9e",
+      "8036abf5-cc0f-4eee-9ac0-09986941c5e1",
+      "f46a4c65-5d4d-47ab-90ae-21f36d504c94",
+      "5162f6f9-a506-4d9d-8387-333a74e6ff57",
+      "083e4790-dd41-45ca-bdd7-70da09ca8f7b"
+    ],
+    "989b35ce-b8fd-44dc-b53f-2d3233a85706": [
+      "053065d9-d452-4891-9ad9-19fcc952051b",
+      "f3805a44-567e-4ff3-9a91-e40c4bed0a0c",
+      "eff74107-717d-4d2c-a3ec-5b4bc2164fe2",
+      "e93b73f9-617f-467f-8cc1-42a1fc5a1cb2",
+      "592fcaa2-0ae1-4f3f-b34f-54d84bddbd92",
+      "8276ae38-0456-40d8-ab01-ccd11f5b0d86",
+      "06cfa48b-3494-44d6-bcfc-b81c325b9881",
+      "b84b4c29-a373-4108-a7a3-3adcdcdc6f6c",
+      "bd69e55d-7ee5-4fe1-ba00-06df6988ef97",
+      "7b58cd2b-8a0e-4083-886e-920f52d3da66",
+      "a7c2a04a-1580-4cda-b5a7-2af4847e6166",
+      "57bc2240-b0c1-45ad-ad13-ac16f6010329",
+      "9cd19c8a-f066-4144-a996-7c43627a0906",
+      "2dd5297e-bf9e-47a5-94f6-668992b8f99b",
+      "56ad116f-101b-4890-b0e0-5df305fd4c0f",
+      "e761cbf9-2ca9-42e6-b91e-4867d82a0f3e",
+      "49993f1f-daa7-4f09-8d97-f08330aa49f1",
+      "1d3f7e0b-6a20-4522-9a22-e424e5430f71",
+      "076d0f02-1e35-4127-a079-844c810f9bec"
+    ],
+    "5d1b4d21-59cb-4ff3-bae1-fe9f1129cf18": [
+      "093ef433-7944-4437-b42b-898af33385ab",
+      "7188289f-df52-49b4-a071-e40a4c0ba6a9",
+      "bdfea008-0170-4326-a95f-3f17c5fdebf1",
+      "8a9fc652-df69-4bea-b8d5-1eefe564cab7",
+      "bac93873-eb84-47c4-b691-73b79e25582a",
+      "e7de3719-f064-4e1b-b178-aa6ef3bcbe16",
+      "501190b8-5902-45a1-9e2b-cfa400ba4177",
+      "d11b7132-b9cf-4400-9d0e-9a9c34e6d7f9",
+      "103d1cca-4f2c-49f7-ad49-059bc3cd96f6",
+      "ffe59cbf-41ee-42f0-adb4-7f3e9f0c2060",
+      "1a3a9d25-bdd4-4c6c-8b34-7c42bf9e7b3b",
+      "f3a51ea8-299d-4ef5-89be-f221b2f2e2a0",
+      "b92169b2-5243-4fba-aad2-b385fa618cdb",
+      "2aaf362c-ba42-47c3-b9da-5cf91cf18c66",
+      "2d1f3215-16b5-4350-b4e7-de5e8c23b3e4",
+      "cabb3bf8-234b-4bef-bc67-c213d5e3c703",
+      "a7aa3c72-6b8b-4a1e-a502-1a6ebf3e9696",
+      "bceb8cc8-27b5-429b-b114-d86388447e9a",
+      "2be26ac6-61af-47e3-9e06-2cc5b8880e8d"
+    ],
+    "1598ce28-8bb0-4787-ad40-f5227d3a72a6": [
+      "f53ee310-328c-45f4-be7a-917f61577afe",
+      "b5293366-d043-43d2-9ee4-c76f6652c08e",
+      "aba29516-22e2-4759-b55b-0954266aa16f",
+      "c164632e-6847-4005-a9ad-ef2e61489dbd",
+      "6c9d5d9e-15f5-4abd-b1e1-9caf14db73ef",
+      "acd35cb9-12ab-4a34-9ce0-18a2c3b62eda",
+      "b8c0b45e-5ee1-4851-acd3-a786e867cca6",
+      "709852d9-ea87-4577-b799-d01d79251be7",
+      "9e63d314-eb9a-4a74-857f-c8df3b5730f8",
+      "2770bc43-8695-49de-85b7-e4641bdc69fc",
+      "05d1609b-1930-463c-82ab-3d93bc598d14",
+      "49b3c41a-04d0-4296-8f67-fba0ccfd4476",
+      "58f6d727-f1ab-41f9-a02b-321ad7e5f7b0",
+      "72eef596-0f03-404a-b397-cdcefbeb98cf",
+      "d839691f-e394-4395-99d6-6ebc51ac1838",
+      "834fbc6a-9ac3-44b0-88e2-14ad0ea3919f",
+      "b0e55d81-4c1d-46d5-8cae-f81b22a8dc6b",
+      "6bdf0a12-4534-402b-9e75-15ed837ad9a3",
+      "42365b15-af5e-4316-bf19-3b416762a413"
+    ],
+    "077deca3-7e7e-4c48-b848-6f8cfcf84b5c": [
+      "715669b7-9ff5-4250-b5a5-6653e896cff8",
+      "14daef31-42c0-46d3-9c6a-6fb67463c2c0",
+      "f123e1d5-3a1e-4c0a-b3f0-5233a41878ee",
+      "16817656-cb4f-45ad-b1ab-ec8a5cdb3e9d",
+      "2143a293-8bad-4096-961f-643d0af762c5",
+      "2f8c9e36-ee58-4a71-a7eb-f5b58e0d77d6",
+      "d8f6e679-117f-4780-a72f-f9f7f7745545",
+      "030d2ed4-8f7e-41c8-85a6-7093d8308159",
+      "768a5e03-1f9b-404f-b855-fd6760b74c1a",
+      "d16176fd-88cf-47a5-806d-434b565a3c01",
+      "b6ee9f5e-2e6c-4f3c-b5b4-75af52c9880c",
+      "7d5b239c-6ab4-4e40-afc8-1e80595d42e6",
+      "2bdbd2f4-be1c-40a8-af44-3849cc736201",
+      "15b2f408-e15a-48e0-bee6-216b3ddefdfa",
+      "7a4ef79b-56b1-462a-9fae-dc3871fa0f5c",
+      "5f3b25c6-0ba5-488a-96fb-771908f625ba",
+      "a7aad8b7-2b45-4059-9ee8-78381b3f9161",
+      "47b32556-12bb-4bb8-bd9d-7cc98327f937",
+      "c9905f88-3873-4695-a25a-10fc6c6c48cd"
+    ],
+    "5602d908-a5c5-43c1-b888-975dff32a2c4": [
+      "f182684d-b21a-4111-b8f5-df819f9a236c",
+      "2a8700a4-4c95-4033-9db7-8ac2824fef70",
+      "b17bd158-c50f-4805-b2ca-387f2e4bf4ab",
+      "c61f5ead-aa70-47e9-8092-bc06aa9815fc",
+      "d2993e0b-6e56-4ef4-aa77-83f97de99c32",
+      "f70aa508-9dbb-4740-a31e-b6953e41c955",
+      "151ef257-0874-44e9-8584-15a8e62e3ae8",
+      "73dedba4-4c22-46b7-974b-719bf54bf76b",
+      "468379f8-e7ee-449e-b2de-9c4e26859a44",
+      "dad186a9-fee5-4f56-a768-4db94e110b6c",
+      "1bb659b7-96c3-4be3-af0a-6e690a89a36e",
+      "3863678d-4d9c-40ba-8bac-9f441d5c5f6e",
+      "aca31d3a-3997-4cb9-a77a-a592bd8faa0f",
+      "ec0fc8a2-ec5b-4beb-836c-563242dee228",
+      "e4d53107-35e9-4bae-a626-182dff5d2893",
+      "b34ae7f4-20dd-4d8d-933f-53fb5795b97b",
+      "c19dbcba-bc1a-44e9-a162-41218ebe2998",
+      "c5ed8f03-cfa5-4282-b711-bf0c3b2afb4d",
+      "9ff7b015-9b87-4471-a48c-6fb9faf470af"
+    ],
+    "f39dc51b-689e-424d-af9b-0ba2d2c0bb86": [
+      "3299680c-e027-4b9b-a2d2-a55a89726654",
+      "14c2c798-8b70-4522-b372-12a0726e9b40",
+      "68ad0bf4-815d-46b5-b2a7-58b018dbcbe3",
+      "e379a135-ee39-4e52-9e4d-1e7891914f79",
+      "cdb476fc-7209-4527-9e75-21a64993db96",
+      "61200619-e0f5-4766-a78b-ab481487d591",
+      "dd1e2c0f-cc2c-4862-ae6e-b7869a22074c",
+      "5ab00814-587c-40b9-b1de-2874b6b0ceb8",
+      "828c1a7c-50c6-4668-a662-d37865b7468c",
+      "00c344b6-b05d-475c-85db-7e054152070e",
+      "b8afb776-fe88-41ad-94ab-1cc3792e66cc",
+      "976ae4db-7948-4434-ae65-a6538989a15e",
+      "10c1d6b7-8435-46ab-a016-069faf73573f",
+      "fec74e8d-aef4-4c80-aded-b86ca26b3ad3",
+      "4367451b-7b02-4f58-ba64-4a5fd4fb5729",
+      "8a7034dd-aeac-413e-b55c-7c19a82a7b9c",
+      "f2d8759a-4908-4659-b1b3-c3f6670308a4",
+      "ed50c9ff-de0a-4b51-bda4-b65ec87e04e7",
+      "95328f4e-0af1-4374-a227-48e425f0c29b"
+    ]
+  },
+  "documents": {
+    "ae5e9f7b-f64a-4be4-8fa2-8d6989a1d6e3": {
+      "category_id": "AMZN",
+      "date": "2020-01-30",
+      "quarter": "Q4 2019"
+    },
+    "7e538606-f18b-410f-8284-59e5929f2aaa": {
+      "category_id": "AMZN",
+      "date": "2016-04-28",
+      "quarter": "Q1 2016"
+    },
+    "e64e6c04-9a86-4c8b-9802-868c62930f5e": {
+      "category_id": "AMZN",
+      "date": "2019-10-24",
+      "quarter": "Q3 2019"
+    },
+    "d3427db7-3f62-4127-b86b-3a24cccf6f7e": {
+      "category_id": "AMZN",
+      "date": "2020-04-30",
+      "quarter": "Q1 2020"
+    },
+    "a1865281-b3b2-4fa0-8500-bb9678a63824": {
+      "category_id": "AMZN",
+      "date": "2019-04-25",
+      "quarter": "Q1 2019"
+    },
+    "29db40d9-7313-4c3b-9d52-b82457f5cf68": {
+      "category_id": "AMZN",
+      "date": "2017-07-27",
+      "quarter": "Q2 2017"
+    },
+    "7e407d90-f242-4e0a-8adc-652ac34e0064": {
+      "category_id": "AMZN",
+      "date": "2018-07-26",
+      "quarter": "Q2 2018"
+    },
+    "3066867a-c8e7-4a7d-ba6f-d396374aa645": {
+      "category_id": "AMZN",
+      "date": "2018-10-25",
+      "quarter": "Q3 2018"
+    },
+    "4514ce72-36f3-4478-9854-65348be1bcd9": {
+      "category_id": "AMZN",
+      "date": "2016-01-28",
+      "quarter": "Q4 2015"
+    },
+    "36c904fa-4403-4c80-9ed4-6d929edd8796": {
+      "category_id": "AMZN",
+      "date": "2018-02-01",
+      "quarter": "Q4 2017"
+    },
+    "b8b246b9-baa7-42f1-8d7a-9101e426550a": {
+      "category_id": "AMZN",
+      "date": "2020-07-30",
+      "quarter": "Q2 2020"
+    },
+    "88270af8-bfd6-41e8-989a-d9ca9b41d701": {
+      "category_id": "AMZN",
+      "date": "2019-07-25",
+      "quarter": "Q2 2019"
+    },
+    "8e1cdb0f-46c1-4862-97dd-4eaefa73288d": {
+      "category_id": "AMZN",
+      "date": "2017-04-27",
+      "quarter": "Q1 2017"
+    },
+    "dff131fb-62f7-4f23-9727-977ecf92a4b1": {
+      "category_id": "AMZN",
+      "date": "2019-01-31",
+      "quarter": "Q4 2018"
+    },
+    "0a5ee092-d490-44f3-b3ca-c1e9f5bbf7ec": {
+      "category_id": "AMZN",
+      "date": "2018-04-26",
+      "quarter": "Q1 2018"
+    },
+    "a3a6d5e3-1944-4cfc-a95b-46e6d6a79406": {
+      "category_id": "AMZN",
+      "date": "2016-10-27",
+      "quarter": "Q3 2016"
+    },
+    "bde3a713-e38f-43db-962a-2b7a293d5d4a": {
+      "category_id": "AMZN",
+      "date": "2017-02-02",
+      "quarter": "Q4 2016"
+    },
+    "96d65eb1-4f00-456b-81b3-728d80f280c9": {
+      "category_id": "AMZN",
+      "date": "2016-07-28",
+      "quarter": "Q2 2016"
+    },
+    "8e26c676-2ac4-46cb-9382-d1991351f163": {
+      "category_id": "AMZN",
+      "date": "2017-10-26",
+      "quarter": "Q3 2017"
+    },
+    "847ed110-b532-4a67-ac52-f2e2dc3aa9df": {
+      "category_id": "AAPL",
+      "date": "2018-05-01",
+      "quarter": "Q2 2018"
+    },
+    "2d39dab3-1c1e-408a-88d9-53f5bba43403": {
+      "category_id": "AAPL",
+      "date": "2019-10-30",
+      "quarter": "Q4 2019"
+    },
+    "cfd47f1f-65da-4358-af09-9cccd212632f": {
+      "category_id": "AAPL",
+      "date": "2016-01-26",
+      "quarter": "Q1 2016"
+    },
+    "eddc7334-742e-4c8d-971c-768c3b4d20c3": {
+      "category_id": "AAPL",
+      "date": "2020-07-30",
+      "quarter": "Q3 2020"
+    },
+    "dc8167db-d406-4774-9d1a-da8c9b8273eb": {
+      "category_id": "AAPL",
+      "date": "2017-08-01",
+      "quarter": "Q3 2017"
+    },
+    "9fd97e6f-b821-44f3-a531-6345ae617344": {
+      "category_id": "AAPL",
+      "date": "2020-01-28",
+      "quarter": "Q1 2020"
+    },
+    "e66b33bf-af3f-4681-8aae-94011f332c4d": {
+      "category_id": "AAPL",
+      "date": "2016-04-26",
+      "quarter": "Q2 2016"
+    },
+    "1c245c5a-1bfe-45c6-a44f-5f37511c5d42": {
+      "category_id": "AAPL",
+      "date": "2017-01-31",
+      "quarter": "Q1 2017"
+    },
+    "5003d409-a441-4a17-8ecb-4354cd4f3f37": {
+      "category_id": "AAPL",
+      "date": "2019-04-30",
+      "quarter": "Q2 2019"
+    },
+    "b96ccaa3-78d2-42d8-aa47-fdd487775119": {
+      "category_id": "AAPL",
+      "date": "2017-11-02",
+      "quarter": "Q4 2017"
+    },
+    "169593a1-62d3-4376-a6e9-db3443ae9658": {
+      "category_id": "AAPL",
+      "date": "2016-10-25",
+      "quarter": "Q4 2016"
+    },
+    "5969ece6-a45a-4726-ab3c-419450cdf146": {
+      "category_id": "AAPL",
+      "date": "2016-07-26",
+      "quarter": "Q3 2016"
+    },
+    "945c9089-eb71-4b6a-8b1d-4eb0004bb27f": {
+      "category_id": "AAPL",
+      "date": "2017-05-02",
+      "quarter": "Q2 2017"
+    },
+    "29c41506-6a49-4ebe-8f13-76607b4c117a": {
+      "category_id": "AAPL",
+      "date": "2019-07-30",
+      "quarter": "Q3 2019"
+    },
+    "5da7677f-f71c-4ebb-a7bc-75bd23bbeb1b": {
+      "category_id": "AAPL",
+      "date": "2019-01-29",
+      "quarter": "Q1 2019"
+    },
+    "ac563310-91d8-4d9d-b030-3c9cdd18674c": {
+      "category_id": "AAPL",
+      "date": "2018-07-31",
+      "quarter": "Q3 2018"
+    },
+    "286b72ac-a473-4eaa-a71e-8c9a53eb899b": {
+      "category_id": "AAPL",
+      "date": "2018-02-01",
+      "quarter": "Q1 2018"
+    },
+    "cbe9aced-b988-4785-9eb9-175ae77de51d": {
+      "category_id": "AAPL",
+      "date": "2018-11-01",
+      "quarter": "Q4 2018"
+    },
+    "45247e77-068a-4ea5-8036-04a682c76abf": {
+      "category_id": "AAPL",
+      "date": "2020-04-30",
+      "quarter": "Q2 2020"
+    },
+    "e257fce7-01cc-4cb3-b15f-034a038f062a": {
+      "category_id": "INTC",
+      "date": "2019-01-24",
+      "quarter": "Q4 2018"
+    },
+    "4c80d92e-c91e-4ed9-bdab-562d41d5b462": {
+      "category_id": "INTC",
+      "date": "2019-10-24",
+      "quarter": "Q3 2019"
+    },
+    "57ef51e8-3ceb-4d11-b6c6-5c0eaac309e2": {
+      "category_id": "INTC",
+      "date": "2019-04-25",
+      "quarter": "Q1 2019"
+    },
+    "dce50f58-a2dd-441e-9e36-be510ea8f9b3": {
+      "category_id": "INTC",
+      "date": "2017-07-27",
+      "quarter": "Q2 2017"
+    },
+    "5bef4285-80d1-45bd-a0c2-4e25f8089920": {
+      "category_id": "INTC",
+      "date": "2016-07-20",
+      "quarter": "Q2 2016"
+    },
+    "b5ee749b-6296-44e0-b11a-6bf71b3e7a24": {
+      "category_id": "INTC",
+      "date": "2018-07-26",
+      "quarter": "Q2 2018"
+    },
+    "a8e5eb78-1844-41a6-8d08-832453349e95": {
+      "category_id": "INTC",
+      "date": "2018-10-25",
+      "quarter": "Q3 2018"
+    },
+    "2a3434ba-5fbc-4c44-b29e-12f7e0a4cbc5": {
+      "category_id": "INTC",
+      "date": "2018-01-25",
+      "quarter": "Q4 2017"
+    },
+    "db245149-a508-4457-9136-4302e3e87516": {
+      "category_id": "INTC",
+      "date": "2020-07-23",
+      "quarter": "Q2 2020"
+    },
+    "7a1511a3-7142-47f4-811b-08f3747c84a5": {
+      "category_id": "INTC",
+      "date": "2019-07-25",
+      "quarter": "Q2 2019"
+    },
+    "56f537d5-9d89-4bd1-879f-09bf4787b076": {
+      "category_id": "INTC",
+      "date": "2017-04-27",
+      "quarter": "Q1 2017"
+    },
+    "3e8787b3-177d-4912-a49c-e64d083e2c4c": {
+      "category_id": "INTC",
+      "date": "2018-04-26",
+      "quarter": "Q1 2018"
+    },
+    "674ddfcb-c397-4b4b-b4c3-1370a18aa9e1": {
+      "category_id": "INTC",
+      "date": "2016-10-18",
+      "quarter": "Q3 2016"
+    },
+    "345230d4-d49e-449a-b66e-7368cdae4b83": {
+      "category_id": "INTC",
+      "date": "2020-04-23",
+      "quarter": "Q1 2020"
+    },
+    "d06c92db-d7b8-46bf-a7a3-164dbf2d5b41": {
+      "category_id": "INTC",
+      "date": "2017-01-26",
+      "quarter": "Q4 2016"
+    },
+    "0bbc8cf7-f020-4d4d-94ae-66c95587b4ea": {
+      "category_id": "INTC",
+      "date": "2016-01-14",
+      "quarter": "Q4 2015"
+    },
+    "8644566d-4632-4c5a-9f2d-27634819e04b": {
+      "category_id": "INTC",
+      "date": "2016-04-19",
+      "quarter": "Q1 2016"
+    },
+    "95169fd9-70cf-49ed-bb34-cf82a84b6e9b": {
+      "category_id": "INTC",
+      "date": "2017-10-26",
+      "quarter": "Q3 2017"
+    },
+    "898a3819-d404-4d78-84b1-7e0452801c66": {
+      "category_id": "INTC",
+      "date": "2020-01-23",
+      "quarter": "Q4 2019"
+    },
+    "a447b829-5612-400a-8459-95487ae22e1e": {
+      "category_id": "MU",
+      "date": "2018-09-20",
+      "quarter": "Q4 2018"
+    },
+    "0fd5a117-76d3-4509-a08f-00e8989ffd14": {
+      "category_id": "MU",
+      "date": "2019-03-20",
+      "quarter": "Q2 2019"
+    },
+    "23c41af9-e593-4d57-8239-7a5d7ed1d1d4": {
+      "category_id": "MU",
+      "date": "2019-12-18",
+      "quarter": "Q1 2020"
+    },
+    "82bd3b7a-d865-4006-96c3-6be46c18cc0c": {
+      "category_id": "MU",
+      "date": "2016-12-21",
+      "quarter": "Q1 2017"
+    },
+    "30a5e8f2-117e-4540-8703-dd8b4f957677": {
+      "category_id": "MU",
+      "date": "2016-10-04",
+      "quarter": "Q4 2016"
+    },
+    "f9bb933f-f2f6-4007-b410-e939b9dc2399": {
+      "category_id": "MU",
+      "date": "2017-03-23",
+      "quarter": "Q2 2017"
+    },
+    "a82150cc-4c7f-4276-addc-6bf81cc14098": {
+      "category_id": "MU",
+      "date": "2020-06-29",
+      "quarter": "Q3 2020"
+    },
+    "21d2e3bc-c815-4f6c-a597-12dc843a94cd": {
+      "category_id": "MU",
+      "date": "2018-03-22",
+      "quarter": "Q2 2018"
+    },
+    "7a96ae04-b737-4650-9afb-80e37c31422e": {
+      "category_id": "MU",
+      "date": "2019-06-25",
+      "quarter": "Q3 2019"
+    },
+    "4611a704-1186-4c4a-ac05-a46b60833522": {
+      "category_id": "MU",
+      "date": "2017-12-19",
+      "quarter": "Q1 2018"
+    },
+    "1253b37b-09a1-4e11-9b02-38759d525a6d": {
+      "category_id": "MU",
+      "date": "2018-12-18",
+      "quarter": "Q1 2019"
+    },
+    "2cf0da85-42da-4a49-9a1a-197e9d626947": {
+      "category_id": "MU",
+      "date": "2020-03-25",
+      "quarter": "Q2 2020"
+    },
+    "8f8e68b8-bb8e-4e2d-a07e-dec0d9586d9e": {
+      "category_id": "MU",
+      "date": "2019-09-26",
+      "quarter": "Q4 2019"
+    },
+    "8036abf5-cc0f-4eee-9ac0-09986941c5e1": {
+      "category_id": "MU",
+      "date": "2016-06-30",
+      "quarter": "Q3 2016"
+    },
+    "f46a4c65-5d4d-47ab-90ae-21f36d504c94": {
+      "category_id": "MU",
+      "date": "2017-09-26",
+      "quarter": "Q4 2017"
+    },
+    "5162f6f9-a506-4d9d-8387-333a74e6ff57": {
+      "category_id": "MU",
+      "date": "2017-06-29",
+      "quarter": "Q3 2017"
+    },
+    "083e4790-dd41-45ca-bdd7-70da09ca8f7b": {
+      "category_id": "MU",
+      "date": "2016-03-30",
+      "quarter": "Q2 2016"
+    },
+    "053065d9-d452-4891-9ad9-19fcc952051b": {
+      "category_id": "989b35ce-b8fd-44dc-b53f-2d3233a85706",
+      "date": "2018-07-23",
+      "quarter": "Q2 2018"
+    },
+    "f3805a44-567e-4ff3-9a91-e40c4bed0a0c": {
+      "category_id": "989b35ce-b8fd-44dc-b53f-2d3233a85706",
+      "date": "2020-04-28",
+      "quarter": "Q1 2020"
+    },
+    "eff74107-717d-4d2c-a3ec-5b4bc2164fe2": {
+      "category_id": "989b35ce-b8fd-44dc-b53f-2d3233a85706",
+      "date": "2017-04-27",
+      "quarter": "Q1 2017"
+    },
+    "e93b73f9-617f-467f-8cc1-42a1fc5a1cb2": {
+      "category_id": "989b35ce-b8fd-44dc-b53f-2d3233a85706",
+      "date": "2019-10-28",
+      "quarter": "Q3 2019"
+    },
+    "592fcaa2-0ae1-4f3f-b34f-54d84bddbd92": {
+      "category_id": "989b35ce-b8fd-44dc-b53f-2d3233a85706",
+      "date": "2017-07-24",
+      "quarter": "Q2 2017"
+    },
+    "8276ae38-0456-40d8-ab01-ccd11f5b0d86": {
+      "category_id": "989b35ce-b8fd-44dc-b53f-2d3233a85706",
+      "date": "2016-07-28",
+      "quarter": "Q2 2016"
+    },
+    "06cfa48b-3494-44d6-bcfc-b81c325b9881": {
+      "category_id": "989b35ce-b8fd-44dc-b53f-2d3233a85706",
+      "date": "2019-07-25",
+      "quarter": "Q2 2019"
+    },
+    "b84b4c29-a373-4108-a7a3-3adcdcdc6f6c": {
+      "category_id": "989b35ce-b8fd-44dc-b53f-2d3233a85706",
+      "date": "2019-02-04",
+      "quarter": "Q4 2018"
+    },
+    "bd69e55d-7ee5-4fe1-ba00-06df6988ef97": {
+      "category_id": "989b35ce-b8fd-44dc-b53f-2d3233a85706",
+      "date": "2018-10-25",
+      "quarter": "Q3 2018"
+    },
+    "7b58cd2b-8a0e-4083-886e-920f52d3da66": {
+      "category_id": "989b35ce-b8fd-44dc-b53f-2d3233a85706",
+      "date": "2016-04-21",
+      "quarter": "Q1 2016"
+    },
+    "a7c2a04a-1580-4cda-b5a7-2af4847e6166": {
+      "category_id": "989b35ce-b8fd-44dc-b53f-2d3233a85706",
+      "date": "2016-10-27",
+      "quarter": "Q3 2016"
+    },
+    "57bc2240-b0c1-45ad-ad13-ac16f6010329": {
+      "category_id": "989b35ce-b8fd-44dc-b53f-2d3233a85706",
+      "date": "2018-04-23",
+      "quarter": "Q1 2018"
+    },
+    "9cd19c8a-f066-4144-a996-7c43627a0906": {
+      "category_id": "989b35ce-b8fd-44dc-b53f-2d3233a85706",
+      "date": "2017-10-26",
+      "quarter": "Q3 2017"
+    },
+    "2dd5297e-bf9e-47a5-94f6-668992b8f99b": {
+      "category_id": "989b35ce-b8fd-44dc-b53f-2d3233a85706",
+      "date": "2019-04-29",
+      "quarter": "Q1 2019"
+    },
+    "56ad116f-101b-4890-b0e0-5df305fd4c0f": {
+      "category_id": "989b35ce-b8fd-44dc-b53f-2d3233a85706",
+      "date": "2016-02-01",
+      "quarter": "Q4 2015"
+    },
+    "e761cbf9-2ca9-42e6-b91e-4867d82a0f3e": {
+      "category_id": "989b35ce-b8fd-44dc-b53f-2d3233a85706",
+      "date": "2020-07-30",
+      "quarter": "Q2 2020"
+    },
+    "49993f1f-daa7-4f09-8d97-f08330aa49f1": {
+      "category_id": "989b35ce-b8fd-44dc-b53f-2d3233a85706",
+      "date": "2017-01-26",
+      "quarter": "Q4 2016"
+    },
+    "1d3f7e0b-6a20-4522-9a22-e424e5430f71": {
+      "category_id": "989b35ce-b8fd-44dc-b53f-2d3233a85706",
+      "date": "2018-02-01",
+      "quarter": "Q4 2017"
+    },
+    "076d0f02-1e35-4127-a079-844c810f9bec": {
+      "category_id": "989b35ce-b8fd-44dc-b53f-2d3233a85706",
+      "date": "2020-02-03",
+      "quarter": "Q4 2019"
+    },
+    "093ef433-7944-4437-b42b-898af33385ab": {
+      "category_id": "5d1b4d21-59cb-4ff3-bae1-fe9f1129cf18",
+      "date": "2017-07-20",
+      "quarter": "Q4 2017"
+    },
+    "7188289f-df52-49b4-a071-e40a4c0ba6a9": {
+      "category_id": "5d1b4d21-59cb-4ff3-bae1-fe9f1129cf18",
+      "date": "2016-07-19",
+      "quarter": "Q4 2016"
+    },
+    "bdfea008-0170-4326-a95f-3f17c5fdebf1": {
+      "category_id": "5d1b4d21-59cb-4ff3-bae1-fe9f1129cf18",
+      "date": "2019-07-18",
+      "quarter": "Q4 2019"
+    },
+    "8a9fc652-df69-4bea-b8d5-1eefe564cab7": {
+      "category_id": "5d1b4d21-59cb-4ff3-bae1-fe9f1129cf18",
+      "date": "2016-01-28",
+      "quarter": "Q2 2016"
+    },
+    "bac93873-eb84-47c4-b691-73b79e25582a": {
+      "category_id": "5d1b4d21-59cb-4ff3-bae1-fe9f1129cf18",
+      "date": "2020-07-22",
+      "quarter": "Q4 2020"
+    },
+    "e7de3719-f064-4e1b-b178-aa6ef3bcbe16": {
+      "category_id": "5d1b4d21-59cb-4ff3-bae1-fe9f1129cf18",
+      "date": "2019-04-24",
+      "quarter": "Q3 2019"
+    },
+    "501190b8-5902-45a1-9e2b-cfa400ba4177": {
+      "category_id": "5d1b4d21-59cb-4ff3-bae1-fe9f1129cf18",
+      "date": "2018-07-19",
+      "quarter": "Q4 2018"
+    },
+    "d11b7132-b9cf-4400-9d0e-9a9c34e6d7f9": {
+      "category_id": "5d1b4d21-59cb-4ff3-bae1-fe9f1129cf18",
+      "date": "2019-10-23",
+      "quarter": "Q1 2020"
+    },
+    "103d1cca-4f2c-49f7-ad49-059bc3cd96f6": {
+      "category_id": "5d1b4d21-59cb-4ff3-bae1-fe9f1129cf18",
+      "date": "2018-10-24",
+      "quarter": "Q1 2019"
+    },
+    "ffe59cbf-41ee-42f0-adb4-7f3e9f0c2060": {
+      "category_id": "5d1b4d21-59cb-4ff3-bae1-fe9f1129cf18",
+      "date": "2020-04-29",
+      "quarter": "Q3 2020"
+    },
+    "1a3a9d25-bdd4-4c6c-8b34-7c42bf9e7b3b": {
+      "category_id": "5d1b4d21-59cb-4ff3-bae1-fe9f1129cf18",
+      "date": "2017-04-27",
+      "quarter": "Q3 2017"
+    },
+    "f3a51ea8-299d-4ef5-89be-f221b2f2e2a0": {
+      "category_id": "5d1b4d21-59cb-4ff3-bae1-fe9f1129cf18",
+      "date": "2016-04-21",
+      "quarter": "Q3 2016"
+    },
+    "b92169b2-5243-4fba-aad2-b385fa618cdb": {
+      "category_id": "5d1b4d21-59cb-4ff3-bae1-fe9f1129cf18",
+      "date": "2019-01-30",
+      "quarter": "Q2 2019"
+    },
+    "2aaf362c-ba42-47c3-b9da-5cf91cf18c66": {
+      "category_id": "5d1b4d21-59cb-4ff3-bae1-fe9f1129cf18",
+      "date": "2018-04-26",
+      "quarter": "Q3 2018"
+    },
+    "2d1f3215-16b5-4350-b4e7-de5e8c23b3e4": {
+      "category_id": "5d1b4d21-59cb-4ff3-bae1-fe9f1129cf18",
+      "date": "2020-01-29",
+      "quarter": "Q2 2020"
+    },
+    "cabb3bf8-234b-4bef-bc67-c213d5e3c703": {
+      "category_id": "5d1b4d21-59cb-4ff3-bae1-fe9f1129cf18",
+      "date": "2016-10-20",
+      "quarter": "Q1 2017"
+    },
+    "a7aa3c72-6b8b-4a1e-a502-1a6ebf3e9696": {
+      "category_id": "5d1b4d21-59cb-4ff3-bae1-fe9f1129cf18",
+      "date": "2018-01-31",
+      "quarter": "Q2 2018"
+    },
+    "bceb8cc8-27b5-429b-b114-d86388447e9a": {
+      "category_id": "5d1b4d21-59cb-4ff3-bae1-fe9f1129cf18",
+      "date": "2017-10-26",
+      "quarter": "Q1 2018"
+    },
+    "2be26ac6-61af-47e3-9e06-2cc5b8880e8d": {
+      "category_id": "5d1b4d21-59cb-4ff3-bae1-fe9f1129cf18",
+      "date": "2017-01-26",
+      "quarter": "Q2 2017"
+    },
+    "f53ee310-328c-45f4-be7a-917f61577afe": {
+      "category_id": "1598ce28-8bb0-4787-ad40-f5227d3a72a6",
+      "date": "2019-01-29",
+      "quarter": "Q4 2018"
+    },
+    "b5293366-d043-43d2-9ee4-c76f6652c08e": {
+      "category_id": "1598ce28-8bb0-4787-ad40-f5227d3a72a6",
+      "date": "2017-01-31",
+      "quarter": "Q4 2016"
+    },
+    "aba29516-22e2-4759-b55b-0954266aa16f": {
+      "category_id": "1598ce28-8bb0-4787-ad40-f5227d3a72a6",
+      "date": "2018-04-25",
+      "quarter": "Q1 2018"
+    },
+    "c164632e-6847-4005-a9ad-ef2e61489dbd": {
+      "category_id": "1598ce28-8bb0-4787-ad40-f5227d3a72a6",
+      "date": "2018-01-30",
+      "quarter": "Q4 2017"
+    },
+    "6c9d5d9e-15f5-4abd-b1e1-9caf14db73ef": {
+      "category_id": "1598ce28-8bb0-4787-ad40-f5227d3a72a6",
+      "date": "2017-05-01",
+      "quarter": "Q1 2017"
+    },
+    "acd35cb9-12ab-4a34-9ce0-18a2c3b62eda": {
+      "category_id": "1598ce28-8bb0-4787-ad40-f5227d3a72a6",
+      "date": "2020-07-28",
+      "quarter": "Q2 2020"
+    },
+    "b8c0b45e-5ee1-4851-acd3-a786e867cca6": {
+      "category_id": "1598ce28-8bb0-4787-ad40-f5227d3a72a6",
+      "date": "2018-07-25",
+      "quarter": "Q2 2018"
+    },
+    "709852d9-ea87-4577-b799-d01d79251be7": {
+      "category_id": "1598ce28-8bb0-4787-ad40-f5227d3a72a6",
+      "date": "2017-10-24",
+      "quarter": "Q3 2017"
+    },
+    "9e63d314-eb9a-4a74-857f-c8df3b5730f8": {
+      "category_id": "1598ce28-8bb0-4787-ad40-f5227d3a72a6",
+      "date": "2018-10-24",
+      "quarter": "Q3 2018"
+    },
+    "2770bc43-8695-49de-85b7-e4641bdc69fc": {
+      "category_id": "1598ce28-8bb0-4787-ad40-f5227d3a72a6",
+      "date": "2017-07-25",
+      "quarter": "Q2 2017"
+    },
+    "05d1609b-1930-463c-82ab-3d93bc598d14": {
+      "category_id": "1598ce28-8bb0-4787-ad40-f5227d3a72a6",
+      "date": "2020-04-28",
+      "quarter": "Q1 2020"
+    },
+    "49b3c41a-04d0-4296-8f67-fba0ccfd4476": {
+      "category_id": "1598ce28-8bb0-4787-ad40-f5227d3a72a6",
+      "date": "2019-07-30",
+      "quarter": "Q2 2019"
+    },
+    "58f6d727-f1ab-41f9-a02b-321ad7e5f7b0": {
+      "category_id": "1598ce28-8bb0-4787-ad40-f5227d3a72a6",
+      "date": "2020-01-28",
+      "quarter": "Q4 2019"
+    },
+    "72eef596-0f03-404a-b397-cdcefbeb98cf": {
+      "category_id": "1598ce28-8bb0-4787-ad40-f5227d3a72a6",
+      "date": "2016-01-19",
+      "quarter": "Q4 2015"
+    },
+    "d839691f-e394-4395-99d6-6ebc51ac1838": {
+      "category_id": "1598ce28-8bb0-4787-ad40-f5227d3a72a6",
+      "date": "2016-07-21",
+      "quarter": "Q2 2016"
+    },
+    "834fbc6a-9ac3-44b0-88e2-14ad0ea3919f": {
+      "category_id": "1598ce28-8bb0-4787-ad40-f5227d3a72a6",
+      "date": "2019-10-29",
+      "quarter": "Q3 2019"
+    },
+    "b0e55d81-4c1d-46d5-8cae-f81b22a8dc6b": {
+      "category_id": "1598ce28-8bb0-4787-ad40-f5227d3a72a6",
+      "date": "2016-10-20",
+      "quarter": "Q3 2016"
+    },
+    "6bdf0a12-4534-402b-9e75-15ed837ad9a3": {
+      "category_id": "1598ce28-8bb0-4787-ad40-f5227d3a72a6",
+      "date": "2016-04-21",
+      "quarter": "Q1 2016"
+    },
+    "42365b15-af5e-4316-bf19-3b416762a413": {
+      "category_id": "1598ce28-8bb0-4787-ad40-f5227d3a72a6",
+      "date": "2019-04-30",
+      "quarter": "Q1 2019"
+    },
+    "715669b7-9ff5-4250-b5a5-6653e896cff8": {
+      "category_id": "077deca3-7e7e-4c48-b848-6f8cfcf84b5c",
+      "date": "2016-10-19",
+      "quarter": "Q3 2016"
+    },
+    "14daef31-42c0-46d3-9c6a-6fb67463c2c0": {
+      "category_id": "077deca3-7e7e-4c48-b848-6f8cfcf84b5c",
+      "date": "2018-04-18",
+      "quarter": "Q1 2018"
+    },
+    "f123e1d5-3a1e-4c0a-b3f0-5233a41878ee": {
+      "category_id": "077deca3-7e7e-4c48-b848-6f8cfcf84b5c",
+      "date": "2017-04-19",
+      "quarter": "Q1 2017"
+    },
+    "16817656-cb4f-45ad-b1ab-ec8a5cdb3e9d": {
+      "category_id": "077deca3-7e7e-4c48-b848-6f8cfcf84b5c",
+      "date": "2016-04-20",
+      "quarter": "Q1 2016"
+    },
+    "2143a293-8bad-4096-961f-643d0af762c5": {
+      "category_id": "077deca3-7e7e-4c48-b848-6f8cfcf84b5c",
+      "date": "2020-01-22",
+      "quarter": "Q4 2019"
+    },
+    "2f8c9e36-ee58-4a71-a7eb-f5b58e0d77d6": {
+      "category_id": "077deca3-7e7e-4c48-b848-6f8cfcf84b5c",
+      "date": "2019-07-17",
+      "quarter": "Q2 2019"
+    },
+    "d8f6e679-117f-4780-a72f-f9f7f7745545": {
+      "category_id": "077deca3-7e7e-4c48-b848-6f8cfcf84b5c",
+      "date": "2017-10-18",
+      "quarter": "Q3 2017"
+    },
+    "030d2ed4-8f7e-41c8-85a6-7093d8308159": {
+      "category_id": "077deca3-7e7e-4c48-b848-6f8cfcf84b5c",
+      "date": "2020-07-15",
+      "quarter": "Q2 2020"
+    },
+    "768a5e03-1f9b-404f-b855-fd6760b74c1a": {
+      "category_id": "077deca3-7e7e-4c48-b848-6f8cfcf84b5c",
+      "date": "2017-01-18",
+      "quarter": "Q4 2016"
+    },
+    "d16176fd-88cf-47a5-806d-434b565a3c01": {
+      "category_id": "077deca3-7e7e-4c48-b848-6f8cfcf84b5c",
+      "date": "2016-01-20",
+      "quarter": "Q4 2015"
+    },
+    "b6ee9f5e-2e6c-4f3c-b5b4-75af52c9880c": {
+      "category_id": "077deca3-7e7e-4c48-b848-6f8cfcf84b5c",
+      "date": "2019-04-17",
+      "quarter": "Q1 2019"
+    },
+    "7d5b239c-6ab4-4e40-afc8-1e80595d42e6": {
+      "category_id": "077deca3-7e7e-4c48-b848-6f8cfcf84b5c",
+      "date": "2018-10-17",
+      "quarter": "Q3 2018"
+    },
+    "2bdbd2f4-be1c-40a8-af44-3849cc736201": {
+      "category_id": "077deca3-7e7e-4c48-b848-6f8cfcf84b5c",
+      "date": "2020-04-15",
+      "quarter": "Q1 2020"
+    },
+    "15b2f408-e15a-48e0-bee6-216b3ddefdfa": {
+      "category_id": "077deca3-7e7e-4c48-b848-6f8cfcf84b5c",
+      "date": "2018-01-17",
+      "quarter": "Q4 2017"
+    },
+    "7a4ef79b-56b1-462a-9fae-dc3871fa0f5c": {
+      "category_id": "077deca3-7e7e-4c48-b848-6f8cfcf84b5c",
+      "date": "2019-01-23",
+      "quarter": "Q4 2018"
+    },
+    "5f3b25c6-0ba5-488a-96fb-771908f625ba": {
+      "category_id": "077deca3-7e7e-4c48-b848-6f8cfcf84b5c",
+      "date": "2018-07-18",
+      "quarter": "Q2 2018"
+    },
+    "a7aad8b7-2b45-4059-9ee8-78381b3f9161": {
+      "category_id": "077deca3-7e7e-4c48-b848-6f8cfcf84b5c",
+      "date": "2017-07-19",
+      "quarter": "Q2 2017"
+    },
+    "47b32556-12bb-4bb8-bd9d-7cc98327f937": {
+      "category_id": "077deca3-7e7e-4c48-b848-6f8cfcf84b5c",
+      "date": "2019-10-16",
+      "quarter": "Q3 2019"
+    },
+    "c9905f88-3873-4695-a25a-10fc6c6c48cd": {
+      "category_id": "077deca3-7e7e-4c48-b848-6f8cfcf84b5c",
+      "date": "2016-07-20",
+      "quarter": "Q2 2016"
+    },
+    "f182684d-b21a-4111-b8f5-df819f9a236c": {
+      "category_id": "5602d908-a5c5-43c1-b888-975dff32a2c4",
+      "date": "2016-05-12",
+      "quarter": "Q1 2017"
+    },
+    "2a8700a4-4c95-4033-9db7-8ac2824fef70": {
+      "category_id": "5602d908-a5c5-43c1-b888-975dff32a2c4",
+      "date": "2016-02-17",
+      "quarter": "Q4 2016"
+    },
+    "b17bd158-c50f-4805-b2ca-387f2e4bf4ab": {
+      "category_id": "5602d908-a5c5-43c1-b888-975dff32a2c4",
+      "date": "2017-05-09",
+      "quarter": "Q1 2018"
+    },
+    "c61f5ead-aa70-47e9-8092-bc06aa9815fc": {
+      "category_id": "5602d908-a5c5-43c1-b888-975dff32a2c4",
+      "date": "2019-08-15",
+      "quarter": "Q2 2020"
+    },
+    "d2993e0b-6e56-4ef4-aa77-83f97de99c32": {
+      "category_id": "5602d908-a5c5-43c1-b888-975dff32a2c4",
+      "date": "2020-02-13",
+      "quarter": "Q4 2020"
+    },
+    "f70aa508-9dbb-4740-a31e-b6953e41c955": {
+      "category_id": "5602d908-a5c5-43c1-b888-975dff32a2c4",
+      "date": "2016-11-10",
+      "quarter": "Q3 2017"
+    },
+    "151ef257-0874-44e9-8584-15a8e62e3ae8": {
+      "category_id": "5602d908-a5c5-43c1-b888-975dff32a2c4",
+      "date": "2017-08-10",
+      "quarter": "Q2 2018"
+    },
+    "73dedba4-4c22-46b7-974b-719bf54bf76b": {
+      "category_id": "5602d908-a5c5-43c1-b888-975dff32a2c4",
+      "date": "2019-11-14",
+      "quarter": "Q3 2020"
+    },
+    "468379f8-e7ee-449e-b2de-9c4e26859a44": {
+      "category_id": "5602d908-a5c5-43c1-b888-975dff32a2c4",
+      "date": "2019-02-14",
+      "quarter": "Q4 2019"
+    },
+    "dad186a9-fee5-4f56-a768-4db94e110b6c": {
+      "category_id": "5602d908-a5c5-43c1-b888-975dff32a2c4",
+      "date": "2018-11-15",
+      "quarter": "Q3 2019"
+    },
+    "1bb659b7-96c3-4be3-af0a-6e690a89a36e": {
+      "category_id": "5602d908-a5c5-43c1-b888-975dff32a2c4",
+      "date": "2020-08-19",
+      "quarter": "Q2 2021"
+    },
+    "3863678d-4d9c-40ba-8bac-9f441d5c5f6e": {
+      "category_id": "5602d908-a5c5-43c1-b888-975dff32a2c4",
+      "date": "2019-05-16",
+      "quarter": "Q1 2020"
+    },
+    "aca31d3a-3997-4cb9-a77a-a592bd8faa0f": {
+      "category_id": "5602d908-a5c5-43c1-b888-975dff32a2c4",
+      "date": "2018-05-10",
+      "quarter": "Q1 2019"
+    },
+    "ec0fc8a2-ec5b-4beb-836c-563242dee228": {
+      "category_id": "5602d908-a5c5-43c1-b888-975dff32a2c4",
+      "date": "2018-02-08",
+      "quarter": "Q4 2018"
+    },
+    "e4d53107-35e9-4bae-a626-182dff5d2893": {
+      "category_id": "5602d908-a5c5-43c1-b888-975dff32a2c4",
+      "date": "2020-05-21",
+      "quarter": "Q1 2021"
+    },
+    "b34ae7f4-20dd-4d8d-933f-53fb5795b97b": {
+      "category_id": "5602d908-a5c5-43c1-b888-975dff32a2c4",
+      "date": "2018-08-16",
+      "quarter": "Q2 2019"
+    },
+    "c19dbcba-bc1a-44e9-a162-41218ebe2998": {
+      "category_id": "5602d908-a5c5-43c1-b888-975dff32a2c4",
+      "date": "2017-11-09",
+      "quarter": "Q3 2018"
+    },
+    "c5ed8f03-cfa5-4282-b711-bf0c3b2afb4d": {
+      "category_id": "5602d908-a5c5-43c1-b888-975dff32a2c4",
+      "date": "2016-08-11",
+      "quarter": "Q2 2017"
+    },
+    "9ff7b015-9b87-4471-a48c-6fb9faf470af": {
+      "category_id": "5602d908-a5c5-43c1-b888-975dff32a2c4",
+      "date": "2017-02-09",
+      "quarter": "Q4 2017"
+    },
+    "3299680c-e027-4b9b-a2d2-a55a89726654": {
+      "category_id": "f39dc51b-689e-424d-af9b-0ba2d2c0bb86",
+      "date": "2016-02-10",
+      "quarter": "Q2 2016"
+    },
+    "14c2c798-8b70-4522-b372-12a0726e9b40": {
+      "category_id": "f39dc51b-689e-424d-af9b-0ba2d2c0bb86",
+      "date": "2019-05-15",
+      "quarter": "Q3 2019"
+    },
+    "68ad0bf4-815d-46b5-b2a7-58b018dbcbe3": {
+      "category_id": "f39dc51b-689e-424d-af9b-0ba2d2c0bb86",
+      "date": "2018-08-15",
+      "quarter": "Q4 2018"
+    },
+    "e379a135-ee39-4e52-9e4d-1e7891914f79": {
+      "category_id": "f39dc51b-689e-424d-af9b-0ba2d2c0bb86",
+      "date": "2020-02-12",
+      "quarter": "Q2 2020"
+    },
+    "cdb476fc-7209-4527-9e75-21a64993db96": {
+      "category_id": "f39dc51b-689e-424d-af9b-0ba2d2c0bb86",
+      "date": "2019-08-14",
+      "quarter": "Q4 2019"
+    },
+    "61200619-e0f5-4766-a78b-ab481487d591": {
+      "category_id": "f39dc51b-689e-424d-af9b-0ba2d2c0bb86",
+      "date": "2016-11-16",
+      "quarter": "Q1 2017"
+    },
+    "dd1e2c0f-cc2c-4862-ae6e-b7869a22074c": {
+      "category_id": "f39dc51b-689e-424d-af9b-0ba2d2c0bb86",
+      "date": "2016-05-18",
+      "quarter": "Q3 2016"
+    },
+    "5ab00814-587c-40b9-b1de-2874b6b0ceb8": {
+      "category_id": "f39dc51b-689e-424d-af9b-0ba2d2c0bb86",
+      "date": "2017-08-16",
+      "quarter": "Q4 2017"
+    },
+    "828c1a7c-50c6-4668-a662-d37865b7468c": {
+      "category_id": "f39dc51b-689e-424d-af9b-0ba2d2c0bb86",
+      "date": "2018-11-14",
+      "quarter": "Q1 2019"
+    },
+    "00c344b6-b05d-475c-85db-7e054152070e": {
+      "category_id": "f39dc51b-689e-424d-af9b-0ba2d2c0bb86",
+      "date": "2018-02-14",
+      "quarter": "Q2 2018"
+    },
+    "b8afb776-fe88-41ad-94ab-1cc3792e66cc": {
+      "category_id": "f39dc51b-689e-424d-af9b-0ba2d2c0bb86",
+      "date": "2019-11-13",
+      "quarter": "Q1 2020"
+    },
+    "976ae4db-7948-4434-ae65-a6538989a15e": {
+      "category_id": "f39dc51b-689e-424d-af9b-0ba2d2c0bb86",
+      "date": "2019-02-13",
+      "quarter": "Q2 2019"
+    },
+    "10c1d6b7-8435-46ab-a016-069faf73573f": {
+      "category_id": "f39dc51b-689e-424d-af9b-0ba2d2c0bb86",
+      "date": "2020-08-12",
+      "quarter": "Q4 2020"
+    },
+    "fec74e8d-aef4-4c80-aded-b86ca26b3ad3": {
+      "category_id": "f39dc51b-689e-424d-af9b-0ba2d2c0bb86",
+      "date": "2017-02-15",
+      "quarter": "Q2 2017"
+    },
+    "4367451b-7b02-4f58-ba64-4a5fd4fb5729": {
+      "category_id": "f39dc51b-689e-424d-af9b-0ba2d2c0bb86",
+      "date": "2017-11-15",
+      "quarter": "Q1 2018"
+    },
+    "8a7034dd-aeac-413e-b55c-7c19a82a7b9c": {
+      "category_id": "f39dc51b-689e-424d-af9b-0ba2d2c0bb86",
+      "date": "2018-05-16",
+      "quarter": "Q3 2018"
+    },
+    "f2d8759a-4908-4659-b1b3-c3f6670308a4": {
+      "category_id": "f39dc51b-689e-424d-af9b-0ba2d2c0bb86",
+      "date": "2017-05-17",
+      "quarter": "Q3 2017"
+    },
+    "ed50c9ff-de0a-4b51-bda4-b65ec87e04e7": {
+      "category_id": "f39dc51b-689e-424d-af9b-0ba2d2c0bb86",
+      "date": "2020-05-13",
+      "quarter": "Q3 2020"
+    },
+    "95328f4e-0af1-4374-a227-48e425f0c29b": {
+      "category_id": "f39dc51b-689e-424d-af9b-0ba2d2c0bb86",
+      "date": "2016-08-17",
+      "quarter": "Q4 2016"
+    }
+  },
+  "doc_ids_with_summaries": [
+    "5da7677f-f71c-4ebb-a7bc-75bd23bbeb1b",
+    "a8e5eb78-1844-41a6-8d08-832453349e95",
+    "56f537d5-9d89-4bd1-879f-09bf4787b076",
+    "7e538606-f18b-410f-8284-59e5929f2aaa",
+    "95169fd9-70cf-49ed-bb34-cf82a84b6e9b",
+    "88270af8-bfd6-41e8-989a-d9ca9b41d701",
+    "1253b37b-09a1-4e11-9b02-38759d525a6d",
+    "0bbc8cf7-f020-4d4d-94ae-66c95587b4ea",
+    "7e407d90-f242-4e0a-8adc-652ac34e0064",
+    "345230d4-d49e-449a-b66e-7368cdae4b83",
+    "4514ce72-36f3-4478-9854-65348be1bcd9",
+    "3066867a-c8e7-4a7d-ba6f-d396374aa645",
+    "b8b246b9-baa7-42f1-8d7a-9101e426550a",
+    "4c80d92e-c91e-4ed9-bdab-562d41d5b462",
+    "e64e6c04-9a86-4c8b-9802-868c62930f5e",
+    "1c245c5a-1bfe-45c6-a44f-5f37511c5d42",
+    "7a1511a3-7142-47f4-811b-08f3747c84a5",
+    "96d65eb1-4f00-456b-81b3-728d80f280c9",
+    "898a3819-d404-4d78-84b1-7e0452801c66",
+    "36c904fa-4403-4c80-9ed4-6d929edd8796",
+    "b5ee749b-6296-44e0-b11a-6bf71b3e7a24",
+    "cfd47f1f-65da-4358-af09-9cccd212632f",
+    "ac563310-91d8-4d9d-b030-3c9cdd18674c",
+    "ae5e9f7b-f64a-4be4-8fa2-8d6989a1d6e3",
+    "45247e77-068a-4ea5-8036-04a682c76abf",
+    "bde3a713-e38f-43db-962a-2b7a293d5d4a",
+    "d3427db7-3f62-4127-b86b-3a24cccf6f7e",
+    "d06c92db-d7b8-46bf-a7a3-164dbf2d5b41",
+    "8644566d-4632-4c5a-9f2d-27634819e04b",
+    "21d2e3bc-c815-4f6c-a597-12dc843a94cd",
+    "674ddfcb-c397-4b4b-b4c3-1370a18aa9e1",
+    "2cf0da85-42da-4a49-9a1a-197e9d626947",
+    "dc8167db-d406-4774-9d1a-da8c9b8273eb",
+    "847ed110-b532-4a67-ac52-f2e2dc3aa9df",
+    "286b72ac-a473-4eaa-a71e-8c9a53eb899b",
+    "a82150cc-4c7f-4276-addc-6bf81cc14098",
+    "29db40d9-7313-4c3b-9d52-b82457f5cf68",
+    "8036abf5-cc0f-4eee-9ac0-09986941c5e1",
+    "e257fce7-01cc-4cb3-b15f-034a038f062a",
+    "3e8787b3-177d-4912-a49c-e64d083e2c4c",
+    "b96ccaa3-78d2-42d8-aa47-fdd487775119",
+    "2a3434ba-5fbc-4c44-b29e-12f7e0a4cbc5",
+    "a447b829-5612-400a-8459-95487ae22e1e",
+    "dce50f58-a2dd-441e-9e36-be510ea8f9b3",
+    "8e1cdb0f-46c1-4862-97dd-4eaefa73288d",
+    "cbe9aced-b988-4785-9eb9-175ae77de51d",
+    "30a5e8f2-117e-4540-8703-dd8b4f957677",
+    "5bef4285-80d1-45bd-a0c2-4e25f8089920",
+    "f9bb933f-f2f6-4007-b410-e939b9dc2399",
+    "5003d409-a441-4a17-8ecb-4354cd4f3f37",
+    "a3a6d5e3-1944-4cfc-a95b-46e6d6a79406",
+    "29c41506-6a49-4ebe-8f13-76607b4c117a",
+    "0fd5a117-76d3-4509-a08f-00e8989ffd14",
+    "0a5ee092-d490-44f3-b3ca-c1e9f5bbf7ec",
+    "23c41af9-e593-4d57-8239-7a5d7ed1d1d4",
+    "4611a704-1186-4c4a-ac05-a46b60833522",
+    "7a96ae04-b737-4650-9afb-80e37c31422e",
+    "82bd3b7a-d865-4006-96c3-6be46c18cc0c",
+    "dff131fb-62f7-4f23-9727-977ecf92a4b1",
+    "945c9089-eb71-4b6a-8b1d-4eb0004bb27f",
+    "f46a4c65-5d4d-47ab-90ae-21f36d504c94",
+    "eddc7334-742e-4c8d-971c-768c3b4d20c3",
+    "a1865281-b3b2-4fa0-8500-bb9678a63824",
+    "2d39dab3-1c1e-408a-88d9-53f5bba43403",
+    "e66b33bf-af3f-4681-8aae-94011f332c4d",
+    "5969ece6-a45a-4726-ab3c-419450cdf146",
+    "169593a1-62d3-4376-a6e9-db3443ae9658",
+    "db245149-a508-4457-9136-4302e3e87516",
+    "8f8e68b8-bb8e-4e2d-a07e-dec0d9586d9e",
+    "9fd97e6f-b821-44f3-a531-6345ae617344",
+    "8e26c676-2ac4-46cb-9382-d1991351f163",
+    "57ef51e8-3ceb-4d11-b6c6-5c0eaac309e2"
+  ],
+  "categories_with_summaries": [],
+  "departments_with_summaries": []
+}

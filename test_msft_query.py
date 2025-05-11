@@ -1,16 +1,16 @@
 #!/usr/bin/env python3
 """
-Test script for specific Microsoft Q1 2017 revenue query
+Test script for Microsoft Q1 2017 query using our new two-layer tools directly
 """
 
 import os
 import logging
-from dotenv import load_dotenv
+import sys
+import json
+from pymongo import MongoClient
 from langchain_anthropic import ChatAnthropic
-from tools.earnings_call_tool import run_transcript_agent
-
-# Load environment variables
-load_dotenv()
+from langchain_tools.summaries_analysis_tool import analyze_document_summaries
+from langchain_tools.full_document_analysis_tool import analyze_full_document
 
 # Configure logging
 logging.basicConfig(
@@ -19,41 +19,96 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
-# Test query for Microsoft Q1 2017 revenue
-TEST_QUERY = "What was Microsoft's Q1 2017 revenue and key insights in few lines?"
+# Query
+test_query = "Give me a summary of Microsoft's Q1 2017 earnings call"
 
-def run_test():
-    """Run the test with a specific Microsoft query"""
-    logger.info(f"Testing earnings call tool with query: {TEST_QUERY}")
-    
-    # Get API key from environment
-    api_key = os.getenv("ANTHROPIC_API_KEY")
-    if not api_key:
-        logger.error("ANTHROPIC_API_KEY environment variable is not set")
-        return
-    
+def get_msft_document_ids(limit=3):
+    """Find relevant Microsoft document IDs from the database"""
     try:
-        # Create LLM
-        llm = ChatAnthropic(
-            model="claude-3-5-sonnet-20240620",
-            temperature=0,
-            anthropic_api_key=api_key
-        )
+        # Connect to MongoDB
+        client = MongoClient('mongodb://localhost:27017/')
+        db = client['earnings_transcripts']
         
-        # Call the earnings call tool
-        logger.info("Calling earnings call transcript analysis tool...")
-        response = run_transcript_agent(TEST_QUERY, llm, api_key)
+        # First, try to find document IDs by searching for MSFT 2017 Q1
+        pipeline = [
+            {
+                "$match": {
+                    "$and": [
+                        {"company_ticker": "MSFT"}, 
+                        {"$or": [
+                            {"call_title": {"$regex": "Q1.*2017", "$options": "i"}},
+                            {"call_title": {"$regex": "2017.*Q1", "$options": "i"}},
+                            {"call_date": {"$regex": "2017", "$options": "i"}}
+                        ]}
+                    ]
+                }
+            },
+            {"$limit": limit}
+        ]
         
-        # Print the response
-        logger.info("Response received:")
-        print("\n" + "=" * 80)
-        print(f"QUERY: {TEST_QUERY}")
-        print("=" * 80)
-        print(response)
-        print("=" * 80 + "\n")
+        docs = list(db.transcripts.aggregate(pipeline))
         
+        # If we found documents, return their IDs
+        if docs:
+            logger.info(f"Found {len(docs)} Microsoft Q1 2017 documents")
+            return [doc.get('document_id') for doc in docs]
+        else:
+            # If we didn't find specific Q1 2017 documents, just get any Microsoft documents
+            logger.info("No specific Q1 2017 documents found, fetching general Microsoft documents")
+            docs = list(db.transcripts.find({"company_ticker": "MSFT"}, {"document_id": 1}).limit(limit))
+            return [doc.get('document_id') for doc in docs]
+    
     except Exception as e:
-        logger.error(f"Error running test: {e}", exc_info=True)
+        logger.error(f"Error fetching document IDs: {e}")
+        return []
+
+def test_layer_one(query, document_ids):
+    """Test the first layer - document summaries analysis"""
+    logger.info(f"Testing Document Summaries Analysis with {len(document_ids)} documents")
+    logger.info(f"Document IDs: {document_ids}")
+    logger.info(f"Query: {query}")
+    
+    result = analyze_document_summaries(query, document_ids)
+    
+    print("\n===== LAYER 1: Document Summaries Analysis =====")
+    print(f"Query: {query}")
+    print(f"Document IDs: {document_ids}")
+    if "error" in result and result["error"]:
+        print(f"Error: {result['error']}")
+    else:
+        print(f"\nAnswer:\n{result.get('answer', 'No answer provided')}")
+
+def test_layer_two(query, document_id):
+    """Test the second layer - full document analysis"""
+    logger.info(f"Testing Full Document Analysis with document ID: {document_id}")
+    logger.info(f"Query: {query}")
+    
+    result = analyze_full_document(query, document_id)
+    
+    print("\n===== LAYER 2: Full Document Analysis =====")
+    print(f"Query: {query}")
+    print(f"Document ID: {document_id}")
+    if "error" in result and result["error"]:
+        print(f"Error: {result['error']}")
+    else:
+        print(f"\nAnswer:\n{result.get('answer', 'No answer provided')}")
+        print(f"\nHas more chunks: {result.get('has_more_chunks', False)}")
+        print(f"Current chunk: {result.get('current_chunk', 0)}")
+        print(f"Total chunks: {result.get('total_chunks', 1)}")
+
+def main():
+    # Get document IDs
+    document_ids = get_msft_document_ids()
+    
+    if not document_ids:
+        logger.error("No document IDs found. Exiting.")
+        sys.exit(1)
+    
+    # Test layer one - document summaries analysis
+    test_layer_one(test_query, document_ids)
+    
+    # Test layer two - full document analysis (using first document ID)
+    test_layer_two(test_query, document_ids[0])
 
 if __name__ == "__main__":
-    run_test() 
+    main() 
