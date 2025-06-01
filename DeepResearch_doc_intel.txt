@@ -1,0 +1,91 @@
+
+
+**The Overall Goal:** To provide you with a comprehensive analytical summary or report based *only* on the information found within its database of earnings call transcripts (which cover roughly 2016-2020).
+
+Here's how it typically unfolds:
+
+**Step 0: Your Query Arrives**
+
+*   You ask a question like, "What did Apple and Microsoft say about their AI strategy in their recent earnings calls?"
+*   The main system (the `BasicAgent`) recognizes this question is about earnings calls and hands it over to its specialist: the `Transcript Agent` (by calling the `run_transcript_agent` function).
+
+**Step 1: The Transcript Agent Wakes Up & Understands the Mission**
+
+*   The `Transcript Agent` isn't just a simple function; it's a mini-AI brain (an LLM) guided by a very specific set of instructions (the `TRANSCRIPT_AGENT_PROMPT_TEMPLATE`).
+*   These instructions tell it to act like an "expert Equity Research Analyst." Its job is to break down your query and gather information methodically.
+
+**Step 2: First Pass - Getting the Big Picture (Using the `category_tool`)**
+
+*   **Action**: The agent first identifies the main companies or "categories" in your query (e.g., "Apple," "Microsoft").
+*   For each company, it uses its internal `category_tool`.
+*   **How the `category_tool` works**:
+    1.  **Input**: It takes your query (or part of it, like "AI strategy") and the company name (e.g., "Apple").
+    2.  **Fetch Pre-computed Summary**: It goes to a database (MongoDB) and looks up a pre-existing, high-level summary specifically for "Apple." Think of this as a concise executive briefing already prepared for "Apple."
+    3.  **Quick Analysis**: It then uses its AI brain (another LLM call) to read this pre-computed Apple summary and see how it relates to "AI strategy."
+    4.  **Output**: It provides a thought process and an answer based *only* on that high-level summary for Apple.
+*   The agent repeats this for Microsoft, getting a similar high-level summary and analysis.
+*   **Result**: The agent now has a general overview for both Apple and Microsoft regarding their AI strategy, based on their existing category summaries.
+
+**Step 3: "Is This Enough?" - The Agent Pauses and Thinks**
+
+*   **Action**: The agent looks at the high-level information it just gathered from the `category_tool`.
+*   **Decision**: It asks itself: "Can I answer the user's original question comprehensively with just these general summaries? Or does the user need more specific details, examples, or direct quotes that aren't in these overviews?"
+    *   If your query was very general (e.g., "Give me a quick overview of Apple's business"), the category summaries might be enough.
+    *   But for "What did they say about AI strategy?", it likely needs more detail.
+
+**Step 4: Second Pass - Digging Deeper for Specific Transcripts (Using the `document_level_search_tool`)**
+
+*   *(This step happens if the category summaries weren't enough)*
+*   **Action**: The agent decides it needs to find the actual earnings call transcripts that are most relevant. It uses its internal `document_level_search_tool`.
+*   **How the `document_level_search_tool` works**:
+    1.  **Input**: It takes your natural language query (e.g., "Apple AI strategy recent earnings calls").
+    2.  **Semantic Search**: It converts your query into a mathematical representation (an embedding). It then compares this to a library (ChromaDB vector store) where *all* the individual earnings call transcripts (or their detailed summaries/beginnings) have also been converted into these mathematical representations.
+    3.  **Find Matches**: It finds the transcripts whose mathematical representations are closest to your query's representation. This is "semantic search" – it looks for meaning, not just keywords.
+    4.  **Output**: It returns a list of the most relevant transcripts, including their names (e.g., "Apple - Q4 2020 Earnings Call"), unique Document IDs (like a library catalog number, e.g., `ae5e9f7b-...`), the company ticker, and a relevance score.
+*   If your query involved multiple companies (like Apple and Microsoft), the agent might run this search specifically for each company to get the most targeted results.
+*   **Result**: The agent now has a list of specific earnings call transcripts that are likely to contain the detailed information about AI strategy for Apple and Microsoft.
+
+**Step 5: Handling "No Specific Documents Found"**
+
+*   If the `document_level_search_tool` comes back empty for a particular company or topic, the agent makes a note of this. It knows it will have to rely on the earlier, more general category summary for that part of the answer.
+
+**Step 6: Third Pass - Reading the Relevant Transcripts (Using the `document_content_analysis_tool`)**
+
+*   *(This step happens if specific, relevant transcripts were found in Step 4)*
+*   **Action**: The agent is programmed to be thorough. It won't just look at the single top search result. It will often examine 2-3 of the most relevant transcripts for each company/topic to get a well-rounded view.
+*   For each promising Document ID it found:
+    *   It uses its internal `document_content_analysis_tool`.
+    *   **How the `document_content_analysis_tool` works**:
+        1.  **Input**: Your query (or the relevant part, e.g., "AI strategy") and the specific Document ID (e.g., `ae5e9f7b-...`).
+        2.  **Fetch Content**: It goes back to the database (MongoDB) and retrieves the content for that *exact* transcript. It tries to get a detailed pre-computed summary of *that specific call* first (if available). If not, it fetches the full text of the transcript.
+        3.  **Focused Analysis**: It then uses its AI brain (another LLM call), providing it with your query and the full content of *just that one transcript*. It asks the AI to answer your query based *only* on the information within that single document.
+        4.  **Output**: It provides the specific answer found within that transcript.
+*   The agent repeats this for each relevant document it needs to check.
+*   **Result**: The agent gathers detailed snippets, facts, and statements about AI strategy directly from the most relevant individual earnings call transcripts for both Apple and Microsoft.
+
+**Step 7: Synthesizing the Final "Analyst Report"**
+
+*   **Action**: The agent now has all the pieces:
+    *   High-level overviews from the `category_tool`.
+    *   (If applicable) A list of specific relevant transcripts from the `document_level_search_tool`.
+    *   (If applicable) Detailed answers and insights extracted from those specific transcripts by the `document_content_analysis_tool`.
+*   Its final instruction is to combine all this information into a single, coherent, and comprehensive "Analyst Report" that directly answers your original question.
+*   **Content of the Report**:
+    *   It will present the key findings logically.
+    *   It will draw from both the high-level summaries and the specific document details.
+    *   If it couldn't find certain information (e.g., if no specific documents were found for a detail, or if a transcript didn't mention AI), it will clearly state that, possibly mentioning the data coverage (2016-2020).
+
+**Step 8: Delivering the Answer**
+
+*   This final "Analyst Report" generated by the `Transcript Agent` is then passed back to the main system (`BasicAgent`), which delivers it to you as the answer to your query.
+
+**In a Nutshell:**
+
+The Earnings Call Summary tool is like a multi-stage research process:
+
+1.  **Quick Overview**: Get broad summaries for the companies involved.
+2.  **Targeted Search**: If needed, find the exact documents (transcripts) that are most likely to have the details.
+3.  **Deep Dive**: Read those specific documents carefully to extract the precise information.
+4.  **Report**: Combine everything into a clear, well-supported answer.
+
+This layered approach allows the agent to be both efficient (by using summaries when possible) and thorough (by digging into full transcripts when necessary).
